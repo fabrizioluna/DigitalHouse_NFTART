@@ -30,15 +30,20 @@
 
 
 ## Páginas de Inspiración
-- <a href="https://www.mattelsa.net" target="_blank""> Mattelsa </a> 
-
+- <a href="https://www.mattelsa.net" target="_blank"> Mattelsa </a> 
+- <a href="https://www.ingoldwetrust-paris.fr" target="_blank"> In Gold We Trust </a> 
+- <a href="https://www.junghoe.com" target="_blank"> Junghoe </a> 
+- <a href="https://opensea.io" target="_blank"> Opensea </a> 
+- <a href="https://rarible.com/" target="_blank"> Rarible </a> 
+- <a href="https://mintable.app/" target="_blank"> Mintable </a> 
+- <a href="https://www.bbva.mx/" target="_blank"> BBVA </a> 
 
 
 
 ## Boceto
 - <a href="https://www.figma.com/file/Z5HOcuBXfmjrrSsGid8zRN/NFTART?node-id=0%3A1" target="_blank">Home NFTART</a>
-- <a href="https://www.figma.com/file/Z5HOcuBXfmjrrSsGid8zRN/NFTART?node-id=19%3A4751 target="_blank"">Market Place y Carrito de Compra</a>
-- <a href="https://www.figma.com/file/Z5HOcuBXfmjrrSsGid8zRN/NFTART?node-id=19%3A4752 target="_blank"">Login - Registro y Perfil de Usuario</a>
+- <a href="https://www.figma.com/file/Z5HOcuBXfmjrrSsGid8zRN/NFTART?node-id=19%3A4751" target="_blank">Market Place y Carrito de Compra</a>
+- <a href="https://www.figma.com/file/Z5HOcuBXfmjrrSsGid8zRN/NFTART?node-id=19%3A4752" target="_blank">Login - Registro y Perfil de Usuario</a>
 
 
 
