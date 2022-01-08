@@ -3,15 +3,23 @@
 ## Colaboradores
 - Juan Felipe Prada Suárez
 > Breve descripción
+
 - Hugo Resendiz
-> Breve descripción
+> Profesión: Mercadologo e Ing. industrial.
+
+
+> Acividades Proferidas: Me encanta pasar tiempo con mi familia y disfrutar de un buen libro y nadar.
+
+> Expectativas del proyecto: Realizar un proyecto integrador que nos permita esforzarnos y sacra lo mejor de nosotros  a través del prendizaje a base de experiencias que podamos encontrar en el mercado laboral.
+
+
 - Sergio Orrego
 > Breve descripción
 - Fabrizio Luna Toledo
 > Breve descripción
 
 ## Páginas de Inspiración
-- <a href="https://trello.com/b/PQ1j3b6a/proyecto-integrador-desarrollo-full-stack">Página 1</a>
+- <a href="https://trello.com/b/PQ1j3b6a/proyecto-integrador-desarrollo-full-stack">Página 1</a> 
 - <a href="https://trello.com/b/PQ1j3b6a/proyecto-integrador-desarrollo-full-stack">Página 2</a>
 - <a href="https://trello.com/b/PQ1j3b6a/proyecto-integrador-desarrollo-full-stack">Página 3</a>
 - <a href="https://trello.com/b/PQ1j3b6a/proyecto-integrador-desarrollo-full-stack">Página 4</a>
