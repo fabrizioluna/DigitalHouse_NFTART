@@ -10,6 +10,17 @@
 
 
 
+## Páginas de Inspiración
+- <a href="https://www.mattelsa.net" target="_blank"> Mattelsa </a> 
+- <a href="https://www.ingoldwetrust-paris.fr" target="_blank"> In Gold We Trust </a> 
+- <a href="https://www.junghoe.com" target="_blank"> Junghoe </a> 
+- <a href="https://opensea.io" target="_blank"> Opensea </a> 
+- <a href="https://rarible.com/" target="_blank"> Rarible </a> 
+- <a href="https://mintable.app/" target="_blank"> Mintable </a> 
+- <a href="https://www.bbva.mx/" target="_blank"> BBVA </a> 
+
+
+
 ## Colaboradores
 
 - Juan Felipe Prada Suárez
@@ -43,17 +54,6 @@
 > Actividades preferidas: Jugar videojuegos, ver series de televisión, pasar tiempo con familia y amigos.
 
 > Expectativas del proyecto: Diseñar y programar una aplicación que involucre un buen trabajo en equipo para así poner en práctica todo lo aprendido durante las clases y generar un proyecto innovador en la experiencia del usuario y, del lado del desarrollo crear un proyecto con las tecnologías en tendencia y con mayor proyección a futuro. Además de poder contribuir en la difusión del mercado de NFT's en todo Latinoamérica.
-
-
-
-## Páginas de Inspiración
-- <a href="https://www.mattelsa.net" target="_blank"> Mattelsa </a> 
-- <a href="https://www.ingoldwetrust-paris.fr" target="_blank"> In Gold We Trust </a> 
-- <a href="https://www.junghoe.com" target="_blank"> Junghoe </a> 
-- <a href="https://opensea.io" target="_blank"> Opensea </a> 
-- <a href="https://rarible.com/" target="_blank"> Rarible </a> 
-- <a href="https://mintable.app/" target="_blank"> Mintable </a> 
-- <a href="https://www.bbva.mx/" target="_blank"> BBVA </a> 
 
 
 
