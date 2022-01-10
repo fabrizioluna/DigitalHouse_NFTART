@@ -6,20 +6,24 @@
 
 ## Publico Objetivo
 
-> Personas ineteresadas en compra, vender y cponocer sobre el mercado de los NFT.
+> Personas interesadas en comprar, vender y conocer sobre el mercado de los NFT.
 
 
 
 ## Colaboradores
 - Juan Felipe Prada Suárez
-> Breve descripción
+>Profesión: Ingeniero Industrial
+
+>Actividades preferidas: Me gusta la fotografía, viajar, ir al cine y ponerme desafíos siempre!.
+
+>Expectativas del proyecto: Quiero generar un proyecto actual, disruptivo y que nos exija dar lo mejor de nosotros para poder generar una experiencia diferente al usuario que lo vaya a usar. Además de empezar a practicar todos los conocimientos vistos en las clases de Digital House con lo cual pueda completar todo el conocimiento adquirido y ser un Desarrollador Web Full Stack Pro!! :)
 
 - Hugo Resendiz
 > Profesión: Mercadologo e Ing. industrial.
 
 > Acividades Proferidas: Me encanta pasar tiempo con mi familia y disfrutar de un buen libro y nadar.
 
-> Expectativas del proyecto: Realizar un proyecto integrador que nos permita esforzarnos y sacra lo mejor de nosotros  a través del prendizaje a base de experiencias que podamos encontrar en el mercado laboral.
+> Expectativas del proyecto: Realizar un proyecto integrador que nos permita esforzarnos y sacar lo mejor de nosotros  a través del prendizaje a base de experiencias que podamos encontrar en el mercado laboral.
 
 
 - Sergio Orrego
