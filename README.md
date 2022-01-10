@@ -57,22 +57,5 @@
 
 
 
-## Boceto
-- <a href="https://www.figma.com/file/Z5HOcuBXfmjrrSsGid8zRN/NFTART?node-id=0%3A1" target="_blank">Home NFTART</a>
-- <a href="https://www.figma.com/file/Z5HOcuBXfmjrrSsGid8zRN/NFTART?node-id=19%3A4751" target="_blank">Market Place y Carrito de Compra</a>
-- <a href="https://www.figma.com/file/Z5HOcuBXfmjrrSsGid8zRN/NFTART?node-id=19%3A4752" target="_blank">Login - Registro y Perfil de Usuario</a>
-
-
-
-## Wireframes
-- <a href="https://trello.com/b/PQ1j3b6a/proyecto-integrador-desarrollo-full-stack">Página de Inicio</a>
-- <a href="https://trello.com/b/PQ1j3b6a/proyecto-integrador-desarrollo-full-stack">Detalle del Producto</a>
-- <a href="https://trello.com/b/PQ1j3b6a/proyecto-integrador-desarrollo-full-stack">Carrito de Compras</a>
-- <a href="https://trello.com/b/PQ1j3b6a/proyecto-integrador-desarrollo-full-stack">Marketplace</a>
-- <a href="https://trello.com/b/PQ1j3b6a/proyecto-integrador-desarrollo-full-stack">Perfil de Usuarios</a>
-- <a href="https://trello.com/b/PQ1j3b6a/proyecto-integrador-desarrollo-full-stack">Registro e Identificacion</a>
-
-
-
 ## Tablero de trabajo
 - <a href="https://trello.com/b/PQ1j3b6a/proyecto-integrador-desarrollo-full-stack" target="_blank">Tablero Trello</a>
