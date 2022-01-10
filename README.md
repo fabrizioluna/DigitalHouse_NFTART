@@ -57,5 +57,5 @@
 
 
 
-## Tablero de trabajo
+## Tablero de Trabajo
 - <a href="https://trello.com/b/PQ1j3b6a/proyecto-integrador-desarrollo-full-stack" target="_blank">Tablero Trello</a>
