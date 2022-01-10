@@ -29,7 +29,11 @@
 - Sergio Orrego
 > Breve descripción
 - Fabrizio Luna Toledo
-> Breve descripción
+> Profesión: Estudiante.
+
+> Actividades preferidas: Jugar videojuegos, ver series de televisión, pasar tiempo con familia y amigos.
+
+> Expectativas del proyecto: Diseñar y programar una aplicación que involucre un buen trabajo en equipo para así poner en práctica todo lo aprendido durante las clases y generar un proyecto innovador en la experiencia del usuario y, del lado del desarrollo crear un proyecto con las tecnologías en tendencia y con mayor proyección a futuro. Además de poder contribuir en la defunción del mercado de NFTS en todo Latinoamérica.
 
 
 
