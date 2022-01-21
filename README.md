@@ -1,6 +1,6 @@
 # NFTART PROJECT 
 
-> Plataforma de comercio electronico en el mercado de NFT's.
+> Plataforma de comercio electrónico en el mercado de NFT's.
 
 
 
@@ -11,6 +11,7 @@
 
 
 ## Páginas de Inspiración
+
 - <a href="https://www.mattelsa.net" target="_blank"> Mattelsa </a> 
 - <a href="https://www.ingoldwetrust-paris.fr" target="_blank"> In Gold We Trust </a> 
 - <a href="https://www.junghoe.com" target="_blank"> Junghoe </a> 
@@ -25,11 +26,11 @@
 
 - Juan Felipe Prada Suárez
 
->Profesión: Ingeniero Industrial.
+> Profesión: Ingeniero Industrial.
 
->Actividades preferidas: Me gusta la fotografía, viajar, ir al cine y ponerme desafíos siempre!.
+> Actividades preferidas: Me gusta la fotografía, viajar, ir al cine y ponerme desafíos siempre!.
 
->Expectativas del proyecto: Quiero generar un proyecto actual, disruptivo y que nos exija dar lo mejor de nosotros para poder generar una experiencia diferente al usuario que lo vaya a usar. Además de empezar a practicar todos los conocimientos vistos en las clases de Digital House con lo cual pueda completar todo el conocimiento adquirido y ser un Desarrollador Web Full Stack Pro!! :)
+> Expectativas del proyecto: Quiero generar un proyecto actual, disruptivo y que nos exija dar lo mejor de nosotros para poder generar una experiencia diferente al usuario que lo vaya a usar. Además de empezar a practicar todos los conocimientos vistos en las clases de Digital House con lo cual pueda completar todo el conocimiento adquirido y ser un Desarrollador Web Full Stack Pro!! :)
 
 - Hugo Resendiz
 
