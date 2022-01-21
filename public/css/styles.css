@@ -1,3 +1,211 @@
+/* Estilos Globales */
 body{
-    background-color: yellow;
+    background-color: white;
+    padding: 0px;
+    margin: 0px;
+}
+
+p{
+    color: #5BBEFF;
+    font-family: 'Alumni Sans', sans-serif;
+    font-size: 20px;
+    font-weight: 900;
+}
+
+a{
+    color: #5BBEFF;
+    text-decoration: none;
+    font-family: 'Alumni Sans', sans-serif;
+    font-size: 20px;
+}
+
+h1{
+    font-size: 22px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: grey;
+}
+
+h2{
+    font-size: 15px;
+    font-weight: lighter;
+}
+
+/* Estilo de los Iconos */
+i{
+    color: white;
+}
+
+nav{
+    width: 100%;
+    background-color: #072146;
+}
+
+
+/* Estilos de Navegacion */
+
+.nav__primary-logo{
+    width: 13%;
+    float: right;
+}
+
+.logo_header{
+    width: 100%;
+    justify-content: center;
+}
+.nav__primary-figure{
+    width: 80%;
+}
+
+.nav__primary{
+    width: 100%;
+    display: flex;
+}
+
+.nav__primary ul{
+    width: 80%;
+    display: flex;
+    justify-content: right;
+    list-style-type: none;
+}
+
+.nav__primary li{
+    margin-right: 30px;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.nav__primary i{
+    font-size: 15px;
+    color: rgb(255, 255, 255);
+    border-color: transparent;
+}
+
+.nav__secondary{
+    display: flex;
+    justify-content: right;
+    padding: 20px;
+    height: 1rem;
+    background-color: #D4EDFC;
+    text-decoration: none;
+}
+
+.nav__secondary li{
+    color: grey;
+    width: 8%;
+    list-style-type: none;
+}
+
+.nav__secondary li a{
+    color: grey;
+    text-decoration: none;
+    list-style-type: none;
+}
+
+.nav__secondary i{
+    font-size: 15px;
+    color: grey;
+    border-color: transparent;
+}
+
+#busqueda{
+    height: 1rem;
+    width: 20rem;
+    margin-right: 10px;
+    border-radius: 4px;
+    border-color: transparent;
+}
+
+
+/* Estilos del Banner */
+.banner__primary{
+    width: 100%;
+    height: 40rem;
+}
+
+.banner__primary img{
+    width: 100%;
+    height: 40rem;
+    object-fit: cover;
+}
+
+.banner__secondary{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 5rem;
+}
+
+
+/* Categorias */
+.categories__section{
+    width: 80%;
+    display: flex;
+    margin: auto;
+    margin-bottom: 5rem;
+}
+
+.categories__section img{
+    width: 12rem;
+    height: 12rem;
+    z-index: -20;
+}
+
+.categories__section h3{
+    text-align: center;
+}
+
+.categories__section article{
+    border: 0;
+    border: 2px solid #eeeeee;
+    padding: 10px;
+    display: block;
+    margin-right: 20px;
+}
+
+.categories__section article:hover{
+    -webkit-filter: grayscale(100%);
+}
+
+
+/* Footer */
+.footer__primary{
+    background-color: #072146;
+    display: flex;
+    text-align: center;
+    width: 100%;
+    margin-left: 0px;
+}
+
+.footer__section-one{
+    justify-content: center;
+    width: 25%;
+}
+
+.footer__section-two{
+    width: 30%;
+    margin: 30px;
+    font-weight: bolder;
+}
+
+.footer__section-three{
+    width: 30%;
+    margin: 30px;
+    font-weight: bolder;
+}
+
+.footer__section-four{
+    width: 30%;
+    margin: 30px;
+    font-weight: bolder;
+}
+
+.footer__section-icons{
+    text-align: right;
+}
+
+.footer__primary i{
+    font-size: 50px;
+    cursor: pointer;
+    text-align: center;
+    margin-right: 20px;
 }

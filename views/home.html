@@ -4,59 +4,150 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/02e6c8fc0f.js" crossorigin="anonymous"></script>
     <link href ="css/styles.css", rel="stylesheet">
-    <title>NFTART</title>
+
+    <!-- Fuentes -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans:wght@100&family=Bebas+Neue&display=swap" rel="stylesheet">
+    <title>NFTART - Página de Inicio</title>
 </head>
 
+<body>
+
     <header>
-        <img src="imagenes/logo_temporal.png">
-        <H1> NFTART / El mercado de NFT en America Latina</H1>
+        <nav>
+        <section class='nav__primary'>
+            <div class='nav__primary-figure'>
+                <img 
+                    src="imagenes/logo_temporal.png"
+                    class='nav__primary-logo'
+                />
+            </div>
+            <ul>
+                <li>
+                    <a><buton>
+                        <i class='fas fa-user'></i>
+                    </buton></a>
+                </li>
+                <li>
+                    <a href='#'>LOGIN</a>
+                </li>
+                <li>
+                    <a href='#'>REGISTRO</a>
+                </li>
+            </ul>
+        </section>
 
-        <ul>
-            <nav>
-                <ul><a href = "#"> LOGIN / REGISTRO </a></ul>
-                <ul><a href = "#"> MARKETPLACE </a></ul>
-                <ul><a href = "#"> RANKING </a></ul>
-                <ul><a href = "#"> CART </a></ul>
-                <ul><a href = "#"> NOSOTROS </a></ul>
-            </nav>
-        </ul>
+        <!-- Submenu -->
+            <section class='nav__secondary'>
+
+                <input id='busqueda'></input>
+                <li>
+                    <i class='fas fa-search'></i>
+                </li>
+                <li><a href = "#"> MARKETPLACE </a></li>
+                <li><a href = "#"> RANKING </a></li>
+                <li><a href = "#"> CART <i class='fas fa-shopping-cart'></i></a></li>
+            </section>
+        </nav>
         
-
-
     </header>
 
 
-        <H2> Texto de Bienvenida </H2>
+    <!-- Banner -->
+    <section class='banner__primary'>
+        <img 
+            src='/imagenes/OPCIÓN BANNER 4.jpg'
+            alt='banner'
+        />
+    </section>
 
+    <section class='banner__secondary'>
+        <article>
+            <h1>NFTART / El mercado de NFT en America Latina</h1>
+            <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                Pellentesque nisl purus, semper et orci non, ullamcorper pretium odio. 
+                Cras venenatis lobortis odio maximus dignissim. 
+                Sed consectetur justo hendrerit risus tempor rutrum. 
+                Pellentesque sit amet sapien non augue eleifend convallis nec a sem. 
+                Curabitur ornare aliquet dui, vehicula commodo augue dignissim ac. 
+                Maecenas sed tristique eros, eget faucibus ligula. Donec at velit ligula. 
+                Curabitur viverra nisi in arcu fringilla sollicitudin. 
+                Suspendisse in purus diam. Proin sit amet libero vel justo tempor viverra. 
+                Mauris gravida est id sollicitudin efficitur. 
+                In rutrum hendrerit mi, sed dignissim ipsum aliquam eget.</h2>
+        </article>
+    </section>
 
-    <section>
-        <H3> CATEGORIAS </H3>
-    </section> 
+     <!-- Categorias -->
 
-    <article>
+    <section class='categories__section'>
+        <article>
+            <h3>Arte</h3>
+            <img 
+                src='/imagenes/OPCION ARTE 1.jpg' 
+            />
+        </article>
+        <article>
+            <h3>Fotografia</h3>
+            <img 
+                src='/imagenes/OPCIÓN BANNER 3.jpg' 
+            />
+        </article>
+        <article>
+            <h3>Música</h3>
+            <img 
+                src='/imagenes/OPCIÓN BANNER 4.jpg' 
+            />
+        </article>
+        <article>
+            <h3>Simi</h3>
+            <img 
+                src='/imagenes/OPCIÓN BANNER 6.jpg' 
+            />
+        </article>
+        <article>
+            <h3>Metaverso</h3>
+            <img 
+                src='/imagenes/OPCION ARTE 3.jpg' 
+            />
+        </article>
+    </section>
 
-
-
-    </article>
-
-
+    <!-- Footer -->
     <footer>
-        <ul>
-            <nav>
+        <div class='footer__primary'>
+            <section class='footer__section-one'>
+                <img src="imagenes/logo_temporal.png">
+            </section>
+            <section class='footer__section-two'>
                 <ul><a href = "#"> LOGIN / REGISTRO </a></ul>
                 <ul><a href = "#"> MARKETPLACE </a></ul>
                 <ul><a href = "#"> RANKING </a></ul>
+            </section>
+            <section class='footer__section-three'> 
+                <ul><a href = "#"> TERMINOS Y CONDICIONES </a></ul>
                 <ul><a href = "#"> BLOG </a></ul>
                 <ul><a href = "#"> NOSOTROS </a></ul>
-                <ul><a href = "#"> TERMINOS Y CONDICIONES </a></ul>
-            </nav>
-        </ul>
-        
-        <p>Todos los derechos reservados</p>
-    </footer>
+            </section>
 
-<body>
+            <section class='footer__section-four'>
+                <ul><a href = "#"> GRUPO 2 </a></ul>
+                <ul><a href = "#"> DIGITAL HOUSE </a></ul>
+                <ul><a href = "#"> DERECHOS RESERVADOS </a></ul>
+                <div class='footer__section-icons'>
+                    <i class="fab fa-facebook-square"></i>
+                    <i class="fab fa-twitter-square"></i>
+                    <i class="fab fa-github-square"></i>
+                    <i class="fab fa-instagram-square"></i>
+                </div>
+
+            </section>
+        </div>
+    </footer>
     
 </body>
 </html>
