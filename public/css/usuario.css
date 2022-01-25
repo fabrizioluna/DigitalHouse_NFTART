@@ -1,0 +1,183 @@
+/* Estilos Globales */
+body{
+    background-color: white;
+    width:100%;
+    margin: auto;
+    justify-content: center;
+    min-width:600px;
+    max-width:2000px
+ }
+
+ .H1perfil{
+    color: rgb(47, 194, 3);
+    font-size: 28px;
+    padding-left: 20px;
+    margin-top:0%;
+ }
+
+.H2perfil{
+    color:rgb(136, 136, 136);   
+    font-size: 22px; 
+    padding-left: 20px;
+    margin-top:-2%;
+}
+
+
+p{
+    color:rgb(43, 43, 43);
+    font-size: 18px;
+    padding-left: 20px;
+    margin-top:-2%;
+}
+
+
+
+
+
+/*Presentacion */
+.Presentacion{
+    display:flex;
+    align-items:center;
+    width: 80%;    
+    margin:auto;
+    box-sizing: border-box;
+}
+
+
+/* ImagenPerfil */
+.circulo{
+    width: 200px;
+    height: 200px;
+    background-color: grey;
+    border-radius: 100%;
+}
+
+
+/* Rede Sociales */
+.Redessociales{
+    display:flex;
+    color: #072146;
+    list-style: none;
+    padding-left: 10px;
+    margin-top:1%;
+    align-items:center;
+}
+
+.Botonredes{
+    padding:15px;
+    box-sizing: border-box;
+    font-size: 22px;
+}
+
+.Botoncompartir{
+    margin-left: 2em;
+}
+
+
+/* MenuPerfil */
+.Menuperfil {
+    width: 90%;
+    font-family:Arial, Helvetica, sans-serif;
+    margin:auto;
+    box-sizing: border-box;
+}
+
+.Menuperfilb{
+    display: flex;
+    list-style: none;
+    padding:12px;
+    background: #333;
+    text-align: center;
+    justify-content: center;
+}
+
+.Menuperfilc{
+    color:white;
+    text-decoration: none;
+    display: block;
+    font-size: 18px;
+    padding: 1em;
+}
+
+.Menuperfilc:hover{
+    background: #072146;
+    color: white;
+}
+ 
+/* Submenu Perfiles */
+.lupa{
+    color:black;
+    box-sizing: border-box;
+}
+
+
+.Submenuperfil{
+    width: 90%;
+    font-family:Arial, Helvetica, sans-serif;
+    margin:auto;
+    box-sizing: border-box;
+}
+
+.Submenuperfilb{
+    display: flex;
+    list-style: none;
+    padding:12px;
+    background: rgb(216, 216, 216);
+    justify-content: right;
+}
+
+.Submenuperfilc{
+    color:black;
+    text-decoration: none;
+    display: block;
+    font-size: 14px;
+    padding-right: 1em;
+    padding-left: 1em;
+}
+
+
+/* Submenu Perfil Actividad y Ofertas */
+.lupa{
+    color:black;
+    box-sizing: border-box;
+}
+
+.Submenuperfilao{
+    width: 90%;
+    font-family:Arial, Helvetica, sans-serif;
+    margin:auto;
+    box-sizing: border-box;
+}
+
+.Submenuperfilaob{
+    display: flex;
+    list-style: none;
+    padding:12px;
+    background: rgb(216, 216, 216);
+    justify-content: right;
+}
+
+/* Coleccion */
+
+.Coleccion{
+    display:flex;
+    width: 90%;
+    margin: auto;
+    box-sizing:border-box;
+    padding: 2em;
+    background-color: white;
+}
+
+.itemcoleccion{
+    background-color:rgba(240, 240, 240, 0.644);
+    padding: 1.5em;
+    margin-left: 20px;
+    border-radius: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.Imagenesftp{
+    width: 80%;
+    padding: 2em;
+}
+
