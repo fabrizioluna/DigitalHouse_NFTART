@@ -6,12 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/02e6c8fc0f.js" crossorigin="anonymous"></script>
     <link href ="css/usuario.css", rel="stylesheet">
+    <link href ="css/styles.css", rel="stylesheet">
 
 
     
 
 <!-- Fuentes -->
-
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans:wght@100&family=Bebas+Neue&display=swap" rel="stylesheet">
     <title>NFTART- Usuario </title>
 </head>
 
@@ -81,17 +85,17 @@
         <section>
         <nav class="Menuperfil">
             <ul class="Menuperfilb">
-                <li class="Menuperfilc"> <a href="#" > COLECCION </a></li>
-                <li class="Menuperfilc"> <a href="#" > FAVORITOS </a></li>
-                <li class="Menuperfilc"> <a href="#" > ACTIVIDAD </a></li>
-                <li class="Menuperfilc"> <a href="#" > OFERTAS </a></li>
+                <li class="Menuperfilc"> <a href="#" id='buttonCollection'> COLECCION </a></li>
+                <li class="Menuperfilc"> <a href="#" id='buttonFavorites'> FAVORITOS </a></li>
+                <li class="Menuperfilc"> <a href="#" id='buttonActivity'> ACTIVIDAD </a></li>
+                <li class="Menuperfilc"> <a href="#" id='buttonOffers'> OFERTAS </a></li>
             </ul>
         </nav>
         </section>
 
     <!-- Submenu Perfil Colección, Creados, Favoritos  -->
 
-        <section>
+        <section id='subMenuFilter'>
         <nav class="Submenuperfil">
             <ul class= "Submenuperfilb">
                 <button class="lupa"><i class='fas fa-search'></i></button>
@@ -307,5 +311,7 @@
             </section>
         </div>
     </footer>
+
+    <script src='/scripts/userOptions.js'></script>
 </body>
 </html>

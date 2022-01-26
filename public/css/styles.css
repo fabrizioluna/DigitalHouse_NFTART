@@ -5,50 +5,6 @@ body{
     margin: 0px;
 }
 
-p{
-    color: #5BBEFF;
-    font-family: 'Alumni Sans', sans-serif;
-    font-size: 20px;
-    font-weight: 900;
-}
-
-span{
-    color: #5BBEFF;
-    font-family: 'Alumni Sans', sans-serif;
-    font-size: 20px;
-    font-weight: 900;
-    cursor: pointer;
-}
-
-a{
-    color: #5BBEFF;
-    text-decoration: none;
-    font-family: 'Alumni Sans', sans-serif;
-    font-size: 20px;
-}
-
-h1{
-    font-size: 22px;
-    font-family: Arial, Helvetica, sans-serif;
-    color: grey;
-}
-
-h2{
-    font-size: 15px;
-    font-weight: lighter;
-}
-
-h4{
-    font-size: 15px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: lighter;
-}
-
-/* Estilo de los Iconos */
-i{
-    color: white;
-}
-
 nav{
     width: 100%;
     background-color: #072146;
@@ -94,6 +50,15 @@ nav{
     border-color: transparent;
 }
 
+.nav__primary span{
+    color: #5BBEFF;
+    font-family: 'Alumni Sans', sans-serif;
+    font-weight: 0;
+    font-size: 20px;
+    font-weight: 900;
+    cursor: pointer;
+}
+
 .nav__secondary{
     display: flex;
     justify-content: right;
@@ -119,6 +84,13 @@ nav{
     font-size: 15px;
     color: grey;
     border-color: transparent;
+}
+
+.nav__secondary a{
+    color: #5BBEFF;
+    text-decoration: none;
+    font-family: 'Alumni Sans', sans-serif;
+    font-size: 20px;
 }
 
 #busqueda{
@@ -222,4 +194,12 @@ nav{
     cursor: pointer;
     text-align: center;
     margin-right: 20px;
+    color: white;
+}
+
+.footer__primary a{
+    color: #5BBEFF;
+    text-decoration: none;
+    font-family: 'Alumni Sans', sans-serif;
+    font-size: 20px;
 }

@@ -73,6 +73,9 @@ p{
     margin-left: 2em;
 }
 
+#subMenuFilter{
+    display: none;
+}
 
 /* MenuPerfil */
 .Menuperfil {
