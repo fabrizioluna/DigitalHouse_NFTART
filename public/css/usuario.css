@@ -8,6 +8,7 @@ body{
     max-width:2000px
  }
 
+/* Letras Perfil */
  .H1perfil{
     color: rgb(47, 194, 3);
     font-size: 28px;
@@ -31,8 +32,32 @@ p{
 }
 
 
+/* Letras Seccion Usuario */
 
+.Nombre{
+    color:black;
+    font-size:26px;
+}
 
+.Autor{
+    color: rgb(0, 132, 255);
+    font-size:22px;
+}
+
+.PrecioU{
+    color:rgb(47, 194, 3);
+    font-size:20px;
+}
+
+.PrecioE{
+    color:rgb(47, 194, 3);
+}
+
+/* Letras Tablas */
+.precioc{
+    color:rgb(47, 194, 3);
+    font-weight: bold;
+}
 
 /*Presentacion */
 .Presentacion{
@@ -40,6 +65,7 @@ p{
     align-items:center;
     width: 80%;    
     margin:auto;
+    margin-top:50px;
     box-sizing: border-box;
 }
 
@@ -53,7 +79,7 @@ p{
 }
 
 
-/* Rede Sociales */
+/* Redes Sociales */
 .Redessociales{
     display:flex;
     color: #072146;
@@ -78,7 +104,7 @@ p{
 }
 
 /* MenuPerfil */
-.Menuperfil {
+.Menuperfil{
     width: 90%;
     font-family:Arial, Helvetica, sans-serif;
     margin:auto;
@@ -89,13 +115,13 @@ p{
     display: flex;
     list-style: none;
     padding:12px;
-    background: #333;
+    background: #028484;
     text-align: center;
     justify-content: center;
 }
 
 .Menuperfilc{
-    color:white;
+    color: white;
     text-decoration: none;
     display: block;
     font-size: 18px;
@@ -103,11 +129,11 @@ p{
 }
 
 .Menuperfilc:hover{
-    background: #072146;
-    color: white;
+    background: #bdf4f8;
 }
  
 /* Submenu Perfiles */
+
 .lupa{
     color:black;
     box-sizing: border-box;
@@ -161,26 +187,94 @@ p{
 }
 
 /* Coleccion */
-
 .Coleccion{
-    display:flex;
     width: 90%;
     margin: auto;
-    box-sizing:border-box;
-    padding: 2em;
-    background-color: white;
+    margin-top: 1em;
+    background-color: rgb(233, 233, 233);
+    box-sizing: border-box;
+}
+
+.Collecciona{
+    display: flex;
+    flex-wrap: nowrap;
 }
 
 .itemcoleccion{
-    background-color:rgba(240, 240, 240, 0.644);
-    padding: 1.5em;
-    margin-left: 20px;
-    border-radius: 15px;
-    font-family: Arial, Helvetica, sans-serif;
+    box-shadow: 0px 0px 10px rgb(100, 100, 100);
+    background-color: white;
+    margin:10px;
+}
+
+.descripcion{
+    background-color: white;
+    padding: 0.5em;
+    border: rgb(199, 199, 199) 1px solid;
 }
 
 .Imagenesftp{
-    width: 80%;
-    padding: 2em;
+    width: 90%;
+    position: relative;
 }
+
+
+/* Tablas */
+
+.Tablaactividad{
+    display: block;
+    justify-content: center;
+    width: 90%;
+    margin:auto;
+    margin-top: 10px;
+    Padding-top:10px;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 10px;
+    background-color: rgb(233, 233, 233);
+    box-sizing: border-box;   
+    border-spacing: 0;
+}
+
+.Tablaofertas{
+    display: block;
+    width: 90%;
+    margin:auto;
+    margin-top: 10px;
+    Padding-top: 10px;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 10px;
+    background-color: rgb(233, 233, 233);
+    box-sizing: border-box;   
+    border-spacing: 0;
+}
+
+
+th{
+    width: 40%;
+    text-align: center;
+    font-size: 24px;
+    color:rgb(255, 255, 255);
+    vertical-align: top;
+    border: none solid rgb(221, 221, 221);
+    padding: 0.3em;
+    background-color: #333333;
+    width: calc(100%/5);
+}
+
+td{
+    width: 40%;
+    text-align: center;
+    font-size: 22px;
+    color:rgb(59, 59, 59);
+    vertical-align: top;
+    border: none solid rgb(221, 221, 221);
+    padding: 0.3em;
+    background-color: rgb(255, 255, 255);
+    width: calc(100%/5)
+}
+
+
+
+
 
