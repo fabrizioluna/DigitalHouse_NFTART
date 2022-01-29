@@ -7,6 +7,10 @@ app.listen(3004, () =>
 );
 
 app.get('/',(req, res)=>{
+    res.sendFile(__dirname + '/views/marketplace.html');
+});
+
+app.get('/',(req, res)=>{
     res.sendFile(__dirname + '/views/home.html');
 });
 

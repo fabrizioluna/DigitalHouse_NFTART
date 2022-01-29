@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/02e6c8fc0f.js" crossorigin="anonymous"></script>
+    <link href ="css/styles.css", rel="stylesheet">
+    <link href ="css/popUp.css", rel="stylesheet">
+    <link href ="css/marketplace.css", rel="stylesheet">
+
+    <!-- Fuentes -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans:wght@100&family=Bebas+Neue&display=swap" rel="stylesheet">
+    <title>NFTART - Página de Inicio</title>
+</head>
+<body>
+    <!-- PopUps - Registro y Login -->
+
+    <section class='popUp__Backdrop' id='popUpBackdropLogin'>
+        <article class='popUp__Content' id='popUpContentLogin'>
+            <div class='popUp__Nav'>
+                <div class='popUp__Nav--button1'>
+                    <!-- <i id='popUp__BackLogin' class="fas fa-chevron-circle-left"></i> -->
+                </div>
+                <div class='popUp__Nav--button2'>
+                    <i id='popUp__CloseLogin' class="fas fa-times-circle"></i>
+                </div>
+            </div>
+            <div class='popUp__Body'>
+                <figure>
+                    <section class='popUp__Img--content'>
+                        <img 
+                            src="imagenes/logo_temporal.png"
+                            class='popUp__Logo'
+                        />
+                    </section>
+                </figure>
+                <section class='popUp__LoginWith'>
+                    <h4>Inicia sesión con:</h4>
+                    <i class="fab fa-facebook-square"></i>
+                    <i class="fab fa-twitter-square"></i>
+                    <i class="fab fa-github-square"></i>
+                    <i class="fab fa-instagram-square"></i>
+                </section>
+                <section>
+                    <form class='popUp__Fields'>
+                        <input 
+                            placeholder='Correo electronico'
+                            type='email'
+                        />
+                        <input 
+                            placeholder='Contraseña'
+                            type='password'
+                        />
+                        <span>¿Olvidaste tu contraseña?</span>
+                        <button type='submit'>Ingresar</button>
+                        <button type='' id='registerButton'>¿No tienes cuenta? Registrate</button>
+                    </form>
+                </section>
+            </div>
+        </article>
+    </section>
+
+    <!-- Registro -->
+    <section class='popUp__Backdrop' id='popUpBackdropRegister'>
+        <article class='popUp__Content' id='popUpContentRegister'>
+            <div class='popUp__Nav'>
+                <div class='popUp__Nav--button1'>
+                    <i id='popUp__BackRegister' class="fas fa-chevron-circle-left"></i>
+                </div>
+                <div class='popUp__Nav--button2'>
+                    <i id='popUp__CloseRegister' class="fas fa-times-circle"></i>
+                </div>
+            </div>
+            <div class='popUp__Body'>
+                <figure>
+                    <section class='popUp__Img--content'>
+                        <img 
+                            src="imagenes/logo_temporal.png"
+                            class='popUp__Logo'
+                        />
+                    </section>
+                </figure>
+                <section class='popUp__LoginWith'>
+                    <h4>Registrate con:</h4>
+                    <i class="fab fa-facebook-square"></i>
+                    <i class="fab fa-twitter-square"></i>
+                    <i class="fab fa-github-square"></i>
+                    <i class="fab fa-instagram-square"></i>
+                </section>
+                <section>
+                    <form class='popUp__Fields'>
+                        <input 
+                            placeholder='Nombre completo'
+                            type='text'
+                        />
+                        <input 
+                            placeholder='Nombre de usuario'
+                            type='text'
+                        />
+                        <input 
+                            placeholder='Correo electronico'
+                            type='email'
+                        />
+                        <label>Fecha de nacimiento</label>
+                        <input 
+                            type='date'
+                        />
+                        <label>País</label>
+                        <select>
+                            <option>Colombia</option>
+                            <option>México</option>
+                            <option>Chile</option>
+                            <option>Paraguay</option>
+                            <option>Argentina</option>
+                        </select>
+                        <label>Tipo de cuenta</label>
+                        <div class='popUp__Type'>
+                            <label>Vendedor</label>
+                            <input 
+                                type='checkbox'
+                            />
+                            <label>Comprador</label>
+                            <input 
+                                type='checkbox'
+                            />
+                        </div>
+                        <input 
+                            placeholder='Contraseña'
+                            type='password'
+                        />
+                        <input 
+                            placeholder='Repite tu contraseña'
+                            type='password'
+                        />
+                        <button type='submit'>Continuar</button>
+                    </form>
+                </section>
+            </div>
+        </article>
+    </section>
+
+    <header>
+        <nav>
+        <section class='nav__primary'>
+            <div class='nav__primary-figure'>
+                <img 
+                    src="imagenes/logo_temporal.png"
+                    class='nav__primary-logo'
+                />
+            </div>
+            <ul>
+                <li>
+                    <a>
+                        <i class='fas fa-user'></i>
+                    </a>
+                </li>
+                <li>
+                    <span id='login'>LOGIN</span>
+                </li>
+                <li>
+                    <span id='register'>REGISTRO</span>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Submenu -->
+        <section>
+            <div class='nav__secondary'>
+
+                <input id='busqueda'></input>
+                <li>
+                    <i class='fas fa-search'></i>
+                </li>
+                <li><a href = "#"> MARKETPLACE </a></li>
+                <li><a href = "#"> RANKING </a></li>
+                <li><a href = "#"> CART <i class='fas fa-shopping-cart'></i></a></li>
+            </div>
+
+            <!-- Banner por categoría -->
+
+            <div>
+                <img src="/imagenes/OPCIÓN BANNER  CATEGORIAS.jpg" 
+                alt="Banner por categoría"
+                class="banner-category">
+            </div>
+            <div class="busqueda_producto">
+                <li id="filtros"> CATEGORIAS </li>
+                <input class='busqueda' value="ARTE">
+                </i></input>
+                <div class="container_div_filtro_precio">
+                    <li id="filtros"> PRECIO (US$) </li>
+                    <span>MINIMO</span>
+                    <input class='busqueda_precio' type="number" value="0"></input>
+                    <span>MAXIMO</span>
+                    <input class='busqueda_precio' type="number" value="1000"></input>
+                </div>
+                <li id="filtros"> MEDIO DE PAGO</li>
+                <input class='busqueda' value="CRIPTOMONEDAS" ></input>
+            </div>
+        </section>
+        </nav>
+    </header>
+
+    <!-- Main: Vitrina de producto -->
+    <main>
+        <section class="container_vitrina_producto">
+            <div class="products">
+                <article class="container_product_desc">
+                    <img src="/imagenes/NFTAR AJUSTADAS/OPCION ARTE 1.jpg" alt="NFT" class="product_img">
+                    <div class="main-article">
+                            <h2 class="name_product">NFT original number 1</h2>
+                            <p class="autor">Fabrizio</p>
+                            <p class="price">$6.770</p>
+                            <p class="price_cripto">1.5 ETH</p>
+                            <i class="fab fa-ethereum"></i>
+                            <i class="fas fa-heartbeat"></i>
+                            <i class="fas fa-cart-arrow-down"></i>
+                    </div>
+                </article>
+                <article class="container_product_desc">
+                    <img src="/imagenes/NFTAR AJUSTADAS/OPCION ARTE 2.jpg" alt="NFT" class="product_img">
+                    <div class="main-article">
+                            <h2 class="name_product">NFT original number 2</h2>
+                            <p class="autor">Hugo</p>
+                            <p class="price">$230.000</p>
+                            <p class="price_cripto">3.0 ETH</p>
+                            <i class="fab fa-ethereum"></i>
+                            <i class="fas fa-heartbeat"></i>
+                            <i class="fas fa-cart-arrow-down"></i>
+                    </div>
+                </article>
+                <article class="container_product_desc">
+                    <img src="/imagenes/NFTAR AJUSTADAS/OPCION ARTE 3.jpg" alt="NFT" class="product_img">
+                    <div class="main-article">
+                            <h2 class="name_product">NFT original number 3</h2>
+                            <p class="autor">Checho</p>
+                            <p class="price">$70.500</p>
+                            <p class="price_cripto">2.3 ETH</p>
+                            <i class="fab fa-ethereum"></i>
+                            <i class="fas fa-heartbeat"></i>
+                            <i class="fas fa-cart-arrow-down"></i>
+                    </div>
+                </article>
+
+                <article class="container_product_desc">
+                    <img src="/imagenes/NFTAR AJUSTADAS/OPCION ARTE 4.jpg" alt="NFT" class="product_img">
+                    <div class="main-article">
+                            <h2 class="name_product">NFT original number 4</h2>
+                            <p class="autor">Jero</p>
+                            <p class="price">$23.200</p>
+                            <p class="price_cripto">0.9 ETH</p>
+                            <i class="fab fa-ethereum"></i>
+                            <i class="fas fa-heartbeat"></i>
+                            <i class="fas fa-cart-arrow-down"></i>
+                    </div>
+                </article>
+
+                <article class="container_product_desc">
+                    <img src="/imagenes/NFTAR AJUSTADAS/OPCIÓN BANNER 3.jpg" alt="NFT" class="product_img">
+                    <div class="main-article">
+                            <h2 class="name_product">NFT original number 5</h2>
+                            <p class="autor">JoseMa</p>
+                            <p class="price">$100.200</p>
+                            <p class="price_cripto">0.8 ETH</p>
+                            <i class="fab fa-ethereum"></i>
+                            <i class="fas fa-heartbeat"></i>
+                            <i class="fas fa-cart-arrow-down"></i>
+                    </div>
+                </article>
+
+                <article class="container_product_desc">
+                    <img src="/imagenes/NFTAR AJUSTADAS/OPCION FOTOGRAFÍA 3.jpg" alt="NFT" class="product_img">
+                    <div class="main-article">
+                            <h2 class="name_product">NFT original number 6</h2>
+                            <p class="autor">Justin Bieber</p>
+                            <p class="price">$200.000</p>
+                            <p class="price_cripto">5.0 ETH</p>
+                            <i class="fab fa-ethereum"></i>
+                            <i class="fas fa-heartbeat"></i>
+                            <i class="fas fa-cart-arrow-down"></i>
+                    </div>
+                </article>
+
+                <article class="container_product_desc">
+                    <img src="/imagenes/NFTAR AJUSTADAS/OPCION METAVERSO3.jpg" alt="NFT" class="product_img">
+                    <div class="main-article">
+                            <h2 class="name_product">NFT original number 6</h2>
+                            <p class="autor">Snoop</p>
+                            <p class="price">$150.000</p>
+                            <p class="price_cripto">6.0 ETH</p>
+                            <i class="fab fa-ethereum"></i>
+                            <i class="fas fa-heartbeat"></i>
+                            <i class="fas fa-cart-arrow-down"></i>
+                    </div>
+                </article>
+            </div>  
+        </section>
+    </main>
+
+
+
+
+
+
+    <!-- Footer -->
+    <footer>
+        <div class='footer__primary'>
+            <section class='footer__section-one'>
+                <img src="imagenes/logo_temporal.png">
+            </section>
+            <section class='footer__section-two'>
+                <ul><a href = "#"> LOGIN / REGISTRO </a></ul>
+                <ul><a href = "#"> MARKETPLACE </a></ul>
+                <ul><a href = "#"> RANKING </a></ul>
+            </section>
+            <section class='footer__section-three'> 
+                <ul><a href = "#"> TERMINOS Y CONDICIONES </a></ul>
+                <ul><a href = "#"> BLOG </a></ul>
+                <ul><a href = "#"> NOSOTROS </a></ul>
+            </section>
+
+            <section class='footer__section-four'>
+                <ul><a href = "#"> GRUPO 2 </a></ul>
+                <ul><a href = "#"> DIGITAL HOUSE </a></ul>
+                <ul><a href = "#"> DERECHOS RESERVADOS </a></ul>
+                <div class='footer__section-icons'>
+                    <i class="fab fa-facebook-square"></i>
+                    <i class="fab fa-twitter-square"></i>
+                    <i class="fab fa-github-square"></i>
+                    <i class="fab fa-instagram-square"></i>
+                </div>
+
+            </section>
+        </div>
+    </footer>
+    <script src='/scripts/popUp.js'></script>
+</body>
+</html>
