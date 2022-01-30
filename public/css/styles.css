@@ -121,13 +121,37 @@ nav{
     margin-bottom: 5rem;
 }
 
+.banner__secondary h1{
+    font-family: 'Alumni Sans', sans-serif;
+}
+
+.banner__secondary h2{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: lighter;
+}
+
 
 /* Categorias */
-.categories__section{
-    width: 80%;
-    display: flex;
+.categories__main h1{
+    width: 50%;
     margin: auto;
+    font-size: 50px;
+    font-family: 'Alumni Sans', sans-serif;
+}
+
+.categories__section{
+    width: 50%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    margin: auto;
+    grid-column-gap: 10px;
+    grid-row-gap: 0px;
+    font-family: 'Alumni Sans', sans-serif;
     margin-bottom: 5rem;
+    padding: 20px;
+    height: 22rem;
+    /* background-color: blueviolet; */
 }
 
 .categories__section img{
@@ -136,70 +160,155 @@ nav{
     z-index: -20;
 }
 
-.categories__section h3{
-    text-align: center;
-}
-
 .categories__section article{
     border: 0;
-    border: 2px solid #eeeeee;
+    height: 8.5rem;
+    box-shadow: 0px 0px 5px rgb(100, 100, 100, 0.5);
+    border-radius: 1rem;
     padding: 10px;
     display: block;
-    margin-right: 20px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    justify-items: left;
+    cursor: pointer;
+    transition: box-shadow 1s;
 }
 
 .categories__section article:hover{
-    -webkit-filter: grayscale(100%);
+    box-shadow: 0px 0px 12px rgb(100 ,100, 100);
 }
 
+.categories__section h3{
+    font-size: 1.5em;
+    text-align: left;
+    margin-bottom: 0px;
+}
+
+.categories__section p{
+    text-align: left;
+    margin-top: 0px;
+}
+
+.categories__section article i{
+    color: white;
+    font-size: 20px;
+    background-color: rgb(68, 68, 250);
+    padding: 7px;
+    border-radius: 0.5rem;
+    margin-bottom: 0px;
+}
 
 /* Footer */
-.footer__primary{
-    background-color: #072146;
-    display: flex;
-    text-align: center;
+
+footer{
     width: 100%;
-    margin-left: 0px;
+    background-color: #072146;
+}
+
+hr {
+    border-color: rgb(179, 179, 179, 0.7);
+    width: 50%;
+}
+
+.footer__primary{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    text-align: left;
+    width: 50%;
+    height: 5rem;
+    margin: auto;
+    padding-top: 30px;
+    margin-bottom: 0px;
+}
+
+.footer__secondary{
+    display: grid;
+    grid-template-row: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    text-align: left;
+    width: 50%;
+    margin: auto;
+    margin-top: 0px;
 }
 
 .footer__section-one{
-    justify-content: center;
-    width: 25%;
+    width: 100%;
+    height: 5rem;
+}
+
+.footer__section-one img{
+    width: 20%;
+    -webkit-filter: brightness(100%);
+    -webkit-filter: invert(100%);
 }
 
 .footer__section-two{
-    width: 30%;
-    margin: 30px;
+    width: 100%;
+    margin-top: 30px;
+    margin-bottom: 30px;
     font-weight: bolder;
 }
 
 .footer__section-three{
-    width: 30%;
-    margin: 30px;
+    width: 100%;
+    margin-top: 30px;
+    margin-bottom: 30px;
     font-weight: bolder;
 }
 
 .footer__section-four{
-    width: 30%;
-    margin: 30px;
+    width: 100%;
+    margin-top: 30px;
+    margin-bottom: 30px;
     font-weight: bolder;
 }
 
 .footer__section-icons{
     text-align: right;
+    width: 100%;
+    height: 5rem;
+    margin-top: 20px;
 }
 
 .footer__primary i{
-    font-size: 50px;
+    font-size: 35px;
     cursor: pointer;
-    text-align: center;
     margin-right: 20px;
     color: white;
 }
 
-.footer__primary a{
+.footer__secondary a{
     color: #5BBEFF;
     text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+}
+
+.footer__secondary p{
+    color: rgb(179, 179, 179);
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+}
+
+.footer__secondary h5{
+    color: white;
+    margin-left: 40px;
+    font-size: 23px;
+    margin-bottom: 0px;
     font-family: 'Alumni Sans', sans-serif;
-    font-size: 20px;
+}
+
+
+@media all and (max-width: 700px){
+    .categories__section{
+        width: 80%;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        height: auto;
+    }
+    .categories__main h1{
+        width: 90%;
+    }
 }

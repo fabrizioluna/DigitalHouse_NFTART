@@ -6,7 +6,7 @@ app.listen(3004, () =>
     console.log('servidor corrriendo')
 );
 
-app.get('/',(req, res)=>{
+app.get('/marketplace',(req, res)=>{
     res.sendFile(__dirname + '/views/marketplace.html');
 });
 
