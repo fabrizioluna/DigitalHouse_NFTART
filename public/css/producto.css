@@ -1,0 +1,520 @@
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+
+/* HEADER */
+nav {
+    width: 100%;
+    background-color: #072146;
+}
+
+.nav__primary {
+    position: relative;
+}
+
+.nav__primary-figure {
+    display: block;
+    text-align: center;
+    padding: 10px 0px;
+}
+
+.nav__primary-logo {
+    width: 130px;
+    -webkit-filter: brightness(100%);
+    -webkit-filter: invert(100%);
+}
+
+.nav__primary-text {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    position: absolute;
+    top: 50px;
+    right: 50px;
+}
+
+a.nav__primary-login {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-right: 15px;
+    text-decoration: none;
+}
+
+.nav__primary-element {
+    font-size: 20px;
+    color: white;
+}
+
+.nav__primary-login_text {
+    font-size: 25px;
+    color: #5BBEFF;
+    font-family: 'Alumni Sans', sans-serif;
+    margin-left: 20px;
+}
+
+.nav__primary-register {
+    font-size: 25px;
+    color: #5BBEFF;
+    font-family: 'Alumni Sans', sans-serif;
+    margin-left: 20px;
+    text-decoration: none;
+}
+
+.nav__secondary {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    padding: 15px 100px 15px 0px;
+    background-color: #D4EDFC;
+}
+
+.search-element {
+}
+
+.search-box {
+    height: 30px;
+    width: 250px;
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-family: sans-serif;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.search-button {
+    opacity: 0;
+    background-color: transparent;
+    border-radius: 5px;
+    font-size: 20px;
+    padding: 2.5px;
+    position: relative;
+    right: 30px;
+    transition: 200ms;
+}
+
+.search-button:hover {
+    opacity: 1;
+}
+
+.nav__secondary-text {
+    display: block;
+    font-size: 20px;
+    font-weight: bold;
+    color: grey;
+    font-family: 'Alumni Sans', sans-serif;
+    text-decoration: none;
+    margin-left: 100px;
+}
+
+.nav__secondary-cart {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-left: 100px;
+    text-decoration: none;
+}
+
+.nav__secondary-cart_text {
+    font-size: 20px;
+    font-weight: bold;
+    color: grey;
+    font-family: 'Alumni Sans', sans-serif;
+    margin-right: 10px;
+}
+
+.nav__secondary-cart_element {
+    font-size: 20px;
+    color: grey;
+}
+/* HEADER */
+
+
+/* PRODUCTO */
+.main_box {
+    background-color: white;
+    border: solid 5px grey;
+    width: 95%;
+    margin: 10px auto;
+    padding: 10px;
+}
+
+.img {
+    text-align: center;
+    position: relative;
+}
+
+.share {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    display: flex;
+    justify-content: right;
+    align-items: flex-end;
+    width: 100%;
+    height: 100%;
+    padding-bottom: 30px;
+    padding-right: 30px;
+    font-size: 400px;
+    opacity: 0;
+    transition: 200ms;
+}
+
+.share:hover {
+    opacity: 1;
+    font-size: 40px;
+}
+
+.img-product {
+    max-width: 100%;
+    max-height: 400px;
+    border: solid 5px black;
+}
+
+.main_boxes {
+    display: flex;
+    padding-top: 20px;
+}
+
+.main_box-info {
+    width: 70%;
+}
+
+.main_box-buy {
+    width: 30%;
+}
+
+.information1 {
+    display: flex;
+    justify-content: flex-start;
+    padding-right: 20px;
+    padding-bottom: 20px;
+}
+
+.name {
+    width: 50%;
+    padding-right: 30px;
+}
+
+.author {
+    width: 50%;
+    padding-left: 30px;
+}
+
+h2 {
+    font-size: 35px;
+    font-family: 'Bebas Neue', cursive;
+}
+
+p {
+    font-size: 30px;
+    font-family: 'Alumni Sans', sans-serif;
+}
+
+.information2 {
+    display: flex;
+    justify-content: flex-start;
+    padding-right: 20px;
+    padding-top: 20px;
+}
+
+.description {
+    width: 50%;
+    padding-right: 30px;
+}
+
+.theme {
+    width: 50%;
+    padding-left: 30px;
+}
+
+.main_box-buy {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    border-left: solid 2px grey;
+}
+
+.button {
+    font-size: 50px;
+    font-family: 'Alumni Sans', sans-serif;
+    font-weight: bold;
+    color: black;
+    background-color: chartreuse;
+    border: solid 5px black;
+    border-radius: 15px;
+    padding: 10px;
+    transition: 200ms;
+}
+
+.button:hover {
+    background-color: rgb(92, 184, 0);
+}
+
+.priceUSD {
+    font-size: 50px;
+    font-family: 'Bebas Neue', cursive;
+    text-align: center;
+    width: 100%;
+}
+
+.priceETH {
+    font-size: 50px;
+    font-family: 'Bebas Neue', cursive;
+    text-align: center;
+    width: 100%;
+}
+
+.sub_boxes {
+    display: flex;
+    background-color: white;
+    border: solid 5px grey;
+    width: 95%;
+    margin: 10px auto;
+    padding: 10px;
+}
+
+.information3 {
+    width: 50%;
+}
+
+table {
+    width: 100%;
+    padding: 30px 20px 20px 20px;
+}
+
+td {
+    font-size: 30px;
+    font-family: 'Alumni Sans', sans-serif;
+    padding: 20px;
+}
+
+#current-property {
+    font-weight: bold;
+    border-left: solid 2px grey;
+}
+
+.information4 {
+    width: 50%;
+    border-left: solid 2px grey;
+    padding-left: 10px;
+}
+/* PRODUCTO */
+
+
+/* OTROS NFT'S */
+.title__other-nfts {
+    font-size: 35px;
+    font-family: 'Bebas Neue', cursive;
+    text-align: center;
+    padding: 100px;
+}
+
+.Coleccion{
+    width: 90%;
+    margin: auto;
+    margin-top: 1em;
+    background-color: rgb(233, 233, 233);
+}
+
+.Collecciona{
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.itemcoleccion{
+    background-color: white;
+    margin: 10px;
+}
+
+.itemcoleccion:hover{
+    box-shadow: 0px 0px 10px rgb(100, 100, 100);
+}
+
+.descripcion{
+    background-color: white;
+    padding: 0.5em;
+    border: rgb(199, 199, 199) 1px solid;
+    border-top: #072146 2px solid;
+}
+
+.descripciona{
+    display: flex;
+    justify-content: flex-start;
+    margin-left:-20px;
+    box-sizing: border-box;    
+}
+
+.PrecioE{
+    margin-left: 60px;
+    color: #8BC1FF;
+    font-weight: 800;
+}
+
+.Imagenesftp{
+    width: 100%;
+}
+
+.imagendesa{
+    display: flex;
+    color:rgb(47, 194, 3);
+    font-size: 1.5em;
+    position:relative;
+    bottom:10px;
+    left: 10px;
+}
+
+.imagendesb{
+    display: flex;
+    width: 20%;
+    color:grey;
+    font-size: 1.5em;
+    box-sizing: border-box;
+    position:relative;
+    bottom: 140px;
+    left:200px;
+}
+
+.imagendesb:hover{
+    color:red
+}
+
+.imagendesc{
+    display: flex;
+    width: 20%;
+    color: rgb(47, 194, 3);
+    font-size: 1.5em;
+    box-sizing: border-box;
+    position:relative;
+    bottom: 163px;
+    left:242px;
+    transition: transform 3s;
+}
+
+.imagendesc:hover{
+    color:rgb(47, 194, 3);
+    transform:scale(1.2)
+}
+/* OTROS NFT'S */
+
+
+/* FOOTER */
+footer{
+    width: 100%;
+    background-color: #072146;
+}
+
+hr {
+    border-color: rgb(179, 179, 179, 0.7);
+    width: 50%;
+}
+
+.footer__primary{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    text-align: left;
+    width: 50%;
+    height: 5rem;
+    margin: auto;
+    padding-top: 30px;
+    margin-bottom: 0px;
+}
+
+.footer__secondary{
+    display: grid;
+    grid-template-row: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    text-align: left;
+    width: 50%;
+    margin: auto;
+    margin-top: 0px;
+}
+
+.footer__section-one{
+    width: 100%;
+    height: 5rem;
+}
+
+.footer__section-one img{
+    width: 20%;
+    -webkit-filter: brightness(100%);
+    -webkit-filter: invert(100%);
+}
+
+.footer__section-two{
+    width: 100%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-weight: bolder;
+}
+
+.footer__section-three{
+    width: 100%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-weight: bolder;
+}
+
+.footer__section-four{
+    width: 100%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-weight: bolder;
+}
+
+.footer__section-icons{
+    text-align: right;
+    width: 100%;
+    height: 5rem;
+    margin-top: 20px;
+}
+
+.footer__primary i{
+    font-size: 35px;
+    cursor: pointer;
+    margin-right: 20px;
+    color: white;
+}
+
+.footer__secondary a{
+    color: #5BBEFF;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+}
+
+.footer__secondary p{
+    color: rgb(179, 179, 179);
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+}
+
+.footer__secondary h5{
+    color: white;
+    margin-left: 40px;
+    font-size: 23px;
+    margin-bottom: 0px;
+    font-family: 'Alumni Sans', sans-serif;
+}
+
+
+@media all and (max-width: 700px){
+    .categories__section{
+        width: 80%;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        height: auto;
+    }
+    .categories__main h1{
+        width: 90%;
+    }
+}
+/* FOOTER */
