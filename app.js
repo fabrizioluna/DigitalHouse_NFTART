@@ -3,7 +3,7 @@ const path = require('path');
 const app = express();
 
 app.listen(3004, () =>
-    console.log('servidor corrriendo')
+    console.log('servidor corriendo')
 );
 
 app.get('/marketplace',(req, res)=>{
@@ -11,7 +11,7 @@ app.get('/marketplace',(req, res)=>{
 });
 
 app.get('/',(req, res)=>{
-    res.sendFile(__dirname + '/views/home.html');
+    res.sendFile(__dirname + '/views/marketplace.html');
 });
 
 app.get('/usuario',(req,res)=>{
