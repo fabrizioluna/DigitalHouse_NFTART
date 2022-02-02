@@ -11,7 +11,7 @@ app.get('/marketplace',(req, res)=>{
 });
 
 app.get('/',(req, res)=>{
-    res.sendFile(__dirname + '/views/marketplace.html');
+    res.sendFile(__dirname + '/views/home.html');
 });
 
 app.get('/usuario',(req,res)=>{
