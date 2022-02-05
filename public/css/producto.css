@@ -211,7 +211,7 @@ h2 {
     font-family: 'Bebas Neue', cursive;
 }
 
-p {
+.text {
     font-size: 30px;
     font-family: 'Alumni Sans', sans-serif;
 }
@@ -316,96 +316,101 @@ td {
     padding: 100px;
 }
 
-.Coleccion{
+.Coleccion {
     width: 90%;
     margin: auto;
-    margin-top: 1em;
     background-color: rgb(233, 233, 233);
 }
 
-.Collecciona{
+.Articulos {
     display: flex;
     flex-wrap: nowrap;
+    margin-bottom: 100px;
 }
 
-.itemcoleccion{
+.ItemColeccion {
     background-color: white;
     margin: 10px;
 }
 
-.itemcoleccion:hover{
+.ItemColeccion:hover {
     box-shadow: 0px 0px 10px rgb(100, 100, 100);
 }
 
-.descripcion{
-    background-color: white;
-    padding: 0.5em;
-    border: rgb(199, 199, 199) 1px solid;
-    border-top: #072146 2px solid;
-}
-
-.descripciona{
-    display: flex;
-    justify-content: flex-start;
-    margin-left:-20px;
-    box-sizing: border-box;    
-}
-
-.PrecioE{
-    margin-left: 60px;
-    color: #8BC1FF;
-    font-weight: 800;
-}
-
-.Imagenesftp{
+.ImagenesNFT {
     width: 100%;
 }
 
-.imagendesa{
+.DescripcionA {
     display: flex;
-    color:rgb(47, 194, 3);
-    font-size: 1.5em;
-    position:relative;
-    bottom:10px;
-    left: 10px;
+    justify-content: flex-start;
+    background-color: white;
+    margin-top: 10px;
+    padding: 10px 10px 5px 10px;
+    border-top: solid 2px grey;
 }
 
-.imagendesb{
-    display: flex;
-    width: 20%;
-    color:grey;
-    font-size: 1.5em;
-    box-sizing: border-box;
-    position:relative;
-    bottom: 140px;
-    left:200px;
+.Nombre {
+    font-size: 30px;
+    font-family: 'Bebas Neue', cursive;
+    width: 70%;
 }
 
-.imagendesb:hover{
-    color:red
+.ImagenA {
+    font-size: 30px;
+    color: gray;
+    width: 15%;
+    transition: 200ms;
 }
 
-.imagendesc{
-    display: flex;
-    width: 20%;
+.ImagenA:hover {
+    color: red;
+}
+
+.ImagenB {
+    font-size: 30px;
     color: rgb(47, 194, 3);
-    font-size: 1.5em;
-    box-sizing: border-box;
-    position:relative;
-    bottom: 163px;
-    left:242px;
-    transition: transform 3s;
+    width: 15%;
+    transition: 200ms;
 }
 
-.imagendesc:hover{
-    color:rgb(47, 194, 3);
-    transform:scale(1.2)
+.ImagenB:hover {
+    font-size: 40px;
+}
+
+.Autor {
+    font-size: 30px;
+    font-family: 'Alumni Sans', sans-serif;
+    padding: 5px 10px 10px 10px;
+}
+
+.DescripcionB {
+    display: flex;
+    /* justify-content: center; */
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.PrecioUSD {
+    font-size: 25px;
+    font-family: 'Bebas Neue', cursive;
+    font-weight: bolder;
+    padding-left: 10px;
+    width: 50%;
+}
+
+.PrecioETH {
+    font-size: 25px;
+    font-family: 'Bebas Neue', cursive;
+    font-weight: bolder;
+    padding-right: 10px;
+    width: 50%;
 }
 /* OTROS NFT'S */
 
 
 /* FOOTER */
-footer{
+footer {
     width: 100%;
     background-color: #072146;
 }
@@ -413,108 +418,102 @@ footer{
 hr {
     border-color: rgb(179, 179, 179, 0.7);
     width: 50%;
-}
-
-.footer__primary{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    text-align: left;
-    width: 50%;
-    height: 5rem;
     margin: auto;
-    padding-top: 30px;
-    margin-bottom: 0px;
 }
 
-.footer__secondary{
-    display: grid;
-    grid-template-row: 1fr 1fr;
-    grid-template-columns: 1fr 1fr 1fr;
-    text-align: left;
+.footer__primary {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 50%;
+    margin: auto;
+    padding-top: 25px;
+    padding-bottom: 15px;
+}
+
+.footer__section-one {
+    width: 100%;
+}
+
+.footer__section-one img {
+    width: 25%;
+    -webkit-filter: brightness(100%);
+    -webkit-filter: invert(100%);
+}
+
+.footer__section-icons {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.footer__section-icons i {
+    font-size: 35px;
+    color: white;
+    margin: 10px;
+}
+
+.footer__secondary {
+    display: flex;
+    align-items: flex-start;
     width: 50%;
     margin: auto;
     margin-top: 0px;
 }
 
-.footer__section-one{
-    width: 100%;
-    height: 5rem;
-}
-
-.footer__section-one img{
-    width: 20%;
-    -webkit-filter: brightness(100%);
-    -webkit-filter: invert(100%);
-}
-
-.footer__section-two{
-    width: 100%;
+.footer__section-two {
+    width: 33%;
     margin-top: 30px;
     margin-bottom: 30px;
     font-weight: bolder;
+    text-align: left;
+    padding-left: 6%;
 }
 
-.footer__section-three{
-    width: 100%;
+.footer__section-three {
+    width: 34%;
     margin-top: 30px;
     margin-bottom: 30px;
     font-weight: bolder;
+    text-align: left;
+    padding-left: 6%;
 }
 
-.footer__section-four{
-    width: 100%;
+.footer__section-four {
+    width: 33%;
     margin-top: 30px;
     margin-bottom: 30px;
     font-weight: bolder;
+    text-align: left;
+    padding-left: 6%;
 }
 
-.footer__section-icons{
-    text-align: right;
-    width: 100%;
-    height: 5rem;
-    margin-top: 20px;
-}
-
-.footer__primary i{
-    font-size: 35px;
-    cursor: pointer;
-    margin-right: 20px;
+.footer__secondary h5 {
+    font-size: 23px;
+    font-family: 'Alumni Sans', sans-serif;
     color: white;
+    margin-bottom: 16px;
 }
 
-.footer__secondary a{
+.footer__secondary ul {
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+
+.footer__secondary a {
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
     color: #5BBEFF;
     text-decoration: none;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 14px;
 }
 
-.footer__secondary p{
+.copyright {
+    width: 50%;
+    margin: auto;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
     color: rgb(179, 179, 179);
     text-decoration: none;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 14px;
-}
-
-.footer__secondary h5{
-    color: white;
-    margin-left: 40px;
-    font-size: 23px;
-    margin-bottom: 0px;
-    font-family: 'Alumni Sans', sans-serif;
-}
-
-
-@media all and (max-width: 700px){
-    .categories__section{
-        width: 80%;
-        grid-template-columns: 1fr;
-        grid-template-rows: auto;
-        height: auto;
-    }
-    .categories__main h1{
-        width: 90%;
-    }
+    padding-bottom: 16px;
 }
 /* FOOTER */
