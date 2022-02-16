@@ -1,63 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/02e6c8fc0f.js" crossorigin="anonymous"></script>
+    <%- include('../partials/head') %>
     <link href ="/css/usuario.css", rel="stylesheet">
     <link href ="/css/styles.css", rel="stylesheet">
-
-
-    
-
-<!-- Fuentes -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans&family=Bebas+Neue&display=swap" rel="stylesheet">
     <title>NFTART- Usuario </title>
 </head>
 
 <body>
 <!-- Cabecera -->
-    <header>
-    <nav>
-        <section class='nav__primary'>
-            <div class='nav__primary-figure'>
-                <img 
-                    src="/img/logo_temporal.png"
-                    class='nav__primary-logo'
-                />
-            </div>
-            <ul>
-                <li>
-                    <a>
-                        <i class='fas fa-user'></i>
-                    </a>
-                </li>
-                <li>
-                    <span id='login'>LOGIN</span>
-                </li>
-                <li>
-                    <span id='register'>REGISTRO</span>
-                </li>
-            </ul>
-        </section>
-
-        <!-- Submenu -->
-            <section class='nav__secondary'>
-
-                <input id='busqueda'></input>
-                <li>
-                    <i class='fas fa-search'></i>
-                </li>
-                <li><a href = "#"> MARKETPLACE </a></li>
-                <li><a href = "#/usuario.html"> RANKING </a></li>
-                <li><a href = "#"> CART <i class='fas fa-shopping-cart'></i></a></li>
-            </section>
-        </nav>   
-    </header>
     
+    <%- include('../partials/header')%>;
+
     <!-- Cuerpo -->
     <!-- <section>
         <div>
