@@ -1,16 +1,17 @@
-const express = require('express');
-const path = require('path');
-const home = require('./src/rutas/rutaHome');
-const app = express();
+const EXPRESS = require('express');
+const APP = EXPRESS();
+const PATH = require('path');
 
-app.listen(process.env.PORT || 3000, () =>
+const MAIN = require('./src/routes/mainRoutes');
+const PRODUCT = require('./src/routes/productRoutes')
+
+APP.use(EXPRESS.static(PATH.join(__dirname, './public')));
+
+APP.set("view engine", "ejs");
+
+APP.use('/', MAIN);
+APP.use('/product', PRODUCT);
+
+APP.listen(process.env.PORT || 3000, function () {
     console.log('Servidor corriendo en el puerto 3000')
-);
-
-app.use('/', home);
-
-
-app.use(express.static(path.join(__dirname, './public')));
-
-// Rutas de renderizado
-app.set("view engine","ejs")
+});

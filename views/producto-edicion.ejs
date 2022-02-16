@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" crossorigin="anonymous"/>
+    <script src="https://kit.fontawesome.com/02e6c8fc0f.js" crossorigin="anonymous"></script>
+    <link href ="css/producto-edicion.css", rel="stylesheet">
+
+    <!-- FUENTES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans&family=Bebas+Neue&display=swap" rel="stylesheet">
+    <title>NFTART - Edición de Producto</title>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <nav class='nav__primary'>
+            <a href='/home.html' class='nav__primary-figure'>
+                <img src="img/logo_temporal.png" class='nav__primary-logo'>
+            </a>
+            <div class='nav__primary-text'>
+                <a href="#" class='nav__primary-login'>
+                    <div class='nav__primary-element'><i class='fas fa-user'></i></div>
+                    <div class='nav__primary-login_text'>LOGIN</div>
+                </a>
+                <a href="#" class='nav__primary-register'>
+                    REGISTRO
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- SUBMENU -->
+    <nav class='nav__secondary'>
+        <div class='search-element'>
+            <input class='search-box' type='search' placeholder='Buscar...'></input>
+            <button class='search-button' type='submit'>
+                <i class='fas fa-search'></i>
+            </button>
+        </div>
+        <a href="#" class='nav__secondary-text'>MARKETPLACE</a>
+        <a href="#" class='nav__secondary-text'>RANKING</a>
+        <a href="#" class='nav__secondary-cart'>
+            <div class='nav__secondary-cart_text'>CART</div>
+            <div class='nav__secondary-cart_element'><i class='fas fa-shopping-cart'></i></div>
+        </a>
+    </nav>
+
+    <main>
+
+        <!-- PRODUCTO EDICIÓN -->
+        <section class='main_box'>
+            <form>
+                <div class="row">
+                    <div class="col">
+                        <div class="col_ele1">
+                            <label for="image" class="labels">Expresión artística del NFT:</label>
+                        </div>
+                        <div class="col_ele2">
+                            <input id="image" type="file" required>
+                        </div>
+                    </div>
+                    <div class="col2">
+                        <label for="NFT_name" class="labels">Nombre del NFT:</label>
+                        <input id="NFT_name" type="text" placeholder="Nombre del NFT" class="form_box" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col1">
+                        <label for="NFT_author" class="labels">Nombre del autor:</label>
+                        <input id="NFT_author" type="text" placeholder="Nombre de autor" class="form_box" required>
+                    </div>
+                    <div class="col2">
+                        <label for="NFT_description" class="labels">Descripción del NFT:</label>
+                        <textarea id="NFT_description" placeholder="Descripción del NFT" class="form_box" required></textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col1">
+                        <label for="NFT_theme" class="labels">Temática del NFT:</label>
+                        <textarea id="NFT_theme" placeholder="Temática del NFT" class="form_box" required></textarea>
+                    </div>
+                    <div class="col2">
+                        <label for="ETH_price" class="labels">Precio en ETH:</label>
+                        <input id="ETH_price" type="number" placeholder="Precio en ETH" class="form_box" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <button id="reset_button" type="reset">BORRAR</button>
+                    <button id="submit_button" type="submit">EDITAR</button>
+                </div>
+            </form>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class='footer__primary'>
+            <section class='footer__section-one'>
+                <img src="img/logo_temporal.png">
+            </section>
+            <div class='footer__section-icons'>
+                <i class="fab fa-facebook-square"></i>
+                <i class="fab fa-twitter-square"></i>
+                <i class="fab fa-github-square"></i>
+                <i class="fab fa-instagram-square"></i>
+            </div>
+        </div>
+        <hr>
+        <div class='footer__secondary'>
+            <section class='footer__section-two'>
+                <h5>Navegación</h5>
+                <ul><a href = "#">LOGIN / REGISTRO</a></ul>
+                <ul><a href = "#">MARKETPLACE</a></ul>
+                <ul><a href = "#">RANKING</a></ul>
+            </section>
+            <section class='footer__section-three'> 
+                <h5>Compañia</h5>
+                <ul><a href = "#">TERMINOS Y CONDICIONES</a></ul>
+                <ul><a href = "#">BLOG</a></ul>
+                <ul><a href = "#">NOSOTROS</a></ul>
+            </section>
+            <section class='footer__section-four'>
+                <h5>Desarrolladores</h5>
+                <ul><a href = "#">GRUPO 2</a></ul>
+                <ul><a href = "#">DIGITAL HOUSE</a></ul>
+                <!-- <ul><a href = "#"> DERECHOS RESERVADOS </a></ul> -->
+            </section>
+        </div>
+        <div class="copyright">
+            <p>© 2022 Grupo 2 Digital House</p>
+        </div>
+    </footer>
+
+</body>
+</html>
