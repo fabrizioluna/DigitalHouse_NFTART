@@ -1,0 +1,138 @@
+header {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+.nav__secondary {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+
+/* HEADER */
+nav {
+    width: 100%;
+    background-color: #072146;
+}
+
+.nav__primary {
+    position: relative;
+}
+
+.nav__primary-figure {
+    display: block;
+    text-align: center;
+    padding: 10px 0px;
+}
+
+.nav__primary-logo {
+    width: 130px;
+    -webkit-filter: brightness(100%);
+    -webkit-filter: invert(100%);
+}
+
+.nav__primary-text {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    position: absolute;
+    top: 50px;
+    right: 50px;
+}
+
+a.nav__primary-login {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-right: 15px;
+    text-decoration: none;
+}
+
+.nav__primary-element {
+    font-size: 20px;
+    color: white;
+}
+
+.nav__primary-login_text {
+    font-size: 25px;
+    color: #5BBEFF;
+    font-family: 'Alumni Sans', sans-serif;
+    margin-left: 20px;
+}
+
+.nav__primary-register {
+    font-size: 25px;
+    color: #5BBEFF;
+    font-family: 'Alumni Sans', sans-serif;
+    margin-left: 20px;
+    text-decoration: none;
+}
+
+.nav__secondary {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    padding: 15px 100px 15px 0px;
+    background-color: #D4EDFC;
+}
+
+.search-box {
+    height: 30px;
+    width: 250px;
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-family: sans-serif;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.search-button {
+    opacity: 0;
+    background-color: transparent;
+    border-radius: 5px;
+    font-size: 20px;
+    padding: 2.5px;
+    position: relative;
+    right: 30px;
+    transition: 200ms;
+}
+
+.search-button:hover {
+    opacity: 1;
+}
+
+.nav__secondary-text {
+    display: block;
+    font-size: 20px;
+    font-weight: bold;
+    color: grey;
+    font-family: 'Alumni Sans', sans-serif;
+    text-decoration: none;
+    margin-left: 100px;
+}
+
+.nav__secondary-cart {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-left: 100px;
+    text-decoration: none;
+}
+
+.nav__secondary-cart_text {
+    font-size: 20px;
+    font-weight: bold;
+    color: grey;
+    font-family: 'Alumni Sans', sans-serif;
+    margin-right: 10px;
+}
+
+.nav__secondary-cart_element {
+    font-size: 20px;
+    color: grey;
+}
+/* HEADER */

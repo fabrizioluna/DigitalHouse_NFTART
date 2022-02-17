@@ -5,136 +5,6 @@
 }
 
 
-/* HEADER */
-nav {
-    width: 100%;
-    background-color: #072146;
-}
-
-.nav__primary {
-    position: relative;
-}
-
-.nav__primary-figure {
-    display: block;
-    text-align: center;
-    padding: 10px 0px;
-}
-
-.nav__primary-logo {
-    width: 130px;
-    -webkit-filter: brightness(100%);
-    -webkit-filter: invert(100%);
-}
-
-.nav__primary-text {
-    display: flex;
-    justify-content: right;
-    align-items: center;
-    position: absolute;
-    top: 50px;
-    right: 50px;
-}
-
-a.nav__primary-login {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    margin-right: 15px;
-    text-decoration: none;
-}
-
-.nav__primary-element {
-    font-size: 20px;
-    color: white;
-}
-
-.nav__primary-login_text {
-    font-size: 25px;
-    color: #5BBEFF;
-    font-family: 'Alumni Sans', sans-serif;
-    margin-left: 20px;
-}
-
-.nav__primary-register {
-    font-size: 25px;
-    color: #5BBEFF;
-    font-family: 'Alumni Sans', sans-serif;
-    margin-left: 20px;
-    text-decoration: none;
-}
-
-.nav__secondary {
-    display: flex;
-    justify-content: right;
-    align-items: center;
-    padding: 15px 100px 15px 0px;
-    background-color: #D4EDFC;
-}
-
-.search-element {
-}
-
-.search-box {
-    height: 30px;
-    width: 250px;
-    background-color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    font-family: sans-serif;
-    padding-left: 30px;
-    padding-right: 30px;
-}
-
-.search-button {
-    opacity: 0;
-    background-color: transparent;
-    border-radius: 5px;
-    font-size: 20px;
-    padding: 2.5px;
-    position: relative;
-    right: 30px;
-    transition: 200ms;
-}
-
-.search-button:hover {
-    opacity: 1;
-}
-
-.nav__secondary-text {
-    display: block;
-    font-size: 20px;
-    font-weight: bold;
-    color: grey;
-    font-family: 'Alumni Sans', sans-serif;
-    text-decoration: none;
-    margin-left: 100px;
-}
-
-.nav__secondary-cart {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    margin-left: 100px;
-    text-decoration: none;
-}
-
-.nav__secondary-cart_text {
-    font-size: 20px;
-    font-weight: bold;
-    color: grey;
-    font-family: 'Alumni Sans', sans-serif;
-    margin-right: 10px;
-}
-
-.nav__secondary-cart_element {
-    font-size: 20px;
-    color: grey;
-}
-/* HEADER */
-
-
 /* PRODUCTO EDICIÓN */
 .main_box {
     background-color: white;
@@ -199,6 +69,7 @@ a.nav__primary-login {
     border: solid 5px black;
     border-radius: 15px;
     padding: 10px;
+    cursor: pointer;
     transition: 200ms;
 }
 
@@ -216,6 +87,7 @@ a.nav__primary-login {
     border: solid 5px black;
     border-radius: 15px;
     padding: 10px;
+    cursor: pointer;
     transition: 200ms;
 }
 
@@ -223,113 +95,3 @@ a.nav__primary-login {
     background-color: rgb(92, 184, 0);
 }
 /* PRODUCTO EDICIÓN */
-
-
-/* FOOTER */
-footer {
-    width: 100%;
-    background-color: #072146;
-}
-
-hr {
-    border-color: rgb(179, 179, 179, 0.7);
-    width: 50%;
-    margin: auto;
-}
-
-.footer__primary {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    width: 50%;
-    margin: auto;
-    padding-top: 25px;
-    padding-bottom: 15px;
-}
-
-.footer__section-one {
-    width: 100%;
-}
-
-.footer__section-one img {
-    width: 25%;
-    -webkit-filter: brightness(100%);
-    -webkit-filter: invert(100%);
-}
-
-.footer__section-icons {
-    display: flex;
-    justify-content: flex-end;
-    width: 100%;
-}
-
-.footer__section-icons i {
-    font-size: 35px;
-    color: white;
-    margin: 10px;
-}
-
-.footer__secondary {
-    display: flex;
-    align-items: flex-start;
-    width: 50%;
-    margin: auto;
-    margin-top: 0px;
-}
-
-.footer__section-two {
-    width: 33%;
-    margin-top: 30px;
-    margin-bottom: 30px;
-    font-weight: bolder;
-    text-align: left;
-    padding-left: 6%;
-}
-
-.footer__section-three {
-    width: 34%;
-    margin-top: 30px;
-    margin-bottom: 30px;
-    font-weight: bolder;
-    text-align: left;
-    padding-left: 6%;
-}
-
-.footer__section-four {
-    width: 33%;
-    margin-top: 30px;
-    margin-bottom: 30px;
-    font-weight: bolder;
-    text-align: left;
-    padding-left: 6%;
-}
-
-.footer__secondary h5 {
-    font-size: 23px;
-    font-family: 'Alumni Sans', sans-serif;
-    color: white;
-    margin-bottom: 16px;
-}
-
-.footer__secondary ul {
-    margin-top: 16px;
-    margin-bottom: 16px;
-}
-
-.footer__secondary a {
-    font-size: 14px;
-    font-family: Arial, Helvetica, sans-serif;
-    color: #5BBEFF;
-    text-decoration: none;
-}
-
-.copyright {
-    width: 50%;
-    margin: auto;
-    font-size: 14px;
-    font-family: Arial, Helvetica, sans-serif;
-    color: rgb(179, 179, 179);
-    text-decoration: none;
-    padding-bottom: 16px;
-}
-/* FOOTER */
