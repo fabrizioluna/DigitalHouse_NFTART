@@ -12,6 +12,7 @@ nav{
 }
 
 
+<<<<<<< HEAD
 /* Estilos de Navegacion */
 
 .nav__primary-logo{
@@ -104,6 +105,8 @@ nav{
 }
 
 
+=======
+>>>>>>> 0900a8bfecfd5524ebbc625d0c1b5c26d8552990
 /* Estilos del Banner */
 .banner__primary{
     width: 100%;
@@ -198,6 +201,7 @@ nav{
     padding: 7px;
     border-radius: 0.5rem;
     margin-bottom: 0px;
+<<<<<<< HEAD
 }
 
 /* Footer */
@@ -394,4 +398,6 @@ hr {
     .footer__secondary p{
         padding-top: 8rem;
     }
+=======
+>>>>>>> 0900a8bfecfd5524ebbc625d0c1b5c26d8552990
 }

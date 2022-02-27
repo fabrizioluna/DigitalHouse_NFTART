@@ -349,6 +349,7 @@ td{
     padding: 0.3em;
     background-color: rgb(255, 255, 255);
     width: calc(100%/5)
+<<<<<<< HEAD
 }
 
 @media all and (max-width: 700px){
@@ -432,3 +433,6 @@ td{
 
 
 
+=======
+}
+>>>>>>> 0900a8bfecfd5524ebbc625d0c1b5c26d8552990

@@ -1,0 +1,97 @@
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+
+/* PRODUCTO EDICIÓN */
+.main_box {
+    background-color: white;
+    border: solid 5px grey;
+    width: 95%;
+    margin: 10px auto;
+    padding: 10px;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 15px;
+}
+
+.col {
+    width: 50%;
+    padding-right: 15px;
+}
+
+.col_ele1 {
+    margin-bottom: 10px;
+}
+
+.col1 {
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    padding-right: 15px;
+}
+
+.col2 {
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    padding-left: 15px;
+}
+
+.labels {
+    width: 50%;
+    font-size: 20px;
+    font-family: 'Bebas Neue', cursive;
+}
+
+.form_box {
+    width: 50%;
+    font-size: 20px;
+    font-family: 'Alumni Sans', sans-serif;
+    font-weight: bolder;
+    color: black;
+    padding: 5px;
+}
+
+#reset_button {
+    margin-right: 50px;
+    font-size: 40px;
+    font-family: 'Alumni Sans', sans-serif;
+    font-weight: bold;
+    color: black;
+    background-color: rgb(206, 206, 206);
+    border: solid 5px black;
+    border-radius: 15px;
+    padding: 10px;
+    cursor: pointer;
+    transition: 200ms;
+}
+
+#reset_button:hover {
+    background-color: grey;
+}
+
+#submit_button {
+    margin-left: 50px;
+    font-size: 40px;
+    font-family: 'Alumni Sans', sans-serif;
+    font-weight: bold;
+    color: black;
+    background-color: chartreuse;
+    border: solid 5px black;
+    border-radius: 15px;
+    padding: 10px;
+    cursor: pointer;
+    transition: 200ms;
+}
+
+#submit_button:hover {
+    background-color: rgb(92, 184, 0);
+}
+/* PRODUCTO EDICIÓN */

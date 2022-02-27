@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <%- include('../partials/head') %>
+    <link href ="/css/header.css", rel="stylesheet">
+    <link href ="/css/producto-detalle.css", rel="stylesheet">
+    <link href ="/css/footer.css", rel="stylesheet">
+    <title>NFTART - <%=productos.nombre%></title>
+</head>
+<body>
+
+    <%- include('../partials/header') %>
+
+    <main>
+
+        <!-- PRODUCTO -->
+        <section class='main_box'>
+            <div class='img'>
+                <div class='share'><i class="fa-solid fa-share-nodes"></i></div>
+                <img src='/img/PRODUCTOS/<%=productos.categoria%>_<%=productos.id%>.jpg' class='img-product'>
+            </div>
+            <div class='main_boxes'>
+                <div class='main_box-info'>
+                    <div class='information1'>
+                        <div class='name'>
+                            <h2>NOMBRE NFT</h2>
+                            <p class='text'><%=productos.nombre%></p>
+                        </div>
+                        <div class='author'>
+                            <h2>AUTOR</h2>
+                            <p class='text'><%=productos.autor%></p>
+                        </div>
+                    </div>
+                    <div class='information2'>
+                        <div class='description'>
+                            <h2>DESCRIPCIÓN</h2>
+                            <p class='text'><%=productos.descripcion%></p>
+                        </div>
+                        <div class='theme'>
+                            <h2>TEMÁTICA</h2>
+                            <p class='text'><%=productos.tematicaAutor%></p>
+                        </div>
+                    </div>
+                </div>
+                <div class='main_box-buy'>
+                    <div class='buy_button'>
+                        <button type='submit' class='button'>COMPRAR AHORA</button>
+                    </div>
+                    <div class='priceUSD'>
+                        <h3>USD <%=productos.precioUSD%></h3>
+                    </div>
+                    <div class='priceETH'>
+                        <h3><%=productos.precioETH%> ETH</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class='sub_boxes'>
+            <div class='information3'>
+                <h2>COMPRADORES HISTÓRICOS</h2>
+                <table>
+                    <tr>
+                        <td><%=compradores.buyer1%></td>
+                        <td id='current-property'>PROPIETARIO ACTUAL</td>
+                    </tr>
+                    <tr>
+                        <td><%=compradores.buyer2%></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><%=compradores.buyer3%></td>
+                        <td></td>
+                    </tr>
+                </table>
+            </div>
+            <div class='information4'>
+                <h2>PRECIO HISTÓRICO DEL NFT</h2>
+            </div>
+        </section>
+
+        <!-- OTROS NFT'S -->
+        <h2 class='title__other-nfts'>NFT'S QUE TE PUEDEN INTERESAR</h2>
+
+        <section class="Coleccion">
+            <div class="Articulos">
+                <article class="ItemColeccion">
+                    <img src="/img/NFTAR AJUSTADAS/OPCION ARTE 1.jpg" class="ImagenesNFT">
+                    <div class="DescripcionA">
+                        <h2 class="Nombre">Nombre NFT1</h2>
+                        <i class="ImagenA fas fa-heart"></i>
+                        <i class="ImagenB fas fa-cart-arrow-down"></i>
+                    </div>
+                    <h4 class="Autor">Autor</h4>
+                    <div class="DescripcionB">
+                        <p class= "PrecioUSD">USD 10.000</p>
+                        <p class= "PrecioETH">2.0 EHT</p>
+                    </div>
+                </article>
+
+                <article class="ItemColeccion">
+                    <img src="/img/NFTAR AJUSTADAS/OPCION ARTE 2.jpg" class="ImagenesNFT">
+                    <div class="DescripcionA">
+                        <h2 class="Nombre">Nombre NFT2</h2>
+                        <i class="ImagenA fas fa-heart"></i>
+                        <i class="ImagenB fas fa-cart-arrow-down"></i>
+                    </div>
+                    <h4 class="Autor">Autor</h4>
+                    <div class="DescripcionB">
+                        <p class= "PrecioUSD">USD 10.000</p>
+                        <p class= "PrecioETH">2.0 EHT</p>
+                    </div>
+                </article>
+
+                <article class="ItemColeccion">
+                    <img src="/img/NFTAR AJUSTADAS/OPCION ARTE 3.jpg" class="ImagenesNFT">
+                    <div class="DescripcionA">
+                        <h2 class="Nombre">Nombre NFT3</h2>
+                        <i class="ImagenA fas fa-heart"></i>
+                        <i class="ImagenB fas fa-cart-arrow-down"></i>
+                    </div>
+                    <h4 class="Autor">Autor</h4>
+                    <div class="DescripcionB">
+                        <p class= "PrecioUSD">USD 10.000</p>
+                        <p class= "PrecioETH">2.0 EHT</p>
+                    </div>
+                </article>
+
+                <article class="ItemColeccion">
+                    <img src="/img/NFTAR AJUSTADAS/OPCION ARTE 4.jpg" class="ImagenesNFT">
+                    <div class="DescripcionA">
+                        <h2 class="Nombre">Nombre NFT4</h2>
+                        <i class="ImagenA fas fa-heart"></i>
+                        <i class="ImagenB fas fa-cart-arrow-down"></i>
+                    </div>
+                    <h4 class="Autor">Autor</h4>
+                    <div class="DescripcionB">
+                        <p class= "PrecioUSD">USD 10.000</p>
+                        <p class= "PrecioETH">2.0 EHT</p>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+    </main>
+
+    <%- include('../partials/footer') %>
+
+</body>
+</html>
