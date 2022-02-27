@@ -1,3 +1,11 @@
+*{
+    box-sizing: border-box;
+
+}
+
+main{
+    justify-content: center;
+}
 
 h2{
     color: #043d63;
@@ -5,24 +13,142 @@ h2{
     font-size: 30px;
     font-weight: 900;
 }
+/* Estilos de Navegacion */
 
-
-
-.banner-category{
-    box-sizing: border-box;
-    height: 10vw;
-    width: 100%;
+.nav__primary-logo{
+    width: 13%;
+    float: right;
 }
 
-.busqueda_producto{
+.logo_header{
     width: 100%;
-    height: 40px;
+    justify-content: center;
+}
+.nav__primary-figure{
+    width: 80%;
+}
+
+.nav__primary{
+    width: 100%;
     display: flex;
-    justify-content: space-around;
+}
+
+.nav__primary ul{
+    width: 80%;
+    display: flex;
+    justify-content: right;
+    list-style-type: none;
+}
+
+.nav__primary li{
+    margin-right: 30px;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.nav__primary i{
+    font-size: 15px;
+    color: rgb(255, 255, 255);
+    border-color: transparent;
+}
+
+.nav__primary span{
+    color: #5BBEFF;
+    font-family: 'Alumni Sans', sans-serif;
+    font-weight: 0;
+    font-size: 20px;
+    font-weight: 900;
+    cursor: pointer;
+}
+
+.nav__secondary{
+    display: flex;
+    justify-content: right;
     padding: 20px;
     height: 1rem;
     background-color: #D4EDFC;
     text-decoration: none;
+    justify-items: center;
+}
+
+.nav__secondary li{
+    color: grey;
+    width: 8%;
+    list-style-type: none;
+}
+
+.nav__secondary li a{
+    color: grey;
+    text-decoration: none;
+    list-style-type: none;
+}
+
+.nav__secondary i{
+    font-size: 15px;
+    color: grey;
+    border-color: transparent;
+}
+
+.nav__secondary a{
+    color: #5BBEFF;
+    text-decoration: none;
+    font-family: 'Alumni Sans', sans-serif;
+    font-size: 20px;
+}
+
+#busqueda{
+    height: 1rem;
+    width: 20rem;
+    margin-right: 10px;
+    border-radius: 4px;
+    border-color: transparent;
+}
+
+
+.container_banner{
+    justify-content: center;
+    width: 100%;
+    margin-top: 5px;
+    background-color: #D4EDFC;
+    position:relative;
+}
+
+.banner-category{
+    justify-content: center;
+    height: 100%;
+    margin: 0%;
+    width: 100%;
+    margin: 0%;
+}
+
+.categoria_tex{
+    font-size: 60px;
+    position: absolute;
+    z-index: 100;
+    top: 30%;
+    left: 30%;
+    color: rgb(245, 245, 248);
+    border: groove white;
+}
+
+.busqueda_producto{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    justify-items: center;
+    padding: 10px;
+    height: 50px;
+    background-color: #D4EDFC;
+    text-decoration: none;
+    list-style: none;
+    margin: 0%;    
+}
+
+.busqueda_producto input{
+    border-radius: 8px;
+    border-color: transparent;
+    max-width: 100px;
 }
 
 .busqueda{
@@ -40,9 +166,9 @@ h2{
     font-weight: bold;
 }
 
-#busqueda_precio{
-    height: 1rem;
-    width: 3rem;
+.input_sec{
+    height: 20px;
+    width: 70%;
     margin-right: 10px;
     border-radius: 1px;
     border-color: transparent;
@@ -50,18 +176,44 @@ h2{
 }
 
 .container_div_filtro_precio{
+    align-items: center;
     display: flex;
     flex-grow: 0.2;
     justify-content: space-around;
+    max-width: 30%;
 }
 
+.container_div_filtro_categoria{
+    align-items: center;
+    display: flex;
+    justify-items: center;
+    justify-content: space-between;
+}
+
+.container_div_filtro_precio{
+    align-items: center;
+    display: flex;
+}
+
+.container_div_filtro_pago{
+    align-items: center;
+    display: flex;
+    justify-items: center;
+    justify-content: space-between;
+}
+
+.container_div_filtro_categoria input{
+    margin-left: 10px;
+}
+
+.container_div_filtro_pago input{
+    margin-left: 10px;
+}
 
 /*/////////////// VITRINA PRODUCTO ///////////////////*/
 
 .container_vitrina_producto{
-    display: flex;
-    flex-wrap: wrap;
-    margin: 40px;
+    margin: auto;
 }
 
 .products{
@@ -69,23 +221,27 @@ h2{
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
-    align-items: flex-start;
+    padding: 5%;
 }
 
 .product_img{
     width: 100%;
+    height: 350px;
 }
 
 
 .container_product_desc{
     background-color: white;
+    height: 500px;
     width: 30%;
     border: 5px solid #ccc;
     align-content: center;
     margin: 10px;
-    border-radius: 10px;
+    border-radius: 8px;
     box-shadow: 0px 0px 10px rgb(100, 100, 100);
+    position: relative;
 }
+
 
 .container_product_desc:hover{
     border-color: green;
@@ -96,14 +252,11 @@ h2{
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    align-items: baseline;
-    border-top: 1px solid #ebebeb;
-    position: relative;
-    padding: 15px;
+    border-top: 3px solid rgb(100, 100, 100);
 }
 
 .price{
-    font-size: 40px;
+    font-size: 25px;
     font-weight: bold;
     width: 30%;
     color: rgb(108, 206, 17);
@@ -112,20 +265,23 @@ h2{
 .price_cripto{
     color: #5BBEFF;
     font-family: 'Alumni Sans', sans-serif;
-    font-size: 30px;
+    font-size: 20px;
     font-weight: bold;
 }
 
 
 div.main-article i{
-    background-color: white;
+    background-color:transparent;
     border-radius: 5px;
     color: rgb(29, 224, 11);
     font-size: 30px;
     height: 40px;
-    margin: 10px 0px 20px 0px;
-    padding: 10px;
     width: 40px;
+    margin-top: 10%;
+}
+
+div.main-article i:hover{
+    color: rgb(241, 86, 14);
 }
 
 .name_product{
@@ -137,4 +293,119 @@ div.main-article i{
 .autor{
     width: 80%;
     height: 10px;
+    position: absolute;
+    bottom: 3%;
+}
+
+
+.carrito_corazon{
+    position: absolute;
+    bottom:15px;
+    right: 5%;
+    border-color: transparent;
+    border-radius: 8px;
+}
+
+
+
+/* Footer */
+
+footer{
+    width: 100%;
+    background-color: #072146;
+}
+
+hr {
+    border-color: rgb(179, 179, 179, 0.7);
+    width: 50%;
+}
+
+.footer__primary{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    text-align: left;
+    width: 50%;
+    height: 5rem;
+    margin: auto;
+    padding-top: 30px;
+    margin-bottom: 0px;
+}
+
+.footer__secondary{
+    display: grid;
+    grid-template-row: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    text-align: left;
+    width: 50%;
+    margin: auto;
+    margin-top: 0px;
+}
+
+.footer__section-one{
+    width: 100%;
+    height: 5rem;
+}
+
+.footer__section-one img{
+    width: 20%;
+    -webkit-filter: brightness(100%);
+    -webkit-filter: invert(100%);
+}
+
+.footer__section-two{
+    width: 100%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-weight: bolder;
+}
+
+.footer__section-three{
+    width: 100%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-weight: bolder;
+}
+
+.footer__section-four{
+    width: 100%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-weight: bolder;
+}
+
+.footer__section-icons{
+    text-align: right;
+    width: 100%;
+    height: 5rem;
+    margin-top: 20px;
+}
+
+.footer__primary i{
+    font-size: 35px;
+    cursor: pointer;
+    margin-right: 20px;
+    color: white;
+}
+
+.footer__secondary a{
+    color: #5BBEFF;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+}
+
+.footer__secondary p{
+    color: rgb(179, 179, 179);
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+}
+
+.footer__secondary h5{
+    color: white;
+    margin-left: 40px;
+    font-size: 23px;
+    margin-bottom: 0px;
+    font-family: 'Alumni Sans', sans-serif;
 }

@@ -75,11 +75,18 @@ p{
 
 
 /* ImagenPerfil */
-.circulo{
+.ok{
     width: 200px;
     height: 200px;
-    background-color: grey;
+    background-color: rgb(219, 219, 219);
     border-radius: 100%;
+}
+
+
+/* Banner */
+.banner{
+    height: 20vw;
+    width: 100%;
 }
 
 
@@ -110,7 +117,7 @@ p{
 /* MenuPerfil */
 .Menuperfil{
     width: 90%;
-    font-family:Arial, Helvetica, sans-serif;
+    /* font-family:Arial, Helvetica, sans-serif; */
     margin:auto;
     box-sizing: border-box;
 }
@@ -125,7 +132,6 @@ p{
 }
 
 .Menuperfilc{
-    color: white;
     text-decoration: none;
     display: block;
     font-size: 18px;
@@ -134,6 +140,8 @@ p{
 
 .Menuperfilc:hover{
     background: #bdf4f8;
+    border-radius: 10px;
+    color:blue;
 }
  
 /* Submenu Perfiles */
@@ -155,7 +163,7 @@ p{
     display: flex;
     list-style: none;
     padding:12px;
-    background: rgb(216, 216, 216);
+    background:#D4EDFC;
     justify-content: right;
 }
 
@@ -167,6 +175,7 @@ p{
     padding-right: 1em;
     padding-left: 1em;
 }
+
 
 
 /* Submenu Perfil Actividad y Ofertas */
@@ -186,12 +195,15 @@ p{
     display: flex;
     list-style: none;
     padding:12px;
-    background: rgb(216, 216, 216);
+    background: #D4EDFC;
     justify-content: right;
 }
 
+
 /* Coleccion */
+
 .Coleccion{
+    display: flex;
     width: 90%;
     margin: auto;
     margin-top: 1em;
@@ -205,20 +217,81 @@ p{
 }
 
 .itemcoleccion{
-    box-shadow: 0px 0px 10px rgb(100, 100, 100);
     background-color: white;
     margin:10px;
+}
+
+.itemcoleccion:hover{
+    box-shadow: 0px 0px 10px rgb(100, 100, 100);
 }
 
 .descripcion{
     background-color: white;
     padding: 0.5em;
     border: rgb(199, 199, 199) 1px solid;
+    border-top: #072146 2px solid;
 }
 
+.descripciona{
+    display: flex;
+    justify-content: flex-start;
+    margin-left:-20px;
+    box-sizing: border-box;    
+}
+
+.PrecioE{
+    margin-left: 60px;
+    color: #8BC1FF;
+    font-weight: 800;
+}
+
+
 .Imagenesftp{
-    width: 90%;
-    position: relative;
+    width: 100%;
+}
+
+
+.imagendesa{
+    display: flex;
+    color:rgb(47, 194, 3);
+    font-size: 1.5em;
+    position:relative;
+    bottom:10px;
+    left: 10px;
+}
+
+
+.imagendesb{
+    display: flex;
+    width: 20%;
+    color:grey;
+    font-size: 1.5em;
+    box-sizing: border-box;
+    position:relative;
+    bottom: 140px;
+    left:200px;
+}
+
+.imagendesb:hover{
+    color:red
+}
+
+
+.imagendesc{
+    display: flex;
+    width: 20%;
+    color: rgb(47, 194, 3);
+    font-size: 1.5em;
+    box-sizing: border-box;
+    position:relative;
+    bottom: 163px;
+    left:242px;
+    transition: transform 3s;
+}
+
+.imagendesc:hover{
+    color:rgb(47, 194, 3);
+    transform:scale(1.2)
 }
 
 

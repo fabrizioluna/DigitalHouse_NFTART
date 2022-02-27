@@ -1,4 +1,4 @@
-let _isOpen = false;
+let showModal = false;
 
 const menu_select = 
     document
@@ -12,12 +12,10 @@ const nav_secondary =
         .getElementById('nav__secondary-show');
 
 function showMenuMobile(){
-    if(_isOpen){
+    if(showModal){
         nav_secondary.style.display = 'none';
-        nav_secondary.style.display = 'none';
-        return _isOpen = false;
+        return showModal = false;
     }
     nav_secondary.style.display = 'block';
-    nav_secondary.style.display = 'block';
-    return _isOpen = true;
+    return showModal = true;
 }
