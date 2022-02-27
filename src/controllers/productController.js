@@ -1,3 +1,9 @@
+const fs = require('fs')
+const path = require('path')
+
+const productosBD = JSON.parse(fs.readFileSync(path.join(__dirname,"../data/productos.json")),'utf-8');
+const compradoresBD = JSON.parse(fs.readFileSync(path.join(__dirname,"../data/compradores.json")),'utf-8');
+
 const PRODUCT = {
 
     marketplace: function (req, res) {
@@ -17,7 +23,22 @@ const PRODUCT = {
     },
 
     detail: function (req, res) {
-        res.render("product/producto-detalle");
+        let productoSeleccionado = req.params.id;
+        for (p of productosBD) {
+            if (p.id==productoSeleccionado) {
+                productoEncontrado=p;
+                break;
+            };
+        };
+
+        for (c of compradoresBD){
+            if (c.id==productoSeleccionado) {
+                compradorEncontrado=c;
+                break;
+            };
+        };
+
+        res.render("product/producto-detalle",{productos:productoEncontrado,compradores:compradorEncontrado});
     },
 
 };

@@ -7,6 +7,6 @@ ROUTER.get('/marketplace', PRODUCT.marketplace);
 ROUTER.get('/create', PRODUCT.create);
 ROUTER.get('/edit', PRODUCT.edit);
 ROUTER.get('/cart', PRODUCT.cart);
-ROUTER.get('/detail', PRODUCT.detail);
+ROUTER.get('/detail/:id', PRODUCT.detail);
 
 module.exports = ROUTER;

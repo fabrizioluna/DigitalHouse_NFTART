@@ -5,7 +5,7 @@
     <link href ="/css/header.css", rel="stylesheet">
     <link href ="/css/producto-detalle.css", rel="stylesheet">
     <link href ="/css/footer.css", rel="stylesheet">
-    <title>NFTART - Producto</title>
+    <title>NFTART - <%=productos.nombre%></title>
 </head>
 <body>
 
@@ -17,28 +17,28 @@
         <section class='main_box'>
             <div class='img'>
                 <div class='share'><i class="fa-solid fa-share-nodes"></i></div>
-                <img src='/img/OPCION ARTE 1.jpg' class='img-product'>
+                <img src='/img/PRODUCTOS/<%=productos.categoria%>_<%=productos.id%>.jpg' class='img-product'>
             </div>
             <div class='main_boxes'>
                 <div class='main_box-info'>
                     <div class='information1'>
                         <div class='name'>
                             <h2>NOMBRE NFT</h2>
-                            <p class='text'>NFT original number 1</p>
+                            <p class='text'><%=productos.nombre%></p>
                         </div>
                         <div class='author'>
                             <h2>AUTOR</h2>
-                            <p class='text'>Grupo 2</p>
+                            <p class='text'><%=productos.autor%></p>
                         </div>
                     </div>
                     <div class='information2'>
                         <div class='description'>
                             <h2>DESCRIPCIÓN</h2>
-                            <p class='text'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Asperiores veniam sint aliquam sunt recusandae repudiandae ut ipsa sed at, consequatur labore non incidunt libero perspiciatis vitae voluptate quibusdam nostrum? Odio.</p>
+                            <p class='text'><%=productos.descripcion%></p>
                         </div>
                         <div class='theme'>
                             <h2>TEMÁTICA</h2>
-                            <p class='text'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Asperiores veniam sint aliquam sunt recusandae repudiandae ut ipsa sed at, consequatur labore non incidunt libero perspiciatis vitae voluptate quibusdam nostrum? Odio.</p>
+                            <p class='text'><%=productos.tematicaAutor%></p>
                         </div>
                     </div>
                 </div>
@@ -47,10 +47,10 @@
                         <button type='submit' class='button'>COMPRAR AHORA</button>
                     </div>
                     <div class='priceUSD'>
-                        <h3>USD 6.770</h3>
+                        <h3>USD <%=productos.precioUSD%></h3>
                     </div>
                     <div class='priceETH'>
-                        <h3>1.5 ETH</h3>
+                        <h3><%=productos.precioETH%> ETH</h3>
                     </div>
                 </div>
             </div>
@@ -61,15 +61,15 @@
                 <h2>COMPRADORES HISTÓRICOS</h2>
                 <table>
                     <tr>
-                        <td>Justin Bieber</td>
+                        <td><%=compradores.buyer1%></td>
                         <td id='current-property'>PROPIETARIO ACTUAL</td>
                     </tr>
                     <tr>
-                        <td>Eminem</td>
+                        <td><%=compradores.buyer2%></td>
                         <td></td>
                     </tr>
                     <tr>
-                        <td>Snoop Dogg</td>
+                        <td><%=compradores.buyer3%></td>
                         <td></td>
                     </tr>
                 </table>
