@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/02e6c8fc0f.js" crossorigin="anonymous"></script>
+    <link href ="/css/popUp.css", rel="stylesheet">
+    <link href ="/css/styles.css", rel="stylesheet">
+    <link href ="/css/marketplace.css", rel="stylesheet">
+
+    <!-- Fuentes -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans:wght@100&family=Bebas+Neue&display=swap" rel="stylesheet">
+    <title>NFTART - Marketplace</title>
+</head>
+<body>
+
+    <%- include('./partials/login-register')%>
+
+    <header>
+        <nav>
+        <section class='nav__primary'>
+            <div class='nav__primary-figure'>
+                <img 
+                    src="imagenes/logo_temporal.png"
+                    class='nav__primary-logo'
+                />
+            </div>
+            <ul>
+                <li>
+                    <i class='fas fa-user'></i>
+                </li>
+                <li>
+                    <span id='login'>LOGIN</span>
+                </li>
+                <li>
+                    <span id='register'>REGISTRO</span>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Submenu -->
+            <section class='nav__secondary'>
+
+                <input id='busqueda'></input>
+                <li>
+                    <i class='fas fa-search'></i>
+                </li>
+                <li><a href = "#"> MARKETPLACE </a></li>
+                <li><a href = "#/usuario.html"> RANKING </a></li>
+                <li><a href = "#"> CART <i class='fas fa-shopping-cart'></i></a></li>
+            </section>
+        </nav>
+        
+    </header>
+            <!-- Banner por categoría -->
+            <h1 class="categoria_tex">MARKETPLACE</h1>
+            <div class="container_banner">
+                <img src="/imagenes/BANNER_CATEGORIA_ARTE.jpg" 
+                alt="Banner por categoría"
+                class="banner-category">
+            </div>
+
+            <div class="busqueda_producto">
+                <div class="container_div_filtro_categoria">
+                    <li id="filtros"> CATEGORIAS </li>
+                    <input class="input_sec" value="ARTE">
+                    </i></input>
+                </div>
+                
+                <div class="container_div_filtro_precio">
+                    <li id="filtros"> PRECIO (US$) </li>
+                    <input class="input_sec" type="number" placeholder="MIN"></input>
+                    <input class="input_sec" type="number" placeholder="MAX"></input>
+                </div>
+                <div class="container_div_filtro_pago">
+                <li id="filtros"> MEDIO DE PAGO</li>
+                <input class="input_sec" value="CRIPTOS" ></input>
+                </div>
+            </div>
+        </section>
+        </nav>
+    </header>
+
+    <!-- Main: Vitrina de producto -->
+    <main>
+        <section class="container_vitrina_producto">
+            <div class="products">
+                <article class="container_product_desc" href='/producto.html'>
+                    <img src="/imagenes/NFTAR AJUSTADAS/OPCION ARTE 2.jpg" alt="NFT" class="product_img">
+                    <div class="main-article">
+                        <div>
+                            <h2 class="name_product">NFT original number 1</h2>
+                            <p class="autor">Fabrizio</p>
+                        </div>
+                        <div>
+                            <p class="price">$6.770</p>
+                            <p class="price_cripto">1.5 ETH</p>
+                        </div>
+                        <div class="carrito_corazon">
+                            <i class="fas fa-heart"></i>
+                            <i class="fas fa-cart-arrow-down"></i>
+                        </div>
+                    </div>
+                </article>
+                <article class="container_product_desc">
+                    <img src="/imagenes/NFTAR AJUSTADAS/OPCIÓN BANNER 5.jpg" alt="NFT" class="product_img">
+                    <div class="main-article">
+                            <div>
+                                <h2 class="name_product">NFT original number 2</h2>
+                                <p class="autor">Hugo</p>
+                            </div>
+                            <div>
+                                <p class="price">$230.000</p>
+                                <p class="price_cripto">3.0 ETH</p>
+                            </div>
+                            <div class="carrito_corazon">
+                                <i class="fas fa-heart"></i>
+                                <i class="fas fa-cart-arrow-down"></i>
+                            </div>
+                    </div>
+                </article>
+                <article class="container_product_desc">
+                    <img src="/imagenes/NFTAR AJUSTADAS/OPCION ARTE 3.jpg" alt="NFT" class="product_img">
+                    <div class="main-article">
+                            <div>
+                                <h2 class="name_product">NFT original number 3</h2>
+                                <p class="autor">Checho</p>
+                            </div>
+                            <div>
+                                <p class="price">$70.500</p>
+                                <p class="price_cripto">2.3 ETH</p>
+                            </div>
+                            <div class="carrito_corazon">
+                                <i class="fas fa-heart"></i>
+                                <i class="fas fa-cart-arrow-down"></i>
+                            </div>
+                    </div>
+                </article>
+
+                <article class="container_product_desc">
+                    <img src="/imagenes/NFTAR AJUSTADAS/OPCION ARTE 4.jpg" alt="NFT" class="product_img">
+                    <div class="main-article">
+                            <div>
+                                <h2 class="name_product">NFT original number 4</h2>
+                                <p class="autor">Jero</p>                   
+                            </div>
+                            <div>
+                                <p class="price">$23.200</p>
+                                <p class="price_cripto">0.9 ETH</p>
+                            </div>
+                            <div class="carrito_corazon">
+                                <i class="fas fa-heart"></i>
+                                <i class="fas fa-cart-arrow-down"></i>
+                            </div>
+                    </div>
+                </article>
+
+                <article class="container_product_desc">
+                    <img src="/imagenes/NFTAR AJUSTADAS/OPCIÓN BANNER 3.jpg" alt="NFT" class="product_img">
+                    <div class="main-article">
+                            <div>
+                                <h2 class="name_product">NFT original number 5</h2>
+                                <p class="autor">JoseMa</p>
+                            </div>
+                            <div>
+                                <p class="price">$100.200</p>
+                                <p class="price_cripto">0.8 ETH</p>
+                            </div>
+                            <div class="carrito_corazon">
+                                <i class="fas fa-heart"></i>
+                                <i class="fas fa-cart-arrow-down"></i>
+                            </div>
+                    </div>
+                </article>
+
+                <article class="container_product_desc">
+                    <img src="/imagenes/NFTAR AJUSTADAS/OPCION FOTOGRAFÍA 3.jpg" alt="NFT" class="product_img">
+                    <div class="main-article">
+                            <div>
+                                <h2 class="name_product">NFT original number 6</h2>
+                                <p class="autor">Justin Bieber</p>
+                            </div>
+                            <div>
+                                <p class="price">$200.000</p>
+                                <p class="price_cripto">5.0 ETH</p>
+                            </div>
+                            <div class="carrito_corazon">
+                                <i class="fas fa-heart"></i>
+                                <i class="fas fa-cart-arrow-down"></i>
+                            </div>
+                    </div>
+                </article>
+
+                <article class="container_product_desc">
+                    <img src="/imagenes/NFTAR AJUSTADAS/OPCION METAVERSO3.jpg" alt="NFT" class="product_img">
+                    <div class="main-article">
+                            <div>
+                                <h2 class="name_product">NFT original number 6</h2>
+                                <p class="autor">Snoop</p>
+                            </div>
+                            <div>
+                                <p class="price">$150.000</p>
+                                <p class="price_cripto">6.0 ETH</p>
+                            </div>
+                            <div class="carrito_corazon">
+                                <i class="fas fa-heart"></i>
+                                <i class="fas fa-cart-arrow-down"></i>
+                            </div>
+                    </div>
+                </article>
+            </div>  
+        </section>
+    </main>
+
+
+    <!-- Footer -->
+    <footer>
+        <div class='footer__primary'>
+            <section class='footer__section-one'>
+                <img src="imagenes/logo_temporal.png">
+            </section>
+            <div class='footer__section-icons'>
+                <i class="fab fa-facebook-square"></i>
+                <i class="fab fa-twitter-square"></i>
+                <i class="fab fa-github-square"></i>
+                <i class="fab fa-instagram-square"></i>
+            </div>
+        </div>
+        <hr>
+        <div class='footer__secondary'>
+            <section class='footer__section-two'>
+                <h5>Navegación</h5>
+                <ul><a href = "#"> LOGIN / REGISTRO </a></ul>
+                <ul><a href = "#"> MARKETPLACE </a></ul>
+                <ul><a href = "#"> RANKING </a></ul>
+            </section>
+            <section class='footer__section-three'> 
+                <h5>Compañia</h5>
+                <ul><a href = "#"> TERMINOS Y CONDICIONES </a></ul>
+                <ul><a href = "#"> BLOG </a></ul>
+                <ul><a href = "#"> NOSOTROS </a></ul>
+            </section>
+
+            <section class='footer__section-four'>
+                <h5>Desarrolladores</h5>
+                <ul><a href = "#"> GRUPO 2 </a></ul>
+                <ul><a href = "#"> DIGITAL HOUSE </a></ul>
+                <!-- <ul><a href = "#"> DERECHOS RESERVADOS </a></ul> -->
+            </section>
+            <section>
+                <p>© 2022 Grupo 2 Digital House</p>
+            </section>
+        </div>
+    </footer>
+    <script src='/js/popUp.js'></script>
+</body>
+</html>
