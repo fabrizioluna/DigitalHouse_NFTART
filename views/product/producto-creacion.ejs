@@ -15,40 +15,51 @@
     <main>
 
         <!-- PRODUCTO CREACIÓN -->
-        <section class='main_box'>
-            <form>
+        <!-- <section class='main_box'> -->
+
+            <form action="/product/create" method="POST" enctype="multipart/form-data">
                 <div class="row">
                     <div class="col">
                         <div class="col_ele1">
                             <label for="image" class="labels">Expresión artística del NFT:</label>
                         </div>
                         <div class="col_ele2">
-                            <input id="image" type="file" required>
+                            <input id="image" type="file" name="imageProduct" required>
                         </div>
                     </div>
                     <div class="col2">
                         <label for="NFT_name" class="labels">Nombre del NFT:</label>
-                        <input id="NFT_name" type="text" placeholder="Nombre del NFT" class="form_box" required>
+                        <input type="text" id="NFT_name" name= "NFT_name" placeholder="Nombre del NFT" class="form_box" required>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col1">
                         <label for="NFT_author" class="labels">Nombre del autor:</label>
-                        <input id="NFT_author" type="text" placeholder="Nombre de autor" class="form_box" required>
+                        <input type="text" id="NFT_author" name= "NFT_author"  placeholder="Nombre de autor" class="form_box" required>
                     </div>
                     <div class="col2">
                         <label for="NFT_description" class="labels">Descripción del NFT:</label>
-                        <textarea id="NFT_description" placeholder="Descripción del NFT" class="form_box" required></textarea>
+                        <textarea id="NFT_description" name= "NFT_description" placeholder="Descripción del NFT" class="form_box" required></textarea>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col1">
                         <label for="NFT_theme" class="labels">Temática del NFT:</label>
-                        <textarea id="NFT_theme" placeholder="Temática del NFT" class="form_box" required></textarea>
+                        <textarea id="NFT_theme" name= "NFT_theme" placeholder="Temática del NFT" class="form_box" required></textarea>
                     </div>
                     <div class="col2">
+                        <label for="Category" class="labels">Categoria:</label>
+                        <input id="Category" name= "Category" placeholder="Categoria" class="form_box" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col1">
                         <label for="ETH_price" class="labels">Precio en ETH:</label>
-                        <input id="ETH_price" type="number" placeholder="Precio en ETH" class="form_box" required>
+                        <input type="number" id="ETH_price" name= "ETH_price" placeholder="Precio en ETH" class="form_box" required>
+                    </div>
+                    <div class="col2">
+                        <label for="USD_price" class="labels">Precio en USD:</label>
+                        <input type="number" id="USD_price" name= "USD_price" placeholder="Precio en USD" class="form_box" required>
                     </div>
                 </div>
                 <div class="row">

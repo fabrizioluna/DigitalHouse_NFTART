@@ -14,6 +14,34 @@ const PRODUCT = {
         res.render("product/producto-creacion");
     },
 
+    store: function (req, res) {
+        let nuevoP = req.body;
+        let idNuevo = productosBD[productosBD.length-1].id + 1;
+
+        let nombreImagen = req.file.filename;
+        
+        let nuevoProducto = {
+            id: idNuevo,
+            precioUSD: req.body.USD_price,
+            precioETH: req.body.ETH_price,
+            nombre: req.body.NFT_name,
+            categoria: req.body.category,
+            descripcion: req.body.NFT_description,
+            autor: req.body.NFT_author,
+            tematicaAutor: req.body.NFT_theme,
+            imagen:nombreImagen
+        }
+
+        productosBD.push(nuevoProducto);
+
+        fs.writeFileSync(path.join(__dirname,"../data/productos.json"), JSON.stringify(productosBD,null,' '));
+
+        res.redirect("/product/detail/" + idNuevo);
+              
+    },
+
+
+
     edit: function (req, res) {
         const PATH_BATABASE = '../data/productos.json';
         let data = null;
@@ -121,3 +149,4 @@ const PRODUCT = {
 };
 
 module.exports = PRODUCT;
+
