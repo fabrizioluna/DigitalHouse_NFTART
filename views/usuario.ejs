@@ -1,14 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<<<<<<< HEAD:views/usuario.html
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/02e6c8fc0f.js" crossorigin="anonymous"></script>
-    <link href ="css/usuario.css", rel="stylesheet">
-    <link href ="css/popUp.css", rel="stylesheet">
-    <link href ="css/styles.css", rel="stylesheet">
+    <link href ="/css/usuario.css", rel="stylesheet">
+    <link href ="/css/styles.css", rel="stylesheet">
 
 
     
@@ -18,149 +16,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans:wght@100&family=Bebas+Neue&display=swap" rel="stylesheet">
-=======
-    <%- include('../partials/head') %>
-    <link href ="/css/popUp.css", rel="stylesheet">
-    <link href ="/css/header.css", rel="stylesheet">
-    <link href ="/css/usuario.css", rel="stylesheet">
-    <link href ="/css/styles.css", rel="stylesheet">
-    <link href ="/css/footer.css", rel="stylesheet">
->>>>>>> 0900a8bfecfd5524ebbc625d0c1b5c26d8552990:views/user/usuario.ejs
     <title>NFTART- Usuario </title>
 </head>
 
 <body>
 <!-- Cabecera -->
-<<<<<<< HEAD:views/usuario.html
     <header>
-     <!-- PopUps - Registro y Login -->
-
-     <section class='popUp__Backdrop' id='popUpBackdropLogin'>
-        <article class='popUp__Content' id='popUpContentLogin'>
-            <div class='popUp__Nav'>
-                <div class='popUp__Nav--button1'>
-                    <!-- <i id='popUp__BackLogin' class="fas fa-chevron-circle-left"></i> -->
-                </div>
-                <div class='popUp__Nav--button2'>
-                    <i id='popUp__CloseLogin' class="fas fa-times-circle"></i>
-                </div>
-            </div>
-            <div class='popUp__Body'>
-                <figure>
-                    <section class='popUp__Img--content'>
-                        <img 
-                            src="imagenes/logo_temporal.png"
-                            class='popUp__Logo'
-                        />
-                    </section>
-                </figure>
-                <section class='popUp__LoginWith'>
-                    <h4>Inicia sesión con:</h4>
-                    <i class="fab fa-facebook-square"></i>
-                    <i class="fab fa-twitter-square"></i>
-                    <i class="fab fa-github-square"></i>
-                    <i class="fab fa-instagram-square"></i>
-                </section>
-                <section>
-                    <form class='popUp__Fields'>
-                        <input 
-                            placeholder='Correo electronico'
-                            type='email'
-                        />
-                        <input 
-                            placeholder='Contraseña'
-                            type='password'
-                        />
-                        <span>¿Olvidaste tu contraseña?</span>
-                        <button type='submit'>Ingresar</button>
-                        <button type='' id='registerButton'>¿No tienes cuenta? Registrate</button>
-                    </form>
-                </section>
-            </div>
-        </article>
-    </section>
-
-    <!-- Registro -->
-    <section class='popUp__Backdrop' id='popUpBackdropRegister'>
-        <article class='popUp__Content' id='popUpContentRegister'>
-            <div class='popUp__Nav'>
-                <div class='popUp__Nav--button1'>
-                    <i id='popUp__BackRegister' class="fas fa-chevron-circle-left"></i>
-                </div>
-                <div class='popUp__Nav--button2'>
-                    <i id='popUp__CloseRegister' class="fas fa-times-circle"></i>
-                </div>
-            </div>
-            <div class='popUp__Body'>
-                <figure>
-                    <section class='popUp__Img--content'>
-                        <img 
-                            src="imagenes/logo_temporal.png"
-                            class='popUp__Logo'
-                        />
-                    </section>
-                </figure>
-                <section class='popUp__LoginWith'>
-                    <h4>Registrate con:</h4>
-                    <i class="fab fa-facebook-square"></i>
-                    <i class="fab fa-twitter-square"></i>
-                    <i class="fab fa-github-square"></i>
-                    <i class="fab fa-instagram-square"></i>
-                </section>
-                <section>
-                    <form class='popUp__Fields'>
-                        <input 
-                            placeholder='Nombre completo'
-                            type='text'
-                        />
-                        <input 
-                            placeholder='Nombre de usuario'
-                            type='text'
-                        />
-                        <input 
-                            placeholder='Correo electronico'
-                            type='email'
-                        />
-                        <label>Fecha de nacimiento</label>
-                        <input 
-                            type='date'
-                        />
-                        <label>País</label>
-                        <select>
-                            <option>Colombia</option>
-                            <option>México</option>
-                            <option>Chile</option>
-                            <option>Paraguay</option>
-                            <option>Argentina</option>
-                        </select>
-                        <label>Tipo de cuenta</label>
-                        <div class='popUp__Type'>
-                            <label>Vendedor</label>
-                            <input 
-                                type='checkbox'
-                            />
-                            <label>Comprador</label>
-                            <input 
-                                type='checkbox'
-                            />
-                        </div>
-                        <input 
-                            placeholder='Contraseña'
-                            type='password'
-                        />
-                        <input 
-                            placeholder='Repite tu contraseña'
-                            type='password'
-                        />
-                        <button type='submit'>Continuar</button>
-                    </form>
-                </section>
-            </div>
-        </article>
-    </section>
-
-    <header>
-        <!-- <nav>
+    <nav>
         <section class='nav__primary'>
             <div class='nav__primary-figure'>
                 <img 
@@ -170,7 +32,9 @@
             </div>
             <ul>
                 <li>
-                    <i class='fas fa-user'></i>
+                    <a>
+                        <i class='fas fa-user'></i>
+                    </a>
                 </li>
                 <li>
                     <span id='login'>LOGIN</span>
@@ -179,27 +43,22 @@
                     <span id='register'>REGISTRO</span>
                 </li>
             </ul>
-            <i id='menu__mobile' class='fas fa-bars'></i>
-        </section> -->
+        </section>
 
         <!-- Submenu -->
-            <section id='nav__secondary-show' class='nav__secondary'>
-                <input id='busqueda'></input>
-                <i class='fas fa-search'></i>
-                <ul>
-                    <li><a href = "#"> MARKETPLACE </a></li>
-                    <li><a href = "#/usuario.html"> RANKING </a></li>
-                    <li><a href = "#"> CART <i class='fas fa-shopping-cart'></i></a></li>
-                </ul>
-                </section>
-        </nav>  
-    </header>
-=======
->>>>>>> 0900a8bfecfd5524ebbc625d0c1b5c26d8552990:views/user/usuario.ejs
-    
-    <%- include('../partials/login-register')%>
-    <%- include('../partials/header')%>
+            <section class='nav__secondary'>
 
+                <input id='busqueda'></input>
+                <li>
+                    <i class='fas fa-search'></i>
+                </li>
+                <li><a href = "#"> MARKETPLACE </a></li>
+                <li><a href = "#/usuario.html"> RANKING </a></li>
+                <li><a href = "#"> CART <i class='fas fa-shopping-cart'></i></a></li>
+            </section>
+        </nav>   
+    </header>
+    
     <!-- Cuerpo -->
     <!-- <section>
         <div>
@@ -212,7 +71,7 @@
     <main>
             <section class= "Presentacion">
                 <div class="circulo">
-                    <img src="/img/imagenusuario.jpg" class=ok>
+                    <img src="/imagenes/imagenusuario.jpg" class=ok>
                 </div>
                 <div>
                     <H1 class="H1perfil"> Jeronimo Digital House </H1>
@@ -230,18 +89,18 @@
     
     <!-- Menu Perfil -->
     
-        <!-- <section>
+        <section>
             <div>
-            <div class="Menuperfil">
+            <nav class="Menuperfil">
             <ul class="Menuperfilb">
                 <li class="Menuperfilc"> <a href="#" id='buttonCollection'> COLECCION </a></li>
                 <li class="Menuperfilc"> <a href="#" id='buttonFavorites'> FAVORITOS </a></li>
                 <li class="Menuperfilc"> <a href="#" id='buttonActivity'> ACTIVIDAD </a></li>
                 <li class="Menuperfilc"> <a href="#" id='buttonOffers'> OFERTAS </a></li>
             </ul>
-        </div>
+            </nav>
             </div>
-        </section> -->
+        </section>
 
     <!-- Submenu Perfil Colección, Creados, Favoritos  -->
 
@@ -283,20 +142,20 @@
 
           <section>
             <div>
-            <div class= "Submenuperfilao"> 
+            <nav class= "Submenuperfilao"> 
                 <ul class= "Submenuperfilaob">
                     <button class="lupa"><i class='fas fa-search'></i></button>
                     <input class='botonbusqueda'></input>
                 </ul>
-            </div> 
+            </nav> 
             </div> 
         </section>    
 
         <!-- Colección -->
-        <!-- <section class="Coleccion">
+        <section class="Coleccion">
         <div class="Collecciona">
             <article class="itemcoleccion">
-                <img src="/img/NFTAR AJUSTADAS/OPCION ARTE 1.jpg" class="Imagenesftp">
+                <img src="/imagenes/NFTAR AJUSTADAS/OPCION ARTE 1.jpg" class="Imagenesftp">
                 <div class="descripcion">
                 <H2 class="Nombre"> Nombre NFT1 </H2>
                 <H4 class="Autor"> Autor </H4>
@@ -312,7 +171,7 @@
             </article>
 
             <article class="itemcoleccion">
-                <img src="/img/NFTAR AJUSTADAS/OPCION ARTE 2.jpg" class="Imagenesftp">
+                <img src="/imagenes/NFTAR AJUSTADAS/OPCION ARTE 2.jpg" class="Imagenesftp">
                 <div class ="descripcion">
                 <H2 class="Nombre"> Nombre NFT2 </H2>
                 <H4 class="Autor"> Autor </H4>
@@ -328,7 +187,7 @@
             </article>
 
             <article class="itemcoleccion">
-                <img src="/img/NFTAR AJUSTADAS/OPCION ARTE 3.jpg" class="Imagenesftp">
+                <img src="/imagenes/NFTAR AJUSTADAS/OPCION ARTE 3.jpg" class="Imagenesftp">
                 <div class ="descripcion">
                 <H2 class="Nombre"> Nombre NFT3 </H2>
                 <H4 class="Autor"> Autor </H4>
@@ -344,7 +203,7 @@
             </article>
 
             <article class="itemcoleccion">
-                <img src="/img/NFTAR AJUSTADAS/OPCION ARTE 4.jpg" class="Imagenesftp">
+                <img src="/imagenes/NFTAR AJUSTADAS/OPCION ARTE 4.jpg" class="Imagenesftp">
                 <div class ="descripcion">
                 <H2 class="Nombre"> Nombre NFT4 </H2>
                 <H4 class="Autor"> Autor </H4>
@@ -364,7 +223,7 @@
             <section class="Coleccion">
             <div class="Collecciona">
             <article class="itemcoleccion">
-                <img src="/img/NFTAR AJUSTADAS/OPCION ARTE 4.jpg" class="Imagenesftp">
+                <img src="/imagenes/NFTAR AJUSTADAS/OPCION ARTE 4.jpg" class="Imagenesftp">
                 <div class="descripcion">
                 <H2 class="Nombre"> Nombre NFT5 </H2>
                 <H4 class="Autor"> Autor </H4>
@@ -380,7 +239,7 @@
             </article>
 
             <article class="itemcoleccion">
-                <img src="/img/NFTAR AJUSTADAS/OPCION ARTE 3.jpg" class="Imagenesftp">
+                <img src="/imagenes/NFTAR AJUSTADAS/OPCION ARTE 3.jpg" class="Imagenesftp">
                 <div class="descripcion">
                 <H2 class="Nombre"> Nombre NFT6 </H2>
                 <H4 class="Autor"> Autor </H4>
@@ -396,7 +255,7 @@
             </article>
 
             <article class="itemcoleccion">
-                <img src="/img/NFTAR AJUSTADAS/OPCION ARTE 2.jpg" class="Imagenesftp">
+                <img src="/imagenes/NFTAR AJUSTADAS/OPCION ARTE 2.jpg" class="Imagenesftp">
                 <div class="descripcion">
                 <H2 class="Nombre"> Nombre NFT7 </H2>
                 <H4 class="Autor"> Autor </H4>
@@ -411,7 +270,7 @@
             </article>
 
             <article class="itemcoleccion">
-                <img src="/img/NFTAR AJUSTADAS/OPCION ARTE 1.jpg" class="Imagenesftp">
+                <img src="/imagenes/NFTAR AJUSTADAS/OPCION ARTE 1.jpg" class="Imagenesftp">
                 <div class= "descripcion">
                 <H2 class="Nombre"> Nombre NFT8 </H2>
                 <H4 class="Autor"> Autor </H4>
@@ -426,68 +285,27 @@
                 </div>
             </article>
         </div>
-        </section> -->
+        </section>
 
         <!-- Actividad -->
         <section class="Tablaactividad">
         <div>
         <table>
-            <!-- <div class= "MenuTabla"> -->
+            <div class= "MenuTabla">
             <tr>
-                <th class='tablaActividad__titulo1'>Nombre</th>
-                <th class='tablaActividad__titulo2'>Precio</th>
-                <!-- <th>Precio</th>
+                <th>Tipo</th>
+                <th>NFT</th>
+                <th>Precio</th>
                 <th>Propietario Anterior</th>
-                <th>Fecha / Hora de Operación</th> -->
+                <th>Fecha / Hora de Operación</th>
             </tr>
             </div>
             <tr>
-                <!-- <td>Tipo</td> -->
-                <td class='tablaActividad__descripcion'>
-                    <!-- <figure> -->
-                        <img
-                            src='https://images.ole.com.ar/2022/01/23/dgnR0nTmN_720x0__1.jpg'
-                        />
-                    <!-- </figure> -->
-                    <div class='tablaActividad__informacion'>
-                        <span class='descripcion__1'>Meebits</span>
-                        <span class='descripcion__2'>ETH</span>
-                        <span class='descripcion__3'>Expira en 12hrs y 30mins</span>
-                    </div>
-                </td>
-                <td class= "precioc"> $15.00 USD</td>
-            </tr>
-            <tr>
-                <!-- <td>Tipo</td> -->
-                <td class='tablaActividad__descripcion'>
-                    <!-- <figure> -->
-                        <img
-                            src='https://images.ole.com.ar/2022/01/23/dgnR0nTmN_720x0__1.jpg'
-                        />
-                    <!-- </figure> -->
-                    <div class='tablaActividad__informacion'>
-                        <span class='descripcion__1'>Meebits</span>
-                        <span class='descripcion__2'>ETH</span>
-                        <span class='descripcion__3'>Expira en 12hrs y 30mins</span>
-                    </div>
-                </td>
-                <td class= "precioc"> $15.00 USD</td>
-            </tr>
-            <tr>
-                <!-- <td>Tipo</td> -->
-                <td class='tablaActividad__descripcion'>
-                    <!-- <figure> -->
-                        <img
-                            src='https://images.ole.com.ar/2022/01/23/dgnR0nTmN_720x0__1.jpg'
-                        />
-                    <!-- </figure> -->
-                    <div class='tablaActividad__informacion'>
-                        <span class='descripcion__1'>Meebits</span>
-                        <span class='descripcion__2'>ETH</span>
-                        <span class='descripcion__3'>Expira en 12hrs y 30mins</span>
-                    </div>
-                </td>
-                <td class= "precioc"> $15.00 USD</td>
+                <td> Tipo1</td>
+                <td> NFT2</td>
+                <td class= "precioc"> Precio1</td>
+                <td> Anterior Propietario1</td>
+                <td> Fecha / Hora Operacion1 </td>
             </tr>
             <tr>
                 <td> Tipo2 </td>
@@ -547,13 +365,46 @@
             </section>
     </main>
 
-    <%- include('../partials/footer')%>
+    <!-- Footer -->
+    <!-- Footer -->
+    <footer>
+        <div class='footer__primary'>
+            <section class='footer__section-one'>
+                <img src="imagenes/logo_temporal.png">
+            </section>
+            <div class='footer__section-icons'>
+                <i class="fab fa-facebook-square"></i>
+                <i class="fab fa-twitter-square"></i>
+                <i class="fab fa-github-square"></i>
+                <i class="fab fa-instagram-square"></i>
+            </div>
+        </div>
+        <hr>
+        <div class='footer__secondary'>
+            <section class='footer__section-two'>
+                <h5>Navegación</h5>
+                <ul><a href = "#"> LOGIN / REGISTRO </a></ul>
+                <ul><a href = "#"> MARKETPLACE </a></ul>
+                <ul><a href = "#"> RANKING </a></ul>
+            </section>
+            <section class='footer__section-three'> 
+                <h5>Compañia</h5>
+                <ul><a href = "#"> TERMINOS Y CONDICIONES </a></ul>
+                <ul><a href = "#"> BLOG </a></ul>
+                <ul><a href = "#"> NOSOTROS </a></ul>
+            </section>
 
-<<<<<<< HEAD
-    <script src='/scripts/popUp.js'></script>
-    <script src='/scripts/menu_mobile.js'></script>
-=======
+            <section class='footer__section-four'>
+                <h5>Desarrolladores</h5>
+                <ul><a href = "#"> GRUPO 2 </a></ul>
+                <ul><a href = "#"> DIGITAL HOUSE </a></ul>
+                <!-- <ul><a href = "#"> DERECHOS RESERVADOS </a></ul> -->
+            </section>
+            <section>
+                <p>© 2022 Grupo 2 Digital House</p>
+            </section>
+        </div>
+    </footer>
     <script src='/js/popUp.js'></script>
->>>>>>> b2a4de80083adc1a6c5e7478888a8df15cc52f56
 </body>
 </html>

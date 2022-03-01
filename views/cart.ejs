@@ -1,16 +1,57 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <%- include('../partials/head') -%>
-    <link href ="/css/header.css", rel="stylesheet">
-    <link href ="/css/producto-cart.css", rel="stylesheet">
-    <link href ="/css/footer.css", rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" crossorigin="anonymous"/>
+    <script src="https://kit.fontawesome.com/02e6c8fc0f.js" crossorigin="anonymous"></script>
+    <link href ="/css/styles.css", rel="stylesheet">
+    <link href ="/css/cart.css", rel="stylesheet">
     <link href ="/css/popUp.css", rel="stylesheet">
+
+    <!-- FUENTES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans&family=Bebas+Neue&display=swap" rel="stylesheet">
     <title>NFTART - Cart</title>
 </head>
 <body>
-    <%- include('../partials/login-register')%>
-    <%- include('../partials/header') -%>
+
+    <%- include('./partials/login-register')%>
+
+    <!-- HEADER -->
+    <header>
+        <nav class='nav__primary'>
+            <a href='/home.html' class='nav__primary-figure'>
+                <img src="imagenes/logo_temporal.png" class='nav__primary-logo'>
+            </a>
+            <div class='nav__primary-text'>
+                <a href="#" class='nav__primary-login'>
+                    <div class='nav__primary-element'><i class='fas fa-user'></i></div>
+                    <div class='nav__primary-login_text'>LOGIN</div>
+                </a>
+                <a href="#" class='nav__primary-register'>
+                    REGISTRO
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- SUBMENU -->
+    <nav class='nav__secondary'>
+        <div class='search-element'>
+            <input class='search-box' type='search' placeholder='Buscar...'></input>
+            <button class='search-button' type='submit'>
+                <i class='fas fa-search'></i>
+            </button>
+        </div>
+        <a href="#" class='nav__secondary-text'>MARKETPLACE</a>
+        <a href="#" class='nav__secondary-text'>RANKING</a>
+        <a href="#" class='nav__secondary-cart'>
+            <div class='nav__secondary-cart_text'>CART</div>
+            <div class='nav__secondary-cart_element'><i class='fas fa-shopping-cart'></i></div>
+        </a>
+    </nav>
 
     <main>
 
@@ -22,7 +63,7 @@
                 <div class='cart_box'>
                     <div class='product'>
                         <div class='img'>
-                            <img src='/img/OPCION ARTE 1.jpg' class='img-product'>
+                            <img src='/imagenes/OPCION ARTE 1.jpg' class='img-product'>
                         </div>
                         <div class='information'>
                             <h3 class='information-name'>NOMBRE NFT</h3>
@@ -40,11 +81,11 @@
                         </div>
                     </div>
 
-                    <hr class='divider'>
+                    <div class='divider'>D</div>
 
                     <div class='product'>
                         <div class='img'>
-                            <img src='/img/OPCION ARTE 2.jpg' class='img-product'>
+                            <img src='/imagenes/OPCION ARTE 2.jpg' class='img-product'>
                         </div>
                         <div class='information'>
                             <h3 class='information-name'>NOMBRE NFT</h3>
@@ -62,11 +103,11 @@
                         </div>
                     </div>
 
-                    <hr class='divider'>
+                    <div class='divider'>D</div>
 
                     <div class='product'>
                         <div class='img'>
-                            <img src='/img/OPCION ARTE 3.jpg' class='img-product'>
+                            <img src='/imagenes/OPCION ARTE 3.jpg' class='img-product'>
                         </div>
                         <div class='information'>
                             <h3 class='information-name'>NOMBRE NFT</h3>
@@ -123,7 +164,7 @@
         <section class="Coleccion">
             <div class="Articulos">
                 <article class="ItemColeccion">
-                    <img src="/img/NFTAR AJUSTADAS/OPCION ARTE 1.jpg" class="ImagenesNFT">
+                    <img src="/imagenes/NFTAR AJUSTADAS/OPCION ARTE 1.jpg" class="ImagenesNFT">
                     <div class="DescripcionA">
                         <h2 class="Nombre">Nombre NFT1</h2>
                         <i class="ImagenA fas fa-heart"></i>
@@ -137,7 +178,7 @@
                 </article>
 
                 <article class="ItemColeccion">
-                    <img src="/img/NFTAR AJUSTADAS/OPCION ARTE 2.jpg" class="ImagenesNFT">
+                    <img src="/imagenes/NFTAR AJUSTADAS/OPCION ARTE 2.jpg" class="ImagenesNFT">
                     <div class="DescripcionA">
                         <h2 class="Nombre">Nombre NFT2</h2>
                         <i class="ImagenA fas fa-heart"></i>
@@ -151,7 +192,7 @@
                 </article>
 
                 <article class="ItemColeccion">
-                    <img src="/img/NFTAR AJUSTADAS/OPCION ARTE 3.jpg" class="ImagenesNFT">
+                    <img src="/imagenes/NFTAR AJUSTADAS/OPCION ARTE 3.jpg" class="ImagenesNFT">
                     <div class="DescripcionA">
                         <h2 class="Nombre">Nombre NFT3</h2>
                         <i class="ImagenA fas fa-heart"></i>
@@ -165,7 +206,7 @@
                 </article>
 
                 <article class="ItemColeccion">
-                    <img src="/img/NFTAR AJUSTADAS/OPCION ARTE 4.jpg" class="ImagenesNFT">
+                    <img src="/imagenes/NFTAR AJUSTADAS/OPCION ARTE 4.jpg" class="ImagenesNFT">
                     <div class="DescripcionA">
                         <h2 class="Nombre">Nombre NFT4</h2>
                         <i class="ImagenA fas fa-heart"></i>
@@ -183,7 +224,46 @@
 
     </main>
 
-    <%- include('../partials/footer') -%>
+    <!-- FOOTER -->
+    <footer>
+        <div class='footer__primary'>
+            <section class='footer__section-one'>
+                <img src="imagenes/logo_temporal.png">
+            </section>
+            <div class='footer__section-icons'>
+                <i class="fab fa-facebook-square"></i>
+                <i class="fab fa-twitter-square"></i>
+                <i class="fab fa-github-square"></i>
+                <i class="fab fa-instagram-square"></i>
+            </div>
+        </div>
+        <hr>
+        <div class='footer__secondary'>
+            <section class='footer__section-two'>
+                <h5>Navegación</h5>
+                <ul><a href = "#">LOGIN / REGISTRO</a></ul>
+                <ul><a href = "#">MARKETPLACE</a></ul>
+                <ul><a href = "#">RANKING</a></ul>
+            </section>
+            <section class='footer__section-three'> 
+                <h5>Compañia</h5>
+                <ul><a href = "#">TERMINOS Y CONDICIONES</a></ul>
+                <ul><a href = "#">BLOG</a></ul>
+                <ul><a href = "#">NOSOTROS</a></ul>
+            </section>
+            <section class='footer__section-four'>
+                <h5>Desarrolladores</h5>
+                <ul><a href = "#">GRUPO 2</a></ul>
+                <ul><a href = "#">DIGITAL HOUSE</a></ul>
+                <!-- <ul><a href = "#"> DERECHOS RESERVADOS </a></ul> -->
+            </section>
+        </div>
+        <div class="copyright">
+            <p>© 2022 Grupo 2 Digital House</p>
+        </div>
+    </footer>
+
     <script src='/js/popUp.js'></script>
+
 </body>
 </html>

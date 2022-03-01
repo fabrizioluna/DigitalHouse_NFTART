@@ -4,94 +4,95 @@
     padding: 0px;
 }
 
-
 /* PRODUCTO EDICIÓN */
 .main_box {
     background-color: white;
-    border: solid 5px grey;
     width: 95%;
     margin: 10px auto;
-    padding: 10px;
+    padding: 3rem;
 }
 
-.row {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    padding: 15px;
+.main_content{
+    width: 30%;
+    margin: auto;
 }
 
-.col {
-    width: 50%;
-    padding-right: 15px;
-}
-
-.col_ele1 {
-    margin-bottom: 10px;
-}
-
-.col1 {
-    display: flex;
-    justify-content: space-between;
-    width: 50%;
-    padding-right: 15px;
-}
-
-.col2 {
-    display: flex;
-    justify-content: space-between;
-    width: 50%;
-    padding-left: 15px;
-}
-
-.labels {
+.title{
     width: 50%;
     font-size: 20px;
     font-family: 'Bebas Neue', cursive;
 }
 
 .form_box {
-    width: 50%;
+    width: 100%;
     font-size: 20px;
     font-family: 'Alumni Sans', sans-serif;
     font-weight: bolder;
     color: black;
     padding: 5px;
+    margin-bottom: 1rem;
+    border-color: transparent;
+    border-color: rgba(163, 163, 163, 0.2);
+    transition: border 3s;
+    border-radius: 0.2rem;
+    box-shadow: none;
+}
+
+.form_box_textarea{
+    width: 100%;
+    font-size: 20px;
+    font-family: 'Alumni Sans', sans-serif;
+    font-weight: bolder;
+    color: black;
+    padding: 5px;
+    height: 8rem;
+    margin-bottom: 1rem;
+    border-color: transparent;
+    border-color: rgba(163, 163, 163, 0.2);
+    transition: border 3s;
+}
+
+.form_box:hover{
+    border-bottom-color: rgba(63, 76, 255, 0.3);
+}
+
+.form_box_textarea:hover{
+    border-bottom-color: rgba(63, 76, 255, 0.7);
 }
 
 #reset_button {
-    margin-right: 50px;
-    font-size: 40px;
+    font-size: 20px;
+    width: 49.5%;
     font-family: 'Alumni Sans', sans-serif;
     font-weight: bold;
-    color: black;
-    background-color: rgb(206, 206, 206);
-    border: solid 5px black;
-    border-radius: 15px;
+    background-color: rgb(161, 0, 0);
+    border-color: transparent;
+    margin-top: 1rem;
+    color: white;
     padding: 10px;
     cursor: pointer;
     transition: 200ms;
 }
 
 #reset_button:hover {
-    background-color: grey;
+    background-color: rgb(112, 0, 0);
 }
 
 #submit_button {
-    margin-left: 50px;
-    font-size: 40px;
+    font-size: 20px;
+    width: 49.5%;
     font-family: 'Alumni Sans', sans-serif;
     font-weight: bold;
-    color: black;
-    background-color: chartreuse;
-    border: solid 5px black;
-    border-radius: 15px;
+    margin-top: 1rem;
+    background-color: #072146;
+    color: white;
+    border-color: transparent;
     padding: 10px;
     cursor: pointer;
     transition: 200ms;
 }
 
 #submit_button:hover {
-    background-color: rgb(92, 184, 0);
+    background-color: rgb(0, 20, 47);
 }
 /* PRODUCTO EDICIÓN */
