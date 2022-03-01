@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head') %>
+    <link href ="/css/header.css", rel="stylesheet">
+    <link href ="/css/footer.css", rel="stylesheet">
+    <link href ="/css/edicionRegistro.css", rel="stylesheet">
+    <title>Edición de Registro </title>
+</head>
+<body>
+    <%- include("../partials/header")%>
+
+<section class="container_body">
+
+        <section class="container_datos_persona">
+            <div class="circulo">
+                <img src="/img/imagenusuario.jpg" class=ok>
+                <button type="submit" name="editarFotoPerfil">Editar imagen</button>
+            </div>
+            <form class='popUp__Fields'>
+                <div>
+                <label>Nombre completo</label>
+                <input 
+                    placeholder='Fabrizio Ortiz'
+                    type='text'
+                />
+                </div>
+                <div>
+                <label>Nombre de usuario</label>
+                <input 
+                    placeholder='Jade3000'
+                    type='text'
+                />
+                </div>
+                <div>
+                <label>Correo electronico</label>
+                <input 
+                    placeholder='jade3000@gmail.com'
+                    type='email'
+                />
+                </div>
+                <div>
+                <label>Fecha de nacimiento</label>
+                <input 
+                    type='date'
+                    placeholder="2000/02/15"
+                />
+                </div>
+                <div>
+                    <label>País</label>
+                    <select>
+                        <option>Colombia</option>
+                        <option>México</option>
+                        <option>Chile</option>
+                        <option>Paraguay</option>
+                        <option>Argentina</option>
+                    </select>
+                </div>
+        </section>
+                <div class="container_tipo_cuenta">
+                    <label>Tipo de cuenta</label>
+                    <div class='popUp__Type'>
+                        <label>Vendedor</label>
+                        <input 
+                            type='checkbox'
+                        />
+                        <label>Comprador</label>
+                        <input 
+                            type='checkbox'
+                        />
+                    </div>
+                </div>
+                <section class='container_registro_redes'>
+                    <h4>Sincroniza tus redes sociales:</h4>
+                    <i class="fab fa-facebook-square"></i>
+                    <i class="fab fa-twitter-square"></i>
+                    <i class="fab fa-github-square"></i>
+                    <i class="fab fa-instagram-square"></i>
+                </section>
+                <section class="section_contraseñas">
+                    <p>Validación de contraseña actual para efectuar los cambios</p>
+                    <div>
+                        <input 
+                            placeholder='Contraseña'
+                            type='password'
+                        />
+                    </div>
+                    <div>
+                        <input 
+                            placeholder='Repite tu contraseña'
+                            type='password'
+                        />
+                    </div>
+                    <button type='submit'>Continuar</button>
+                </section>
+            </form>
+        </section>
+    </section>
+    <%- include("../partials/footer")%>
+</body>
+</html>
+
+
+
+
+

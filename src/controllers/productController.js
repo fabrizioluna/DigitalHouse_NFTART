@@ -70,3 +70,4 @@ const PRODUCT = {
 };
 
 module.exports = PRODUCT;
+

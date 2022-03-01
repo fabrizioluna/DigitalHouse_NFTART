@@ -1,3 +1,8 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
 /* Estilos Globales */
 body{
     background-color: white;
