@@ -17,6 +17,8 @@ const PRODUCT = {
     store: function (req, res) {
         let nuevoP = req.body;
         let idNuevo = productosBD[productosBD.length-1].id + 1;
+
+        let nombreImagen = req.file.filename;
         
         let nuevoProducto = {
             id: idNuevo,
@@ -27,7 +29,7 @@ const PRODUCT = {
             descripcion: req.body.NFT_description,
             autor: req.body.NFT_author,
             tematicaAutor: req.body.NFT_theme,
-            imagen:"IMAGEN"
+            imagen:nombreImagen
         }
 
         productosBD.push(nuevoProducto);

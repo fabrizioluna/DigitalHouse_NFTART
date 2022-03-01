@@ -16,14 +16,14 @@
         <!-- PRODUCTO CREACIÓN -->
         <!-- <section class='main_box'> -->
 
-            <form action="/product/create" method="POST">
+            <form action="/product/create" method="POST" enctype="multipart/form-data">
                 <div class="row">
                     <div class="col">
                         <div class="col_ele1">
                             <label for="image" class="labels">Expresión artística del NFT:</label>
                         </div>
                         <div class="col_ele2">
-                            <input id="image" type="file" required>
+                            <input id="image" type="file" name="imageProduct" required>
                         </div>
                     </div>
                     <div class="col2">
