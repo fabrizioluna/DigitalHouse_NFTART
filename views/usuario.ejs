@@ -1,21 +1,64 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <%- include('../partials/head') %>
-    <link href ="/css/popUp.css", rel="stylesheet">
-    <link href ="/css/header.css", rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/02e6c8fc0f.js" crossorigin="anonymous"></script>
     <link href ="/css/usuario.css", rel="stylesheet">
     <link href ="/css/styles.css", rel="stylesheet">
-    <link href ="/css/footer.css", rel="stylesheet">
+
+
+    
+
+<!-- Fuentes -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans:wght@100&family=Bebas+Neue&display=swap" rel="stylesheet">
     <title>NFTART- Usuario </title>
 </head>
 
 <body>
 <!-- Cabecera -->
-    
-    <%- include('../partials/login-register')%>
-    <%- include('../partials/header')%>
+    <header>
+    <nav>
+        <section class='nav__primary'>
+            <div class='nav__primary-figure'>
+                <img 
+                    src="imagenes/logo_temporal.png"
+                    class='nav__primary-logo'
+                />
+            </div>
+            <ul>
+                <li>
+                    <a>
+                        <i class='fas fa-user'></i>
+                    </a>
+                </li>
+                <li>
+                    <span id='login'>LOGIN</span>
+                </li>
+                <li>
+                    <span id='register'>REGISTRO</span>
+                </li>
+            </ul>
+        </section>
 
+        <!-- Submenu -->
+            <section class='nav__secondary'>
+
+                <input id='busqueda'></input>
+                <li>
+                    <i class='fas fa-search'></i>
+                </li>
+                <li><a href = "#"> MARKETPLACE </a></li>
+                <li><a href = "#/usuario.html"> RANKING </a></li>
+                <li><a href = "#"> CART <i class='fas fa-shopping-cart'></i></a></li>
+            </section>
+        </nav>   
+    </header>
+    
     <!-- Cuerpo -->
     <!-- <section>
         <div>
@@ -28,7 +71,7 @@
     <main>
             <section class= "Presentacion">
                 <div class="circulo">
-                    <img src="/img/imagenusuario.jpg" class=ok>
+                    <img src="/imagenes/imagenusuario.jpg" class=ok>
                 </div>
                 <div>
                     <H1 class="H1perfil"> Jeronimo Digital House </H1>
@@ -112,7 +155,7 @@
         <section class="Coleccion">
         <div class="Collecciona">
             <article class="itemcoleccion">
-                <img src="/img/NFTAR AJUSTADAS/OPCION ARTE 1.jpg" class="Imagenesftp">
+                <img src="/imagenes/NFTAR AJUSTADAS/OPCION ARTE 1.jpg" class="Imagenesftp">
                 <div class="descripcion">
                 <H2 class="Nombre"> Nombre NFT1 </H2>
                 <H4 class="Autor"> Autor </H4>
@@ -128,7 +171,7 @@
             </article>
 
             <article class="itemcoleccion">
-                <img src="/img/NFTAR AJUSTADAS/OPCION ARTE 2.jpg" class="Imagenesftp">
+                <img src="/imagenes/NFTAR AJUSTADAS/OPCION ARTE 2.jpg" class="Imagenesftp">
                 <div class ="descripcion">
                 <H2 class="Nombre"> Nombre NFT2 </H2>
                 <H4 class="Autor"> Autor </H4>
@@ -144,7 +187,7 @@
             </article>
 
             <article class="itemcoleccion">
-                <img src="/img/NFTAR AJUSTADAS/OPCION ARTE 3.jpg" class="Imagenesftp">
+                <img src="/imagenes/NFTAR AJUSTADAS/OPCION ARTE 3.jpg" class="Imagenesftp">
                 <div class ="descripcion">
                 <H2 class="Nombre"> Nombre NFT3 </H2>
                 <H4 class="Autor"> Autor </H4>
@@ -160,7 +203,7 @@
             </article>
 
             <article class="itemcoleccion">
-                <img src="/img/NFTAR AJUSTADAS/OPCION ARTE 4.jpg" class="Imagenesftp">
+                <img src="/imagenes/NFTAR AJUSTADAS/OPCION ARTE 4.jpg" class="Imagenesftp">
                 <div class ="descripcion">
                 <H2 class="Nombre"> Nombre NFT4 </H2>
                 <H4 class="Autor"> Autor </H4>
@@ -180,7 +223,7 @@
             <section class="Coleccion">
             <div class="Collecciona">
             <article class="itemcoleccion">
-                <img src="/img/NFTAR AJUSTADAS/OPCION ARTE 4.jpg" class="Imagenesftp">
+                <img src="/imagenes/NFTAR AJUSTADAS/OPCION ARTE 4.jpg" class="Imagenesftp">
                 <div class="descripcion">
                 <H2 class="Nombre"> Nombre NFT5 </H2>
                 <H4 class="Autor"> Autor </H4>
@@ -196,7 +239,7 @@
             </article>
 
             <article class="itemcoleccion">
-                <img src="/img/NFTAR AJUSTADAS/OPCION ARTE 3.jpg" class="Imagenesftp">
+                <img src="/imagenes/NFTAR AJUSTADAS/OPCION ARTE 3.jpg" class="Imagenesftp">
                 <div class="descripcion">
                 <H2 class="Nombre"> Nombre NFT6 </H2>
                 <H4 class="Autor"> Autor </H4>
@@ -212,7 +255,7 @@
             </article>
 
             <article class="itemcoleccion">
-                <img src="/img/NFTAR AJUSTADAS/OPCION ARTE 2.jpg" class="Imagenesftp">
+                <img src="/imagenes/NFTAR AJUSTADAS/OPCION ARTE 2.jpg" class="Imagenesftp">
                 <div class="descripcion">
                 <H2 class="Nombre"> Nombre NFT7 </H2>
                 <H4 class="Autor"> Autor </H4>
@@ -227,7 +270,7 @@
             </article>
 
             <article class="itemcoleccion">
-                <img src="/img/NFTAR AJUSTADAS/OPCION ARTE 1.jpg" class="Imagenesftp">
+                <img src="/imagenes/NFTAR AJUSTADAS/OPCION ARTE 1.jpg" class="Imagenesftp">
                 <div class= "descripcion">
                 <H2 class="Nombre"> Nombre NFT8 </H2>
                 <H4 class="Autor"> Autor </H4>
@@ -322,8 +365,46 @@
             </section>
     </main>
 
-    <%- include('../partials/footer')%>
+    <!-- Footer -->
+    <!-- Footer -->
+    <footer>
+        <div class='footer__primary'>
+            <section class='footer__section-one'>
+                <img src="imagenes/logo_temporal.png">
+            </section>
+            <div class='footer__section-icons'>
+                <i class="fab fa-facebook-square"></i>
+                <i class="fab fa-twitter-square"></i>
+                <i class="fab fa-github-square"></i>
+                <i class="fab fa-instagram-square"></i>
+            </div>
+        </div>
+        <hr>
+        <div class='footer__secondary'>
+            <section class='footer__section-two'>
+                <h5>Navegación</h5>
+                <ul><a href = "#"> LOGIN / REGISTRO </a></ul>
+                <ul><a href = "#"> MARKETPLACE </a></ul>
+                <ul><a href = "#"> RANKING </a></ul>
+            </section>
+            <section class='footer__section-three'> 
+                <h5>Compañia</h5>
+                <ul><a href = "#"> TERMINOS Y CONDICIONES </a></ul>
+                <ul><a href = "#"> BLOG </a></ul>
+                <ul><a href = "#"> NOSOTROS </a></ul>
+            </section>
 
+            <section class='footer__section-four'>
+                <h5>Desarrolladores</h5>
+                <ul><a href = "#"> GRUPO 2 </a></ul>
+                <ul><a href = "#"> DIGITAL HOUSE </a></ul>
+                <!-- <ul><a href = "#"> DERECHOS RESERVADOS </a></ul> -->
+            </section>
+            <section>
+                <p>© 2022 Grupo 2 Digital House</p>
+            </section>
+        </div>
+    </footer>
     <script src='/js/popUp.js'></script>
 </body>
 </html>
