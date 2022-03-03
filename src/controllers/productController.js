@@ -1,8 +1,8 @@
-const fs = require('fs')
-const path = require('path');
+const FS = require('fs')
+const PATH = require('path');
 
-const productosBD = JSON.parse(fs.readFileSync(path.join(__dirname,"../data/productos.json")),'utf-8');
-const compradoresBD = JSON.parse(fs.readFileSync(path.join(__dirname,"../data/compradores.json")),'utf-8');
+const productosBD = JSON.parse(FS.readFileSync(PATH.join(__dirname,"../data/productos.json")),'utf-8');
+const compradoresBD = JSON.parse(FS.readFileSync(PATH.join(__dirname,"../data/compradores.json")),'utf-8');
 
 const PRODUCT = {
 
@@ -15,9 +15,8 @@ const PRODUCT = {
     },
 
     store: function (req, res) {
-        let nuevoP = req.body;
-        let idNuevo = productosBD[productosBD.length-1].id + 1;
 
+        let idNuevo = productosBD[productosBD.length-1].id + 1;
         let nombreImagen = req.file.filename;
         
         let nuevoProducto = {
@@ -29,24 +28,22 @@ const PRODUCT = {
             descripcion: req.body.NFT_description,
             autor: req.body.NFT_author,
             tematicaAutor: req.body.NFT_theme,
-            imagen:nombreImagen
+            imagen: nombreImagen
         }
 
         productosBD.push(nuevoProducto);
 
-        fs.writeFileSync(path.join(__dirname,"../data/productos.json"), JSON.stringify(productosBD,null,' '));
+        FS.writeFileSync(PATH.join(__dirname,"../data/productos.json"), JSON.stringify(productosBD,null,' '));
 
         res.redirect("/product/detail/" + idNuevo);
               
     },
 
-
-
     edit: function (req, res) {
         const PATH_BATABASE = '../data/productos.json';
         let data = null;
 
-        const payload = JSON.parse(fs.readFileSync(path.join(__dirname, PATH_BATABASE)),'utf-8');
+        const payload = JSON.parse(FS.readFileSync(PATH.join(__dirname, PATH_BATABASE)),'utf-8');
 
         payload.map((element) => {
             if(element.id == req.params.id){
@@ -69,7 +66,7 @@ const PRODUCT = {
 
     update: function (req, res) {
         const PATH_BATABASE = '../data/productos.json';
-        const payload = JSON.parse(fs.readFileSync(path.join(__dirname, PATH_BATABASE)),'utf-8');
+        const payload = JSON.parse(FS.readFileSync(PATH.join(__dirname, PATH_BATABASE)),'utf-8');
         
         const { body: state } = req;
         let indexElement = null;
@@ -119,7 +116,7 @@ const PRODUCT = {
         console.log(`Update-Database: Se ha actualizado un producto. \n 
             (Producto: ${id} | Nombre: ${payload[indexElement].nombre})`);
     
-        fs.writeFileSync(path.join(__dirname, PATH_BATABASE), JSON.stringify(payload, null, '  '));
+        FS.writeFileSync(PATH.join(__dirname, PATH_BATABASE), JSON.stringify(payload, null, '  '));
         res.redirect(`/product/detail/${id}`);
     },
     
@@ -143,10 +140,9 @@ const PRODUCT = {
             };
         };
 
-        res.render("product/producto-detalle",{productos:productoEncontrado,compradores:compradorEncontrado});
+        res.render("product/producto-detalle", {productos:productoEncontrado, compradores:compradorEncontrado});
     },
 
 };
 
 module.exports = PRODUCT;
-

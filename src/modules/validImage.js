@@ -1,12 +1,11 @@
-const path = require('path');
-const multer = require('multer');
+const PATH = require('path');
+const MULTER = require('multer');
 
-
-const configuracionImagen = multer.diskStorage({
-    destination: function(req, file, cb) { 
-        cb(null, path.join(__dirname, "../../public/img/PRODUCTOS")); 
+const configuracionImagen = MULTER.diskStorage({
+    destination: function (req, file, cb) { 
+        cb(null, PATH.join(__dirname, "../../public/img/PRODUCTOS")); 
     },
-    filename: function(req, file, cb) { 
+    filename: function (req, file, cb) { 
         let imageName = Date.now() + file.originalname; 
         cb(null, imageName);
     }
@@ -21,15 +20,11 @@ const fileFilter = (req, file, cb) => {
     }
 };
 
-
 const limits = {
     fileSize: 1024 * 1024 * 1, 
     fieldNameSize: 200
 }
 
+const UPLOADFILE = MULTER({ storage: configuracionImagen, fileFilter: fileFilter, limits: limits });
 
-
-const uploadFile = multer({ storage: configuracionImagen, fileFilter: fileFilter, limits: limits });
-
-
-module.exports = uploadFile;
+module.exports = UPLOADFILE;

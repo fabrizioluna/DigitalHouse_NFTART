@@ -1,201 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-<<<<<<< HEAD:views/usuario.html
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/02e6c8fc0f.js" crossorigin="anonymous"></script>
-    <link href ="css/usuario.css", rel="stylesheet">
-    <link href ="css/popUp.css", rel="stylesheet">
-    <link href ="css/styles.css", rel="stylesheet">
-
-
-    
-
-<!-- Fuentes -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans:wght@100&family=Bebas+Neue&display=swap" rel="stylesheet">
-=======
     <%- include('../partials/head') %>
     <link href ="/css/popUp.css", rel="stylesheet">
     <link href ="/css/header.css", rel="stylesheet">
     <link href ="/css/usuario.css", rel="stylesheet">
     <link href ="/css/styles.css", rel="stylesheet">
     <link href ="/css/footer.css", rel="stylesheet">
->>>>>>> 0900a8bfecfd5524ebbc625d0c1b5c26d8552990:views/user/usuario.ejs
     <title>NFTART- Usuario </title>
 </head>
 
 <body>
 <!-- Cabecera -->
-<<<<<<< HEAD:views/usuario.html
-    <header>
-     <!-- PopUps - Registro y Login -->
-
-     <section class='popUp__Backdrop' id='popUpBackdropLogin'>
-        <article class='popUp__Content' id='popUpContentLogin'>
-            <div class='popUp__Nav'>
-                <div class='popUp__Nav--button1'>
-                    <!-- <i id='popUp__BackLogin' class="fas fa-chevron-circle-left"></i> -->
-                </div>
-                <div class='popUp__Nav--button2'>
-                    <i id='popUp__CloseLogin' class="fas fa-times-circle"></i>
-                </div>
-            </div>
-            <div class='popUp__Body'>
-                <figure>
-                    <section class='popUp__Img--content'>
-                        <img 
-                            src="imagenes/logo_temporal.png"
-                            class='popUp__Logo'
-                        />
-                    </section>
-                </figure>
-                <section class='popUp__LoginWith'>
-                    <h4>Inicia sesión con:</h4>
-                    <i class="fab fa-facebook-square"></i>
-                    <i class="fab fa-twitter-square"></i>
-                    <i class="fab fa-github-square"></i>
-                    <i class="fab fa-instagram-square"></i>
-                </section>
-                <section>
-                    <form class='popUp__Fields'>
-                        <input 
-                            placeholder='Correo electronico'
-                            type='email'
-                        />
-                        <input 
-                            placeholder='Contraseña'
-                            type='password'
-                        />
-                        <span>¿Olvidaste tu contraseña?</span>
-                        <button type='submit'>Ingresar</button>
-                        <button type='' id='registerButton'>¿No tienes cuenta? Registrate</button>
-                    </form>
-                </section>
-            </div>
-        </article>
-    </section>
-
-    <!-- Registro -->
-    <section class='popUp__Backdrop' id='popUpBackdropRegister'>
-        <article class='popUp__Content' id='popUpContentRegister'>
-            <div class='popUp__Nav'>
-                <div class='popUp__Nav--button1'>
-                    <i id='popUp__BackRegister' class="fas fa-chevron-circle-left"></i>
-                </div>
-                <div class='popUp__Nav--button2'>
-                    <i id='popUp__CloseRegister' class="fas fa-times-circle"></i>
-                </div>
-            </div>
-            <div class='popUp__Body'>
-                <figure>
-                    <section class='popUp__Img--content'>
-                        <img 
-                            src="imagenes/logo_temporal.png"
-                            class='popUp__Logo'
-                        />
-                    </section>
-                </figure>
-                <section class='popUp__LoginWith'>
-                    <h4>Registrate con:</h4>
-                    <i class="fab fa-facebook-square"></i>
-                    <i class="fab fa-twitter-square"></i>
-                    <i class="fab fa-github-square"></i>
-                    <i class="fab fa-instagram-square"></i>
-                </section>
-                <section>
-                    <form class='popUp__Fields'>
-                        <input 
-                            placeholder='Nombre completo'
-                            type='text'
-                        />
-                        <input 
-                            placeholder='Nombre de usuario'
-                            type='text'
-                        />
-                        <input 
-                            placeholder='Correo electronico'
-                            type='email'
-                        />
-                        <label>Fecha de nacimiento</label>
-                        <input 
-                            type='date'
-                        />
-                        <label>País</label>
-                        <select>
-                            <option>Colombia</option>
-                            <option>México</option>
-                            <option>Chile</option>
-                            <option>Paraguay</option>
-                            <option>Argentina</option>
-                        </select>
-                        <label>Tipo de cuenta</label>
-                        <div class='popUp__Type'>
-                            <label>Vendedor</label>
-                            <input 
-                                type='checkbox'
-                            />
-                            <label>Comprador</label>
-                            <input 
-                                type='checkbox'
-                            />
-                        </div>
-                        <input 
-                            placeholder='Contraseña'
-                            type='password'
-                        />
-                        <input 
-                            placeholder='Repite tu contraseña'
-                            type='password'
-                        />
-                        <button type='submit'>Continuar</button>
-                    </form>
-                </section>
-            </div>
-        </article>
-    </section>
-
-    <header>
-        <!-- <nav>
-        <section class='nav__primary'>
-            <div class='nav__primary-figure'>
-                <img 
-                    src="imagenes/logo_temporal.png"
-                    class='nav__primary-logo'
-                />
-            </div>
-            <ul>
-                <li>
-                    <i class='fas fa-user'></i>
-                </li>
-                <li>
-                    <span id='login'>LOGIN</span>
-                </li>
-                <li>
-                    <span id='register'>REGISTRO</span>
-                </li>
-            </ul>
-            <i id='menu__mobile' class='fas fa-bars'></i>
-        </section> -->
-
-        <!-- Submenu -->
-            <section id='nav__secondary-show' class='nav__secondary'>
-                <input id='busqueda'></input>
-                <i class='fas fa-search'></i>
-                <ul>
-                    <li><a href = "#"> MARKETPLACE </a></li>
-                    <li><a href = "#/usuario.html"> RANKING </a></li>
-                    <li><a href = "#"> CART <i class='fas fa-shopping-cart'></i></a></li>
-                </ul>
-                </section>
-        </nav>  
-    </header>
-=======
->>>>>>> 0900a8bfecfd5524ebbc625d0c1b5c26d8552990:views/user/usuario.ejs
     
     <%- include('../partials/login-register')%>
     <%- include('../partials/header')%>
@@ -549,11 +365,7 @@
 
     <%- include('../partials/footer')%>
 
-<<<<<<< HEAD
     <script src='/scripts/popUp.js'></script>
     <script src='/scripts/menu_mobile.js'></script>
-=======
-    <script src='/js/popUp.js'></script>
->>>>>>> b2a4de80083adc1a6c5e7478888a8df15cc52f56
 </body>
 </html>
