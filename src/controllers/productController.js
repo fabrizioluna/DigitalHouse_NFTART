@@ -133,14 +133,14 @@ const PRODUCT = {
             };
         };
 
-        for (c of compradoresBD){
-            if (c.id==productoSeleccionado) {
-                compradorEncontrado=c;
-                break;
-            };
-        };
+        // for (c of compradoresBD){
+        //     if (c.id==productoSeleccionado) {
+        //         compradorEncontrado=c;
+        //         break;
+        //     };
+        // };
 
-        res.render("product/producto-detalle", {productos:productoEncontrado, compradores:compradorEncontrado});
+        res.render("product/producto-detalle", {productos:productoEncontrado/* , compradores:compradorEncontrado */});
     },
 
 };
