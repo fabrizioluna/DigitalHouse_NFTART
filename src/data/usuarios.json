@@ -18,5 +18,15 @@
   "pais": "colombia",
   "tipoCuenta": "vendedor",
   "contrasenia": "$2b$12$SKPcGr5gvD3B7JpVNBe.6upB30zqyi.nevU/neHPkRMKwLVIF7TBK"
+ },
+ {
+  "id": 3,
+  "nombreCompleto": "John Doe",
+  "nombreUsuario": "JohnDoe",
+  "email": "jdoe.23@gmail.com",
+  "fechaNacimiento": "2022-03-17",
+  "pais": "argentina",
+  "tipoCuenta": "vendedor",
+  "contrasenia": "$2b$12$SNRP6Zc5omGfrvvN72xJNewfe.MljbxcOE.1MX.jM.3BbKhZ1a/am"
  }
 ]

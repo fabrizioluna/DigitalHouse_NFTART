@@ -37,36 +37,45 @@
                     <i class="fab fa-instagram-square"></i>
                 </section>
                 <section>
+                    <% if (error != null) { %>
+                        <div class='popUp__Errors'><% error.map((err) => { %>
+                            <span><%= err.msg %></span>
+                        <% }) %></div>
+                    <% } %>
+                    <% console.log(old) %>
                     <form method='POST' class='popUp__Fields'>
                         <input
                             name="nombreCompleto"
                             placeholder='Nombre completo'
                             type='text'
+                            value='<%= old !== null ? old.nombreCompleto : '' %>'
                         />
                         <input
                             name="nombreUsuario"
                             placeholder='Nombre de usuario'
                             type='text'
+                            value='<%= old !== null ? old.nombreUsuario : '' %>'
                         />
                         <input
                             name="email"
                             placeholder='Correo electronico'
                             type='email'
+                            value='<%= old !== null ? old.email : '' %>'
                         />
                         <label>Fecha de nacimiento</label>
                         <input
                             name="fechaNacimiento"
                             type='date'
+                            value='<%= old !== null ? old.fechaNacimiento : '' %>'
                         />
                         <label>País</label>
                         <select
-                            name="pais"
-                        >
-                            <option value="colombia">Colombia</option>
-                            <option value="mexico">México</option>
-                            <option value="chile">Chile</option>
-                            <option value="paraguay">Paraguay</option>
-                            <option value="argentina">Argentina</option>
+                            name="pais">
+                            <option value="Colombia">Colombia</option>
+                            <option value="Mexico">México</option>
+                            <option value="Chile">Chile</option>
+                            <option value="Paraguay">Paraguay</option>
+                            <option value="Argentina">Argentina</option>
                         </select>
                         <label>Tipo de cuenta</label>
                         <div class='popUp__Type'>

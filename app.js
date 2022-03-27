@@ -23,7 +23,12 @@ APP.use('/', MAIN);
 APP.use('/product', PRODUCT);
 APP.use('/user', USER);
 
-APP.use(session({secret: '4E4654415254'}));
+APP.use(session({
+        secret: '4E4654415254',
+        resave: true,
+        saveUninitialized: true
+    }
+));
 
 APP.use('*', function (req, res) {
     res.sendFile(__dirname + '/public/img/error_404.png')

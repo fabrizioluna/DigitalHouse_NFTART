@@ -128,6 +128,20 @@ select{
     text-align: center;
 }
 
+.popUp__Errors{
+    width: 27%;
+    background-color: rgb(255, 154, 154);
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    padding: 1rem;
+}
+
+.popUp__Errors span {
+    width: 100%;
+    color: rgb(0, 0, 0);
+}
+
 .popUp__Fields{
     width: 30%;
     color: grey;

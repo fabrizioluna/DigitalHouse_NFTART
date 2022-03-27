@@ -37,11 +37,17 @@
                     <i class="fab fa-instagram-square"></i>
                 </section>
                 <section>
+                    <% if (error != null) { %>
+                        <div class='popUp__Errors'><% error.map((err) => { %>
+                            <span><%= err.msg %></span>
+                        <% }) %></div>
+                    <% } %>
                     <form method='POST' class='popUp__Fields'>
                         <input
                             name="email"
                             placeholder='Correo electronico'
                             type='email'
+                            value='<%= old !== null ? old.email : '' %>'
                         />
                         <input
                             name="contrasenia"

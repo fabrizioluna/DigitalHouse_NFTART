@@ -16,46 +16,72 @@ const USER = {
     },
 
     register: function (req, res) {
-        res.render('user/usuario-registro');
+        res.render('user/usuario-registro', {
+            error: null,
+            old: null
+        });
     },
 
     login: function (req, res) {
-        res.render('user/usuario-login');
+        res.render('user/usuario-login', {
+            error: null,
+            old: null
+        });
     },
 
     store: function (req, res) {
 
-        const { nombreCompleto,
-        nombreUsuario,
-        email,
-        fechaNacimiento,
-        pais,
-        tipoCuenta,
-        contrasenia1,
-        contrasenia2
+        const { 
+            nombreCompleto,
+            nombreUsuario,
+            email,
+            fechaNacimiento,
+            pais,
+            tipoCuenta,
+            contrasenia1,
+            contrasenia2
         } = req.body
 
         let error = validationResult(req);
-
+        
         if (!error.isEmpty()) {
-            return res.render('user/usuario-registro', {error: error.mapped(), old: req.body});
+            return res.render('user/usuario-registro', {
+                error: error.errors, 
+                old: req.body
+            });
         };
 
-        usuariosBD.map( function (e) {
-            if ((e.nombreUsuario === nombreUsuario) || (e.email === email)) {
-                return res.render('user/usuario-registro', {error: 'Nombre de usuario o email en uso'});
-            }
+        const userExist = usuariosBD.map( function (e) {
+            if ((e.nombreUsuario === nombreUsuario) || (e.email === email)) return true;
         });
+
+        if(userExist){
+            return res.render('user/usuario-registro', {
+                error: [
+                    {
+                        msg: 'Nombre de usuario o email en uso'
+                    }
+                ],
+                old: req.body
+            });
+        }
 
         let idNuevo = usuariosBD[usuariosBD.length-1].id + 1;
 
         if (contrasenia1 !== contrasenia2) {
-            return res.render('user/usuario-registro', {error: 'Contraseñas no coinciden'});
+            return res.render('user/usuario-registro', {
+                error: [
+                    {
+                        msg: 'Las contraseñas no coinciden'
+                    }
+                ],
+                old: req.body
+            });
         };
 
         let passHasheada = bcrypt.hashSync(contrasenia2, 12);
-        
-        let nuevoUsuario = {
+
+        usuariosBD.push({
             id: idNuevo,
             nombreCompleto,
             nombreUsuario,
@@ -64,9 +90,7 @@ const USER = {
             pais,
             tipoCuenta,
             contrasenia: passHasheada,
-        };
-
-        usuariosBD.push(nuevoUsuario);
+        });
 
         FS.writeFileSync(PATH.join(__dirname,"../data/usuarios.json"), JSON.stringify(usuariosBD,null,' '));
 
@@ -83,7 +107,10 @@ const USER = {
         let error = validationResult(req);
 
         if (!error.isEmpty()) {
-            return res.render('user/usuario-login', {error: error.mapped()});
+            return res.render('user/usuario-login', {
+                error: error.errors, 
+                old: req.body
+            });
         };
 
         usuariosBD.map( function (e) {
