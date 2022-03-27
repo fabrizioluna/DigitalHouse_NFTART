@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head') %>
+    <link href ="/css/header.css", rel="stylesheet">
+    <link href ="/css/footer.css", rel="stylesheet">
+    <link href ="/css/popUp2.css", rel="stylesheet">
+    <title>Registro de Usuario</title>
+</head>
+<body>
+    <%- include("../partials/header")%>
+
+    <section class='popUp__Backdrop' id='popUpBackdropRegister'>
+        <article class='popUp__Content' id='popUpContentRegister'>
+            <div class='popUp__Nav'>
+                <div class='popUp__Nav--button1'>
+                    <i id='popUp__BackRegister' class="fas fa-chevron-circle-left"></i>
+                </div>
+                <div class='popUp__Nav--button2'>
+                    <i id='popUp__CloseRegister' class="fas fa-times-circle"></i>
+                </div>
+            </div>
+            <div class='popUp__Body'>
+                <figure>
+                    <section class='popUp__Img--content'>
+                        <img 
+                            src="/img/logo_temporal.png"
+                            class='popUp__Logo'
+                        />
+                    </section>
+                </figure>
+                <section class='popUp__LoginWith'>
+                    <h4>Registrate con:</h4>
+                    <i class="fab fa-facebook-square"></i>
+                    <i class="fab fa-twitter-square"></i>
+                    <i class="fab fa-github-square"></i>
+                    <i class="fab fa-instagram-square"></i>
+                </section>
+                <section>
+                    <form method='POST' class='popUp__Fields'>
+                        <input
+                            name="nombreCompleto"
+                            placeholder='Nombre completo'
+                            type='text'
+                        />
+                        <input
+                            name="nombreUsuario"
+                            placeholder='Nombre de usuario'
+                            type='text'
+                        />
+                        <input
+                            name="email"
+                            placeholder='Correo electronico'
+                            type='email'
+                        />
+                        <label>Fecha de nacimiento</label>
+                        <input
+                            name="fechaNacimiento"
+                            type='date'
+                        />
+                        <label>País</label>
+                        <select
+                            name="pais"
+                        >
+                            <option value="colombia">Colombia</option>
+                            <option value="mexico">México</option>
+                            <option value="chile">Chile</option>
+                            <option value="paraguay">Paraguay</option>
+                            <option value="argentina">Argentina</option>
+                        </select>
+                        <label>Tipo de cuenta</label>
+                        <div class='popUp__Type'>
+                            <label>Vendedor</label>
+                            <input
+                                name="tipoCuenta"
+                                type='checkbox'
+                                value="vendedor"
+                            />
+                            <label>Comprador</label>
+                            <input
+                                name="tipoCuenta"
+                                type='checkbox'
+                                value="comprador"
+                            />
+                        </div>
+                        <input
+                            name="contrasenia1"
+                            placeholder='Contraseña'
+                            type='password'
+                        />
+                        <input
+                            name="contrasenia2"
+                            placeholder='Repite tu contraseña'
+                            type='password'
+                        />
+                        <button type='submit'>Continuar</button>
+                    </form>
+                </section>
+            </div>
+        </article>
+    </section>
+    
+    <%- include("../partials/footer")%>
+</body>
+</html>
