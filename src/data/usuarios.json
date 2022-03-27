@@ -1,0 +1,22 @@
+[
+ {
+  "id": 1,
+  "nombreCompleto": "Fabrizio Luna",
+  "nombreUsuario": "AxRRR",
+  "email": "fss@kdflg.com",
+  "fechaNacimiento": "1900-01-01",
+  "pais": "mexico",
+  "tipoCuenta": "vendedor",
+  "contrasenia": "prueba123"
+ },
+ {
+  "id": 2,
+  "nombreCompleto": "A",
+  "nombreUsuario": "A",
+  "email": "A@A",
+  "fechaNacimiento": "2022-03-26",
+  "pais": "colombia",
+  "tipoCuenta": "vendedor",
+  "contrasenia": "$2b$12$SKPcGr5gvD3B7JpVNBe.6upB30zqyi.nevU/neHPkRMKwLVIF7TBK"
+ }
+]

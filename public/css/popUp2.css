@@ -1,0 +1,197 @@
+label{
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: lighter;
+    margin-bottom: 5px;
+}
+
+select{
+    border-color: rgb(7, 33, 70, 0.2);
+    border-radius: 8px;
+    height: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.popUp__Content{
+    background-color: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    position: fixed;
+    top: 5vh;
+    width: 50%;
+    left: 25%;
+    z-index: 30;
+    animation: slide-down 300ms ease-out forwards;
+    /* display: none; */
+}
+
+.popUp__Backdrop{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 20;
+    background-color: rgba(0, 0, 0, 0.6);
+    /* display: none; */
+}
+
+.popUp__Backdrop i{
+    color: #072146;
+    font-size: 30px;
+}
+
+.popUp__Nav{
+    display: flex;
+}
+
+.popUp__Nav div{
+    width: 50%;
+}
+
+.popUp__Nav--button1{
+    text-align: left;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+.popUp__Nav--button2{
+    text-align: right;
+    margin-right: 20px;
+    margin-top: 20px;
+}
+
+.popUp__Nav button{
+    border-color: transparent;
+    background-color: transparent;
+    color: #5BBEFF;
+    text-decoration: underline;
+    margin-top: 20px;
+}
+
+#popUp__CloseLogin{
+    justify-content: right;
+    border-color: transparent;
+    background-color: transparent;
+    color: #4e4e4e;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+#popUp__BackLogin{
+    justify-content: right;
+    border-color: transparent;
+    background-color: transparent;
+    color: #4e4e4e;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+#popUp__CloseRegister{
+    justify-content: right;
+    border-color: transparent;
+    background-color: transparent;
+    color: #4e4e4e;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+#popUp__BackRegister{
+    justify-content: right;
+    border-color: transparent;
+    background-color: transparent;
+    color: #4e4e4e;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+.popUp__Body{
+    padding: 20px;
+    color: grey;
+}
+
+.popUp__Body figure{
+    width: 30%;
+    margin: auto;
+}
+
+.popUp__Img--content{
+    width: 30%;
+    margin: auto;
+}
+
+.popUp__Logo{
+    width: 100%;
+}
+
+.popUp__LoginWith{
+    text-align: center;
+}
+
+.popUp__Fields{
+    width: 30%;
+    color: grey;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2rem;
+    flex-direction: column;
+}
+
+.popUp__Fields input{
+    border-color: rgb(7, 33, 70, 0.2);
+    border-radius: 8px;
+    height: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.popUp__Fields button{
+    height: 2.5rem;
+    border-color: transparent;
+    color: white;
+    background-color: #072146;
+    font-weight: bolder;
+    margin-bottom: 10px;
+}
+
+.popUp__Fields button:hover{
+    background-color: rgb(7, 33, 70, 0.9);
+}
+
+.popUp__Fields span{
+    font-size: 12px;
+    text-align: right;
+    margin-bottom: 30px;
+    cursor: pointer;
+}
+
+.popUp__Type{
+    display: flex;
+}
+
+.popUp__Type input{
+    width: 8%;
+}
+
+/* Estilos para la version movil */
+@media all and (max-width: 700px){
+    .popUp__Content{
+        background-color: white;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+        border-radius: 5px;
+        position: fixed;
+        top: 5vh;
+        width: 90%;
+        left: 5%;
+    }
+    .popUp__Body{
+        padding: 0;
+    }
+    .popUp__Img--content{
+        width: 60%;
+        margin: auto;
+    }
+    .popUp__Fields{
+        width: 70%;
+    }
+}
