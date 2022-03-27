@@ -1,3 +1,4 @@
+<!-- Login -->
 <section class='popUp__Backdrop' id='popUpBackdropLogin'>
     <article class='popUp__Content' id='popUpContentLogin'>
         <div class='popUp__Nav'>
@@ -71,47 +72,59 @@
                 <i class="fab fa-instagram-square"></i>
             </section>
             <section>
-                <form class='popUp__Fields'>
-                    <input 
+                <form action='' method='POST' class='popUp__Fields'>
+                    <input
+                        name="nombreCompleto"
                         placeholder='Nombre completo'
                         type='text'
                     />
-                    <input 
+                    <input
+                        name="nombreUsuario"
                         placeholder='Nombre de usuario'
                         type='text'
                     />
-                    <input 
+                    <input
+                        name="email"
                         placeholder='Correo electronico'
                         type='email'
                     />
                     <label>Fecha de nacimiento</label>
-                    <input 
+                    <input
+                        name="fechaNacimiento"
                         type='date'
                     />
                     <label>País</label>
-                    <select>
-                        <option>Colombia</option>
-                        <option>México</option>
-                        <option>Chile</option>
-                        <option>Paraguay</option>
-                        <option>Argentina</option>
+                    <select
+                        name="pais"
+                    >
+                        <option value="colombia">Colombia</option>
+                        <option value="mexico">México</option>
+                        <option value="chile">Chile</option>
+                        <option value="paraguay">Paraguay</option>
+                        <option value="argentina">Argentina</option>
                     </select>
                     <label>Tipo de cuenta</label>
                     <div class='popUp__Type'>
                         <label>Vendedor</label>
-                        <input 
+                        <input
+                            name="tipoCuenta"
                             type='checkbox'
+                            value="vendedor"
                         />
                         <label>Comprador</label>
-                        <input 
+                        <input
+                            name="tipoCuenta"
                             type='checkbox'
+                            value="comprador"
                         />
                     </div>
-                    <input 
+                    <input
+                        name="contrasenia1"
                         placeholder='Contraseña'
                         type='password'
                     />
-                    <input 
+                    <input
+                        name="contrasenia2"
                         placeholder='Repite tu contraseña'
                         type='password'
                     />

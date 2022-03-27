@@ -1,4 +1,5 @@
-[{"id":1,"buyer1":"Trixi Simka","buyer2":"Davide Ovenden","buyer3":"Marlin Trattles"},
+[
+{"id":1,"buyer1":"Trixi Simka","buyer2":"Davide Ovenden","buyer3":"Marlin Trattles"},
 {"id":2,"buyer1":"Valaria Palffrey","buyer2":"Lydia Onion","buyer3":"Rosanne Greyes"},
 {"id":3,"buyer1":"Pollyanna Sharland","buyer2":"Curr Brundale","buyer3":"Mortimer Inseal"},
 {"id":4,"buyer1":"Josefa Farnish","buyer2":"Marlo Mounch","buyer3":"Jere Lujan"},
@@ -39,19 +40,5 @@
 {"id":39,"buyer1":"Chandal Gallehawk","buyer2":"Loleta O'Mailey","buyer3":"Rosita Thuillier"},
 {"id":40,"buyer1":"Vikky Sneller","buyer2":"Hugues Sandars","buyer3":"Brandice Bleasdale"},
 {"id":41,"buyer1":"Nerta Barsham","buyer2":"Maddie Brinkworth","buyer3":"Harv Scotts"},
-{"id":42,"buyer1":"Seth Cockrill","buyer2":"Storm Upchurch","buyer3":"Jeremias Manketell"},
-{"id":43,"buyer1":"Corri Derry","buyer2":"Channa Comar","buyer3":"Candice Fake"},
-{"id":44,"buyer1":"Thain Whodcoat","buyer2":"Jabez Durnall","buyer3":"Prue Neasam"},
-{"id":45,"buyer1":"Cristabel Dorrell","buyer2":"Glen Gianulli","buyer3":"Fidel Satch"},
-{"id":46,"buyer1":"Salomo Siward","buyer2":"Ced Van der Baaren","buyer3":"Carole Annable"},
-{"id":47,"buyer1":"Aube Sutlieff","buyer2":"Hirsch Ranald","buyer3":"Ronnie Garwood"},
-{"id":48,"buyer1":"Levey Fraser","buyer2":"Larina Schooling","buyer3":"Darby Oldall"},
-{"id":49,"buyer1":"Leila Filyukov","buyer2":"Hyacintha Albarez","buyer3":"Alvinia Please"},
-{"id":50,"buyer1":"Jannel Duhig","buyer2":"Hilda Braddon","buyer3":"Abie Fills"},
-{"id":51,"buyer1":"Lief Southwick","buyer2":"Camellia Cattel","buyer3":"Obed Gunther"},
-{"id":52,"buyer1":"Brander Gockeler","buyer2":"Selig Cunnane","buyer3":"Farleigh Spores"},
-{"id":53,"buyer1":"Nathalie Geldeard","buyer2":"Arturo Owttrim","buyer3":"Dilly Renowden"},
-{"id":54,"buyer1":"Buck Kesper","buyer2":"Kahaleel Donn","buyer3":"Silvanus Batrip"},
-{"id":55,"buyer1":"Godart O'Currane","buyer2":"Benoit Fearne","buyer3":"Jorie Mounfield"},
-{"id":56,"buyer1":"Gilbertina Lepard","buyer2":"Sal Kyllford","buyer3":"Verney Haberfield"},
-{"id":57,"buyer1":"Archibold Gumly","buyer2":"Kippie Broadway","buyer3":"Sherwynd Wurst"}]
+{"id":42,"buyer1":"Seth Cockrill","buyer2":"Storm Upchurch","buyer3":"Jeremias Manketell"}
+]

@@ -1,12 +1,21 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
 /* Estilos Globales */
 body{
     background-color: white;
-    width:100%;
-    margin: auto;
+    /* width:100%; */
+    /* margin: auto; */
     justify-content: center;
-    min-width:600px;
-    max-width:2000px
- }
+    /* min-width:600px;
+    max-width:2000px */
+}
+
+nav{
+    top: 0px;
+}
 
 /* Letras Perfil */
  .H1perfil{

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <%- include('../partials/head') %>
+    <link href ="/css/header.css", rel="stylesheet">
+    <link href ="/css/popUp.css", rel="stylesheet">
+    <link href ="/css/producto-edicion.css", rel="stylesheet">
+    <link href ="/css/footer.css", rel="stylesheet">
+    <title>NFTART - Edición de Producto</title>
+</head>
+<body>
+
+    <%- include('../partials/login-register')%>
+    <%- include('../partials/header') %>
+
+    <main>
+
+        <!-- PRODUCTO EDICIÓN -->
+        <section class='main_box'>
+            <div class='main_content' style="padding-top: 5rem; padding-bottom: 5rem;">
+                <h1>Ops ocurrió un error inesperado</h1>
+                <h2>Descripcion del error:</h2>
+                <p><%=error.text%></p>
+            </div>
+        </section>
+
+    </main>
+
+    <%- include('../partials/footer') %>
+    <script src='/js/popUp.js'></script>
+</body>
+</html>

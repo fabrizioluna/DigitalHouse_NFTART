@@ -46,18 +46,18 @@
     
     <!-- Menu Perfil -->
     
-        <section>
+        <!-- <section>
             <div>
-            <nav class="Menuperfil">
+            <div class="Menuperfil">
             <ul class="Menuperfilb">
                 <li class="Menuperfilc"> <a href="#" id='buttonCollection'> COLECCION </a></li>
                 <li class="Menuperfilc"> <a href="#" id='buttonFavorites'> FAVORITOS </a></li>
                 <li class="Menuperfilc"> <a href="#" id='buttonActivity'> ACTIVIDAD </a></li>
                 <li class="Menuperfilc"> <a href="#" id='buttonOffers'> OFERTAS </a></li>
             </ul>
-            </nav>
+        </div>
             </div>
-        </section>
+        </section> -->
 
     <!-- Submenu Perfil Colección, Creados, Favoritos  -->
 
@@ -99,17 +99,17 @@
 
           <section>
             <div>
-            <nav class= "Submenuperfilao"> 
+            <div class= "Submenuperfilao"> 
                 <ul class= "Submenuperfilaob">
                     <button class="lupa"><i class='fas fa-search'></i></button>
                     <input class='botonbusqueda'></input>
                 </ul>
-            </nav> 
+            </div> 
             </div> 
         </section>    
 
         <!-- Colección -->
-        <section class="Coleccion">
+        <!-- <section class="Coleccion">
         <div class="Collecciona">
             <article class="itemcoleccion">
                 <img src="/img/NFTAR AJUSTADAS/OPCION ARTE 1.jpg" class="Imagenesftp">
@@ -242,27 +242,68 @@
                 </div>
             </article>
         </div>
-        </section>
+        </section> -->
 
         <!-- Actividad -->
         <section class="Tablaactividad">
         <div>
         <table>
-            <div class= "MenuTabla">
+            <!-- <div class= "MenuTabla"> -->
             <tr>
-                <th>Tipo</th>
-                <th>NFT</th>
-                <th>Precio</th>
+                <th class='tablaActividad__titulo1'>Nombre</th>
+                <th class='tablaActividad__titulo2'>Precio</th>
+                <!-- <th>Precio</th>
                 <th>Propietario Anterior</th>
-                <th>Fecha / Hora de Operación</th>
+                <th>Fecha / Hora de Operación</th> -->
             </tr>
             </div>
             <tr>
-                <td> Tipo1</td>
-                <td> NFT2</td>
-                <td class= "precioc"> Precio1</td>
-                <td> Anterior Propietario1</td>
-                <td> Fecha / Hora Operacion1 </td>
+                <!-- <td>Tipo</td> -->
+                <td class='tablaActividad__descripcion'>
+                    <!-- <figure> -->
+                        <img
+                            src='https://images.ole.com.ar/2022/01/23/dgnR0nTmN_720x0__1.jpg'
+                        />
+                    <!-- </figure> -->
+                    <div class='tablaActividad__informacion'>
+                        <span class='descripcion__1'>Meebits</span>
+                        <span class='descripcion__2'>ETH</span>
+                        <span class='descripcion__3'>Expira en 12hrs y 30mins</span>
+                    </div>
+                </td>
+                <td class= "precioc"> $15.00 USD</td>
+            </tr>
+            <tr>
+                <!-- <td>Tipo</td> -->
+                <td class='tablaActividad__descripcion'>
+                    <!-- <figure> -->
+                        <img
+                            src='https://images.ole.com.ar/2022/01/23/dgnR0nTmN_720x0__1.jpg'
+                        />
+                    <!-- </figure> -->
+                    <div class='tablaActividad__informacion'>
+                        <span class='descripcion__1'>Meebits</span>
+                        <span class='descripcion__2'>ETH</span>
+                        <span class='descripcion__3'>Expira en 12hrs y 30mins</span>
+                    </div>
+                </td>
+                <td class= "precioc"> $15.00 USD</td>
+            </tr>
+            <tr>
+                <!-- <td>Tipo</td> -->
+                <td class='tablaActividad__descripcion'>
+                    <!-- <figure> -->
+                        <img
+                            src='https://images.ole.com.ar/2022/01/23/dgnR0nTmN_720x0__1.jpg'
+                        />
+                    <!-- </figure> -->
+                    <div class='tablaActividad__informacion'>
+                        <span class='descripcion__1'>Meebits</span>
+                        <span class='descripcion__2'>ETH</span>
+                        <span class='descripcion__3'>Expira en 12hrs y 30mins</span>
+                    </div>
+                </td>
+                <td class= "precioc"> $15.00 USD</td>
             </tr>
             <tr>
                 <td> Tipo2 </td>
@@ -324,6 +365,7 @@
 
     <%- include('../partials/footer')%>
 
-    <script src='/js/popUp.js'></script>
+    <script src='/scripts/popUp.js'></script>
+    <script src='/scripts/menu_mobile.js'></script>
 </body>
 </html>
