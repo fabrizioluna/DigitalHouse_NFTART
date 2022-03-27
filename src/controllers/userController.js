@@ -4,6 +4,10 @@ const USER = {
         res.render('user/usuario');
     },
 
+    register: (req, res) => {
+        res.redirect('home')
+    }
+
 };
 
 module.exports = USER;
