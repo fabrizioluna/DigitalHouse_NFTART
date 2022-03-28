@@ -9,6 +9,7 @@ const USER = {
 
     profile: function (req, res) {
         res.render('user/usuario');
+        user: req.session.userLogeado;
     },
 
     editProfile: function (req, res) {
@@ -16,6 +17,7 @@ const USER = {
     },
 
     register: function (req, res) {
+        res.cookie('Cookie', {masAge: 6000});
         res.render('user/usuario-registro', {
             error: null,
             old: null
@@ -51,8 +53,10 @@ const USER = {
             });
         };
 
-        const userExist = usuariosBD.map( function (e) {
-            if ((e.nombreUsuario === nombreUsuario) || (e.email === email)) return true;
+        let userExist = false;
+
+        usuariosBD.map( function (e) {
+            if ((e.nombreUsuario === nombreUsuario) || (e.email === email)) return userExist = true;
         });
 
         if(userExist){
@@ -94,7 +98,7 @@ const USER = {
 
         FS.writeFileSync(PATH.join(__dirname,"../data/usuarios.json"), JSON.stringify(usuariosBD,null,' '));
 
-        res.redirect("/");
+        res.redirect("/user/usuario-login");
     
     },
 
@@ -115,16 +119,28 @@ const USER = {
 
         usuariosBD.map( function (e) {
             if ((e.email === email) && bcrypt.compareSync(contrasenia, e.contrasenia)) {
-                // req.session.aut = true;
-                res.cookie('cookie',{maxAge:60000});
-                return res.redirect('/');
-            } /*else {
-                // req.session.aut = false;
-                return res.render('user/usuario-login', {error: "Usuario y/o contraseña no coinciden"});
-            }*/
+                req.session.userLogeado = usuariosBD;
+                return res.redirect('/user/usuario')}
+            if(userNoExist){
+                return res.render('user/usuario-login', {
+                    error: [
+                        {
+                            email:{
+                                msg: 'Las credecniales son inválidad'
+                            }
+                        }
+                    ],
+                    old: req.body
+                });
+            }
+
         });
     
     },
+    logout: function (req, res) {
+        req.session.destroy();
+        return res.redirect('/')
+    }
 };
 
 module.exports = USER;

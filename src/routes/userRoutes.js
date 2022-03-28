@@ -1,6 +1,10 @@
 const EXPRESS = require('express');
 const ROUTER = EXPRESS.Router();
 const { body } = require('express-validator');
+const autMiddleware = require ('../modules/autMiddleware');
+const guestMiddleware = require ('../modules/guestMiddleware');
+
+
 
 const validacionRegistro = [
     body('nombreCompleto').notEmpty().withMessage('Completa el nombre'),
@@ -20,11 +24,13 @@ const validacionLogin = [
 
 const USER = require('../controllers/userController');
 
-ROUTER.get('/', USER.profile);
+ROUTER.get('/', autMiddleware, USER.profile);
 ROUTER.get('/edicionRegistro', USER.editProfile);
-ROUTER.get('/usuarioRegistro', USER.register);
+ROUTER.get('/usuarioRegistro',guestMiddleware, USER.register);
 ROUTER.post('/usuarioRegistro', validacionRegistro, USER.store);
-ROUTER.get('/usuarioLogin', USER.login);
+ROUTER.get('/usuarioLogin',guestMiddleware, USER.login);
 ROUTER.post('/usuarioLogin', validacionLogin, USER.enter);
+ROUTER.get('/logout', USER.logout);
+
 
 module.exports = ROUTER;

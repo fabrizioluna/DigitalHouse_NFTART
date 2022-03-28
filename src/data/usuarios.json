@@ -28,5 +28,25 @@
   "pais": "argentina",
   "tipoCuenta": "vendedor",
   "contrasenia": "$2b$12$SNRP6Zc5omGfrvvN72xJNewfe.MljbxcOE.1MX.jM.3BbKhZ1a/am"
+ },
+ {
+  "id": 4,
+  "nombreCompleto": "hugo",
+  "nombreUsuario": "hugo",
+  "email": "hepaga-05@hotmal.com",
+  "fechaNacimiento": "2222-01-01",
+  "pais": "Colombia",
+  "tipoCuenta": "vendedor",
+  "contrasenia": "$2b$12$Sh5siYDqeIT8u8xpL8KDNeZnh4.4o4Y3KfYIxTO3ulQkn3pU1PZDa"
+ },
+ {
+  "id": 5,
+  "nombreCompleto": "hugo20",
+  "nombreUsuario": "hugo20",
+  "email": "hugo@hugo20.com",
+  "fechaNacimiento": "2022-03-29",
+  "pais": "Colombia",
+  "tipoCuenta": "vendedor",
+  "contrasenia": "$2b$12$MeQsQHILelxmIRB4P1I.ouWD6LVc/yJW3.AY9dceOrimvDDdfKCC2"
  }
 ]
