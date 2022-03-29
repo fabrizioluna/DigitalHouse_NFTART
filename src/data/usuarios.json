@@ -78,5 +78,25 @@
   "pais": "Paraguay",
   "tipoCuenta": "vendedor",
   "contrasenia": "$2b$12$1yx73308vsmqILC1SLtzoevz1o8kJfUpAI8W0CnbgzXmbS9lf9Xbe"
+ },
+ {
+  "id": 9,
+  "nombreCompleto": "Fernanda",
+  "nombreUsuario": "Fer",
+  "email": "dfer@glaie.com",
+  "fechaNacimiento": "2022-03-09",
+  "pais": "Mexico",
+  "tipoCuenta": "vendedor",
+  "contrasenia": "$2b$12$zwA6V0DZ2ctknLD8n.ayy.PjmqNb332lD6iJ8vBrW1mKHH9bGrC5S"
+ },
+ {
+  "id": 10,
+  "nombreCompleto": "Fernandaaaa",
+  "nombreUsuario": "Ferrr",
+  "email": "dfer@glaieee.com",
+  "fechaNacimiento": "2022-03-09",
+  "pais": "Mexico",
+  "tipoCuenta": "vendedor",
+  "contrasenia": "$2b$12$Yv2V74506QPh4AKGUO.jqewCQkcHGZk990AB9rz.1j4uVIkxp1boa"
  }
 ]
