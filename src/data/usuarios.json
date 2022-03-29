@@ -31,12 +31,52 @@
  },
  {
   "id": 4,
-  "nombreCompleto": "JohnDoeee",
-  "nombreUsuario": "JohnDoeee",
-  "email": "jdoe.22@gmail.com",
-  "fechaNacimiento": "2022-03-03",
+  "nombreCompleto": "hugo",
+  "nombreUsuario": "hugo",
+  "email": "hepaga-05@hotmal.com",
+  "fechaNacimiento": "2222-01-01",
   "pais": "Colombia",
   "tipoCuenta": "vendedor",
-  "contrasenia": "$2b$12$yDSgBFgRQOpJ7LROe9U3aulXvCQOrNnJJN87bpyGTv6ZFMgAkIwzK"
+  "contrasenia": "$2b$12$Sh5siYDqeIT8u8xpL8KDNeZnh4.4o4Y3KfYIxTO3ulQkn3pU1PZDa"
+ },
+ {
+  "id": 5,
+  "nombreCompleto": "hugo20",
+  "nombreUsuario": "hugo20",
+  "email": "hugo@hugo20.com",
+  "fechaNacimiento": "2022-03-29",
+  "pais": "Colombia",
+  "tipoCuenta": "vendedor",
+  "contrasenia": "$2b$12$MeQsQHILelxmIRB4P1I.ouWD6LVc/yJW3.AY9dceOrimvDDdfKCC2"
+ },
+ {
+  "id": 6,
+  "nombreCompleto": "jfprada@unal.co",
+  "nombreUsuario": "juan prada",
+  "email": "jfprada@unal.co",
+  "fechaNacimiento": "1993-03-08",
+  "pais": "Colombia",
+  "tipoCuenta": "vendedor",
+  "contrasenia": "$2b$12$DyVBoW/JRA0UKP9nKa2ad.678aHXZEQbLtfaZC1eP.cNvzniDp/i6"
+ },
+ {
+  "id": 7,
+  "nombreCompleto": "jfpradajasjflas@unal.co",
+  "nombreUsuario": "juan prada s",
+  "email": "jfpradajasjflas@unal.co",
+  "fechaNacimiento": "1993-03-08",
+  "pais": "Colombia",
+  "tipoCuenta": "vendedor",
+  "contrasenia": "$2b$12$y2qRy4WQ2K/zsIXuKFQa1.5UDak3gZmS/kMXeS0D76oCtQVMHqs1S"
+ },
+ {
+  "id": 8,
+  "nombreCompleto": "John Daniels",
+  "nombreUsuario": "John Danielss",
+  "email": "daniels@glai.com",
+  "fechaNacimiento": "2022-03-09",
+  "pais": "Paraguay",
+  "tipoCuenta": "vendedor",
+  "contrasenia": "$2b$12$1yx73308vsmqILC1SLtzoevz1o8kJfUpAI8W0CnbgzXmbS9lf9Xbe"
  }
 ]

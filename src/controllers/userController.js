@@ -9,6 +9,7 @@ const USER = {
 
     profile: function (req, res) {
         res.render('user/usuario');
+        user: req.session.userLogeado;
     },
 
     editProfile: function (req, res) {
@@ -16,6 +17,7 @@ const USER = {
     },
 
     register: function (req, res) {
+        res.cookie('Cookie', {masAge: 6000});
         res.render('user/usuario-registro', {
             error: null,
             old: null
@@ -96,15 +98,16 @@ const USER = {
 
         FS.writeFileSync(PATH.join(__dirname,"../data/usuarios.json"), JSON.stringify(usuariosBD,null,' '));
 
-        res.redirect("/");
+        res.redirect("/user/usuarioLogin");
     
     },
 
     enter: function (req, res) {
 
-        const { email,
-        contrasenia
-        } = req.body
+        const { 
+            email,
+            contrasenia
+        } = req.body;
 
         let error = validationResult(req);
 
@@ -115,17 +118,31 @@ const USER = {
             });
         };
 
-        usuariosBD.map( function (e) {
-            if ((e.email === email) && bcrypt.compareSync(contrasenia, e.contrasenia)) {
-                // req.session.aut = true;
-                res.cookie('cookie',{maxAge:60000});
-                return res.redirect('/');
-            } /*else {
-                // req.session.aut = false;
-                return res.render('user/usuario-login', {error: "Usuario y/o contraseña no coinciden"});
-            }*/
+        let userNoExist = false;
+        usuariosBD.map( function (e) {    
+            if ((e.email === email) && bcrypt.compareSync(contrasenia, e.contrasenia)){
+                return userNoExist = true
+            }
         });
+
+        if(userNoExist){
+            return res.render('user/usuarioLogin', {
+                error: [
+                    {
+                        email: {
+                            msg: 'Las credenciales no son válidas',
+                        }
+                    }
+                ]
+            })
+        } 
+        req.session.userLogeado = usuariosBD;
+        return res.redirect('/');
+    },
     
+    logout: function (req, res) {
+        req.session.destroy();
+        return res.redirect('/')
     },
 };
 

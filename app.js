@@ -4,6 +4,18 @@ const PATH = require('path');
 const METHODOVERRIDE = require('method-override'); // Para poder usar los métodos PUT y DELETE
 const session = require('express-session');
 const cookie = require('cookie-parser');
+const userLogeoMiddleware = require ('./src/modules/userLogeoMiddleware');
+
+
+APP.use(session({
+    secret: '4E4654415254',
+    resave: true,
+    saveUninitialized: true
+}
+));
+
+APP.use(userLogeoMiddleware);
+
 
 APP.use(EXPRESS.static(PATH.join(__dirname, './public')));
 APP.use(EXPRESS.urlencoded({extended: false}));
@@ -23,12 +35,7 @@ APP.use('/', MAIN);
 APP.use('/product', PRODUCT);
 APP.use('/user', USER);
 
-APP.use(session({
-        secret: '4E4654415254',
-        resave: true,
-        saveUninitialized: true
-    }
-));
+
 
 APP.use('*', function (req, res) {
     res.sendFile(__dirname + '/public/img/error_404.png')

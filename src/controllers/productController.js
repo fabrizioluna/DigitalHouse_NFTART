@@ -7,7 +7,7 @@ const compradoresBD = JSON.parse(FS.readFileSync(PATH.join(__dirname,"../data/co
 const PRODUCT = {
 
     marketplace: function (req, res) {
-        res.render("product/producto-marketplace");
+        res.render("product/producto-marketplace", {productos:productosBD});
     },
 
     create: function (req, res) {

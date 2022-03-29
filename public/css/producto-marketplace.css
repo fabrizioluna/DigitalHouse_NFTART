@@ -252,9 +252,17 @@ h2{
 .main-article{
     width: 100%;
     display: flex;
-    flex-wrap: wrap;
+    right: 0%;
+    flex-wrap:wrap;
     border-top: 3px solid rgb(100, 100, 100);
 }
+
+/* .precio{
+    position: absolute;
+    bottom: 20px;
+    right: 5%;
+} */
+
 
 .price{
     font-size: 25px;
@@ -296,6 +304,9 @@ div.main-article i:hover{
     height: 10px;
     position: absolute;
     bottom: 3%;
+    font-family: 'Alumni Sans', sans-serif;
+    color: rgb(108, 206, 17);
+    font-size: 25px;
 }
 
 
