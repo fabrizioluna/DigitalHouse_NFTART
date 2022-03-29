@@ -41,7 +41,7 @@ module.exports = {
             // Usamos la variable validateUser donde tiene almacenamos un valor: 'true' o 'false'.
             // Este valor cambia si el usuario esta registrado ya... entonces un true, si no un false.
             // Si la variable es verdadera entonces usamos el metodo 'reject' que lo que hace es 
-            // marcarlo como un error en la problema y, dentro del controllador manejamos esa excepcion con un catch.
+            // marcarlo como un error en la promesa y si la hay dentro del controllador manejamos esa excepcion con un catch.
             if(!validateUser) return reject({ error: [ { msg: 'Nombre de usuario o email en uso' }], old: userInput});
             // Hacemos lo mismo con el que comprueba las contraseñas sean iguales...
             if (contrasenia1 !== contrasenia2) return reject({ error: [ { msg: 'Las contraseñas no coinciden' } ], old: userInput});
@@ -68,5 +68,19 @@ module.exports = {
             // Si todo está bien... terminamos la promesa con un resolve
             return resolve({ message: 'Account create successfully!' })
         })
+    },
+    loginUser(userInput){
+        return new Promise((resolve, reject) => {
+            const { email, contrasenia } = userInput;
+
+            let userIsRegister = false;
+            localStorageUsers.map((user) => {    
+                (user.email === email) && bcrypt.compareSync(contrasenia, user.contrasenia)
+                ? userIsRegister = true : userIsRegister = false;
+            });
+    
+            if(!userIsRegister) return reject({ error: [ { msg: 'Las credenciales no son válidas', } ], old: userInput})
+            return resolve('User Loggin')
+        });
     }
 }

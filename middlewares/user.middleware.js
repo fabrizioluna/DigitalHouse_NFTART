@@ -16,6 +16,7 @@ const loginValidate = [
     body('contrasenia').notEmpty().withMessage('Completa la contraseña'),
 ];
 
+// Exportamos los middlewares para usarlos en toda la app
 module.exports = {
     registerValidate,
     loginValidate

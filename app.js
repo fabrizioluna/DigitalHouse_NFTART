@@ -12,6 +12,7 @@ const USER = require('./src/routes/userRoutes');
 const router = require('./routes');
 
 
+
 APP.use(session({
     secret: '4E4654415254',
     resave: true,
@@ -36,7 +37,7 @@ APP.listen(process.env.PORT || 3000, function () {
 // APP.use('/product', PRODUCT);
 // APP.use('/user', USER);
 
-APP.use('/v1', router);
+APP.use('/', router);
 
 
 
