@@ -51,8 +51,10 @@ const USER = {
             });
         };
 
-        const userExist = usuariosBD.map( function (e) {
-            if ((e.nombreUsuario === nombreUsuario) || (e.email === email)) return true;
+        let userExist = false;
+
+        usuariosBD.map( function (e) {
+            if ((e.nombreUsuario === nombreUsuario) || (e.email === email)) return userExist = true;
         });
 
         if(userExist){
