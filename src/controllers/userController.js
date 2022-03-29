@@ -98,7 +98,7 @@ const USER = {
 
         FS.writeFileSync(PATH.join(__dirname,"../data/usuarios.json"), JSON.stringify(usuariosBD,null,' '));
 
-        res.redirect("/user/usuario-login");
+        res.redirect("/user/usuarioLogin");
     
     },
 
@@ -117,26 +117,28 @@ const USER = {
             });
         };
 
-        usuariosBD.map( function (e) {
+        let userNoExist= false
+        usuariosBD.map( function (e) {    
             if ((e.email === email) && bcrypt.compareSync(contrasenia, e.contrasenia)) {
-                req.session.userLogeado = usuariosBD;
-                return res.redirect('/user/usuario')}
-            if(userNoExist){
-                return res.render('user/usuario-login', {
-                    error: [
-                        {
-                            email:{
-                                msg: 'Las credecniales son inválidad'
-                            }
-                        }
-                    ],
-                    old: req.body
-                });
-            }
-
+                return userNoExist = true
+                }
         });
+
+        if(userNoExist){
+            return res.render('user/usuarioLogin', {
+                error: [
+                    {
+                        email: {
+                            msg: 'Las credenciales no son válidas',
+                        }
+                    }
+                ]
+            })
+        } else {
+            req.session.userLogeado = usuariosBD;
+            return res.redirect('/');
+        }},
     
-    },
     logout: function (req, res) {
         req.session.destroy();
         return res.redirect('/')
