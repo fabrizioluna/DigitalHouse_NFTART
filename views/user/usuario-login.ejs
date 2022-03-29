@@ -8,7 +8,7 @@
     <title>Registro de Usuario</title>
 </head>
 <body>
-    <%- include("../partials/header")%>
+    <!-- <%- include("../partials/header")%> -->
 
     <section class='popUp__Backdrop' id='popUpBackdropLogin'>
         <article class='popUp__Content' id='popUpContentLogin'>
@@ -39,7 +39,7 @@
                 <section>
                     <% if (error != null) { %>
                         <div class='popUp__Errors'><% error.map((err) => { %>
-                            <span><%= err.msg %></span>
+                            <span><%=err.msg%></span>
                         <% }) %></div>
                     <% } %>
                     <% console.log(old) %>
@@ -48,7 +48,7 @@
                             name="email"
                             placeholder='Correo electronico'
                             type='email'
-                            value='<%= old !== null ? old.email : '' %>'
+                            value='<%= old !== null ? old.email : '' %>' 
                         />
                         <input
                             name="contrasenia"

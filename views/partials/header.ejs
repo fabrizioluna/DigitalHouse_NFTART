@@ -5,21 +5,19 @@
             <img src="/img/logo_temporal.png" class='nav__primary-logo'>
         </a>
         <div class='nav__primary-text'>
-            <% if (locals.isLogged) { %>
+            <% if(locals.isLogged) { %>
             <a href="user/usuarioLogin" class='nav__primary-login'>
                 <div class="circulo">
                     <img src='/img/imagenusuario.jpg' class='ok'></div>
-                     Hola <%= local.userLogeado.nombreUsuario %>
+                    Hola <%=locals.userLogeado.nombreUsuario%>
                     <ul>
                     <a class="nav__primary-profile" href="/user/usuario">MY PROFILE</a>
                     <li><hr class="dropdown-divider"></li>
                     <a class="nav__primary-logout" href="/user/logout">LOUGOUT</a>
-                </ul>
-            <% } else { %>
-
-
-                <div class='nav__primary-login_text' id='login'>LOGIN</div>
+                    </ul>
             </a>
+            <% } else { %>    
+                <a class='nav__primary-login_text' href="user/usuarioLogin" id='login'>LOGIN</a>
             <a href="user/usuarioRegistro" class='nav__primary-register' id='register'>
                 REGISTRO
             </a>

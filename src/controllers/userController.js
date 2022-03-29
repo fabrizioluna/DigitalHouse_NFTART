@@ -125,15 +125,14 @@ const USER = {
             }
         });
 
-        if(userNoExist){
-            return res.render('user/usuarioLogin', {
+        if(!userNoExist){
+            return res.render('user/usuario-login', {
                 error: [
                     {
-                        email: {
-                            msg: 'Las credenciales no son válidas',
-                        }
+                        msg: 'Las credenciales no son válidas',
                     }
-                ]
+                ],
+                old: req.body
             })
         } 
         req.session.userLogeado = usuariosBD;
