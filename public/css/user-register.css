@@ -2,6 +2,7 @@ label{
     font-size: 12px;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: lighter;
+    margin-top: 5px;
     margin-bottom: 5px;
 }
 
@@ -93,6 +94,7 @@ select{
     background-color: transparent;
     color: #4e4e4e;
     font-size: 17px;
+    text-decoration: none;
     cursor: pointer;
 }
 
@@ -102,6 +104,7 @@ select{
     background-color: transparent;
     color: #4e4e4e;
     font-size: 17px;
+    text-decoration: none;
     cursor: pointer;
 }
 
@@ -129,17 +132,14 @@ select{
 }
 
 .popUp__Errors{
-    width: 27%;
-    background-color: rgb(255, 154, 154);
+    width: 90%;
+    color: rgb(245, 31, 31);
+    font-weight: bold;
     display: flex;
     flex-direction: column;
     margin: auto;
-    padding: 1rem;
-}
-
-.popUp__Errors span {
-    width: 100%;
-    color: rgb(0, 0, 0);
+    /* padding: 1rem; */
+    font-size: 12px;
 }
 
 .popUp__Fields{
@@ -156,7 +156,8 @@ select{
     border-color: rgb(7, 33, 70, 0.2);
     border-radius: 8px;
     height: 1.5rem;
-    margin-bottom: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 .popUp__Fields button{
@@ -165,6 +166,7 @@ select{
     color: white;
     background-color: #072146;
     font-weight: bolder;
+    margin-top: 10px;
     margin-bottom: 10px;
 }
 
@@ -181,10 +183,17 @@ select{
 
 .popUp__Type{
     display: flex;
+    align-items: center;
+}
+
+.popUp__Type label{
+    display: flex;
+    align-items: center;
+    width: 50%;
 }
 
 .popUp__Type input{
-    width: 8%;
+    width: 15%;
 }
 
 /* Estilos para la version movil */

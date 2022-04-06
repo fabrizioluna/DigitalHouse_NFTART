@@ -22,14 +22,16 @@ nav{
     color: rgb(47, 194, 3);
     font-size: 28px;
     padding-left: 20px;
-    margin-top:0%;
+    margin-top:5px;
+    margin-bottom:5px;
  }
 
 .H2perfil{
     color:rgb(136, 136, 136);   
     font-size: 22px; 
     padding-left: 20px;
-    margin-top:-2%;
+    margin-top:5px;
+    margin-bottom:5px;
 }
 
 
@@ -81,7 +83,6 @@ p{
 
 /* ImagenPerfil */
 .ok{
-    width: 200px;
     height: 200px;
     background-color: rgb(219, 219, 219);
     border-radius: 100%;

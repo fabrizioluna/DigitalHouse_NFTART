@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%-include('../partials/head')%>
+    <link href ="/css/user-register.css", rel="stylesheet">
+    <title>Registro de Usuario</title>
+</head>
+
+<body>
+
+    <%-include("../partials/header")%>
+
+    <section class='popUp__Backdrop' id='popUpBackdropRegister'>
+        <article class='popUp__Content' id='popUpContentRegister'>
+            <div class='popUp__Nav'>
+                <div class='popUp__Nav--button1'>
+                    <a href="/" id='popUp__BackRegister' class="fas fa-chevron-circle-left"></a>
+                </div>
+                <div class='popUp__Nav--button2'>
+                    <a href="/" id='popUp__CloseRegister' class="fas fa-times-circle"></a>
+                </div>
+            </div>
+            <div class='popUp__Body'>
+                <figure>
+                    <section class='popUp__Img--content'>
+                        <img 
+                            src="/img/logo_temporal.png"
+                            class='popUp__Logo'
+                        />
+                    </section>
+                </figure>
+                <section class='popUp__LoginWith'>
+                    <h4>Regístrate con:</h4>
+                    <i class="fab fa-facebook-square"></i>
+                    <i class="fab fa-twitter-square"></i>
+                    <i class="fab fa-github-square"></i>
+                    <i class="fab fa-instagram-square"></i>
+                </section>
+                <section>
+                    <form method="post" action="/user/register" enctype="multipart/form-data" class="popUp__Fields">
+                        <input
+                            name="fullName"
+                            placeholder='Nombre completo'
+                            type='text'
+                            value="<%=(locals.old) ? old.fullName : ''%>"
+                        />
+                        <div class="popUp__Errors"><%=((typeof(error) !== 'undefined') && (typeof(error.fullName) !== 'undefined')) ? error.fullName.msg : ''%></div>
+                        <input
+                            name="userName"
+                            placeholder='Nombre de usuario'
+                            type='text'
+                            value="<%=(locals.old) ? old.userName : ''%>"
+                        />
+                        <div class="popUp__Errors"><%=((typeof(error) !== 'undefined') && (typeof(error.userName) !== 'undefined')) ? error.userName.msg : ''%></div>
+                        <input
+                            name="email"
+                            placeholder='Correo electrónico'
+                            type='email'
+                            value="<%=(locals.old) ? old.email : ''%>"
+                        />
+                        <div class="popUp__Errors"><%=((typeof(error) !== 'undefined') && (typeof(error.email) !== 'undefined')) ? error.email.msg : ''%></div>
+                        <label>Fecha de nacimiento</label>
+                        <input
+                            name="birthday"
+                            type='date'
+                            value="<%=(locals.old) ? old.birthday : ''%>"
+                        />
+                        <div class="popUp__Errors"><%=((typeof(error) !== 'undefined') && (typeof(error.birthday) !== 'undefined')) ? error.birthday.msg : ''%></div>
+                        <label>País</label>
+                        <select name="country">
+                            <option value="" <%=(locals.old && old.country==='') ? 'selected' : ''%>>Selecciona una opción:</option>
+                            <option value="colombia" <%=(locals.old && old.country==='colombia') ? 'selected' : ''%>>Colombia</option>
+                            <option value="mexico" <%=(locals.old && old.country==='mexico') ? 'selected' : ''%>>México</option>
+                            <option value="chile" <%=(locals.old && old.country==='chile') ? 'selected' : ''%>>Chile</option>
+                            <option value="paraguay" <%=(locals.old && old.country==='paraguay') ? 'selected' : ''%>>Paraguay</option>
+                            <option value="argentina" <%=(locals.old && old.country==='argentina') ? 'selected' : ''%>>Argentina</option>
+                        </select>
+                        <div class="popUp__Errors"><%=((typeof(error) !== 'undefined') && (typeof(error.country) !== 'undefined')) ? error.country.msg : ''%></div>
+                        <label>Tipo de cuenta</label>
+                        <div class='popUp__Type'>
+                            <label>Vendedor
+                            <input
+                                name="userType"
+                                type='checkbox'
+                                value="vendedor"
+                                <%=(locals.old && old.userType && ((old.userType==='vendedor') || (old.userType[0]==='vendedor') || (old.userType[1]==='vendedor'))) ? 'checked' : ''%>
+                            /></label>
+                            <label>Comprador
+                            <input
+                                name="userType"
+                                type='checkbox'
+                                value="comprador"
+                                <%=(locals.old && old.userType && ((old.userType==='comprador') || (old.userType[0]==='comprador') || (old.userType[1]==='comprador'))) ? 'checked' : ''%>
+                            /></label>
+                        </div>
+                        <div class="popUp__Errors"><%=((typeof(error) !== 'undefined') && (typeof(error.userType) !== 'undefined')) ? error.userType.msg : ''%></div>
+                        <input
+                            name="password1"
+                            placeholder='Contraseña'
+                            type='password'
+                        />
+                        <div class="popUp__Errors"><%=((typeof(error) !== 'undefined') && (typeof(error.password1) !== 'undefined')) ? error.password1.msg : ''%></div>
+                        <input
+                            name="password2"
+                            placeholder='Repite tu contraseña'
+                            type='password'
+                        />
+                        <div class="popUp__Errors"><%=((typeof(error) !== 'undefined') && (typeof(error.password2) !== 'undefined')) ? error.password2.msg : ''%></div>
+                        <input
+                            name="avatar"
+                            type='file'
+                        />
+                        <div class="popUp__Errors"><%=((typeof(error) !== 'undefined') && (typeof(error.avatar) !== 'undefined')) ? error.avatar.msg : ''%></div>
+                        <button type='submit'>Registrarse</button>
+                    </form>
+                </section>
+            </div>
+        </article>
+    </section>
+    
+    <%-include("../partials/footer")%>
+
+</body>
+</html>

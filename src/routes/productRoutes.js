@@ -1,15 +1,15 @@
-const EXPRESS = require('express');
-const ROUTER = EXPRESS.Router();
-const UPLOADFILE = require('../modules/validImage');
+const express = require('express');
+const router = express.Router();
+const uploadFile = require('../modules/validImage');
 
-const PRODUCT = require('../controllers/productController');
+const product = require('../controllers/productController');
 
-ROUTER.get('/marketplace', PRODUCT.marketplace);
-ROUTER.get('/create', PRODUCT.create);
-ROUTER.post('/create', UPLOADFILE.single('imageProduct'), PRODUCT.store);
-ROUTER.get('/edit/:id', PRODUCT.edit);
-ROUTER.post('/edit', PRODUCT.update);
-ROUTER.get('/cart', PRODUCT.cart);
-ROUTER.get('/detail/:id', PRODUCT.detail);
+router.get('/marketplace', product.marketplace);
+router.get('/create', product.create);
+router.post('/create', uploadFile.single('imageProduct'), product.processCreate);
+router.get('/edit/:id', product.edit);
+router.post('/edit', product.processEdit);
+router.get('/cart', product.cart);
+router.get('/detail/:id', product.detail);
 
-module.exports = ROUTER;
+module.exports = router;

@@ -1,13 +1,16 @@
-footer {
+* {
     box-sizing: border-box;
     margin: 0px;
     padding: 0px;
-    width: 100%;
-    background-color: #072146;
 }
 
 
 /* FOOTER */
+footer {
+    width: 100%;
+    background-color: #072146;
+}
+
 hr {
     border-color: rgb(179, 179, 179, 0.7);
     width: 50%;

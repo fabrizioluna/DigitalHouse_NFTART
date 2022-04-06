@@ -22,7 +22,7 @@ select{
     left: 25%;
     z-index: 30;
     animation: slide-down 300ms ease-out forwards;
-    display: none;
+    /* display: none; */
 }
 
 .popUp__Backdrop{
@@ -33,7 +33,7 @@ select{
     height: 100vh;
     z-index: 20;
     background-color: rgba(0, 0, 0, 0.6);
-    display: none;
+    /* display: none; */
 }
 
 .popUp__Backdrop i{
@@ -75,6 +75,7 @@ select{
     background-color: transparent;
     color: #4e4e4e;
     font-size: 17px;
+    text-decoration: none;
     cursor: pointer;
 }
 
@@ -84,6 +85,7 @@ select{
     background-color: transparent;
     color: #4e4e4e;
     font-size: 17px;
+    text-decoration: none;
     cursor: pointer;
 }
 
@@ -128,6 +130,17 @@ select{
     text-align: center;
 }
 
+.popUp__Errors{
+    width: 90%;
+    color: rgb(245, 31, 31);
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    /* padding: 1rem; */
+    font-size: 12px;
+}
+
 .popUp__Fields{
     width: 30%;
     color: grey;
@@ -142,7 +155,8 @@ select{
     border-color: rgb(7, 33, 70, 0.2);
     border-radius: 8px;
     height: 1.5rem;
-    margin-bottom: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 .popUp__Fields button{
@@ -154,11 +168,35 @@ select{
     margin-bottom: 10px;
 }
 
+#registerButton a {
+    color: white;
+    text-decoration: none;
+}
+
 .popUp__Fields button:hover{
     background-color: rgb(7, 33, 70, 0.9);
 }
 
-.popUp__Fields span{
+.popUp__Fields-end {
+    display: flex;
+    justify-content: space-between;
+}
+
+.popUp__Fields-end label{
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: left;
+    align-self: center;
+    margin-bottom: 15px;
+}
+
+.popUp__Fields-end input{
+    align-self: center;
+}
+
+.popUp__Fields-end span{
     font-size: 12px;
     text-align: right;
     margin-bottom: 30px;

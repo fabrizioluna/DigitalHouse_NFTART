@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%-include('../partials/head')%>
+    <link href ="/css/user-login.css", rel="stylesheet">
+    <title>Ingreso de Usuario</title>
+</head>
+
+<body>
+
+    <%-include("../partials/header")%>
+
+    <section class='popUp__Backdrop' id='popUpBackdropLogin'>
+        <article class='popUp__Content' id='popUpContentLogin'>
+            <div class='popUp__Nav'>
+                <div class='popUp__Nav--button1'>
+                    <a href="/" id='popUp__BackLogin' class="fas fa-chevron-circle-left"></a>
+                </div>
+                <div class='popUp__Nav--button2'>
+                    <a href="/" id='popUp__CloseLogin' class="fas fa-times-circle"></a>
+                </div>
+            </div>
+            <div class='popUp__Body'>
+                <figure>
+                    <section class='popUp__Img--content'>
+                        <img 
+                            src="/img/logo_temporal.png"
+                            class='popUp__Logo'
+                        />
+                    </section>
+                </figure>
+                <section class='popUp__LoginWith'>
+                    <h4>Inicia sesión con:</h4>
+                    <i class="fab fa-facebook-square"></i>
+                    <i class="fab fa-twitter-square"></i>
+                    <i class="fab fa-github-square"></i>
+                    <i class="fab fa-instagram-square"></i>
+                </section>
+                <section>
+                    <form method="post" action="/user/login" class='popUp__Fields'>
+                        <div class="popUp__Errors"><%=((typeof(error) !== 'undefined') && (typeof(error.top) !== 'undefined')) ? error.top.msg : ''%></div>
+                        <input
+                            name="email"
+                            placeholder='Correo electrónico'
+                            type='email'
+                        />
+                        <div class="popUp__Errors"><%=((typeof(error) !== 'undefined') && (typeof(error.email) !== 'undefined')) ? error.email.msg : ''%></div>
+                        <input
+                            name="password"
+                            placeholder='Contraseña'
+                            type='password'
+                        />
+                        <div class="popUp__Errors"><%=((typeof(error) !== 'undefined') && (typeof(error.password) !== 'undefined')) ? error.password.msg : ''%></div>
+                        <div class='popUp__Fields-end'>
+                            <label>Recordarme
+                                <input
+                                    name="rememberUser"
+                                    type='checkbox'
+                                    value="yes"
+                            /></label>
+                            <span>¿Olvidaste tu contraseña?</span>
+                        </div>
+                        <button type='submit'>Ingresar</button>
+                        <button type='' id='registerButton'><a href="/user/register">¿No tienes cuenta? Regístrate</a></button>
+                    </form>
+                </section>
+            </div>
+        </article>
+    </section>
+    
+    <%-include("../partials/footer")%>
+    
+</body>
+</html>

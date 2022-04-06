@@ -1,146 +1,147 @@
-const FS = require('fs')
-const PATH = require('path');
+const fs = require('fs')
+const path = require('path');
 const { validationResult } = require('express-validator');
 const bcrypt = require('bcrypt');
 
-const usuariosBD = JSON.parse(FS.readFileSync(PATH.join(__dirname,"../data/usuarios.json")),'utf-8');
+const usersDB = JSON.parse(fs.readFileSync(path.join(__dirname,"../data/users.json")),'utf-8');
 
-const USER = {
-
+const user = {
+    
     profile: function (req, res) {
-        res.render('user/usuario');
-        user: req.session.userLogeado;
+        res.render('user/user-profile', {
+            user: req.session.userLogged
+        });
     },
 
-    editProfile: function (req, res) {
-        res.render('user/edicionRegistro');
+    edit: function (req, res) {
+        res.render('user/user-edit', {
+            user: req.session.userLogged
+        });
     },
 
     register: function (req, res) {
-        res.cookie('Cookie', {masAge: 6000});
-        res.render('user/usuario-registro', {
-            error: null,
-            old: null
+        res.render('user/user-register');
+    },
+    
+    processRegister: function (req, res) {
+
+        // Verificación de existencia de errores desde express-validator
+        let error = validationResult(req);
+
+        if (error.errors.length > 0) {
+            return res.render('user/user-register', {
+                error: error.mapped(), 
+                old: req.body
+            });
+        };
+
+        // Desestructuración del objeto req.body
+        const { 
+            fullName,
+            userName,
+            email,
+            birthday,
+            country,
+            userType,
+            password1,
+            password2
+        } = req.body
+
+        // Ingreso de datos a la BD
+        let idNew = usersDB[usersDB.length-1].id + 1;
+
+        let hashedPassword = bcrypt.hashSync(password2, 12);
+
+        usersDB.push({
+            id: idNew,
+            fullName,
+            userName,
+            email,
+            birthday,
+            country,
+            userType,
+            hashedPassword: hashedPassword,
+            avatar: req.file.filename
         });
+
+        fs.writeFileSync(path.join(__dirname,"../data/users.json"), JSON.stringify(usersDB,null,' '));
+
+        res.redirect('/user/login');
+    
     },
 
     login: function (req, res) {
-        res.render('user/usuario-login', {
-            error: null,
-            old: null
-        });
+        res.render('user/user-login');
     },
 
-    store: function (req, res) {
+    processLogin: function (req, res) {
 
-        const { 
-            nombreCompleto,
-            nombreUsuario,
+        // Verificación de existencia de errores desde express-validator
+        let error = validationResult(req);
+
+        if (error.errors.length > 0) {
+            return res.render('user/user-login', {
+                error: error.mapped()
+            });
+        };
+
+        // Desestructuración del objeto req.body
+        const {
             email,
-            fechaNacimiento,
-            pais,
-            tipoCuenta,
-            contrasenia1,
-            contrasenia2
+            password,
+            rememberUser
         } = req.body
 
-        let error = validationResult(req);
+        // Validación de credenciales
+        let userLog = false;
         
-        if (!error.isEmpty()) {
-            return res.render('user/usuario-registro', {
-                error: error.errors, 
-                old: req.body
-            });
-        };
-
-        let userExist = false;
-
-        usuariosBD.map( function (e) {
-            if ((e.nombreUsuario === nombreUsuario) || (e.email === email)) return userExist = true;
-        });
-
-        if(userExist){
-            return res.render('user/usuario-registro', {
-                error: [
-                    {
-                        msg: 'Nombre de usuario o email en uso'
-                    }
-                ],
-                old: req.body
-            });
-        }
-
-        let idNuevo = usuariosBD[usuariosBD.length-1].id + 1;
-
-        if (contrasenia1 !== contrasenia2) {
-            return res.render('user/usuario-registro', {
-                error: [
-                    {
-                        msg: 'Las contraseñas no coinciden'
-                    }
-                ],
-                old: req.body
-            });
-        };
-
-        let passHasheada = bcrypt.hashSync(contrasenia2, 12);
-
-        usuariosBD.push({
-            id: idNuevo,
-            nombreCompleto,
-            nombreUsuario,
-            email,
-            fechaNacimiento,
-            pais,
-            tipoCuenta,
-            contrasenia: passHasheada,
-        });
-
-        FS.writeFileSync(PATH.join(__dirname,"../data/usuarios.json"), JSON.stringify(usuariosBD,null,' '));
-
-        res.redirect("/user/usuario-login");
-    
-    },
-
-    enter: function (req, res) {
-
-        const { email,
-        contrasenia
-        } = req.body
-
-        let error = validationResult(req);
-
-        if (!error.isEmpty()) {
-            return res.render('user/usuario-login', {
-                error: error.errors, 
-                old: req.body
-            });
-        };
-
-        usuariosBD.map( function (e) {
-            if ((e.email === email) && bcrypt.compareSync(contrasenia, e.contrasenia)) {
-                req.session.userLogeado = usuariosBD;
-                return res.redirect('/user/usuario')}
-            if(userNoExist){
-                return res.render('user/usuario-login', {
-                    error: [
-                        {
-                            email:{
-                                msg: 'Las credecniales son inválidad'
-                            }
-                        }
-                    ],
-                    old: req.body
-                });
+        usersDB.forEach( function (e) {
+            if ((e.email === email) && (bcrypt.compareSync(password, e.hashedPassword))) {
+                return userLog = true;
             }
-
         });
-    
+
+        if (!userLog) {
+            return res.render('user/user-login', {
+                error: {
+                    top: {
+                        msg: 'Credenciales inválidas'
+                    }
+                }
+            });                
+        };
+
+        // Creación de session
+        let userLogged = null;
+
+        if (userLog) {
+            userLogged = usersDB.find( function (e) {
+                return (e.email === email);
+            });
+        };
+
+        if (userLog) {
+            // delete userLogged.hashedPassword;
+            req.session.userLogged = userLogged;
+        };
+
+        // Creación de cookie
+        if (rememberUser === "yes") {
+            res.cookie("userEmail", email, { maxAge: 30000 });
+        };
+
+        if (userLog) {
+            res.redirect('/user');
+        };
+        
     },
+
     logout: function (req, res) {
         req.session.destroy();
-        return res.redirect('/')
+        res.clearCookie("userEmail");
+        return res.redirect('/');
     }
+
 };
 
-module.exports = USER;
+module.exports = user;

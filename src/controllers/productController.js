@@ -7,14 +7,14 @@ const compradoresBD = JSON.parse(FS.readFileSync(PATH.join(__dirname,"../data/co
 const PRODUCT = {
 
     marketplace: function (req, res) {
-        res.render("product/producto-marketplace", {productos:productosBD});
+        res.render("product/product-marketplace", {productos:productosBD});
     },
 
     create: function (req, res) {
-        res.render("product/producto-creacion");
+        res.render("product/product-create");
     },
 
-    store: function (req, res) {
+    processCreate: function (req, res) {
 
         let idNuevo = productosBD[productosBD.length-1].id + 1;
         let nombreImagen = req.file.filename;
@@ -52,19 +52,19 @@ const PRODUCT = {
         });
 
         if(data == null){
-            return res.render('product/producto-error-edicion', {
+            return res.render('product/product-edit-error', {
                 error: {
                     text: 'Edit-Error: No se pudo cargar el producto solicitado.'
                 }
             });
         }
 
-        res.render('product/producto-edicion', {
+        res.render('product/product-edit', {
             producto: data
         });
     },
 
-    update: function (req, res) {
+    processEdit: function (req, res) {
         const PATH_BATABASE = '../data/productos.json';
         const payload = JSON.parse(FS.readFileSync(PATH.join(__dirname, PATH_BATABASE)),'utf-8');
         
@@ -121,7 +121,7 @@ const PRODUCT = {
     },
     
     cart: function (req, res) {
-        res.render("product/producto-cart");
+        res.render("product/product-cart");
     },
 
     detail: function (req, res) {
@@ -140,7 +140,7 @@ const PRODUCT = {
         //     };
         // };
 
-        res.render("product/producto-detalle", {productos:productoEncontrado/* , compradores:compradorEncontrado */});
+        res.render("product/product-detail", {productos:productoEncontrado/* , compradores:compradorEncontrado */});
     },
 
 };

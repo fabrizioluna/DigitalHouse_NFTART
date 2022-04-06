@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%-include('../partials/head')%>
+    <link href ="/css/user-edit.css", rel="stylesheet">
+    <title>Edición de Usuario</title>
+</head>
+
+<body>
+
+    <%-include("../partials/header")%>
+
+    <section class="container_body">
+        <section class="container_datos_persona">
+            <div class="circle">
+                <img src="/img/AVATARES/<%=user.avatar%>" class="ok">
+                <input
+                    name="avatarEdited"
+                    type="file"
+                />
+            </div>
+            <form class='popUp__Fields'>
+                <div>
+                <label>Nombre completo</label>
+                <input
+                    name="fullNameEdited"
+                    placeholder='<%=user.fullName%>'
+                    type='text'
+                />
+                </div>
+                <div>
+                <label>Nombre de usuario</label>
+                <input 
+                    name="userNameEdited"
+                    placeholder='<%=user.userName%>'
+                    type='text'
+                />
+                </div>
+                <div>
+                <label>Correo electrónico</label>
+                <input
+                    name="emailEdited"
+                    placeholder='<%=user.email%>'
+                    type='email'
+                />
+                </div>
+                <div>
+                <label>Fecha de nacimiento</label>
+                <input
+                    name="birthdayEdited"
+                    value='<%=user.birthday%>'
+                    type='date'
+                />
+                </div>
+                <div>
+                    <label>País</label>
+                    <select name="countryEdited">
+                        <option value="colombia" <%=(user.country==='colombia') ? 'selected' : ''%>>Colombia</option>
+                        <option value="mexico" <%=(user.country==='mexico') ? 'selected' : ''%>>México</option>
+                        <option value="chile" <%=(user.country==='chile') ? 'selected' : ''%>>Chile</option>
+                        <option value="paraguay" <%=(user.country==='paraguay') ? 'selected' : ''%>>Paraguay</option>
+                        <option value="argentina" <%=(user.country==='argentina') ? 'selected' : ''%>>Argentina</option>
+                    </select>
+                </div>
+        </section>
+                <div class="container_tipo_cuenta">
+                    <label>Tipo de cuenta</label>
+                    <div class='popUp__Type'>
+                        <label>Vendedor</label>
+                        <input
+                            name="userTypeEdited"
+                            type='checkbox'
+                            value="vendedor"
+                            <%=((user.userType==='vendedor') || (user.userType[0]==='vendedor') || (user.userType[1]==='vendedor')) ? 'checked' : ''%>
+                        />
+                        <label>Comprador</label>
+                        <input 
+                            name="userTypeEdited"
+                            type='checkbox'
+                            value="comprador"
+                            <%=((user.userType==='comprador') || (user.userType[0]==='comprador') || (user.userType[1]==='comprador')) ? 'checked' : ''%>
+                        />
+                    </div>
+                </div>
+                <section class='container_registro_redes'>
+                    <h4>Sincroniza tus redes sociales:</h4>
+                    <i class="fab fa-facebook-square"></i>
+                    <i class="fab fa-twitter-square"></i>
+                    <i class="fab fa-github-square"></i>
+                    <i class="fab fa-instagram-square"></i>
+                </section>
+                <section class="section_contraseñas">
+                    <p>Validación de contraseña actual para efectuar los cambios</p>
+                    <div>
+                        <input
+                            name="password1Edited"
+                            placeholder='Contraseña'
+                            type='password'
+                        />
+                    </div>
+                    <div>
+                        <input
+                            name="password2Edited"
+                            placeholder='Repite tu contraseña'
+                            type='password'
+                        />
+                    </div>
+                    <button type='submit'>Continuar</button>
+                    <a href="/"><button type="button">Cancelar</button></a>
+                </section>
+            </form>
+        </section>
+    </section>
+
+    <%-include("../partials/footer")%>
+
+</body>
+</html>

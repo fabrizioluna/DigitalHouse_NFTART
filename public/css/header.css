@@ -1,10 +1,4 @@
-header {
-    box-sizing: border-box;
-    margin: 0px;
-    padding: 0px;
-}
-
-.nav__secondary {
+* {
     box-sizing: border-box;
     margin: 0px;
     padding: 0px;
@@ -15,10 +9,6 @@ header {
 nav {
     width: 100%;
     background-color: #072146;
-}
-
-.nav__primary {
-    position: relative;
 }
 
 .nav__primary-figure {
@@ -33,16 +23,25 @@ nav {
     -webkit-filter: invert(100%);
 }
 
-.nav__primary-text {
+.nav__primary-text-1 {
     display: flex;
     justify-content: right;
     align-items: center;
     position: absolute;
     top: 50px;
-    right: 50px;
+    right: 30px;
 }
 
-a.nav__primary-login {
+.nav__primary-text-2 {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+}
+
+a.nav__primary-login-1 {
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -50,27 +49,25 @@ a.nav__primary-login {
     text-decoration: none;
 }
 
-.nav__primary-element {
-    font-size: 20px;
+a.nav__primary-login-2 {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-right: 15px;
+    text-decoration: none;
+}
+
+.nav__primary-element-1 {
+    font-size: 40px;
     color: white;
 }
 
-.nav__primary-login_text {
-    font-size: 25px;
-    color: #5BBEFF;
-    font-family: 'Alumni Sans', sans-serif;
-    margin-left: 20px;
+.nav__primary-element-2 img {
+    height: 80px;
+    border-radius: 100%;
 }
 
-.nav__primary-register {
-    font-size: 25px;
-    color: #5BBEFF;
-    font-family: 'Alumni Sans', sans-serif;
-    margin-left: 20px;
-    text-decoration: none;
-}
-
-.nav__primary-profile {
+.nav__primary-login_text-1 {
     font-size: 25px;
     color: #5BBEFF;
     font-family: 'Alumni Sans', sans-serif;
@@ -78,7 +75,7 @@ a.nav__primary-login {
     text-decoration: none;
 }
 
-.nav__primary-logout {
+.nav__primary-login_text-2 {
     font-size: 25px;
     color: #5BBEFF;
     font-family: 'Alumni Sans', sans-serif;
@@ -86,9 +83,25 @@ a.nav__primary-login {
     text-decoration: none;
 }
 
+.nav__primary-register-1 {
+    font-size: 25px;
+    color: #5BBEFF;
+    font-family: 'Alumni Sans', sans-serif;
+    margin-left: 20px;
+    text-decoration: none;
+}
+
+.nav__primary-register-2 {
+    font-size: 25px;
+    color: #5BBEFF;
+    font-family: 'Alumni Sans', sans-serif;
+    margin-left: 20px;
+    text-decoration: none;
+}
+/* HEADER */
 
 
-
+/* SUBMENU */
 .nav__secondary {
     display: flex;
     justify-content: right;
@@ -154,12 +167,4 @@ a.nav__primary-login {
     font-size: 20px;
     color: grey;
 }
-/* HEADER */
-
-.ok{
-    width: 100px;
-    height: 100px;
-    background-color: rgb(219, 219, 219);
-    border-radius: 100%;
-    justify-content: flex-end;
-}
+/* SUBMENU */

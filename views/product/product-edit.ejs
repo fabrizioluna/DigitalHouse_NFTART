@@ -1,19 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <%- include('../partials/head') %>
-    <link href ="/css/header.css", rel="stylesheet">
-    <link href ="/css/popUp.css", rel="stylesheet">
-    <link href ="/css/producto-edicion.css", rel="stylesheet">
-    <link href ="/css/footer.css", rel="stylesheet">
+    <%-include('../partials/head')%>
+    <link href ="/css/product-edit.css", rel="stylesheet">
     <title>NFTART - Edición de Producto</title>
 </head>
+
 <body>
 
-    <%- include('../partials/login-register')%>
-    <%- include('../partials/header') %>
+    <%-include('../partials/header')%>
 
     <main>
+        
         <!-- PRODUCTO EDICIÓN -->
         <section class='main_box'>
             <form action='/product/edit' method='post'>
@@ -26,15 +24,14 @@
                     <input 
                         id="NFT_name" 
                         name='NFT_name' 
-                        value='<%=producto.nombre%>' 
+                        placeholder='<%=producto.nombre%>' 
                         type="text" 
                         class="form_box"
-                        placeholder="Nombre del NFT"
                     />
                     <input 
                         id="NFT_id" 
                         name="NFT_id" 
-                        value='<%=producto.id%>' 
+                        placeholder='<%=producto.id%>' 
                         type="number" 
                         readonly="readonly" 
                         class="form_box"
@@ -42,39 +39,35 @@
                     <input 
                         id="NFT_author" 
                         name='NFT_author' 
-                        value='<%=producto.autor%>' 
+                        placeholder='<%=producto.autor%>' 
                         type="text" 
                         class="form_box"
-                        placeholder="Autor del NFT"
                     >
                     <textarea 
                         id="NFT_description" 
                         name='NFT_description' 
                         class="form_box_textarea"
-                        placeholder="Descripcion del Producto"
-                    ><%=producto.descripcion%></textarea>
+                        placeholder="<%=producto.descripcion%>"
+                    ></textarea>
                     <input 
                         id="NFT_theme" 
                         name='NFT_theme' 
                         class="form_box"
-                        value='<%=producto.tematicaAutor%>'
-                        placeholder="Tematica del Autor"
+                        placeholder='<%=producto.tematicaAutor%>'
                     />
                     <input 
                         id="ETH_price" 
                         name='ETH_price' 
                         type="number" 
-                        value='<%=producto.precioUSD%>' 
+                        placeholder='<%=producto.precioUSD%>' 
                         class="form_box"
-                        placeholder="Precio en Ethereum"
                     />
                     <input 
                         id="USD_price" 
                         name='USD_price' 
                         type="number" 
-                        value='<%=producto.precioETH%>' 
+                        placeholder='<%=producto.precioETH%>' 
                         class="form_box"
-                        placeholder="Precio en Dólares"
                     />
                     <button id="reset_button" type="reset">RESTABLECER</button>
                     <button id="submit_button" type="submit">GUARDAR CAMBIOS</button>
@@ -83,7 +76,7 @@
         </section>
     </main>
 
-    <%- include('../partials/footer') %>
-    <script src='/js/popUp.js'></script>
+    <%-include('../partials/footer')%>
+
 </body>
 </html>
