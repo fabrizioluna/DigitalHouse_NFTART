@@ -26,12 +26,12 @@ module.exports = function(sequelize,DataTypes){
         NFTS_Vendidos:{
             type:DataTypes.INTERGER
         },
-        NFTS_Comprados:{
-            type:DataTypes.INTERGER
-        },
-        NFTS_Actuales:{
-            type:DataTypes.INTERGER
-        },
+        // NFTS_Comprados:{
+        //     type:DataTypes.INTERGER
+        // },
+        // NFTS_Actuales:{
+        //     type:DataTypes.INTERGER
+        // },
     }
         let config = {
             tableName: "Usuarios",
