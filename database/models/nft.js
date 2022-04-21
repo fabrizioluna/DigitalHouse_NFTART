@@ -1,27 +1,27 @@
 module.exports = function(sequelize,DataTypes){
     
-    let alias = "Productos";
+    let alias = "nft";
         
     let columnas = {
-        idnft:{
+        id:{
             type:DataTypes.INTERGER,
             primaryKey:true,
             autoIncrement:true,
         },
-        NombreNFT:{
+        nombre_nft:{
             type:DataTypes.STRING,
         },
-        Usuario:{
+        categoria:{
+           type:DataTypes.STRING
+        },
+        descripcion:{
             type:DataTypes.STRING
         },
-        PrecioActualUSD:{
-            type:DataTypes.INT
+        precio_actual_usd:{
+            type:DataTypes.FLOAT
         },
-        Categoria:{
-            type:DataTypes.INTERGER
-        },
-        Descripcion:{
-            type:DataTypes.STRING
+        precio_actual_eth:{
+            type:DataTypes.FLOAT
         },
         Autor:{
             type:DataTypes.INTERGER
@@ -29,16 +29,22 @@ module.exports = function(sequelize,DataTypes){
         Tematica:{
             type:DataTypes.STRING
         },
-        // Imagen:{
-        //     type:DataTypes.STRING
-        // },
+        Imagen:{
+            type:DataTypes.STRING
+        },
     }
         let config = {
             tableName: "nft",
             timestamps:false
         }
-    let Productos = sequelize.define(alias,columnas,config);
-    return Productos;
+    let nft = sequelize.define(alias,columnas,config);
+    
+    // nft.associate = function(models){
+    //     nft.
+
+    // }
+    
+    return nft;
 }
 
     
