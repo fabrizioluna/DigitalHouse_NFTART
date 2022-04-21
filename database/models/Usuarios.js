@@ -1,42 +1,41 @@
-module.exports = function(sequelize,DataTypes){
-    
-    let alias = "Usuarios";
-        
-    let columnas = {
-        id_usuarios:{
-            type:DataTypes.INTERGER,
-            primaryKey:true,
-            autoIncrement:true,
-        },
-        Nombre_Usuario:{
-            type:DataTypes.STRING,
-        },
-        Alias:{
-            type:DataTypes.STRING
-        },
-        // email:{
-        //     type:DataTypes.STRING
-        // },
-        Contrasena:{
-            type:DataTypes.STRING
-        },
-        FechaNacimiento:{
-            type:DataTypes.DATE
-        },
-        NFTS_Vendidos:{
-            type:DataTypes.INTERGER
-        },
-        // NFTS_Comprados:{
-        //     type:DataTypes.INTERGER
-        // },
-        // NFTS_Actuales:{
-        //     type:DataTypes.INTERGER
-        // },
-    }
-        let config = {
-            tableName: "Usuarios",
-            timestamps:false
-        }
-    let Usuarios = sequelize.define(alias,columnas,config);
-    return Usuarios;
-}
+module.exports = function (sequelize, DataTypes) {
+  const alias = 'Usuarios';
+
+  const columnas = {
+    id: {
+      type: DataTypes.INTERGER,
+      primaryKey: true,
+      autoIncrement: true,
+    },
+    nombre_usuario: {
+      type: DataTypes.STRING,
+    },
+    usuario: {
+      type: DataTypes.STRING,
+    },
+    email: {
+      type: DataTypes.STRING,
+    },
+    contrasenia: {
+      type: DataTypes.STRING,
+    },
+    nft_vendedor: {
+      type: DataTypes.DECIMAL,
+    },
+    nft_compras: {
+      type: DataTypes.DECIMAL,
+    },
+    nft_actuales: {
+      type: DataTypes.DECIMAL,
+    },
+    fecha_nacimiento: {
+      type: DataTypes.DATE,
+    },
+  };
+  const config = {
+    tableName: 'Usuarios',
+    timestamps: false,
+  };
+  let Usuarios = sequelize.define(alias, columnas, config);
+  return Usuarios;
+};
