@@ -40,7 +40,7 @@ module.exports = function(sequelize,DataTypes){
     let nft = sequelize.define(alias,columnas,config);
     
     // nft.associate = function(models){
-    //     nft.
+    //     nft.hola!!
 
     // }
     

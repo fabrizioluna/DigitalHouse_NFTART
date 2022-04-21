@@ -22,7 +22,7 @@ module.exports = function(sequelize,DataTypes){
     let nft_actuales = sequelize.define(alias,columnas,config);
     
     // nft.associate = function(models){
-    //     nft.
+    //     nft.hola!!
 
     // }
     
