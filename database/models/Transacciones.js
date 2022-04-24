@@ -32,5 +32,24 @@ module.exports = function(sequelize,DataTypes){
             timestamps:false
         }
     let Transacciones = sequelize.define(alias,columnas,config);
+
+    Transacciones.associate = function(models) {
+        Transacciones.belongsTo(models.Usuarios,{
+            as:"Usuarios",
+            foreignKey: "id"
+        }),
+        Transacciones.belongsToMany(models,nft,{
+            as:"nft",
+            through: "Transacciones_nft",
+            foreignKey: "id",
+            otherKey: "id",
+            timestamps: false
+        }),
+        Transacciones.belongTo(models,medios_de_pago,{
+            as:"medios_de_pago",
+            foreignKey: "id"
+        })
+    }
+
     return Transacciones;
 }

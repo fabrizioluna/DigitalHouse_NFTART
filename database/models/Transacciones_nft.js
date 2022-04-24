@@ -20,5 +20,7 @@ module.exports = function(sequelize,DataTypes){
             timestamps:false
         }
     let Transacciones_nft = sequelize.define(alias,columnas,config);
+
+
     return Transacciones_nft;
 }

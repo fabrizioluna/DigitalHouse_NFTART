@@ -19,23 +19,25 @@ module.exports = function (sequelize, DataTypes) {
     contrasenia: {
       type: DataTypes.STRING,
     },
-    nft_vendedor: {
-      type: DataTypes.DECIMAL,
-    },
-    nft_compras: {
-      type: DataTypes.DECIMAL,
-    },
-    nft_actuales: {
-      type: DataTypes.DECIMAL,
-    },
     fecha_nacimiento: {
       type: DataTypes.DATE,
     },
+    tipo_usuarios:{
+      type: DataTypes.DECIMAL
+    }
   };
   const config = {
     tableName: 'Usuarios',
     timestamps: false,
   };
   let Usuarios = sequelize.define(alias, columnas, config);
+
+  Usuarios.associate = function(models) {
+    Usuarios.hasMany(models.Transacciones,{
+        as:"Transacciones",
+        foreignKey: "id"
+    })
+}
+
   return Usuarios;
 };

@@ -39,10 +39,16 @@ module.exports = function(sequelize,DataTypes){
         }
     let nft = sequelize.define(alias,columnas,config);
     
-    // nft.associate = function(models){
-    //     nft.hola!!
+    nft.associate= function(models){
 
-    // }
+        nft.belonsToMany(models,Transacciones,{
+            as:"Transacciones",
+            trough: "Transacciones_nft",
+            foreignKey: "id",
+            otherKey: "if",
+            timestamps: false 
+        });
+    }
     
     return nft;
 }

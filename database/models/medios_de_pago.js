@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-  const alias = 'medio_pago';
+  const alias = 'medios_de_pago';
 
   const columnas = {
     id: {
@@ -15,6 +15,14 @@ module.exports = (sequelize, DataTypes) => {
     tableName: 'medios_de_pago',
     timestamps: false,
   };
-  let medioPago = sequelize.define(alias, columnas, config);
-  return medioPago;
+  let medios_de_pago = sequelize.define(alias, columnas, config);
+    
+    medios_de_pago.associate = function(models){
+      medios_de_paho.hasMany(models,Transacciones,{
+        as:"Transacciones",
+        foreignKey: "id",
+      })
+    }
+    
+  return medios_de_pago;
 };
