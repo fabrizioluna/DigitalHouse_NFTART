@@ -14,8 +14,7 @@ const compradoresBD = JSON.parse(
 const PRODUCT = {
   getNfts: () => {
     //   Enpoint de prueba para ver si funcionaba la base de datos.
-    Nft
-      .findAll()
+    Nft.findAll()
       .then((nfts) => console.log(nfts))
       .catch(() => console.log('surgio un error'));
   },
@@ -55,93 +54,77 @@ const PRODUCT = {
   },
 
   edit: function (req, res) {
-    const PATH_BATABASE = '../data/productos.json';
-    let data = null;
+    //   Buscamos por la PrimaryKey
+    Nft.findByPk(req.params.id)
+      .then(({ dataValues }) => {
+        //   Desestructuramos dataValues y lo enviamos a la vista.
+        res.render('product/product-edit', {
+          producto: dataValues,
+        });
 
-    const payload = JSON.parse(
-      FS.readFileSync(PATH.join(__dirname, PATH_BATABASE)),
-      'utf-8'
-    );
+        // Está sería la respuesta para cuando migremos a una API Rest.
+        // res.status(200).json({
+        //     status: true,
+        //     producto: dataValues
+        // });
+      })
+      .catch(() => {
+        //   Si no encuentra el producto retorna la vista de error.
+        res.render('product/product-edit-error', {
+          error: {
+            text: 'Edit-Error: No se pudo cargar el producto solicitado.',
+          },
+        });
 
-    payload.map((element) => {
-      if (element.id == req.params.id) {
-        return (data = element);
-      }
-    });
-
-    if (data == null) {
-      return res.render('product/product-edit-error', {
-        error: {
-          text: 'Edit-Error: No se pudo cargar el producto solicitado.',
-        },
+        // Lo mismo pero para el error
+        // res.status(200).json({
+        //     status: false,
+        //     message: 'No se pudo cargar el producto solicitado.'
+        // });
       });
-    }
-
-    res.render('product/product-edit', {
-      producto: data,
-    });
   },
 
-  processEdit: function (req, res) {
-    const PATH_BATABASE = '../data/productos.json';
-    const payload = JSON.parse(
-      FS.readFileSync(PATH.join(__dirname, PATH_BATABASE)),
-      'utf-8'
-    );
-
-    const { body: state } = req;
-    let indexElement = null;
-
+  processEdit: async function (req, res) {
     const {
-      NFT_name,
-      NFT_author,
-      NFT_description,
-      NFT_theme,
-      ETH_price,
-      USD_price,
-      NFT_id: id,
-    } = state;
+      imagen,
+      nombre_nft,
+      descripcion,
+      tematica,
+      precio_actual_eth,
+      precio_actual_usd,
+    } = req.body;
 
-    if (state === undefined) {
-      return res.render('product/producto-error-edicion', {
-        error: {
-          text: 'Update-Error: No se pudo procesar el cambio. (Falta el id o el nuevo estado).',
-        },
-      });
-    }
+    const productUpdate = await Nft.findByPk(req.body.id);
 
-    payload.map((element, index) => {
-      if (parseInt(element.id) === parseInt(id)) {
-        return (indexElement = index);
-      }
-    });
-
-    if (indexElement != null) {
-      payload[indexElement] = {
-        id: parseInt(id),
-        nombre: NFT_name,
-        autor: NFT_author,
-        descripcion: NFT_description,
-        tematicaAutor: NFT_theme,
-        precioETH: parseInt(ETH_price),
-        precioUSD: parseInt(USD_price),
-      };
-    } else {
-      return res.render('product/producto-error-edicion', {
+    if (!productUpdate) {
+      return res.render('product/product-edit-error', {
         error: {
           text: 'Error: Ocurrio un error. No existe el producto a editar en la base de datos.',
         },
       });
     }
 
-    console.log(`Update-Database: Se ha actualizado un producto. \n 
-            (Producto: ${id} | Nombre: ${payload[indexElement].nombre})`);
+    // Enviamos unicamente los datos que se pueden editar.
+    // El id no porque no es editable, tampoco el autor(al menos de momento).
+    await productUpdate
+      .update({
+        imagen,
+        nombre_nft,
+        descripcion,
+        tematica,
+        precio_actual_eth,
+        precio_actual_usd,
+      })
+      .catch(() => {
+        res.render('product/product-edit-error', {
+          error: {
+            text: 'Update-Error: No se pudo procesar el cambio. (Faltan datos para hacer la actualización).',
+          },
+        });
+      });
 
-    FS.writeFileSync(
-      PATH.join(__dirname, PATH_BATABASE),
-      JSON.stringify(payload, null, '  ')
-    );
-    res.redirect(`/product/detail/${id}`);
+    //   Si todo pasa redireccionamos al user.
+    res.redirect(`/product/detail/${req.body.id}`);
   },
 
   cart: function (req, res) {
