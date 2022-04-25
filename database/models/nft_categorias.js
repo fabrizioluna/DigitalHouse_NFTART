@@ -1,23 +1,20 @@
-module.exports = (sequelize, DataTypes) => {
-  const alias = 'nft_categorias';
+const { DataTypes } = require('sequelize/types');
+const { db } = require('..');
 
-  const columnas = {
-    id: {
-      type: DataTypes.INTERGER,
-      primaryKey: true,
-      autoIncrement: true,
-    },
+const Nft_categorias = db.define(
+  'nft_categorias',
+  {
     categoria: {
       type: DataTypes.STRING,
     },
     nombre_nft: {
       type: DataTypes.STRING,
     },
-  };
-  const config = {
+  },
+  {
     tableName: 'medios_de_pago',
     timestamps: false,
-  };
-  let nftCategorias = sequelize.define(alias, columnas, config);
-  return nftCategorias;
-};
+  }
+);
+
+module.exports = Nft_categorias;

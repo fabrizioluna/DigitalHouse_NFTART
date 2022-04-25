@@ -11,5 +11,6 @@ router.get('/edit/:id', product.edit);
 router.post('/edit', product.processEdit);
 router.get('/cart', product.cart);
 router.get('/detail/:id', product.detail);
+router.get('/get_nfts', product.getNfts)
 
 module.exports = router;

@@ -1,12 +1,9 @@
-module.exports = function (sequelize, DataTypes) {
-  const alias = 'Usuarios';
+const { DataTypes } = require('sequelize/types');
+const { db } = require('..');
 
-  const columnas = {
-    id: {
-      type: DataTypes.INTERGER,
-      primaryKey: true,
-      autoIncrement: true,
-    },
+const Usuarios = db.define(
+  'usuarios',
+  {
     nombre_usuario: {
       type: DataTypes.STRING,
     },
@@ -22,22 +19,21 @@ module.exports = function (sequelize, DataTypes) {
     fecha_nacimiento: {
       type: DataTypes.DATE,
     },
-    tipo_usuarios:{
-      type: DataTypes.DECIMAL
-    }
-  };
-  const config = {
-    tableName: 'Usuarios',
+    tipo_usuarios: {
+      type: DataTypes.DECIMAL,
+    },
+  },
+  {
+    tableName: 'usuarios',
     timestamps: false,
-  };
-  let Usuarios = sequelize.define(alias, columnas, config);
+  }
+);
 
-  Usuarios.associate = function(models) {
-    Usuarios.hasMany(models.Transacciones,{
-        as:"Transacciones",
-        foreignKey: "id"
-    })
-}
-
-  return Usuarios;
+Usuarios.associate = function (models) {
+  Usuarios.hasMany(models.Transacciones, {
+    as: 'Transacciones',
+    foreignKey: 'id',
+  });
 };
+
+module.exports = Usuarios;

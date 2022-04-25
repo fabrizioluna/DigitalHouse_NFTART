@@ -1,30 +1,20 @@
-module.exports = function(sequelize,DataTypes){
-    
-    let alias = "nft_actuales";
-        
-    let columnas = {
-        id:{
-            type:DataTypes.INTERGER,
-            primaryKey:true,
-            autoIncrement:true,
-        },
-        usuario:{
-            type:DataTypes.INTERGER,
-        },
-        nombre_nft:{
-            type:DataTypes.INTERGER,
-        },
-    }
-        let config = {
-            tableName: "nft_actuales",
-            timestamps:false
-        }
-    let nft_actuales = sequelize.define(alias,columnas,config);
-    
-    // nft.associate = function(models){
-    //     nft.hola!!
+const { DataTypes } = require('sequelize/types');
+const { db } = require('..');
 
-    // }
-    
-    return nft_actuales;
-}
+const Nft_actuales = db.define(
+  'nft_actuales',
+  {
+    usuario: {
+      type: DataTypes.INTERGER,
+    },
+    nombre_nft: {
+      type: DataTypes.INTERGER,
+    },
+  },
+  {
+    tableName: 'nft_actuales',
+    timestamps: false,
+  }
+);
+
+module.exports = Nft_actuales;

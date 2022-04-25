@@ -1,28 +1,24 @@
-module.exports = (sequelize, DataTypes) => {
-  const alias = 'medios_de_pago';
+const { DataTypes } = require('sequelize/types');
+const { db } = require('..');
 
-  const columnas = {
-    id: {
-      type: DataTypes.INTERGER,
-      primaryKey: true,
-      autoIncrement: true,
-    },
+const Medios_de_pago = db.define(
+  'medios_de_pago',
+  {
     medio_de_pago: {
       type: DataTypes.STRING,
     },
-  };
-  const config = {
+  },
+  {
     tableName: 'medios_de_pago',
     timestamps: false,
-  };
-  let medios_de_pago = sequelize.define(alias, columnas, config);
-    
-    medios_de_pago.associate = function(models){
-      medios_de_paho.hasMany(models,Transacciones,{
-        as:"Transacciones",
-        foreignKey: "id",
-      })
-    }
-    
-  return medios_de_pago;
+  }
+);
+
+Medios_de_pago.associate = function (models) {
+  Medios_de_pago.hasMany(models, Transacciones, {
+    as: 'Transacciones',
+    foreignKey: 'id',
+  });
 };
+
+module.exports = Medios_de_pago;

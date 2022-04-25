@@ -4,6 +4,15 @@ const path = require('path');
 const methodOverride = require('method-override'); // Para poder usar los métodos PUT y DELETE
 const session = require('express-session');
 const cookies = require('cookie-parser');
+const userLoggedMiddleware = require ('./src/modules/userLoggedMiddleware');
+
+const main = require('./src/routes/mainRoutes');
+const product = require('./src/routes/productRoutes');
+const user = require('./src/routes/userRoutes');
+const { dbConnect } = require('./database');
+
+// Conexion a la base de datos.
+dbConnect();
 
 app.use(session({
     secret: '4E4654415254',
@@ -11,12 +20,6 @@ app.use(session({
     saveUninitialized: true
 }
 ));
-
-const userLoggedMiddleware = require ('./src/modules/userLoggedMiddleware');
-
-const main = require('./src/routes/mainRoutes');
-const product = require('./src/routes/productRoutes');
-const user = require('./src/routes/userRoutes');
 
 app.use(express.static(path.join(__dirname, './public')));
 app.use(express.urlencoded({extended: false}));

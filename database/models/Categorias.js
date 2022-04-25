@@ -1,21 +1,17 @@
-module.exports = function(sequelize,DataTypes){
-    
-    let alias = "Categorias";
-        
-    let columnas = {
-        id:{
-            type:DataTypes.INTERGER,
-            primaryKey:true,
-            autoIncrement:true,
-        },
-        categoria:{
-            type:DataTypes.STRING,
-        },
-    };
-        let config = {
-            tableName: "categorias",
-            timestamps:false
-        }
-    let Autores = sequelize.define(alias,columnas,config);
-    return Autores;
-}
+const { DataTypes } = require('sequelize/types');
+const { db } = require('..');
+
+const Categorias = db.define(
+  'categorias',
+  {
+    categoria: {
+      type: DataTypes.STRING,
+    },
+  },
+  {
+    tableName: 'categorias',
+    timestamps: false,
+  }
+);
+
+module.exports = Categorias;
