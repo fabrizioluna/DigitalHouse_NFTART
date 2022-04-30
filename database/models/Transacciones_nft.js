@@ -1,20 +1,15 @@
-const { DataTypes } = require('sequelize/types');
+const { DataTypes } = require('sequelize');
 const { db } = require('..');
 
 
 const Transacciones_nft = db.define(
   'transacciones_nft',
   {
-    id: {
-      type: DataTypes.INTERGER,
-      primaryKey: true,
-      autoIncrement: true,
-    },
     codigo_operacion: {
-      type: DataTypes.INTERGER,
+      type: DataTypes.INTEGER,
     },
     codigo_unico: {
-      type: DataTypes.INTERGER,
+      type: DataTypes.INTEGER,
     },
   },
   {

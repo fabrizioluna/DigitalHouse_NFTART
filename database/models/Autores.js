@@ -1,10 +1,10 @@
-const { DataTypes } = require('sequelize/types');
+const { DataTypes } = require('sequelize');
 const { db } = require('..');
 
 const Autores = db.define('autores',
     {   
         id_autor:{
-            type:DataTypes.INTERGER,
+            type:DataTypes.INTEGER,
         },
         autor:{
             type:DataTypes.STRING,

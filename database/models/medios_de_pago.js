@@ -1,4 +1,4 @@
-const { DataTypes } = require('sequelize/types');
+const { DataTypes } = require('sequelize');
 const { db } = require('..');
 
 const Medios_de_pago = db.define(

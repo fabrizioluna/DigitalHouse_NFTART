@@ -1,4 +1,4 @@
-const { DataTypes } = require('sequelize/types');
+const { DataTypes } = require('sequelize');
 const { db } = require('..');
 
 
@@ -6,7 +6,7 @@ const Categorias = db.define(
   'categorias',
   {
     id_categoria: {
-      type: DataTypes.INTERGER,
+      type: DataTypes.INTEGER,
     },
     categoria: {
       type: DataTypes.STRING,

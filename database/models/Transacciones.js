@@ -1,11 +1,11 @@
-const { DataTypes } = require('sequelize/types');
+const { DataTypes } = require('sequelize');
 const { db } = require('..');
 
 const Transacciones = db.define(
   'transacciones',
   {
     id_transaccion: {
-      type: DataTypes.INTERGER,
+      type: DataTypes.INTEGER,
     },
     codigo_operacion: {
       type: DataTypes.STRING,
