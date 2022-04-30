@@ -1,4 +1,4 @@
-const { DataTypes } = require('sequelize');
+const { DataTypes } = require('sequelize/types');
 const { db } = require('..');
 
 
@@ -23,7 +23,7 @@ const Transacciones_nft = db.define(
   }
 );
 
-transacciones_nft.associate = function (models) {
+Transacciones_nft.associate = function (models) {
     // Relacion transacciones
     transacciones_nft.hasMany(models, transacciones, {
       as: 'transacciones',

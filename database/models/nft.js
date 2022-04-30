@@ -1,62 +1,61 @@
-const Usuarios = require("./usuarios");
+const { DataTypes } = require('sequelize/types');
+const { db } = require('..');
 
-module.exports = function(sequelize,DataTypes){
-    
-    let alias = "nft";
-        
-    let columnas = {
-        id_nft:{
+const nft = db.define('nft',
+
+        {
+          id_nft:{
+              type:DataTypes.INTERGER,
+              primaryKey:true,
+              autoIncrement:true,
+          },  
+            usuario_creador:{
+              type:DataTypes.STRING,
+          },
+          nombre_nft:{
+              type:DataTypes.STRING,
+          },
+          categoria:{
+            type:DataTypes.STRING
+          },
+          descripcion:{
+              type:DataTypes.TEXT
+          },
+          precio_actual_usd:{
+              type:DataTypes.DECIMAL
+          },
+          precio_actual_eth:{
+              type:DataTypes.DECIMAL
+          },
+          autor:{
+              type:DataTypes.INTERGER
+          },
+          tematica:{
+              type:DataTypes.STRING
+          },
+          imagen:{
+              type:DataTypes.STRING
+          },
+          codigo_unico:{
             type:DataTypes.INTERGER,
-            primaryKey:true,
-            autoIncrement:true,
-        },  
-          usuario_creador:{
-            type:DataTypes.STRING,
+          }
         },
-        nombre_nft:{
-            type:DataTypes.STRING,
-        },
-        categoria:{
-           type:DataTypes.STRING
-        },
-        descripcion:{
-            type:DataTypes.TEXT
-        },
-        precio_actual_usd:{
-            type:DataTypes.DECIMAL
-        },
-        precio_actual_eth:{
-            type:DataTypes.DECIMAL
-        },
-        autor:{
-            type:DataTypes.INTERGER
-        },
-        tematica:{
-            type:DataTypes.STRING
-        },
-        imagen:{
-            type:DataTypes.STRING
-        },
-        codigo_unico:{
-          type:DataTypes.INTERGER,
-      },
-    }
-        let config = {
-            tableName: "nft",
-            timestamps:false
-        }
-    let nft = sequelize.define(alias,columnas,config);
+
+        {
+          tableName: "autores",
+          timestamps:false
+        });
     
-    nft.associate = function(models){
+        nft.associate = function(models){
         
         // Relación Usuarios
-        nft.HasMany(models.usuarios,{
+        nft.hasMany(models.usuarios,{
             as: "usuarios",
             foreignKey: "usuario_creador",
         });
 
         // Relación Autores
-        nft.HasMany(models.autores,{
+        nft.hasMany(models.autores,{
           as:"autores",
           foreignKey:"autor"
         });
@@ -76,7 +75,6 @@ module.exports = function(sequelize,DataTypes){
             foreignKey:"codigo_unico",
             otherKey:"codigo_operacion",
         });
-    }
-    
-    return nft;
-}
+      }
+
+module.exports = nft;
