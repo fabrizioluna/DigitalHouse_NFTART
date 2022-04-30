@@ -17,4 +17,18 @@ const Nft_categorias = db.define(
   }
 );
 
+Nft_categorias.associate = function (models) {
+
+  // Relacion categorias
+  Nft_categorias.hasMany(models, categorias, {
+  as: 'categorias',
+  foreignKey: 'id_categoria',
+  }),
+  
+  // Relacion NFT
+  Nft_categorias.hasMany(models, nft, {
+    as: 'nft',
+    foreignKey: 'nombre_nft',
+  })};
+
 module.exports = Nft_categorias;

@@ -1,18 +1,19 @@
 const { DataTypes } = require('sequelize');
 const { db } = require('..');
 
+
 const Transacciones_nft = db.define(
-  'Transacciones_nft',
+  'transacciones_nft',
   {
     id: {
       type: DataTypes.INTERGER,
       primaryKey: true,
       autoIncrement: true,
     },
-    operacion: {
+    codigo_operacion: {
       type: DataTypes.INTERGER,
     },
-    nombre_nft: {
+    codigo_unico: {
       type: DataTypes.INTERGER,
     },
   },
@@ -22,14 +23,17 @@ const Transacciones_nft = db.define(
   }
 );
 
-nft.associate = function (models) {
-  nft.belonsToMany(models, Transacciones, {
-    as: 'Transacciones',
-    trough: 'Transacciones_nft',
-    foreignKey: 'id',
-    otherKey: 'if',
-    timestamps: false,
-  });
-};
+transacciones_nft.associate = function (models) {
+    // Relacion transacciones
+    transacciones_nft.hasMany(models, transacciones, {
+      as: 'transacciones',
+      foreignKey: 'codigo_operacion',
+      }),
+
+    // Relacion NFT
+    transacciones_nft.hasMany(models, nft, {
+      as: 'nft',
+      foreignKey: 'codigo_unico',
+    })};
 
 module.exports = Transacciones_nft;

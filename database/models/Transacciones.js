@@ -4,7 +4,10 @@ const { db } = require('..');
 const Transacciones = db.define(
   'transacciones',
   {
-    operaciones: {
+    id_transaccion: {
+      type: DataTypes.INTERGER,
+    },
+    codigo_operacion: {
       type: DataTypes.STRING,
     },
     valor_usd: {
@@ -17,10 +20,13 @@ const Transacciones = db.define(
       type: DataTypes.DATE,
     },
     medio_de_pago: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
     },
     usuario: {
       type: DataTypes.INTEGER,
+    },
+    tipo_transaccion: {
+      type: DataTypes.STRING,
     },
   },
   {
@@ -30,20 +36,22 @@ const Transacciones = db.define(
 );
 
 Transacciones.associate = function (models) {
-  Transacciones.belongsTo(models.Usuarios, {
-    as: 'Usuarios',
-    foreignKey: 'id',
-  }),
+    Transacciones.hasMany(models.Usuarios, {
+      as: 'Usuarios',
+      foreignKey: 'usuario',
+    }),
+
     Transacciones.belongsToMany(models, nft, {
       as: 'nft',
-      through: 'Transacciones_nft',
-      foreignKey: 'id',
-      otherKey: 'id',
+      through: 'transacciones_nft',
+      foreignKey: 'codigo_operacion',
+      otherKey: 'codigo_unico',
       timestamps: false,
     }),
-    Transacciones.belongTo(models, medios_de_pago, {
+
+    Transacciones.hasMany(models, medios_de_pago, {
       as: 'medios_de_pago',
-      foreignKey: 'id',
+      foreignKey: 'medio_de_pago',
     });
 };
 

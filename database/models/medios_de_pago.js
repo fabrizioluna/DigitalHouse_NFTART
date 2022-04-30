@@ -4,6 +4,11 @@ const { db } = require('..');
 const Medios_de_pago = db.define(
   'medios_de_pago',
   {
+    id_medio_de_pago: {
+      type: DataTypes.INTEGER,
+    },
+  },
+  {
     medio_de_pago: {
       type: DataTypes.STRING,
     },
@@ -15,9 +20,9 @@ const Medios_de_pago = db.define(
 );
 
 Medios_de_pago.associate = function (models) {
-  Medios_de_pago.hasMany(models, Transacciones, {
-    as: 'Transacciones',
-    foreignKey: 'id',
+  Medios_de_pago.belongsTo(models, Transacciones, {
+    as: 'transacciones',
+    foreignKey: 'id_medio_de_pago',
   });
 };
 

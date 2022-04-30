@@ -1,48 +1,82 @@
-const { DataTypes } = require('sequelize');
-const { db } = require('..');
+const Usuarios = require("./usuarios");
 
-const Nft = db.define(
-  'nft',
-  {
-    nombre_nft: {
-      type: DataTypes.STRING,
-    },
-    categoria: {
-      type: DataTypes.STRING,
-    },
-    descripcion: {
-      type: DataTypes.STRING,
-    },
-    precio_actual_usd: {
-      type: DataTypes.FLOAT,
-    },
-    precio_actual_eth: {
-      type: DataTypes.FLOAT,
-    },
-    autor: {
-      type: DataTypes.INTEGER,
-    },
-    tematica: {
-      type: DataTypes.STRING,
-    },
-    imagen: {
-      type: DataTypes.STRING,
-    },
-  },
-  {
-    tableName: 'nft',
-    timestamps: false,
-  }
-);
+module.exports = function(sequelize,DataTypes){
+    
+    let alias = "nft";
+        
+    let columnas = {
+        id_nft:{
+            type:DataTypes.INTERGER,
+            primaryKey:true,
+            autoIncrement:true,
+        },  
+          usuario_creador:{
+            type:DataTypes.STRING,
+        },
+        nombre_nft:{
+            type:DataTypes.STRING,
+        },
+        categoria:{
+           type:DataTypes.STRING
+        },
+        descripcion:{
+            type:DataTypes.TEXT
+        },
+        precio_actual_usd:{
+            type:DataTypes.DECIMAL
+        },
+        precio_actual_eth:{
+            type:DataTypes.DECIMAL
+        },
+        autor:{
+            type:DataTypes.INTERGER
+        },
+        tematica:{
+            type:DataTypes.STRING
+        },
+        imagen:{
+            type:DataTypes.STRING
+        },
+        codigo_unico:{
+          type:DataTypes.INTERGER,
+      },
+    }
+        let config = {
+            tableName: "nft",
+            timestamps:false
+        }
+    let nft = sequelize.define(alias,columnas,config);
+    
+    nft.associate = function(models){
+        
+        // Relación Usuarios
+        nft.HasMany(models.usuarios,{
+            as: "usuarios",
+            foreignKey: "usuario_creador",
+        });
 
-Nft.associate = function (models) {
-  nft.belonsToMany(models, Transacciones, {
-    as: 'Transacciones',
-    trough: 'Transacciones_nft',
-    foreignKey: 'id',
-    otherKey: 'if',
-    timestamps: false,
-  });
-};
+        // Relación Autores
+        nft.HasMany(models.autores,{
+          as:"autores",
+          foreignKey:"autor"
+        });
 
-module.exports = Nft;
+        // Relación Categorias
+        nft.belongsToMany(models.categorias,{
+            as: "categorias",
+            through:"nft_categorias",
+            foreignKey:"nombre_nft",
+            otherKey:"categoria",
+        });
+
+        // Relación Transacciones
+        nft.belongsToMany(models.transacciones,{
+            as: "transacciones",
+            through:"transacciones_nft",
+            foreignKey:"codigo_unico",
+            otherKey:"codigo_operacion",
+        });
+    }
+    
+    return nft;
+}
