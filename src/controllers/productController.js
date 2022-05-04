@@ -1,5 +1,7 @@
+const { redirect } = require('express/lib/response');
 const FS = require('fs');
 const PATH = require('path');
+const { where } = require('sequelize/types');
 const Nft = require('../../database/models/nft');
 
 const productosBD = JSON.parse(
@@ -27,30 +29,15 @@ const PRODUCT = {
     res.render('product/product-create');
   },
 
-  processCreate: function (req, res) {
-    let idNuevo = productosBD[productosBD.length - 1].id + 1;
-    let nombreImagen = req.file.filename;
 
-    let nuevoProducto = {
-      id: idNuevo,
-      precioUSD: req.body.USD_price,
-      precioETH: req.body.ETH_price,
-      nombre: req.body.NFT_name,
-      categoria: req.body.category,
-      descripcion: req.body.NFT_description,
-      autor: req.body.NFT_author,
-      tematicaAutor: req.body.NFT_theme,
-      imagen: nombreImagen,
-    };
-
-    productosBD.push(nuevoProducto);
-
-    FS.writeFileSync(
-      PATH.join(__dirname, '../data/productos.json'),
-      JSON.stringify(productosBD, null, ' ')
-    );
-
-    res.redirect('/product/detail/' + idNuevo);
+  // FALTA TERMINAR 
+  processCreate:async function (req, res) {
+    // let nombreImagen = req.file.filename;
+          console.log(req.body)
+           Nft.create(req.body)
+          .then((nft)=>{
+            res.redirect('/product/detail/' + nft.id);
+          })
   },
 
   edit: function (req, res) {
@@ -125,6 +112,15 @@ const PRODUCT = {
 
     //   Si todo pasa redireccionamos al user.
     res.redirect(`/product/detail/${req.body.id}`);
+  },
+
+  delete: function(req,res){
+    Nft.destroy({where:{
+      id:req.params.id
+    }})
+    .then(()=>{
+      res.redirect('/')
+    })
   },
 
   cart: function (req, res) {

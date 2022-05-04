@@ -4,8 +4,13 @@ const { db } = require('..');
 const nft = db.define(
   'nft',
   {
+    id:{
+      type:DataTypes.INTEGER,
+      primaryKey:true,
+      autoIncrement:true,
+    },
     usuario_creador: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
     },
     nombre_nft: {
       type: DataTypes.STRING,
