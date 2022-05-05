@@ -28,7 +28,7 @@ const nft = db.define(
       type: DataTypes.DECIMAL,
     },
     autor: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
     },
     tematica: {
       type: DataTypes.STRING,

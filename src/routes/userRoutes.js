@@ -11,7 +11,7 @@ const uploadFile = require('../modules/registerImage');
 
 const user = require('../controllers/userController');
 
-router.get('/', guestMiddleware, user.profile);
+router.get('/profile', guestMiddleware, user.profile);
 router.get('/edit', guestMiddleware, user.edit);
 router.get('/register', loggedMiddleware, user.register);
 router.post('/register', uploadFile.single("avatar"), registerValidation, user.processRegister);
