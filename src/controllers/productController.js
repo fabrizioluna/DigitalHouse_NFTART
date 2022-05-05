@@ -1,8 +1,7 @@
-const { redirect } = require('express/lib/response');
 const FS = require('fs');
 const PATH = require('path');
-const { where } = require('sequelize/types');
 const Nft = require('../../database/models/nft');
+
 
 const productosBD = JSON.parse(
   FS.readFileSync(PATH.join(__dirname, '../data/productos.json')),
@@ -114,14 +113,20 @@ const PRODUCT = {
     res.redirect(`/product/detail/${req.body.id}`);
   },
 
+
   delete: function(req,res){
-    Nft.destroy({where:{
-      id:req.params.id
-    }})
-    .then(()=>{
-      res.redirect('/')
-    })
+    res.redirect('/')
   },
+
+
+
+  processDelete: function(req,res) {     
+     Nft.destroy({where:{
+      id: 2
+    }})
+  },
+
+
 
   cart: function (req, res) {
     res.render('product/product-cart');

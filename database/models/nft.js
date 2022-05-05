@@ -42,7 +42,7 @@ const nft = db.define(
   },
 
   {
-    tableName: 'autores',
+    tableName: 'nft',
     timestamps: false,
   }
 );

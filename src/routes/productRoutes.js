@@ -14,6 +14,10 @@ router.post('/create', uploadFile.single('imageProduct'), product.processCreate)
 router.get('/edit/:id', product.edit);
 router.post('/edit', product.processEdit);
 
+// borrar producto
+router.get('/delete', product.delete);
+router.post('/delete/:id', product.processDelete);
+
 // carrito
 router.get('/cart', product.cart);
 router.get('/detail/:id', product.detail);
