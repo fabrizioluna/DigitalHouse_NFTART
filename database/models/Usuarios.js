@@ -28,6 +28,9 @@ const Usuarios = db.define(
     usuario_creador: {
       type: DataTypes.STRING,
     },
+    pais:{
+      type: DataTypes.STRING
+    },
   },
   {
     tableName: 'usuarios',

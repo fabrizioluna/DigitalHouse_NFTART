@@ -29,7 +29,7 @@ const PRODUCT = {
   },
 
 
-  // FALTA TERMINAR 
+  // FALTA TERMINAR TO DO: COMPLETAR FUNCION
   processCreate:async function (req, res) {
     // let nombreImagen = req.file.filename;
           console.log(req.body)
