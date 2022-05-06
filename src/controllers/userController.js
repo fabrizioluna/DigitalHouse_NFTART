@@ -1,8 +1,8 @@
 const fs = require('fs')
 const path = require('path');
-const { validationResult } = require('express-validator');
+// const { validationResult } = require('express-validator');
 const bcrypt = require('bcrypt');
-const Usuer = require('../../database/models/Usuarios');
+const User = require('../../database/models/Usuarios');
 
 const usersDB = JSON.parse(fs.readFileSync(path.join(__dirname,"../data/users.json")),'utf-8');
 
@@ -20,54 +20,62 @@ const user = {
         });
     },
 
+    
     register: function (req, res) {
         res.render('user/user-register');
     },
     
-    processRegister: function (req, res) {
+    processRegister: function (req, res){
+        User
+        .create(req.body) 
+        .then(({ dataValues }) => {
+          res.redirect('/user/login/');
+        })
+
+        // .catch((err) => console.log(err));
 
         // Verificación de existencia de errores desde express-validator
-        let error = validationResult(req);
+        // let error = validationResult(req);
 
-        if (error.errors.length > 0) {
-            return res.render('user/user-register', {
-                error: error.mapped(), 
-                old: req.body
-            });
-        };
+        // if (error.errors.length > 0) {
+        //     return res.render('user/user-register', {
+        //         error: error.mapped(), 
+        //         old: req.body
+        //     });
+        // };
 
-        // Desestructuración del objeto req.body
-        const { 
-            fullName,
-            userName,
-            email,
-            birthday,
-            country,
-            userType,
-            password1,
-            password2
-        } = req.body
+        // // Desestructuración del objeto req.body
+        // const { 
+        //     fullName,
+        //     userName,
+        //     email,
+        //     birthday,
+        //     country,
+        //     userType,
+        //     password1,
+        //     password2
+        // } = req.body
 
-        // Ingreso de datos a la BD
-        let idNew = usersDB[usersDB.length-1].id + 1;
+        // // Ingreso de datos a la BD
+        // let idNew = usersDB[usersDB.length-1].id + 1;
 
-        let hashedPassword = bcrypt.hashSync(password2, 12);
+        // let hashedPassword = bcrypt.hashSync(password2, 12);
 
-        usersDB.push({
-            id: idNew,
-            fullName,
-            userName,
-            email,
-            birthday,
-            country,
-            userType,
-            hashedPassword: hashedPassword,
-            avatar: req.file.filename
-        });
+        // usersDB.push({
+        //     id: idNew,
+        //     fullName,
+        //     userName,
+        //     email,
+        //     birthday,
+        //     country,
+        //     userType,
+        //     hashedPassword: hashedPassword,
+        //     avatar: req.file.filename
+        // });
 
-        fs.writeFileSync(path.join(__dirname,"../data/users.json"), JSON.stringify(usersDB,null,' '));
+        // fs.writeFileSync(path.join(__dirname,"../data/users.json"), JSON.stringify(usersDB,null,' '));
 
-        res.redirect('/user/login');
+        // res.redirect('/user/login');
     
     },
 

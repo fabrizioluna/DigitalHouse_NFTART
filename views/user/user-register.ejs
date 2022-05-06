@@ -40,6 +40,7 @@
                     <form method="post" action="/user/register" enctype="multipart/form-data" class="popUp__Fields">
                         <input
                             name="nombre_usuario"
+                            id="nombre_usuario" 
                             placeholder='Nombre completo'
                             type='text'
                             value="<%=(locals.old) ? old.fullName : ''%>"
@@ -47,6 +48,7 @@
                         <div class="popUp__Errors"><%=((typeof(error) !== 'undefined') && (typeof(error.fullName) !== 'undefined')) ? error.fullName.msg : ''%></div>
                         <input
                             name="usuario"
+                            id="usuario" 
                             placeholder='Nombre de usuario'
                             type='text'
                             value="<%=(locals.old) ? old.userName : ''%>"
@@ -54,6 +56,7 @@
                         <div class="popUp__Errors"><%=((typeof(error) !== 'undefined') && (typeof(error.userName) !== 'undefined')) ? error.userName.msg : ''%></div>
                         <input
                             name="email"
+                            id="email" 
                             placeholder='Correo electrónico'
                             type='email'
                             value="<%=(locals.old) ? old.email : ''%>"
@@ -62,12 +65,13 @@
                         <label>Fecha de nacimiento</label>
                         <input
                             name="fecha_nacimiento"
+                            id="fecha_nacimiento" 
                             type='date'
                             value="<%=(locals.old) ? old.birthday : ''%>"
                         />
-                        <div class="popUp__Errors"><%=((typeof(error) !== 'undefined') && (typeof(error.fecha_nacimiento) !== 'undefined')) ? error.birthday.msg : ''%></div>
+                        <div class="popUp__Errors"><%=((typeof(error) !== 'undefined') && (typeof(error.birthday) !== 'undefined')) ? error.birthday.msg : ''%></div>
                         <label>País</label>
-                        <select name="pais">
+                        <select name="pais" id="pais" >
                             <option value="" <%=(locals.old && old.country==='') ? 'selected' : ''%>>Selecciona una opción:</option>
                             <option value="colombia" <%=(locals.old && old.country==='colombia') ? 'selected' : ''%>>Colombia</option>
                             <option value="mexico" <%=(locals.old && old.country==='mexico') ? 'selected' : ''%>>México</option>
@@ -75,33 +79,29 @@
                             <option value="paraguay" <%=(locals.old && old.country==='paraguay') ? 'selected' : ''%>>Paraguay</option>
                             <option value="argentina" <%=(locals.old && old.country==='argentina') ? 'selected' : ''%>>Argentina</option>
                         </select>
-                        <div class="popUp__Errors"><%=((typeof(error) !== 'undefined') && (typeof(error.pais) !== 'undefined')) ? error.country.msg : ''%></div>
+                        <div class="popUp__Errors"><%=((typeof(error) !== 'undefined') && (typeof(error.country) !== 'undefined')) ? error.country.msg : ''%></div>
                         <label>Tipo de cuenta</label>
                         <div class='popUp__Type'>
-                            <label>Vendedor
-                            <input
-                                name="tipos_usuarios"
-                                type='checkbox'
-                                value="vendedor"
-                                <%=(locals.old && old.userType && ((old.userType==='vendedor') || (old.userType[0]==='vendedor') || (old.userType[1]==='vendedor'))) ? 'checked' : ''%>
-                            /></label>
-                            <label>Comprador
-                            <input
-                                name="userType"
-                                type='checkbox'
-                                value="comprador"
-                                <%=(locals.old && old.userType && ((old.userType==='comprador') || (old.userType[0]==='comprador') || (old.userType[1]==='comprador'))) ? 'checked' : ''%>
-                            /></label>
+                            <label>
+                                <select name="usuario_creador" id="usuario_creador" >
+                                    <option value="" <%=(locals.old && old.usuario_creador==='') ? 'selected' : ''%>>Selecciona una opción:</option>
+                                    <option value="vendedor" <%=(locals.old && old.usuario_creador==='comprador') ? 'selected' : ''%>>comprador</option>
+                                    <option value="comprador" <%=(locals.old && old.usuario_creador==='vendedor') ? 'selected' : ''%>>vendedor</option>
+                                </select>
+                        <div class="popUp__Errors"><%=((typeof(error) !== 'undefined') && (typeof(error.usuario_creador) !== 'undefined')) ? error.country.msg : ''%></div>
+
                         </div>
                         <div class="popUp__Errors"><%=((typeof(error) !== 'undefined') && (typeof(error.userType) !== 'undefined')) ? error.userType.msg : ''%></div>
                         <input
                             name="contrasenia"
+                            id="contrasenia" 
                             placeholder='Contraseña'
                             type='password'
                         />
                         <div class="popUp__Errors"><%=((typeof(error) !== 'undefined') && (typeof(error.password1) !== 'undefined')) ? error.password1.msg : ''%></div>
                         <input
                             name="contrasenia"
+                            id="contrasenia" 
                             placeholder='Repite tu contraseña'
                             type='password'
                         />

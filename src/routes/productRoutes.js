@@ -19,8 +19,7 @@ router.get('/delete', product.delete);
 router.post('/delete/:id', product.processDelete);
 
 // carrito
-router.get('/cart', product.cart);
+// router.get('/cart', product.cart);
 router.get('/detail/:id', product.detail);
-router.get('/get_nfts', product.getNfts)
 
 module.exports = router;
