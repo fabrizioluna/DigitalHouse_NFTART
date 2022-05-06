@@ -28,7 +28,8 @@ const user = {
     processRegister: function (req, res){
         User
         .create(req.body) 
-        .then(({ dataValues }) => {
+        .then((user) => {
+            console.log(user)
           res.redirect('/user/login/');
         })
 

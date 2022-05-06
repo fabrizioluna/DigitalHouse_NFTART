@@ -37,7 +37,7 @@
                     <i class="fab fa-instagram-square"></i>
                 </section>
                 <section>
-                    <form method="post" action="/user/register" enctype="multipart/form-data" class="popUp__Fields">
+                    <form action="/user/register" method="post" enctype="multipart/form-data" class="popUp__Fields">
                         <input
                             name="nombre_usuario"
                             id="nombre_usuario" 
@@ -100,8 +100,8 @@
                         />
                         <div class="popUp__Errors"><%=((typeof(error) !== 'undefined') && (typeof(error.password1) !== 'undefined')) ? error.password1.msg : ''%></div>
                         <input
-                            name="contrasenia"
-                            id="contrasenia" 
+                            name="contrasenia2"
+                            id="contrasenia2" 
                             placeholder='Repite tu contraseña'
                             type='password'
                         />
