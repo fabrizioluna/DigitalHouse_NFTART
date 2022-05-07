@@ -19,54 +19,55 @@
                     <label class='title'>Estas editando el producto <%=producto.nombre%></label>
                     <div>
                         <label for="image" class="labels">Expresión artística del NFT:</label>
-                        <input id="NFT_image" name='NFT_image' type="file">
+                        <input id="imagen" name='imagen' type="file">
                     </div>
                     <input 
-                        id="NFT_name" 
-                        name='NFT_name' 
-                        placeholder='<%=producto.nombre%>' 
+                        id="nombre_nft" 
+                        name='nombre_nft' 
+                        placeholder='<%=producto.nombre_nft%>' 
                         type="text" 
                         class="form_box"
                     />
                     <input 
-                        id="NFT_id" 
-                        name="NFT_id" 
+                        id="id" 
+                        name="id" 
+                        value='<%=producto.id%>'
                         placeholder='<%=producto.id%>' 
                         type="number" 
                         readonly="readonly" 
                         class="form_box"
                     >
                     <input 
-                        id="NFT_author" 
-                        name='NFT_author' 
+                        id="autor" 
+                        name='autor' 
                         placeholder='<%=producto.autor%>' 
                         type="text" 
                         class="form_box"
                     >
                     <textarea 
-                        id="NFT_description" 
-                        name='NFT_description' 
+                        id="descripcion" 
+                        name='descripcion' 
                         class="form_box_textarea"
                         placeholder="<%=producto.descripcion%>"
                     ></textarea>
                     <input 
-                        id="NFT_theme" 
-                        name='NFT_theme' 
+                        id="tematica" 
+                        name='tematica' 
                         class="form_box"
-                        placeholder='<%=producto.tematicaAutor%>'
+                        placeholder='<%=producto.tematica%>'
                     />
                     <input 
-                        id="ETH_price" 
-                        name='ETH_price' 
+                        id="precio_actual_eth" 
+                        name='precio_actual_eth' 
                         type="number" 
-                        placeholder='<%=producto.precioUSD%>' 
+                        placeholder='<%=producto.precio_actual_usd%>' 
                         class="form_box"
                     />
                     <input 
-                        id="USD_price" 
-                        name='USD_price' 
+                        id="precio_actual_usd" 
+                        name='precio_actual_usd' 
                         type="number" 
-                        placeholder='<%=producto.precioETH%>' 
+                        placeholder='<%=producto.precio_actual_eth%>' 
                         class="form_box"
                     />
                     <button id="reset_button" type="reset">RESTABLECER</button>

@@ -14,7 +14,8 @@
 
         <!-- PRODUCTO CREACIÓN -->
         <section class='main_box'>
-            <form action="/product/create" method="post" enctype="multipart/form-data">
+            <div id="errorsContainer"></div>
+            <form  method="post" id='formProduct' enctype="multipart/form-data">
                 <div class="row">
                     <div class="col">
                         <div class="col_ele1">
@@ -24,39 +25,49 @@
                             <input id="image" type="file" name="imageProduct" required>
                         </div>
                     </div>
-                    <div class="col2">
-                        <label for="NFT_name" class="labels">Nombre del NFT:</label>
-                        <input type="text" id="NFT_name" name= "NFT_name" placeholder="Nombre del NFT" class="form_box" required>
+                         <div class="col2">
+                        <label for="usuario_creador" class="labels">Usuario creador:</label>
+                        <input type="text" id="usuario_creador" name= "usuario_creador" placeholder="Nombre del NFT" class="form_box">
+                    </div> -->
+                        <div class="col2">
+                        <label for="nombre_nft" class="labels">Nombre del NFT:</label>
+                        <input type="text" id="nombre_nft" name= "nombre_nft" placeholder="Nombre del NFT" class="form_box">
                     </div>
                 </div>
                 <div class="row">
                     <div class="col1">
-                        <label for="NFT_author" class="labels">Nombre del autor:</label>
-                        <input type="text" id="NFT_author" name= "NFT_author"  placeholder="Nombre de autor" class="form_box" required>
+                        <label for="autor" class="labels">Nombre del autor:</label>
+                        <input type="text" id="autor" name= "autor"  placeholder="Nombre de autor" class="form_box">
                     </div>
                     <div class="col2">
-                        <label for="NFT_description" class="labels">Descripción del NFT:</label>
-                        <textarea id="NFT_description" name= "NFT_description" placeholder="Descripción del NFT" class="form_box" required></textarea>
+                        <label for="descripcion" class="labels">Descripción del NFT:</label>
+                        <textarea id="descripcion" name= "descripcion" placeholder="Descripción del NFT" class="form_box"></textarea>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col1">
-                        <label for="NFT_theme" class="labels">Temática del NFT:</label>
-                        <textarea id="NFT_theme" name= "NFT_theme" placeholder="Temática del NFT" class="form_box" required></textarea>
+                        <label for="tematica" class="labels">Temática del NFT:</label>
+                        <textarea id="tematica" name= "tematica" placeholder="Temática del NFT" class="form_box"></textarea>
                     </div>
                     <div class="col2">
-                        <label for="Category" class="labels">Categoria:</label>
-                        <input id="Category" name= "Category" placeholder="Categoria" class="form_box" required>
+                        <label for="categoria" class="labels">Categoria:</label>
+                        <input id="categoria" name= "categoria" placeholder="Categoria" class="form_box">
                     </div>
                 </div>
                 <div class="row">
                     <div class="col1">
-                        <label for="ETH_price" class="labels">Precio en ETH:</label>
-                        <input type="number" id="ETH_price" name= "ETH_price" placeholder="Precio en ETH" class="form_box" required>
+                        <label for="precio_actual_eth" class="labels">Precio en ETH:</label>
+                        <input type="number" id="precio_actual_eth" name= "precio_actual_eth" placeholder="Precio en ETH" class="form_box">
                     </div>
                     <div class="col2">
-                        <label for="USD_price" class="labels">Precio en USD:</label>
-                        <input type="number" id="USD_price" name= "USD_price" placeholder="Precio en USD" class="form_box" required>
+                        <label for="precio_actual_usd" class="labels">Precio en USD:</label>
+                        <input type="number" id="precio_actual_usd" name= "precio_actual_usd" placeholder="Precio en USD" class="form_box">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col1">
+                        <label for="codigo_unico" class="labels">Codigo único:</label>
+                        <input type="codigo_unico" id="codigo_unico" name= "codigo_unico" placeholder="codigo_unico" class="form_box">
                     </div>
                 </div>
                 <div class="row">
@@ -70,5 +81,6 @@
 
     <%-include('../partials/footer')%>
 
+    <script src="/js/validations/product/product.validations.js"></script>
 </body>
 </html>

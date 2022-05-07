@@ -11,12 +11,24 @@ const uploadFile = require('../modules/registerImage');
 
 const user = require('../controllers/userController');
 
-router.get('/', guestMiddleware, user.profile);
+router.get('/profile', guestMiddleware, user.profile);
 router.get('/edit', guestMiddleware, user.edit);
+
+// Registro Usuario
 router.get('/register', loggedMiddleware, user.register);
-router.post('/register', uploadFile.single("avatar"), registerValidation, user.processRegister);
+// router.post('/register', loggedMiddleware, user.processRegister);
+router.post('/register', uploadFile.single("avatar"), user.processRegister);
+
+
+
 router.get('/login', loggedMiddleware, user.login);
 router.post('/login', loginValidation, user.processLogin);
 router.get('/logout', user.logout);
+
+
+
+
+
+
 
 module.exports = router;

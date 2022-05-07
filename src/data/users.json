@@ -45,5 +45,16 @@
   ],
   "hashedPassword": "$2b$12$ZXE/MkYWZ6yumVjbvTnw2OtXP9A7A7j3MrOCPiiUHtBtaHolEMZn.",
   "avatar": "HR_Einstein.png"
+ },
+ {
+  "id": 5,
+  "fullName": "Hugo Edgar Resendiz Suárez",
+  "userName": "hugo9",
+  "email": "hresendizsuarez@gmail.com",
+  "birthday": "1987-11-30",
+  "country": "mexico",
+  "userType": "vendedor",
+  "hashedPassword": "$2b$12$01XIwEkYg1Dw85ZguydQauliv3rRH0LdGZBP8YqjvzSjANTlwOGJe",
+  "avatar": "hugo9_InkedArquitectura-NFT.18.04.22.R.1.jpg"
  }
 ]
