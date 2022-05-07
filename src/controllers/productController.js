@@ -14,7 +14,6 @@ const PRODUCT = {
   },
 
   processCreate: async function (req, res) {
-    // let nombreImagen = req.file.filename;
     nft
       .create(req.body)
       .then(({ dataValues }) => {
@@ -41,17 +40,9 @@ const PRODUCT = {
   },
 
   processEdit: async function (req, res) {
-    const {
-      imagen,
-      nombre_nft,
-      descripcion,
-      tematica,
-      precio_actual_eth,
-      precio_actual_usd,
-    } = req.body;
-
     const productUpdate = await nft.findByPk(req.body.id);
 
+    // Comprobamos que exista el proudcto.
     if (!productUpdate) {
       return res.render('product/product-edit-error', {
         error: {
@@ -59,15 +50,18 @@ const PRODUCT = {
         },
       });
     }
+
+    // Si existe entonces hacemos el update.
     await productUpdate
       .update({
-        imagen,
-        nombre_nft,
-        descripcion,
-        tematica,
-        precio_actual_eth,
-        precio_actual_usd,
+        imagen: req.body.imagen,
+        nombre_nft: req.body.nft,
+        descripcion: req.body.descripcion,
+        tematica: req.body.tematica,
+        precio_actual_eth: req.body.precio_actual_eth,
+        precio_actual_usd: req.body.precio_actual_usd,
       })
+      .then(() => res.redirect(`/product/detail/${req.body.id}`))
       .catch(() => {
         res.render('product/product-edit-error', {
           error: {
@@ -75,8 +69,6 @@ const PRODUCT = {
           },
         });
       });
-
-    res.redirect(`/product/detail/${req.body.id}`);
   },
 
   delete: function (req, res) {
@@ -101,9 +93,6 @@ const PRODUCT = {
       .catch((err) => console.log(err));
   },
 
-  // cart: function (req, res) {
-  //   res.render('product/product-cart');
-  // },
 };
 
 module.exports = PRODUCT;
