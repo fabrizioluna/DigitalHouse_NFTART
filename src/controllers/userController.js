@@ -1,17 +1,17 @@
-const { validationResult } = require("express-validator");
-const bcrypt = require("bcrypt");
-const User = require("../../database/models/Usuarios");
+const { validationResult } = require('express-validator');
+const bcrypt = require('bcrypt');
+const User = require('../../database/models/Usuarios')
 
 const user = {
   register: function (req, res) {
-    res.render("user/user-register");
+    res.render('user/user-register');
   },
 
   processRegister: function (req, res) {
     // Verificación de existencia de errores desde express-validator
     let error = validationResult(req);
     if (error.errors.length > 0) {
-      return res.render("user/user-register", {
+      return res.render('user/user-register', {
         error: error.mapped(),
         old: req.body,
       });
@@ -26,51 +26,85 @@ const user = {
       tipo_usuario: req.body.tipo_usuario,
       contrasenia: password,
     }).then((user) => {
-      res.redirect("/user/login/");
+      res.redirect('/user/login/');
     });
   },
 
   login: function (req, res) {
-    res.render("user/user-login");
+    res.render('user/user-login');
   },
 
   processLogin: function (req, res) {
     let error = validationResult(req);
     if (error.errors.length > 0) {
-      return res.render("user/user-login", {
+      return res.render('user/user-login', {
         error: error.mapped(),
       });
     }
 
-    User.findAll({ where: { email: req.body.email } }).then(function (user) {
+    User.findOne({ where: { email: req.body.email } }).then(function (user) {
+      // console.log(req.body)
+      console.log(req.body.contrasenia, user.dataValues.email)
+      console.log(user.dataValues.contrasenia)
+
+      
+      console.log(bcrypt.compareSync(req.body.contrasenia, user.dataValues.contrasenia))
+
       if (
-        bcrypt.compareSync(req.body.contrasenia, user.dataValues.contrasenia)
-      ) { req.session.userLogged = userLogged; console.log("paso la segunda validacion")
-        if (rememberUser === "yes") {
-            res.cookie("userEmail", email, { maxAge: 30000 });
-        };    
-    };  return res.render('user/user-login', {
+        !bcrypt.compareSync(req.body.contrasenia, user.dataValues.contrasenia)
+      ) {
+        console.log('No paso la validacion')
+      return res.render('user/user-login', {
         error: {
-            top: {
-                msg: 'Credenciales inválidas'
-                     }
-                }
-             });
+          top: {
+            msg: 'Credenciales inválidas',
+          },
+        },
+      });
+      }
+      console.log('Paso la validacion')
+        req.session.userLogged = userLogged;
+        console.log('paso la segunda validacion');
+        if (rememberUser === 'yes') {
+          res.cookie('userEmail', email, { maxAge: 30000 });
+        }
+      
     });
   },
-    profile: function (req, res) {
-      res.render('user/user-profile', {
-          user: req.session.userLogged
+    
+
+  signin: async function (req, res) {
+    try {
+      const user = await User.findOne({
+        where: {
+          email: req.body.email,
+        },
       });
-    },
- 
+      if (!user) {
+        return res.status(404).send({ message: "User Not found." });
+      }
 
+      console.log(req.body.contrasenia,
+        user.dataValues.contrasenia)
+      const passwordIsValid = bcrypt.compareSync(
+        req.body.contrasenia,
+        user.dataValues.contrasenia
+      );
+      if (!passwordIsValid) {
+        return res.status(401).send({
+          message: "Invalid Password!",
+        });
+      }
+    } catch(err) {
+      console.log(err)
+    }
+  },
 
-  // if (userLog) {
-  //     res.redirect('/user');
-  // };
-
- 
+  profile: function (req, res) {
+    res.render('user/user-profile', {
+      user: req.session.userLogged,
+    });
+  },
 
   // edit: function (req, res) {
   //     User.findByPk(req.params.id).then(function(){
@@ -86,8 +120,8 @@ const user = {
 
   logout: function (req, res) {
     req.session.destroy();
-    res.clearCookie("userEmail");
-    return res.redirect("/");
+    res.clearCookie('userEmail');
+    return res.redirect('/');
   },
 };
 

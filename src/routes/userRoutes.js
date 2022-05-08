@@ -19,7 +19,7 @@ router.post('/register', uploadFile.single("avatar"), loggedMiddleware, user.pro
 
 // Login Usuario
 router.get('/login', loggedMiddleware, user.login);
-router.post('/login', loginValidation, user.processLogin);
+router.post('/login', loginValidation, user.signin);
 
 
 // Obtener el Detalle del Usuario
