@@ -50,8 +50,16 @@
                         <textarea id="tematica" name= "tematica" placeholder="Temática del NFT" class="form_box"></textarea>
                     </div>
                     <div class="col2">
-                        <label for="categoria" class="labels">Categoria:</label>
-                        <input id="categoria" name= "categoria" placeholder="Categoria" class="form_box">
+                        <label id="categoria" name="categoria" for="categoria" class="labels">Categoria:</label>
+                        <select name="categoria" id="categoria" >
+                            <option value="" >Selecciona una opción:</option>
+                            <option value="Metaverso" >Metaverso</option>
+                            <option value="Fotografia" >Fotografia</option>
+                            <option value="Arte" >Arte</option>
+                            <option value="Cine" >Cine</option>
+                            <option value="Musica" >Musica</option>
+                        </select>
+
                     </div>
                 </div>
                 <div class="row">
@@ -81,6 +89,6 @@
 
     <%-include('../partials/footer')%>
 
-    <script src="/js/validations/product/product.validations.js"></script>
+    <script src="/js/validations/product/product-Create.validations.js"></script>
 </body>
 </html>

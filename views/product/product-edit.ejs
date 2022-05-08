@@ -14,20 +14,12 @@
         
         <!-- PRODUCTO EDICIÓN -->
         <section class='main_box'>
-            <form action='/product/edit' method='post'>
+            <div id="errorsContainer"></div>
+            <form id="formulario" action='/product/edit' method='post'>
                 <div class='main_content'>
                     <label class='title'>Estas editando el producto <%=producto.nombre%></label>
-                    <div>
-                        <label for="image" class="labels">Expresión artística del NFT:</label>
-                        <input id="imagen" name='imagen' type="file">
-                    </div>
-                    <input 
-                        id="nombre_nft" 
-                        name='nombre_nft' 
-                        placeholder='<%=producto.nombre_nft%>' 
-                        type="text" 
-                        class="form_box"
-                    />
+                    
+                    <label  name="id" for="id" class="labels"></label>
                     <input 
                         id="id" 
                         name="id" 
@@ -37,6 +29,19 @@
                         readonly="readonly" 
                         class="form_box"
                     >
+                    <div>
+                        <label for="image" class="labels">Expresión artística del NFT:</label>
+                        <input id="imagen" name='imagen' type="file">
+                    </div>
+                    <label  name="nombre_nft" for="nombre_nft" class="labels">Nombre NFT:</label>
+                    <input 
+                        id="nombre_nft" 
+                        name='nombre_nft' 
+                        placeholder='<%=producto.nombre_nft%>' 
+                        type="text" 
+                        class="form_box"
+                    />
+                    <label  name="autor" for="autor" class="labels">Autor NFT:</label>
                     <input 
                         id="autor" 
                         name='autor' 
@@ -44,18 +49,21 @@
                         type="text" 
                         class="form_box"
                     >
+                    <label  name="descripcion" for="descripcion" class="labels">Descripción:</label>
                     <textarea 
                         id="descripcion" 
                         name='descripcion' 
                         class="form_box_textarea"
                         placeholder="<%=producto.descripcion%>"
                     ></textarea>
+                    <label  name="tematica" for="tematica" class="labels">Tematica:</label>
                     <input 
                         id="tematica" 
                         name='tematica' 
                         class="form_box"
                         placeholder='<%=producto.tematica%>'
                     />
+                    <label  name="precio_actual_eth" for="precio_actual_eth" class="labels">Precio Actual ETH:</label>
                     <input 
                         id="precio_actual_eth" 
                         name='precio_actual_eth' 
@@ -63,6 +71,7 @@
                         placeholder='<%=producto.precio_actual_usd%>' 
                         class="form_box"
                     />
+                    <label  name="precio_actual_usd" for="precio_actual_usd" class="labels">Precio Actual USD:</label>
                     <input 
                         id="precio_actual_usd" 
                         name='precio_actual_usd' 
@@ -78,6 +87,8 @@
     </main>
 
     <%-include('../partials/footer')%>
+
+<script src="/js/validations/product/product-Edit.validations.js"></script>
 
 </body>
 </html>

@@ -37,16 +37,18 @@
                     <i class="fab fa-instagram-square"></i>
                 </section>
                 <section>
-                    <form method="post" action="/user/login" class='popUp__Fields'>
+                    <div id="errorsContainer"></div>
+                    <form id="formulario" method="post" action="/user/login" class='popUp__Fields'>
                         <div class="popUp__Errors"><%=((typeof(error) !== 'undefined') && (typeof(error.top) !== 'undefined')) ? error.top.msg : ''%></div>
                         <input
+                            id="email"
                             name="email"
                             placeholder='Correo electrónico'
-                            type='email'
                         />
                         <div class="popUp__Errors"><%=((typeof(error) !== 'undefined') && (typeof(error.email) !== 'undefined')) ? error.email.msg : ''%></div>
                         <input
-                            name="password"
+                            id="contrasenia"
+                            name="contrasenia"
                             placeholder='Contraseña'
                             type='password'
                         />
@@ -69,6 +71,7 @@
     </section>
     
     <%-include("../partials/footer")%>
-    
+
+<script src="/js/validations/user/user-Login.validations.js"></script>
 </body>
 </html>

@@ -37,7 +37,8 @@
                     <i class="fab fa-instagram-square"></i>
                 </section>
                 <section>
-                    <form action="/user/register" method="post" enctype="multipart/form-data" class="popUp__Fields">
+                    <div id="errorsContainer"></div>
+                    <form id="formulario" action="/user/register" method="post" enctype="multipart/form-data" class="popUp__Fields">
                         <input
                             name="nombre_usuario"
                             id="nombre_usuario" 
@@ -119,6 +120,8 @@
     </section>
     
     <%-include("../partials/footer")%>
+
+    <script src="/js/validations/user/user-Register.validations.js"></script>
 
 </body>
 </html>
