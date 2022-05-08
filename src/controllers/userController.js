@@ -1,83 +1,37 @@
-const fs = require('fs')
-const path = require('path');
 const { validationResult } = require('express-validator');
 const bcrypt = require('bcrypt');
 const User = require('../../database/models/Usuarios');
 
-const usersDB = JSON.parse(fs.readFileSync(path.join(__dirname,"../data/users.json")),'utf-8');
-
 const user = {
-    
-    profile: function (req, res) {
-        res.render('user/user-profile', {
-            user: req.session.userLogged
-        });
-    },
 
-    edit: function (req, res) {
-        res.render('user/user-edit', {
-            user: req.session.userLogged
-        });
-    },
-
-    
     register: function (req, res) {
         res.render('user/user-register');
     },
-    
+
     processRegister: function (req, res){
+    // Verificación de existencia de errores desde express-validator
+        let error = validationResult(req);
+        if (error.errors.length > 0) {
+            return res.render('user/user-register', {
+                error: error.mapped(), 
+                old: req.body
+            });
+        };
+        const password = bcrypt.hashSync(req.body.contrasenia, 12)
         User
-        .create(req.body) 
+        .create({
+            nombre_usuario: req.body.nombre_usuario,
+            usuario: req.body.usuario,
+            email: req.body.email,
+            fecha_nacimiento: req.body.fecha_nacimiento,
+            pais: req.body.pais,
+            tipo_usuario: req.body.tipo_usuario,
+            contrasenia: password
+        }) 
         .then((user) => {
-            console.log(user)
           res.redirect('/user/login/');
         })
 
-        // .catch((err) => console.log(err));
-
-        // Verificación de existencia de errores desde express-validator
-        // let error = validationResult(req);
-
-        // if (error.errors.length > 0) {
-        //     return res.render('user/user-register', {
-        //         error: error.mapped(), 
-        //         old: req.body
-        //     });
-        // };
-
-        // // Desestructuración del objeto req.body
-        // const { 
-        //     fullName,
-        //     userName,
-        //     email,
-        //     birthday,
-        //     country,
-        //     userType,
-        //     password1,
-        //     password2
-        // } = req.body
-
-        // // Ingreso de datos a la BD
-        // let idNew = usersDB[usersDB.length-1].id + 1;
-
-        // let hashedPassword = bcrypt.hashSync(password2, 12);
-
-        // usersDB.push({
-        //     id: idNew,
-        //     fullName,
-        //     userName,
-        //     email,
-        //     birthday,
-        //     country,
-        //     userType,
-        //     hashedPassword: hashedPassword,
-        //     avatar: req.file.filename
-        // });
-
-        // fs.writeFileSync(path.join(__dirname,"../data/users.json"), JSON.stringify(usersDB,null,' '));
-
-        // res.redirect('/user/login');
-    
     },
 
     login: function (req, res) {
@@ -85,65 +39,109 @@ const user = {
     },
 
     processLogin: function (req, res) {
+        User.findOne({where: {email: req.body.email}})
 
-        // Verificación de existencia de errores desde express-validator
-        let error = validationResult(req);
+            // Verificación de existencia de errores desde express-validator
+    //     let error = validationResult(req);
+    //     if (error.errors.length > 0) {
+    //         return res.render('user/user-login', {
+    //             error: error.mapped()
+    //         });
+    //     };
 
-        if (error.errors.length > 0) {
-            return res.render('user/user-login', {
-                error: error.mapped()
+    // // Desestructuración del objeto req.body
+    // const {
+    //     email,
+    //     password,
+    //     rememberUser
+    // } = req.body
+
+    // // Validación de credenciales
+    // let userLog = false;
+    
+    // usersDB.forEach( function (e) {
+    //     if ((e.email === email) && (bcrypt.compareSync(password, e.hashedPassword))) {
+    //         return userLog = true;
+    //     }
+    // });
+
+    // if (!userLog) {
+    //     return res.render('user/user-login', {
+    //         error: {
+    //             top: {
+    //                 msg: 'Credenciales inválidas'
+    //             }
+    //         }
+    //     });                
+    // };
+
+    // // Creación de session
+    // let userLogged = null;
+
+    // if (userLog) {
+    //     userLogged = usersDB.find( function (e) {
+    //         return (e.email === email);
+    //     });
+    // };
+
+    // if (userLog) {
+    //     // delete userLogged.hashedPassword;
+    //     req.session.userLogged = userLogged;
+    // };
+
+    // // Creación de cookie
+    // if (rememberUser === "yes") {
+    //     res.cookie("userEmail", email, { maxAge: 30000 });
+    // };
+
+    // if (userLog) {
+    //     res.redirect('/user');
+    // };
+
+
+    },
+    // profile: function (req, res) {
+    //     res.render('user/user-profile', {
+    //         user: req.session.userLogged
+    //     });
+    // },
+
+    edit: function (req, res) {
+        User.findByPk(req.params.id).then(function(){
+            res.render('user/user-edit', {
+                user: req.session.userLogged
             });
-        };
+        })
+    },
 
-        // Desestructuración del objeto req.body
-        const {
-            email,
-            password,
-            rememberUser
-        } = req.body
 
-        // Validación de credenciales
-        let userLog = false;
-        
-        usersDB.forEach( function (e) {
-            if ((e.email === email) && (bcrypt.compareSync(password, e.hashedPassword))) {
-                return userLog = true;
-            }
-        });
-
-        if (!userLog) {
-            return res.render('user/user-login', {
-                error: {
-                    top: {
-                        msg: 'Credenciales inválidas'
-                    }
-                }
-            });                
-        };
-
-        // Creación de session
-        let userLogged = null;
-
-        if (userLog) {
-            userLogged = usersDB.find( function (e) {
-                return (e.email === email);
+    edit: function (req, res) {
+        nft
+          .findByPk(req.params.id)
+          .then(({ dataValues }) => {
+            res.render('product/product-edit', {
+              producto: dataValues,
             });
-        };
+          })
+          .catch(() => {
+            res.render('product/product-edit-error', {
+              error: {
+                text: 'Edit-Error: No se pudo cargar el producto solicitado.',
+              },
+            });
+          });
+      
 
-        if (userLog) {
-            // delete userLogged.hashedPassword;
-            req.session.userLogged = userLogged;
-        };
+    update: function(req, res){
+        User.findByPk(req.body.id).then(function(){
 
-        // Creación de cookie
-        if (rememberUser === "yes") {
-            res.cookie("userEmail", email, { maxAge: 30000 });
-        };
+        })
 
-        if (userLog) {
-            res.redirect('/user');
-        };
-        
+
+
+  
+    
+     
     },
 
     logout: function (req, res) {

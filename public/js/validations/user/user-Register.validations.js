@@ -18,7 +18,7 @@ const formLogin = document.addEventListener('submit', (e) => {
     if (checkValues.range(3, 20, user))        
     errors.push('Campo de usuario esta vacio o no esta en el rango(3 - 20)');
 
-    if (checkValues.range(3, 20, email) || checkValues.verificacionCorreo(email) )        
+    if (checkValues.range(3, 50, email) || checkValues.verificacionCorreo(email) )        
       errors.push('Campo email esta vacio o no esta en el rango(3 - 20)');
 
     // if (checkValues.isempty(dateBirthday) || checkValues.verificacionEdad (dateBirthday) < 18)        

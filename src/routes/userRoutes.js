@@ -11,18 +11,30 @@ const uploadFile = require('../modules/registerImage');
 
 const user = require('../controllers/userController');
 
-router.get('/profile', guestMiddleware, user.profile);
-router.get('/edit', guestMiddleware, user.edit);
 
 // Registro Usuario
 router.get('/register', loggedMiddleware, user.register);
-// router.post('/register', loggedMiddleware, user.processRegister);
-router.post('/register', uploadFile.single("avatar"), user.processRegister);
+router.post('/register', uploadFile.single("avatar"), loggedMiddleware, user.processRegister);
 
 
-
+// Login Usuario
 router.get('/login', loggedMiddleware, user.login);
 router.post('/login', loginValidation, user.processLogin);
+
+
+// Obtener el Detalle del Usuario
+// router.get('/profile/', guestMiddleware, user.profile);
+
+
+// Edicion del Usuario
+router.get('/edit', guestMiddleware, user.edit);
+router.put('/edit', guestMiddleware, user.processEdit);
+
+
+
+
+// Edit Borrar Producto
+
 router.get('/logout', user.logout);
 
 
