@@ -5,8 +5,10 @@ const { db } = require('..');
 const Categorias = db.define(
   'categorias',
   {
-    id_categoria: {
+    id: {
       type: DataTypes.INTEGER,
+      primaryKey:true,
+      autoIncrement:true,
     },
     categoria: {
       type: DataTypes.STRING,

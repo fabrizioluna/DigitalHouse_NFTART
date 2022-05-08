@@ -23,19 +23,19 @@ router.post('/login', loginValidation, user.processLogin);
 
 
 // Obtener el Detalle del Usuario
-// router.get('/profile/', guestMiddleware, user.profile);
+router.get('/profile/', guestMiddleware, user.profile);
 
 
 // Edicion del Usuario
-router.get('/edit', guestMiddleware, user.edit);
-router.put('/edit', guestMiddleware, user.processEdit);
+// router.get('/edit', guestMiddleware, user.edit);
+// router.put('/edit', guestMiddleware, user.processEdit);
 
 
 
 
-// Edit Borrar Producto
+// // Edit Borrar Producto
 
-router.get('/logout', user.logout);
+// router.get('/logout', user.logout);
 
 
 

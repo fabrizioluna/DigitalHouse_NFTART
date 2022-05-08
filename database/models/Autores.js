@@ -3,8 +3,10 @@ const { db } = require('..');
 
 const Autores = db.define('autores',
     {   
-        id_autor:{
-            type:DataTypes.INTEGER,
+        id:{
+            type: DataTypes.INTEGER,
+            primaryKey:true,
+            autoIncrement:true,
         },
         autor:{
             type:DataTypes.STRING,

@@ -4,8 +4,10 @@ const { db } = require('..');
 const Transacciones = db.define(
   'transacciones',
   {
-    id_transaccion: {
+    id: {
       type: DataTypes.INTEGER,
+      primaryKey:true,
+      autoIncrement:true,
     },
     codigo_operacion: {
       type: DataTypes.STRING,
