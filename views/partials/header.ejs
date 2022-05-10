@@ -30,10 +30,12 @@
 <!-- SUBMENU -->
 <nav class='nav__secondary'>
     <div class='search-element'>
-        <input class='search-box' type='search' placeholder='Buscar...'></input>
-        <button class='search-button' type='submit'>
-            <i class='fas fa-search'></i>
-        </button>
+        <form action="/product/search" method="get">
+            <input class='search-box' name="like" id="like" type='search' placeholder='Buscar...'></input>
+            <!-- <button class='search-button' type='submit'>
+                <i class='fas fa-search'></i>
+            </button> -->
+        </form>
     </div>
     <a href="/product/marketplace" class='nav__secondary-text'>MARKETPLACE</a>
     <a href="#" class='nav__secondary-text'>RANKING</a>
