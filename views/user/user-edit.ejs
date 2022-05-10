@@ -13,53 +13,53 @@
     <section class="container_body">
         <section class="container_datos_persona">
             <div class="circle">
-                <img src="/img/AVATARES/<%=user.avatar%>" class="ok">
+                <img src="/img/AVATARES/<%=user.imagen%>" class="ok">
                 <input
                     name="avatarEdited"
                     type="file"
                 />
             </div>
-            <form class='popUp__Fields'>
+            <form class='popUp__Fields' action="/user/edit" method="post">
                 <div>
                 <label>Nombre completo</label>
                 <input
-                    name="fullNameEdited"
-                    placeholder='<%=user.fullName%>'
+                    name="nombre_usuario"
+                    value='<%=user.nombre_usuario%>'
                     type='text'
                 />
                 </div>
                 <div>
                 <label>Nombre de usuario</label>
                 <input 
-                    name="userNameEdited"
-                    placeholder='<%=user.userName%>'
+                    name="usuario"
+                    value='<%=user.usuario%>'
                     type='text'
                 />
                 </div>
                 <div>
                 <label>Correo electrónico</label>
                 <input
-                    name="emailEdited"
-                    placeholder='<%=user.email%>'
+                    name="email"
+                    value='<%=user.email%>'
                     type='email'
                 />
                 </div>
                 <div>
-                <label>Fecha de nacimiento</label>
+                <!-- <label>Fecha de nacimiento</label>
                 <input
-                    name="birthdayEdited"
-                    value='<%=user.birthday%>'
+                    name="fecha_nacimiento%"
+                    value='<%=user.fecha_nacimiento%>'
                     type='date'
-                />
+                /> -->
                 </div>
                 <div>
                     <label>País</label>
-                    <select name="countryEdited">
-                        <option value="colombia" <%=(user.country==='colombia') ? 'selected' : ''%>>Colombia</option>
-                        <option value="mexico" <%=(user.country==='mexico') ? 'selected' : ''%>>México</option>
-                        <option value="chile" <%=(user.country==='chile') ? 'selected' : ''%>>Chile</option>
-                        <option value="paraguay" <%=(user.country==='paraguay') ? 'selected' : ''%>>Paraguay</option>
-                        <option value="argentina" <%=(user.country==='argentina') ? 'selected' : ''%>>Argentina</option>
+                    <select name="pais">
+                        <option value="colombia" <%=(user.pais==='colombia') ? 'selected' : ''%>>Colombia</option>
+                        <option value="mexico" <%=(user.pais==='mexico') ? 'selected' : ''%>>México</option>
+                        <option value="chile" <%=(user.pais==='chile') ? 'selected' : ''%>>Chile</option>
+                        <option value="paraguay" <%=(user.pais==='paraguay') ? 'selected' : ''%>>Paraguay</option>
+                        <option value="argentina" <%=(user.pais==='argentina') ? 'selected' : ''%>>Argentina</option>
                     </select>
                 </div>
         </section>
@@ -68,17 +68,15 @@
                     <div class='popUp__Type'>
                         <label>Vendedor</label>
                         <input
-                            name="userTypeEdited"
+                            name="tipo_usuarios"
                             type='checkbox'
                             value="vendedor"
-                            <%=((user.userType==='vendedor') || (user.userType[0]==='vendedor') || (user.userType[1]==='vendedor')) ? 'checked' : ''%>
                         />
                         <label>Comprador</label>
                         <input 
-                            name="userTypeEdited"
+                            name="tipo_usuarios"
                             type='checkbox'
                             value="comprador"
-                            <%=((user.userType==='comprador') || (user.userType[0]==='comprador') || (user.userType[1]==='comprador')) ? 'checked' : ''%>
                         />
                     </div>
                 </div>
@@ -90,21 +88,21 @@
                     <i class="fab fa-instagram-square"></i>
                 </section>
                 <section class="section_contraseñas">
-                    <p>Validación de contraseña actual para efectuar los cambios</p>
+                    <!-- <p>Validación de contraseña actual para efectuar los cambios</p>
                     <div>
                         <input
-                            name="password1Edited"
+                            name="password"
                             placeholder='Contraseña'
                             type='password'
                         />
                     </div>
                     <div>
                         <input
-                            name="password2Edited"
+                            name="second_password"
                             placeholder='Repite tu contraseña'
                             type='password'
                         />
-                    </div>
+                    </div> -->
                     <button type='submit'>Continuar</button>
                     <a href="/"><button type="button">Cancelar</button></a>
                 </section>

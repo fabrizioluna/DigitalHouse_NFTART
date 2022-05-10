@@ -1,30 +1,21 @@
+const User = require('../../database/models/Usuarios');
 const { body } = require('express-validator');
-const Usuarios = require('../../database/models/Usuarios');
 
 let registerValidation = [
-  body('fullName').notEmpty().withMessage('Completa el nombre'),
-  body('userName')
+  body('nombre_usuario').notEmpty().withMessage('Completa el nombre'),
+  body('usuario')
     .notEmpty()
     .withMessage('Completa el nombre de usuario')
     .bail()
 
     // Validación de pre existencia de nombre de usuario
-    // .custom(async function (value, { req }) {
-    //   let userExists = false;
-
-    //   usersDB.forEach(function (e) {
-    //     if (e.userName === req.body.userName) {
-    //       return (userExists = true);
-    //     }
-    //   });
-
-    //   if (userExists) {
-    //     throw new Error('Nombre de usuario en uso');
-    //   }
-
-    //   return true;
-    // }),
-    ,
+    .custom(async function (value, { req }) {
+      const user = await User.findOne({ where: { usuario: req.body.usuario } });
+      if (user != null) {
+        throw new Error('El nombre de usuario ya esta en uso.');
+      }
+      return true;
+    }),
   body('email')
     .notEmpty()
     .withMessage('Completa el correo electrónico')
@@ -33,31 +24,20 @@ let registerValidation = [
     .withMessage('Ingresa un correo electrónico válido')
     .bail()
 
-    // Validación de pre existencia de correo electrónico
     .custom(async function (value, { req }) {
-
-        const emailExists = await Usuarios.findOne({ where: { email: req.body.email } });
-        if(emailExists !== null) throw new Error('Correo electrónico ya esta en uso.')
-        console.log('El middleware', emailExists)
-    //   let emailExists = false;
-
-    //   usersDB.forEach(function (e) {
-    //     if (e.email === req.body.email) {
-    //       return (emailExists = true);
-    //     }
-    //   });
-
-    //   if (emailExists) {
-    //     throw new Error('Correo electrónico en uso');
-    //   }
-
-    //   return true;
+      const user = await User.findOne({ where: { email: req.body.email } });
+      if (user != null) {
+        throw new Error('El email ya esta en uso.');
+      }
+      return true;
     }),
-  body('birthday').notEmpty().withMessage('Completa la fecha de nacimiento'),
-  body('country').notEmpty().withMessage('Completa país de origen'),
-  body('userType').notEmpty().withMessage('Define el tipo de cuenta'),
-  body('password1').notEmpty().withMessage('Ingresa una contraseña'),
-  body('password2')
+  body('fecha_nacimiento')
+    .notEmpty()
+    .withMessage('Completa la fecha de nacimiento'),
+  body('pais').notEmpty().withMessage('Completa país de origen'),
+  body('tipo_usuarios').notEmpty().withMessage('Define el tipo de cuenta'),
+  body('contrasenia').notEmpty().withMessage('Ingresa una contraseña'),
+  body('contrasenia2')
     .notEmpty()
     .withMessage('Ingresa una contraseña')
     .bail()
@@ -67,19 +47,34 @@ let registerValidation = [
       if (req.body.contrasenia !== req.body.contrasenia2) {
         throw new Error('Las contraseñas no coinciden');
       }
-
       return true;
     }),
-//   body('avatar').custom(function (value, { req }) {
-//     let file = req.file;
+  // body('fecha_nacimiento').notEmpty().withMessage('Completa la fecha de nacimiento'),
+  // body('pais').notEmpty().withMessage('Completa país de origen'),
+  // body('tipo_usuarios').notEmpty().withMessage('Define el tipo de cuenta'),
+  // body('contrasenia').notEmpty().withMessage('Ingresa una contraseña'),
+  // body('contrasenia2')
+  //   .notEmpty()
+  //   .withMessage('Ingresa una contraseña')
+  //   .bail()
 
-//     if (!file) {
-//       throw new Error('Se debe cargar una imagen');
-//     }
+  //   // Validación de coincidencia entre contraseñas
+  //   .custom(function (value, { req }) {
+  //     if (req.body.contrasenia !== req.body.contrasenia2) {
+  //       throw new Error('Las contraseñas no coinciden');
+  //     }
 
-//     return true;
-//   }),
+  //     return true;
+  //   }),
+  //   body('avatar').custom(function (value, { req }) {
+  //     let file = req.file;
+
+  //     if (!file) {
+  //       throw new Error('Se debe cargar una imagen');
+  //     }
+
+  //     return true;
+  //   }),
 ];
 
 module.exports = registerValidation;
-

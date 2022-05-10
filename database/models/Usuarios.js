@@ -33,6 +33,9 @@ const Usuarios = db.define(
     pais:{
       type: DataTypes.STRING
     },
+    imagen:{
+      type: DataTypes.STRING
+    },
   },
   {
     tableName: 'usuarios',

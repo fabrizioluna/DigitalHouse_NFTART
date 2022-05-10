@@ -1,25 +1,25 @@
-const fs = require('fs')
-const path = require('path');
+const User = require('../../database/models/Usuarios');
 
-const usersDB = JSON.parse(fs.readFileSync(path.join(__dirname,"../data/users.json")),'utf-8');
+async function userLoggedMiddleware(req, res, next) {
+  res.locals.isLogged = false;
+  res.locals.userLogged = null;
 
-function userLoggedMiddleware (req, res, next){
-    res.locals.isLogged = false;
-    res.locals.userLogged = null;
+  if (typeof req.cookies.userEmail !== 'undefined') {
+    res.locals.isLogged = true;
+    res.locals.userLogged = await User.findOne(
+      { where: { email: req.cookies.userEmail } }.then(function (user) {
+        console.log(user);
+        return user;
+      })
+    );
+  }
 
-    if (typeof(req.cookies.userEmail) !== 'undefined') {
-        res.locals.isLogged = true;
-        res.locals.userLogged = usersDB.find( function (e) {
-            return (e.email === req.cookies.userEmail);
-        });
-    };
+  if (typeof req.session.userLogged !== 'undefined') {
+    res.locals.isLogged = true;
+    res.locals.userLogged = req.session.userLogged;
+  }
 
-    if (typeof(req.session.userLogged) !== 'undefined') {
-        res.locals.isLogged = true;
-        res.locals.userLogged = req.session.userLogged;
-    };
-
-    next();
+  next();
 }
 
 module.exports = userLoggedMiddleware;

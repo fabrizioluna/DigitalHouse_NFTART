@@ -1,6 +1,6 @@
 const { validationResult } = require('express-validator');
+const bcryptJs = require('bcryptjs');
 const bcrypt = require('bcrypt');
-const bcryptJs = require('bcryptjs')
 const User = require('../../database/models/Usuarios');
 
 const user = {
@@ -11,6 +11,8 @@ const user = {
   processRegister: function (req, res) {
     // Verificación de existencia de errores desde express-validator
     let error = validationResult(req);
+
+    console.log(error)
     if (error.errors.length > 0) {
       return res.render('user/user-register', {
         error: error.mapped(),
@@ -18,7 +20,6 @@ const user = {
       });
     }
 
-    console.log(req.body)
     const password = bcryptJs.hashSync(req.body.contrasenia, 12);
     User.create({
       nombre_usuario: req.body.nombre_usuario,
@@ -28,6 +29,7 @@ const user = {
       pais: req.body.pais,
       tipo_usuario: req.body.tipo_usuario,
       contrasenia: password,
+      imagen: req.file.filename
     }).then((user) => {
       res.redirect('/user/login/');
     });
@@ -45,9 +47,10 @@ const user = {
       });
     }
 
-    User.findOne({ where: { email: req.body.email } })
-    .then(async function (user) {
-      if (!bcryptJs.compareSync(req.body.contrasenia, user.dataValues.contrasenia)) {
+    User.findOne({ where: { email: req.body.email } }).then(function (user) {
+      if (
+        !bcrypt.compareSync(req.body.contrasenia, user.dataValues.contrasenia)
+      ) {
         return res.render('user/user-login', {
           error: {
             top: {
@@ -56,11 +59,10 @@ const user = {
           },
         });
       }
-      req.session.userLogged = true;
+      req.session.userLogged = user.dataValues;
       if (req.body.rememberUser === 'yes') {
-        res.cookie('userEmail', email, { maxAge: 30000 });
+        res.cookie('userEmail', user.dataValues.email, { maxAge: 30000 });
       }
-      // TODO: Falta agregar los datos dinamicos.
       return res.redirect('/user/profile');
     });
   },
@@ -71,16 +73,22 @@ const user = {
     });
   },
 
-  // edit: function (req, res) {
-  //     User.findByPk(req.params.id).then(function(){
-  //         res.render('user/user-edit', {
-  //             user: req.session.userLogged
-  //         });
-  //     })
-  // },
+  edit: function (req, res) {
+    User.findByPk(req.params.id).then(function () {
+      res.render('user/user-edit', {
+        user: req.session.userLogged,
+      });
+    });
+  },
 
   update: function (req, res) {
-    User.findByPk(req.body.id).then(function () {});
+    console.log(req.body)
+    User.update(
+      req.body,
+      { where: { email: req.body.email } }
+    ).then(function () {
+      res.redirect('/user/profile');
+    });
   },
 
   logout: function (req, res) {
