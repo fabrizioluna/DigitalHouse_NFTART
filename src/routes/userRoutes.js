@@ -14,12 +14,12 @@ const user = require('../controllers/userController');
 
 // Registro Usuario
 router.get('/register', loggedMiddleware, user.register);
-router.post('/register', uploadFile.single("avatar"), loggedMiddleware, user.processRegister);
+router.post('/register', uploadFile.single("avatar"), registerValidation, user.processRegister);
 
 
 // Login Usuario
 router.get('/login', loggedMiddleware, user.login);
-router.post('/login', loginValidation, user.signin);
+router.post('/login', loginValidation, user.processLogin);
 
 
 // Obtener el Detalle del Usuario
@@ -35,7 +35,7 @@ router.get('/profile/', guestMiddleware, user.profile);
 
 // // Edit Borrar Producto
 
-// router.get('/logout', user.logout);
+router.get('/logout', user.logout);
 
 
 
