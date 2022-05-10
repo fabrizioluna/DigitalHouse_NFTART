@@ -22,19 +22,23 @@
     <main>
             <section class= "Presentacion">
                 <div class="circulo">
-                    <img src="/img/AVATARES/<%=user.avatar%>" class="ok">
+                    <!-- <img src="/img/AVATARES/<%=user.avatar%>" class="ok"> -->
                 </div>
                 <div>
-                    <H1 class="H1perfil"><%=user.fullName%></H1>
-                    <H2 class="H2perfil"><%=user.userName%></H2>
+                    <H1 class="H1perfil"><%=user.nombre_usuario%></H1>
+                    <H2 class="H2perfil"><%=user.usuario%></H2>
                     <ul class="Redessociales">
                         <li> <i class="Botonredes fab fa-facebook-square"></i> Facebook </li>
                         <li> <i class="Botonredes fab fa-instagram-square"></i> Instagram </li>
                         <li> <button class="Botoncompartir"><i class="fas fa-share-alt"></i></button> </li>
                     </ul>
                     <br><br>
+
                     <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesc Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesc
                     </p>
+                    <a href="/user/edit/<%=user.usuario%>">Editar</a>
+                    <form method="post" action="/user/delete">
+                    </form>
                 </div>            
             </section>
     

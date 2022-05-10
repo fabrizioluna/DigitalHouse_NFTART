@@ -1,6 +1,6 @@
 const { validationResult } = require('express-validator');
 const bcrypt = require('bcrypt');
-const User = require('../../database/models/Usuarios')
+const User = require('../../database/models/Usuarios');
 
 const user = {
   register: function (req, res) {
@@ -10,6 +10,8 @@ const user = {
   processRegister: function (req, res) {
     // Verificación de existencia de errores desde express-validator
     let error = validationResult(req);
+    console.log(error)
+
     if (error.errors.length > 0) {
       return res.render('user/user-register', {
         error: error.mapped(),
@@ -43,17 +45,10 @@ const user = {
     }
 
     User.findOne({ where: { email: req.body.email } }).then(function (user) {
-      // console.log(req.body)
-      console.log(req.body.contrasenia, user.dataValues.email)
-      console.log(user.dataValues.contrasenia)
-
-      
-      console.log(bcrypt.compareSync(req.body.contrasenia, user.dataValues.contrasenia))
-
       if (
         !bcrypt.compareSync(req.body.contrasenia, user.dataValues.contrasenia)
       ) {
-        console.log('No paso la validacion')
+
       return res.render('user/user-login', {
         error: {
           top: {
@@ -62,60 +57,33 @@ const user = {
         },
       });
       }
-      console.log('Paso la validacion')
-        req.session.userLogged = userLogged;
-        console.log('paso la segunda validacion');
-        if (rememberUser === 'yes') {
+        req.session.userLogged = true;
+        if (req.body.rememberUser === 'yes') {
           res.cookie('userEmail', email, { maxAge: 30000 });
-        }
+        } return res.redirect('/user/profile')
       
     });
   },
     
-
-  signin: async function (req, res) {
-    try {
-      const user = await User.findOne({
-        where: {
-          email: req.body.email,
-        },
-      });
-      if (!user) {
-        return res.status(404).send({ message: "User Not found." });
-      }
-
-      console.log(req.body.contrasenia,
-        user.dataValues.contrasenia)
-      const passwordIsValid = bcrypt.compareSync(
-        req.body.contrasenia,
-        user.dataValues.contrasenia
-      );
-      if (!passwordIsValid) {
-        return res.status(401).send({
-          message: "Invalid Password!",
-        });
-      }
-    } catch(err) {
-      console.log(err)
-    }
-  },
-
   profile: function (req, res) {
     res.render('user/user-profile', {
       user: req.session.userLogged,
     });
   },
 
-  // edit: function (req, res) {
-  //     User.findByPk(req.params.id).then(function(){
-  //         res.render('user/user-edit', {
-  //             user: req.session.userLogged
-  //         });
-  //     })
-  // },
+  edit: function (req, res) {
+      User.findByPk(req.params.id).then(function(){
+          res.render('user/user-edit', {
+              user: req.session.userLogged
+          });
+      })
+  },
 
   update: function (req, res) {
-    User.findByPk(req.body.id).then(function () {});
+    User.update({subject:req.body},{returning:true},{where:{usuario:req.body.usuario}})
+    .then(function (user){
+        res.redirect('user/user-profile')
+    });
   },
 
   logout: function (req, res) {
