@@ -42,11 +42,11 @@
 
                 <%for(let p of productos){%>
 
-                <a class="container_product_desc" href="/product/detail/<%=p.id%>">
+                <a class="container_product_desc" onclick="set('<%=p.nombre_nft%>')">
                     <img src="/img/PRODUCTOS/<%=p.categoria+'_'+p.id+'.jpg'%>" alt="NFT" class="product_img">
                     <div class="main-article">
                         <div>
-                            <h2 class="name_product"><%=p.nombre%></h2>
+                            <h2 class="name_product"><%=p.nombre_nft%></h2>
                             <p class="autor"><%=p.autor%></p>
                         </div>
                         <div class="precios">
@@ -59,14 +59,14 @@
                         </div>
                     </div>
                 </a>
-
+                <script>let name = '<%-p.nombre%>'</script>
                 <%}%>
-            
             </div>  
         </section>
     </main>
 
     <%- include('../partials/footer') %>
-    
+
+    <script src="/js/Cart/cart.js"></script>
 </body>
 </html>
