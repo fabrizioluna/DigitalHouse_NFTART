@@ -44,6 +44,9 @@ const user = {
 
     User.findAll({ where: { email: req.body.email } }).then(function (user) {
       if (
+
+
+        
         bcrypt.compareSync(req.body.contrasenia, user.dataValues.contrasenia)
       ) { req.session.userLogged = userLogged; console.log("paso la segunda validacion")
         if (rememberUser === "yes") {
