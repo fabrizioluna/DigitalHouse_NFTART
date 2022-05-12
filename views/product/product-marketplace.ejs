@@ -42,7 +42,7 @@
 
                 <%for(let p of productos){%>
 
-                <a class="container_product_desc" onclick="set('<%={nombre_nft:p.nombre_nft,precio_USD:p.precioUSD,precio_ETH:p.precioETH}%>')">
+                <a class="container_product_desc" onclick="set('{nombre_nft:<%=p.nombre_nft %>,precio_actual_usd:<%=p.precio_actual_usd%>,precio_actual_eth:<%=p.precio_actual_eth%>,autor:<%=p.autor%>}')">
                     <img src="/img/PRODUCTOS/<%=p.categoria+'_'+p.id+'.jpg'%>" alt="NFT" class="product_img">
                     <div class="main-article">
                         <div>

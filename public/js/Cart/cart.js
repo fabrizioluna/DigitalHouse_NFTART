@@ -8,6 +8,7 @@
 
 function set(products){
     const previewItems = cartExist()
+    console.log(products,previewItems)
     if(previewItems.status==true){
         return sessionStorage.setItem('authUser',JSON.stringify([...previewItems.data,products]))
     }

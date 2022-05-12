@@ -1,5 +1,5 @@
 const { validationResult } = require('express-validator');
-// const bcryptJs = require('bcryptjs');
+const bcryptJs = require('bcryptjs');
 const bcrypt = require('bcrypt');
 const User = require('../../database/models/Usuarios');
 
@@ -96,6 +96,9 @@ const user = {
     res.clearCookie('userEmail');
     return res.redirect('/');
   },
+  cart: function(req,res){
+    res.render('product/product-cart')
+  }
 };
 
 module.exports = user;
