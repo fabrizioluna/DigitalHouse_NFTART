@@ -1,20 +1,18 @@
 
-let buttonMarketplace= document.getElementById('key').addEventListener('click',function(e){
-    const validation= cartSession.cartExist();
-    if(validation.status==false){
-        return(cartSession.set)
-    }
-})
-
+// let buttonMarketplace= document.getElementById('key').addEventListener('click',function(e){
+//     const validation= cartSession.cartExist();
+//     if(validation.status==false){
+//         return(cartSession.set)
+//     }
+// })
 
 function set(products){
     const previewItems = cartExist()
     if(previewItems.status==true){
-        const {data} = data.push(products);
-        return sessionStorage.setItem('authUser',JSON.stringify(data))
+        return sessionStorage.setItem('authUser',JSON.stringify([...previewItems.data,products]))
     }
+    return sessionStorage.setItem('authUser',JSON.stringify([products]))
 }
-
 
 function cartExist(){
     const cartExist = sessionStorage.getItem('authUser');
