@@ -1,0 +1,78 @@
+
+#search_nav {
+    width: 70%;
+    margin: auto;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+}
+
+#search_image {
+    height: 15rem;
+    width: 50%;
+}
+
+#search_image img {
+    width: 100%;
+    height: 15rem;
+}
+
+#search_nav li {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    height: 15rem;
+    margin-bottom: 2rem;
+}
+
+#search_description {
+    height: 7rem;
+    width: 100%;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+}
+
+#search_description h3 {
+    font-family: 'Alumni Sans', sans-serif;
+    font-size: 32px;
+}
+
+#search_price {
+    display: flex;
+    height: 5rem;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+    flex-direction: row;
+    text-align: right;
+}
+
+#search_price p {
+    padding-left: 2rem;
+    color: rgba(4, 160, 41, 0.922);
+    font-weight: bold;
+    font-size: 16px;
+}
+
+#search_footer {
+    background-color: transparent;
+    justify-items: right;
+    justify-self: right;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+}
+
+#search_footer button {
+    float: right;
+    width: 10rem;
+    height: 2.5rem;
+    color: white;
+    text-decoration: none;
+    border-color: transparent;
+    background-color: #072146;
+}
+
+#search_footer a {
+    text-decoration: none;
+    color: white;
+    font-family: 'Alumni Sans', sans-serif;
+    font-size: 24px;
+}

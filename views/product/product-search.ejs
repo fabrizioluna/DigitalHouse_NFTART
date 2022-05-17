@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%-include('../partials/head')%>
+    <link href="/css/product-search.css" , rel="stylesheet" />
+    <title>NFTART - Búsqueda de producto</title>
+  </head>
+
+  <body>
+    <%-include('../partials/header')%>
+    <!-- <main class="search"> -->
+    <ul id="search_nav">
+      <%for(let p of productos){%>
+      <li>
+        <div id="search_image">
+          <img src="/img/PRODUCTOS/<%=p.imagen%>" />
+        </div>
+        <div>
+          <div id="search_description">
+            <h3><%=p.nombre_nft%></h3>
+            <p><%=p.descripcion%></p>
+          </div>
+          <div id="search_price">
+            <p>Precio Eth: <%=p.precio_actual_eth%></p>
+            <p>Precio Dolares: <%=p.precio_actual_usd%></p>
+          </div>
+          <footer id="search_footer">
+              <button><a href="/product/detail/<%=p.id%>">Ver nft</a></button>
+          </footer>
+        </div>
+      </li>
+      <%}%>
+    </ul>
+    <!-- </main> -->
+    <%-include('../partials/footer')%>
+  </body>
+</html>

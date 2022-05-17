@@ -15,9 +15,9 @@
                 </a>
         <%} else {%>
             <div class='nav__primary-text-2'>
-                <a href="/user" class='nav__primary-login-2'>
-                    <div class='nav__primary-element-2'><img src="/img/AVATARES/<%=locals.userLogged.avatar%>"></div>
-                    <div class='nav__primary-login_text-2'>HOLA, <%=locals.userLogged.userName%></div>
+                <a href="/user/profile" class='nav__primary-login-2'>
+                    <div class='nav__primary-element-2'><img src="/img/AVATARES/<%=locals.userLogged.imagen%>"></div>
+                    <div class='nav__primary-login_text-2'>HOLA, <%=locals.userLogged.usuario%></div>
                 </a>
                 <a href="/user/logout" class='nav__primary-register-2'>
                     CERRAR SESIÓN
@@ -30,10 +30,12 @@
 <!-- SUBMENU -->
 <nav class='nav__secondary'>
     <div class='search-element'>
-        <input class='search-box' type='search' placeholder='Buscar...'></input>
-        <button class='search-button' type='submit'>
-            <i class='fas fa-search'></i>
-        </button>
+        <form action="/product/search" method="get">
+            <input class='search-box' name="like" id="like" type='search' placeholder='Buscar...'></input>
+            <!-- <button class='search-button' type='submit'>
+                <i class='fas fa-search'></i>
+            </button> -->
+        </form>
     </div>
     <a href="/product/marketplace" class='nav__secondary-text'>MARKETPLACE</a>
     <a href="#" class='nav__secondary-text'>RANKING</a>

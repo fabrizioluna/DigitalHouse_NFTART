@@ -19,7 +19,9 @@ router.get('/delete', product.delete);
 router.post('/delete/:id', product.processDelete);
 
 // carrito
-// router.get('/cart', product.cart);
 router.get('/detail/:id', product.detail);
+
+// barra de busqueda
+router.get('/search', product.search)
 
 module.exports = router;

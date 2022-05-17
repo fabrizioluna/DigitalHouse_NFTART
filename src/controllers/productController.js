@@ -1,3 +1,4 @@
+const { Op } = require('sequelize');
 const nft = require('../../database/models/nft');
 
 const PRODUCT = {
@@ -15,7 +16,18 @@ const PRODUCT = {
 
   processCreate: async function (req, res) {
     nft
-      .create(req.body)
+      .create({
+        nombre_nft: req.body.nombre_nft,
+        usuario_creador: req.body.usuario_creador,
+        precio_actual_eth: req.body.precio_actual_eth,
+        precio_actual_usd: req.body.precio_actual_usd,
+        categoria: req.body.categoria,
+        descripcion: req.body.descripcion,
+        autor: req.body.autor,
+        tematica: req.body.tematica,
+        codigo_unico: req.body.codigo_unico,
+        imagen: req.file.filename
+      })
       .then(({ dataValues }) => {
         res.redirect('/product/detail/' + dataValues.id);
       })
@@ -93,6 +105,15 @@ const PRODUCT = {
       .catch((err) => console.log(err));
   },
 
+  search: function (req, res) {
+    nft
+      .findAll({
+        raw: true,
+        where: { nombre_nft: { [Op.like]: `%${req.query.like}%` } },
+      })
+      .then((products) => res.render('product/product-search', { productos: products }))
+      .catch((err) => console.log(err));
+  },
 };
 
 module.exports = PRODUCT;

@@ -44,17 +44,17 @@
                             id="nombre_usuario" 
                             placeholder='Nombre completo'
                             type='text'
-                            value="<%=(locals.old) ? old.fullName : ''%>"
+                            value="<%=(locals.old) ? old.nombre_usuario : ''%>"
                         />
-                        <div class="popUp__Errors"><%=((typeof(error) !== 'undefined') && (typeof(error.fullName) !== 'undefined')) ? error.fullName.msg : ''%></div>
+                        <div class="popUp__Errors"><%=((typeof(error) !== 'undefined') && (typeof(error.nombre_usuario) !== 'undefined')) ? error.nombre_usuario.msg : ''%></div>
                         <input
                             name="usuario"
                             id="usuario" 
                             placeholder='Nombre de usuario'
                             type='text'
-                            value="<%=(locals.old) ? old.userName : ''%>"
+                            value="<%=(locals.old) ? old.usuario : ''%>"
                         />
-                        <div class="popUp__Errors"><%=((typeof(error) !== 'undefined') && (typeof(error.userName) !== 'undefined')) ? error.userName.msg : ''%></div>
+                        <div class="popUp__Errors"><%=((typeof(error) !== 'undefined') && (typeof(error.usuario) !== 'undefined')) ? error.usuario.msg : ''%></div>
                         <input
                             name="email"
                             id="email" 
@@ -68,45 +68,47 @@
                             name="fecha_nacimiento"
                             id="fecha_nacimiento" 
                             type='date'
-                            value="<%=(locals.old) ? old.birthday : ''%>"
+                            value="<%=(locals.old) ? old.fecha_nacimiento : ''%>"
                         />
-                        <div class="popUp__Errors"><%=((typeof(error) !== 'undefined') && (typeof(error.birthday) !== 'undefined')) ? error.birthday.msg : ''%></div>
+                        <div class="popUp__Errors"><%=((typeof(error) !== 'undefined') && (typeof(error.fecha_nacimiento) !== 'undefined')) ? error.fecha_nacimiento.msg : ''%></div>
+                        
                         <label>País</label>
                         <select name="pais" id="pais" >
-                            <option value="" <%=(locals.old && old.country==='') ? 'selected' : ''%>>Selecciona una opción:</option>
-                            <option value="colombia" <%=(locals.old && old.country==='colombia') ? 'selected' : ''%>>Colombia</option>
-                            <option value="mexico" <%=(locals.old && old.country==='mexico') ? 'selected' : ''%>>México</option>
-                            <option value="chile" <%=(locals.old && old.country==='chile') ? 'selected' : ''%>>Chile</option>
-                            <option value="paraguay" <%=(locals.old && old.country==='paraguay') ? 'selected' : ''%>>Paraguay</option>
-                            <option value="argentina" <%=(locals.old && old.country==='argentina') ? 'selected' : ''%>>Argentina</option>
+                            <option value="" <%=(locals.old && old.pais==='') ? 'selected' : ''%>>Selecciona una opción:</option>
+                            <option value="colombia" <%=(locals.old && old.pais==='colombia') ? 'selected' : ''%>>Colombia</option>
+                            <option value="mexico" <%=(locals.old && old.pais==='mexico') ? 'selected' : ''%>>México</option>
+                            <option value="chile" <%=(locals.old && old.pais==='chile') ? 'selected' : ''%>>Chile</option>
+                            <option value="paraguay" <%=(locals.old && old.pais==='paraguay') ? 'selected' : ''%>>Paraguay</option>
+                            <option value="argentina" <%=(locals.old && old.pais==='argentina') ? 'selected' : ''%>>Argentina</option>
                         </select>
-                        <div class="popUp__Errors"><%=((typeof(error) !== 'undefined') && (typeof(error.country) !== 'undefined')) ? error.country.msg : ''%></div>
+                        <div class="popUp__Errors"><%=((typeof(error) !== 'undefined') && (typeof(error.pais) !== 'undefined')) ? error.pais.msg : ''%></div>
+                        
                         <label>Tipo de cuenta</label>
                         <div class='popUp__Type'>
                             <label>
-                                <select name="usuario_creador" id="usuario_creador" >
-                                    <option value="" <%=(locals.old && old.usuario_creador==='') ? 'selected' : ''%>>Selecciona una opción:</option>
-                                    <option value="vendedor" <%=(locals.old && old.usuario_creador==='comprador') ? 'selected' : ''%>>comprador</option>
-                                    <option value="comprador" <%=(locals.old && old.usuario_creador==='vendedor') ? 'selected' : ''%>>vendedor</option>
+                                <select name="tipo_usuarios" id="tipo_usuarios" >
+                                    <option value="" <%=(locals.old && old.tipo_usuarios==='') ? 'selected' : ''%>>Selecciona una opción:</option>
+                                    <option value="vendedor" <%=(locals.old && old.tipo_usuarios==='comprador') ? 'selected' : ''%>>comprador</option>
+                                    <option value="comprador" <%=(locals.old && old.tipo_usuarios==='vendedor') ? 'selected' : ''%>>vendedor</option>
                                 </select>
-                        <div class="popUp__Errors"><%=((typeof(error) !== 'undefined') && (typeof(error.usuario_creador) !== 'undefined')) ? error.country.msg : ''%></div>
+                        <div class="popUp__Errors"><%=((typeof(error) !== 'undefined') && (typeof(error.tipo_usuarios) !== 'undefined')) ? error.tipo_usuarios.msg : ''%></div>
 
                         </div>
-                        <div class="popUp__Errors"><%=((typeof(error) !== 'undefined') && (typeof(error.userType) !== 'undefined')) ? error.userType.msg : ''%></div>
+        
                         <input
                             name="contrasenia"
                             id="contrasenia" 
                             placeholder='Contraseña'
                             type='password'
                         />
-                        <div class="popUp__Errors"><%=((typeof(error) !== 'undefined') && (typeof(error.password1) !== 'undefined')) ? error.password1.msg : ''%></div>
+                        <div class="popUp__Errors"><%=((typeof(error) !== 'undefined') && (typeof(error.contrasenia) !== 'undefined')) ? error.contrasenia.msg : ''%></div>
                         <input
                             name="contrasenia2"
                             id="contrasenia2" 
                             placeholder='Repite tu contraseña'
                             type='password'
                         />
-                        <div class="popUp__Errors"><%=((typeof(error) !== 'undefined') && (typeof(error.password2) !== 'undefined')) ? error.password2.msg : ''%></div>
+                        <div class="popUp__Errors"><%=((typeof(error) !== 'undefined') && (typeof(error.contrasenia2) !== 'undefined')) ? error.contrasenia2.msg : ''%></div>
                         <input
                             name="avatar"
                             type='file'
