@@ -39,10 +39,15 @@
     <main>
         <section class="container_vitrina_producto">
             <div class="products">
+                <script>
+                    function TestHola(producto) {
+                        return console.log(producto)
+                    }
+                </script>
 
                 <%for(let p of productos){%>
 
-                <a class="container_product_desc" href="/product/detail/<%=p.id%>">
+                <a class="container_product_desc" onclick="TestHola(`<%=p.nombre_nft%>`)">
                     <img src="/img/PRODUCTOS/<%=p.categoria+'_'+p.id+'.jpg'%>" alt="NFT" class="product_img">
                     <div class="main-article">
                         <div>
@@ -61,6 +66,7 @@
                 </a>
 
                 <%}%>
+
             
             </div>  
         </section>
