@@ -96,6 +96,9 @@ const user = {
     res.clearCookie('userEmail');
     return res.redirect('/');
   },
+  cart: function(req,res){
+    res.render('user/user-cart')
+  }
 };
 
 module.exports = user;

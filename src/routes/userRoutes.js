@@ -36,4 +36,7 @@ router.post('/edit', guestMiddleware, user.update);
 
 router.get('/logout', user.logout);
 
+// Ruta carrito
+router.get('/cart',user.cart)
+
 module.exports = router;
