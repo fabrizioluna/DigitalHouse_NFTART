@@ -2,7 +2,7 @@
 <html>
 <head>
     <%-include('../partials/head')%>
-    <link href ="/css/product-cart.css", rel="stylesheet">
+    <link href ="/css/user-cart.css", rel="stylesheet">
     <title>NFTART - Cart</title>
 </head>
 
@@ -18,17 +18,17 @@
             <section class='main_box'>
 
                 <div class='cart_box'>
-                    <div class='product'>
+                    <div id="productCart"   class='product'>
                         <div class='img'>
                             <img src='/img/OPCION ARTE 1.jpg' class='img-product'>
                         </div>
                         <div class='information'>
-                            <h3 class='information-name'>NOMBRE NFT</h3>
+                            <h3 id="nombre_nft" class='information-name'>NOMBRE NFT</h3>
                             <div class='information-price'>
-                                <div class='priceUSD'>
+                                <div id= "precio_actual_usd" class='priceUSD'>
                                     <h4>USD 10.000</h4>
                                 </div>
-                                <div class='priceETH'>
+                                <div class='precio_actual_eth'>
                                     <h4>2.0 ETH</h4>
                                 </div>
                                 <div class='trash'>
@@ -37,51 +37,6 @@
                             </div>
                         </div>
                     </div>
-
-                    <hr class='divider'>
-
-                    <div class='product'>
-                        <div class='img'>
-                            <img src='/img/OPCION ARTE 2.jpg' class='img-product'>
-                        </div>
-                        <div class='information'>
-                            <h3 class='information-name'>NOMBRE NFT</h3>
-                            <div class='information-price'>
-                                <div class='priceUSD'>
-                                    <h4>USD 10.000</h4>
-                                </div>
-                                <div class='priceETH'>
-                                    <h4>2.0 ETH</h4>
-                                </div>
-                                <div class='trash'>
-                                    <i class="fas fa-trash-alt"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <hr class='divider'>
-
-                    <div class='product'>
-                        <div class='img'>
-                            <img src='/img/OPCION ARTE 3.jpg' class='img-product'>
-                        </div>
-                        <div class='information'>
-                            <h3 class='information-name'>NOMBRE NFT</h3>
-                            <div class='information-price'>
-                                <div class='priceUSD'>
-                                    <h4>USD 10.000</h4>
-                                </div>
-                                <div class='priceETH'>
-                                    <h4>2.0 ETH</h4>
-                                </div>
-                                <div class='trash'>
-                                    <i class="fas fa-trash-alt"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
 
                 <div class='total_box'>
@@ -182,6 +137,8 @@
     </main>
 
     <%-include('../partials/footer')%>
+
+    <script src="/js/Cart/SessionCart.js"></script>
 
 </body>
 </html>

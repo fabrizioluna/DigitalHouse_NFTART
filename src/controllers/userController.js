@@ -97,7 +97,7 @@ const user = {
     return res.redirect('/');
   },
   cart: function(req,res){
-    res.render('product/product-cart')
+    res.render('user/user-cart')
   }
 };
 
