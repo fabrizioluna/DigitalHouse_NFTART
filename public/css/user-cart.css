@@ -20,6 +20,8 @@ h2 {
 
 .main_box {
     display: flex;
+    background-color: aqua;
+
 }
 
 .cart_box {
