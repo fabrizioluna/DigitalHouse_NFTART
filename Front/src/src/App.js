@@ -2,6 +2,16 @@ import './App.css';
 import { useEffect } from 'react'
 import React from 'react';
 import { client } from './configAxios/configAxios';
+import { Sidebar } from './Components/sidebar';
+import { Segundo } from './Components/segundo';
+import { Tercero } from './Components/tercero';
+import { Cuarto } from './Components/cuarto';
+import { Quinto } from './Components/quinto';
+import { Sexto } from './Components/sexto';
+import { Septimo } from './Components/septimo';
+import { Octavo } from './Components/octavo';
+import { Uno } from './Components/uno';
+
 
 function App() {
 
@@ -20,7 +30,15 @@ function App() {
  
   return (
     <div>
-      <h1>Hola</h1>
+      <Sidebar/>
+      <Uno/> 
+      <Segundo/>  
+      <Tercero/>
+      <Cuarto/>
+      <Quinto/>
+      <Sexto/> 
+      <Septimo/>
+      <Octavo/> 
     </div>
   );
 }
