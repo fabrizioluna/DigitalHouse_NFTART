@@ -1,0 +1,13 @@
+[
+ {
+  "id": 1,
+  "fullName": "Sergio Orrego",
+  "userName": "saog",
+  "email": "s@g.com",
+  "birthday": "2022-03-25",
+  "country": "colombia",
+  "userType": "vendedor",
+  "hashedPassword": "$2b$12$Ba5E1JEBefIg3yLjQl57OegbAj6UNBRXB6O6ht7zKrcITHKK2G4Rq",
+  "avatar": "saog_avatar.png"
+ }
+]

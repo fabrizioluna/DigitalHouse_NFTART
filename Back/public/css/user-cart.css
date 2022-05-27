@@ -1,0 +1,270 @@
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+
+/* CART */
+.cart {
+    width: 95%;
+    margin: 10px auto;
+    padding: 10px;
+}
+
+h2 {
+    font-size: 35px;
+    font-family: 'Bebas Neue', cursive;
+    padding: 10px;
+}
+
+.main_box {
+    display: flex;
+    background-color: aqua;
+
+}
+
+.cart_box {
+    width: 50%;
+    border-top: solid 5px grey;
+    border-right: solid 2.5px grey;
+    border-bottom: solid 5px grey;
+    border-left: solid 5px grey;
+    padding: 5px;
+}
+
+.product {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    padding: 5px;
+}
+
+.img {
+    text-align: center;
+    width: 50%;
+}
+
+.img-product {
+    max-height: 180px;
+    border: solid 5px black;
+}
+
+.information {
+    padding: 10px;
+    width: 50%;
+}
+
+h3 {
+    display: block;
+    font-size: 30px;
+    font-family: 'Bebas Neue', cursive;
+    width: 100%;
+    height: 85%;
+}
+
+.information-price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 15%;
+}
+
+h4 {
+    font-size: 40px;
+    font-family: 'Bebas Neue', cursive;
+    font-weight: lighter;
+}
+
+.trash {
+    font-size: 30px;
+    vertical-align: middle;
+    transition: 200ms;
+}
+
+.trash:hover {
+    color: red;
+}
+
+.divider {
+    width: 90%;
+    border-color: grey;
+    margin: 10px auto 10px auto;
+}
+
+.total_box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 50%;
+    border-top: solid 5px grey;
+    border-right: solid 5px grey;
+    border-bottom: solid 5px grey;
+    border-left: solid 2.5px grey;
+    padding: 10px;
+}
+
+.total {
+    width: 100%;
+}
+
+.priceUSD-total , .priceETH-total {
+    text-align: center;
+    width: 100%;
+}
+
+h5 {
+    font-size: 50px;
+    font-family: 'Bebas Neue', cursive;
+    font-weight: bolder;
+}
+
+#visa , #mastercard , #paypal {
+    text-align: center;
+    width: 33%;
+    font-size: 100px;
+}
+
+#btc , #eth {
+    text-align: center;
+    width: 20%;
+    font-size: 100px;
+}
+
+#btc {
+    margin-left: 20%;
+}
+
+#eth {
+    margin-right: 20%;
+}
+
+.login-register {
+    width: 100%;
+    text-align: center;
+}
+
+.pay-options:hover {
+    color: rgb(100, 100, 100);
+}
+
+.button {
+    font-size: 50px;
+    font-family: 'Alumni Sans', sans-serif;
+    font-weight: bold;
+    color: black;
+    background-color: chartreuse;
+    border: solid 5px black;
+    border-radius: 15px;
+    padding: 10px;
+    cursor: pointer;
+    transition: 200ms;
+}
+
+.button:hover {
+    background-color: rgb(92, 184, 0);
+}
+/* CART */
+
+
+/* OTROS NFT'S */
+.title__other-nfts {
+    font-size: 35px;
+    font-family: 'Bebas Neue', cursive;
+    text-align: center;
+    padding: 100px;
+}
+
+.Coleccion {
+    width: 90%;
+    margin: auto;
+    background-color: rgb(233, 233, 233);
+}
+
+.Articulos {
+    display: flex;
+    flex-wrap: nowrap;
+    margin-bottom: 100px;
+}
+
+.ItemColeccion {
+    background-color: white;
+    margin: 10px;
+}
+
+.ItemColeccion:hover {
+    box-shadow: 0px 0px 10px rgb(100, 100, 100);
+}
+
+.ImagenesNFT {
+    width: 100%;
+}
+
+.DescripcionA {
+    display: flex;
+    justify-content: flex-start;
+    background-color: white;
+    margin-top: 10px;
+    padding: 10px 10px 5px 10px;
+    border-top: solid 2px grey;
+}
+
+.Nombre {
+    font-size: 30px;
+    font-family: 'Bebas Neue', cursive;
+    width: 70%;
+}
+
+.ImagenA {
+    font-size: 30px;
+    color: gray;
+    width: 15%;
+    transition: 200ms;
+}
+
+.ImagenA:hover {
+    color: red;
+}
+
+.ImagenB {
+    font-size: 30px;
+    color: rgb(47, 194, 3);
+    width: 15%;
+    transition: 200ms;
+}
+
+.ImagenB:hover {
+    font-size: 40px;
+}
+
+.Autor {
+    font-size: 30px;
+    font-family: 'Alumni Sans', sans-serif;
+    padding: 5px 10px 10px 10px;
+}
+
+.DescripcionB {
+    display: flex;
+    /* justify-content: center; */
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.PrecioUSD {
+    font-size: 25px;
+    font-family: 'Bebas Neue', cursive;
+    font-weight: bolder;
+    padding-left: 10px;
+    width: 50%;
+}
+
+.PrecioETH {
+    font-size: 25px;
+    font-family: 'Bebas Neue', cursive;
+    font-weight: bolder;
+    padding-right: 10px;
+    width: 50%;
+}
+/* OTROS NFT'S */

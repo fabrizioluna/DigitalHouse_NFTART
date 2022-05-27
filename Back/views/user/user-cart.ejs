@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <%-include('../partials/head')%>
+    <link href ="/css/user-cart.css", rel="stylesheet">
+    <title>NFTART - Cart</title>
+</head>
+
+<body>
+
+    <%-include('../partials/header')%>
+
+    <main>
+
+        <!-- CART -->
+        <div id = "cart" class='cart'>
+            <h2>CART</h2>
+            <section class='main_box'>
+                <div class='cart_box'>
+                    <div id="productCart"   class='product'>
+                        </div>
+                    </div>
+                </div>
+
+                <div class='total_box'>
+                    <h2 class='total'>TOTAL</h2>
+                    <div class='priceUSD-total'>
+                        <h5>USD 30.000</h5>
+                    </div>
+                    <div class='priceETH-total'>
+                        <h5>6.0 ETH</h5>
+                    </div>
+                    <div id='visa' class='pay-options'>
+                        <i class="fab fa-cc-visa"></i>
+                    </div>
+                    <div id='mastercard' class='pay-options'>
+                        <i class="fab fa-cc-mastercard"></i>
+                    </div>
+                    <div id='paypal' class='pay-options'>
+                        <i class="fab fa-cc-paypal"></i>
+                    </div>
+                    <div id='btc' class='pay-options'>
+                        <i class="fab fa-btc"></i>
+                    </div>
+                    <div id='eth' class='pay-options'>
+                        <i class="fab fa-ethereum"></i>
+                    </div>
+                    <div id='login-register'>
+                        <button type='submit' class='button'>LOGIN / REGISTRO</button>
+                    </div>
+                </div>
+
+            </section>
+        </div>
+
+        <!-- OTROS NFT'S -->
+        <h2 class='title__other-nfts'>NFT'S QUE TE PUEDEN INTERESAR</h2>
+
+        <section class="Coleccion">
+            <div class="Articulos">
+                <article class="ItemColeccion">
+                    <img src="/img/NFTAR AJUSTADAS/OPCION ARTE 1.jpg" class="ImagenesNFT">
+                    <div class="DescripcionA">
+                        <h2 class="Nombre">Nombre NFT1</h2>
+                        <i class="ImagenA fas fa-heart"></i>
+                        <i class="ImagenB fas fa-cart-arrow-down"></i>
+                    </div>
+                    <h4 class="Autor">Autor</h4>
+                    <div class="DescripcionB">
+                        <p class= "PrecioUSD">USD 10.000</p>
+                        <p class= "PrecioETH">2.0 EHT</p>
+                    </div>
+                </article>
+
+                <article class="ItemColeccion">
+                    <img src="/img/NFTAR AJUSTADAS/OPCION ARTE 2.jpg" class="ImagenesNFT">
+                    <div class="DescripcionA">
+                        <h2 class="Nombre">Nombre NFT2</h2>
+                        <i class="ImagenA fas fa-heart"></i>
+                        <i class="ImagenB fas fa-cart-arrow-down"></i>
+                    </div>
+                    <h4 class="Autor">Autor</h4>
+                    <div class="DescripcionB">
+                        <p class= "PrecioUSD">USD 10.000</p>
+                        <p class= "PrecioETH">2.0 EHT</p>
+                    </div>
+                </article>
+
+                <article class="ItemColeccion">
+                    <img src="/img/NFTAR AJUSTADAS/OPCION ARTE 3.jpg" class="ImagenesNFT">
+                    <div class="DescripcionA">
+                        <h2 class="Nombre">Nombre NFT3</h2>
+                        <i class="ImagenA fas fa-heart"></i>
+                        <i class="ImagenB fas fa-cart-arrow-down"></i>
+                    </div>
+                    <h4 class="Autor">Autor</h4>
+                    <div class="DescripcionB">
+                        <p class= "PrecioUSD">USD 10.000</p>
+                        <p class= "PrecioETH">2.0 EHT</p>
+                    </div>
+                </article>
+
+                <article class="ItemColeccion">
+                    <img src="/img/NFTAR AJUSTADAS/OPCION ARTE 4.jpg" class="ImagenesNFT">
+                    <div class="DescripcionA">
+                        <h2 class="Nombre">Nombre NFT4</h2>
+                        <i class="ImagenA fas fa-heart"></i>
+                        <i class="ImagenB fas fa-cart-arrow-down"></i>
+                    </div>
+                    <h4 class="Autor">Autor</h4>
+                    <div class="DescripcionB">
+                        <p class= "PrecioUSD">USD 10.000</p>
+                        <p class= "PrecioETH">2.0 EHT</p>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+    </main>
+
+    <%-include('../partials/footer')%>
+
+    <script src="/js/Cart/SessionCart.js"></script>
+
+</body>
+</html>
