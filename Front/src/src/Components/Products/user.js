@@ -1,5 +1,5 @@
 import React from "react";
-export const Quinto = () => {
+export const User = () => {
     return  <div> 	
 
 {/* <!-- Amount of users in DB --> */}

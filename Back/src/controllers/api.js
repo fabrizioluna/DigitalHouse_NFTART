@@ -117,7 +117,21 @@ const apiProduct = {
       productId,
     });
   },
+
+  allProducts: function (req, res) {
+    nft.findAndCountAll()
+    .then(function (nft) {
+      res.json({
+        description: 'Product list',
+        code: 200,
+        nft,
+      });
+    });
+  }
+
 };
+
+
 
 // Servicio que retorne producto particualr por ID (Tablas relacionadas, ruta y url de imagen de prodyucto)
 

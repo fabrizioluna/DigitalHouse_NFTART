@@ -1,5 +1,5 @@
 import React from "react";
-export const Uno = () => {
+export const Navbaruser = () => {
     return  <div> 	
 {/* <!-- Content Wrapper --> */}
 		<div id="content-wrapper" class="d-flex flex-column"/>

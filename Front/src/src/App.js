@@ -2,15 +2,17 @@ import './App.css';
 import { useEffect } from 'react'
 import React from 'react';
 import { client } from './configAxios/configAxios';
-import { Sidebar } from './Components/sidebar';
-import { Segundo } from './Components/segundo';
-import { Tercero } from './Components/tercero';
-import { Cuarto } from './Components/cuarto';
-import { Quinto } from './Components/quinto';
-import { Sexto } from './Components/sexto';
-import { Septimo } from './Components/septimo';
-import { Octavo } from './Components/octavo';
-import { Uno } from './Components/uno';
+import { Router } from './router/router';
+// import { Sidebar } from './Components/sidebar';
+// import { Navbaruser } from './Components/navbaruser';
+// import {Backgrounddashboard } from './Components/backgrounddashboard';
+// import { ProductDB } from './Components/Products/productdb';
+// import { Amountnft } from './Components/Products/amountnft';
+// import { User } from './Components/Products/user';
+// import { Lastproduct } from './Components/Products/lastproduct';
+// import { Listproduct } from './Components/listproduct';
+// import { Category } from './Components/category';
+// import { Footer } from './Components/footer';
 
 
 function App() {
@@ -29,16 +31,17 @@ function App() {
   }, [])
  
   return (
-    <div>
-      <Sidebar/>
-      <Uno/> 
-      <Segundo/>  
-      <Tercero/>
-      <Cuarto/>
-      <Quinto/>
-      <Sexto/> 
-      <Septimo/>
-      <Octavo/> 
+    <div> <Router/>
+      {/* <Sidebar/>
+      <Navbaruser/>
+      <Backgrounddashboard/>  
+      <ProductDB/>
+      <Amountnft/>
+      <User/>
+      <Lastproduct/> 
+      <Listproduct/> 
+      <Category/>
+      <Footer/>  */}
     </div>
   );
 }

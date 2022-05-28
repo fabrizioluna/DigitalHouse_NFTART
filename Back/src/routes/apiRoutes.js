@@ -9,5 +9,6 @@ router.get('/userscount',apiUser.countUsers)
 router.get('/product',apiProduct.product)
 router.get('/product/:id',apiProduct.productId)
 router.get('/category',apiProduct.countCategory)
+router.get('/allproduct',apiProduct.allProducts)
 
 module.exports = router;

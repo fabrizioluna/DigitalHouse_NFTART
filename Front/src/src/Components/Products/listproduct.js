@@ -1,5 +1,5 @@
 import React from "react";
-export const Sexto = () => {
+export const Listproduct = () => {
     return  <div> 	
 
 {/* <!-- Content Row --> */}

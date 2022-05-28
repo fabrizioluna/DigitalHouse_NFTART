@@ -1,5 +1,5 @@
 import React from "react";
-export const Octavo = () => {
+export const Footer = () => {
     return  <div> 	
 
 {/* <!-- Footer --> */}

@@ -1,5 +1,5 @@
 import React from "react";
-export const Segundo = () => {
+export const Backgrounddashboard = () => {
     return  <div> 	
 
 {/* <!-- Begin Page Content --> */}
