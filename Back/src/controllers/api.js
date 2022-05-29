@@ -45,7 +45,7 @@ const apiUser = {
 const apiProduct = {
   // Servicio que retorne los productos (.count), (.countbycategory), (.productos  datos de cada producto)
   product: async function (req, res) {
-    let products = await nft.findAndCountAll();
+    // let products = await nft.findAndCountAll();
     let productsPicture = await nft.count({
       where: { categoria: 'Fotografia' },
     });
@@ -54,11 +54,11 @@ const apiProduct = {
     let productsMetaverso = await nft.count({
       where: { categoria: 'Metaverso' },
     });
-    let productsCinema = await nft.count({ where: { categoria: 'Cine' } });
+    let productsCinema = await nft.findAndCountAll({ where: { categoria: 5 } });
     res.json({
       description: 'Count by Category',
       code: 200,
-      products,
+      // products,
       productsPicture,
       productsMusic,
       productsArt,
