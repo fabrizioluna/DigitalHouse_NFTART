@@ -1,6 +1,28 @@
 import React from "react";
-export const Lastproduct = () => {
-    return  <div> 	
+import { useState } from "react";
+import { useEffect } from "react";
+import { Listproduct } from "./listproduct";
+export const Lastproduct = ( {productList}) => {
+
+	const [lastproduct, setlastProduct] = useState(null)
+	useEffect(function(){
+
+		const lastProductInDatabase = function () {
+			const lastProduct = productList.nft.rows.sort(function (prevValue, currentValue) {
+				if (prevValue.id > currentValue.id) {
+				  return 1;
+				}
+				if (prevValue.id < currentValue.id) {
+				  return -1;
+				}
+				return 0;
+			  }).pop()
+			  console.log(lastProduct)
+			  setlastProduct(lastProduct)
+			};
+		lastProductInDatabase()
+		},[] )
+	return  <div> 	
 
 {/* <!-- Content Row --> */}
 					<div className="row"/>
@@ -15,13 +37,11 @@ export const Lastproduct = () => {
 									<div className="text-center">
 										{/* <img className="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;" src="assets/images/product_dummy.svg" alt="image dummy"/> */}
 									</div>
-									<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores, consequatur explicabo officia inventore libero veritatis iure voluptate reiciendis a magnam, vitae, aperiam voluptatum non corporis quae dolorem culpa exercitationem ratione?</p>
+									<p>$ {lastproduct =! null && lastproduct.nombre_nft}</p>
 									<a target="_blank" rel="nofollow" href="/">Ver Detalles del Producto</a>
 								</div>
 							</div>
 						</div>
-
-
 
 </div>
 }

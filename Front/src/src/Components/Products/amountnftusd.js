@@ -1,12 +1,12 @@
 // import { mapToStyles } from "@popperjs/core/lib/modifiers/computeStyles";
 import React from "react";
-export const Amountnft = ({productList}) => {
+export const Amountnftusd = ({productList}) => {
 
 
 //Opcion 2 
-const Amount = function() {
+const Amountusd = function() {
 	let Total = 0;
-	const test = productList.nft.rows.map((e) => Total += parseInt(e.precio_actual_eth))
+	const test = productList.nft.rows.map((e) => Total += parseInt(e.precio_actual_usd))
 	return Total
 }
 	return  <div> 	
@@ -17,8 +17,8 @@ const Amount = function() {
 			<div className="card-body">
 				<div className="row no-gutters align-items-center">
 					<div className="col mr-2">
-						<div className="text-xs font-weight-bold text-success text-uppercase mb-1"> Amount in products ETH</div>
-						<div className="h5 mb-0 font-weight-bold text-gray-800"> $ { Amount () } </div>
+						<div className="text-xs font-weight-bold text-success text-uppercase mb-1"> Amount in products USD</div>
+						<div className="h5 mb-0 font-weight-bold text-gray-800"> $ { Amountusd () } </div>
 					</div>
 					<div className="col-auto">
 						<i className="fas fa-dollar-sign fa-2x text-gray-300"></i>
