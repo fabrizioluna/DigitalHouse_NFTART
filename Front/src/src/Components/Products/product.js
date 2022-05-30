@@ -7,8 +7,8 @@ import { Amountnft } from './amountnft';
 import { Amountnftusd } from './amountnftusd';
 import { Backgrounddashboard } from './backgrounddashboard';
 import { Category } from './category';
+import { Expensiveproduct } from './expensiveproduct';
 import { Lastproduct } from './lastproduct';
-import { Listproduct } from './listproduct';
 import { ProductDB } from './productdb';
 import { User } from './user';
 import { switchCategory } from './utils/switchCategory';
@@ -62,7 +62,13 @@ export const Product = () => {
       ) : (
         <p> Cargando </p>
       )}
-      <Listproduct />
+      {allProducts != null ? (
+        <Expensiveproduct
+          productList={productData === null ? allProducts : productData}
+        />
+      ) : (
+        <p> Cargando </p>
+      )}
       <Category setCategoryData={setCategory} />
     </Layout>
   );
