@@ -1,16 +1,18 @@
 // import { mapToStyles } from "@popperjs/core/lib/modifiers/computeStyles";
 import React from 'react';
 
-export const Amountnft = ({ productList }) => {
-  const Amount = function () {
+export const Amountnftusd = ({ productList }) => {
+	
+  const AmountUsd = function () {
     let Total = 0;
     if (productList.hasOwnProperty('nft')) {
-      productList.nft.rows.map((e) => (Total += parseInt(e.precio_actual_eth)));
+      productList.nft.rows.map((e) => (Total += parseInt(e.precio_actual_usd)));
     } else {
-      productList.rows.map((e) => (Total += parseInt(e.precio_actual_eth)));
+      productList.rows.map((e) => (Total += parseInt(e.precio_actual_usd)));
     }
     return Total;
   };
+
   return (
     <div>
       {/* <!-- $$$ of all products in DB --> */}
@@ -21,11 +23,11 @@ export const Amountnft = ({ productList }) => {
               <div className='col mr-2'>
                 <div className='text-xs font-weight-bold text-success text-uppercase mb-1'>
                   {' '}
-                  Amount in products ETH
+                  Amount in products USD
                 </div>
                 <div className='h5 mb-0 font-weight-bold text-gray-800'>
                   {' '}
-                  $ {Amount()}{' '}
+                  $ {AmountUsd()}{' '}
                 </div>
               </div>
               <div className='col-auto'>

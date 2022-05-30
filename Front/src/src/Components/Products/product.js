@@ -1,44 +1,69 @@
-import React from "react";
-import { useEffect } from "react";
-import { useState } from "react";
-import { client } from "../../configAxios/configAxios";
-import { Layout } from "../layout";
-import { Amountnft } from "./amountnft";
-import { Backgrounddashboard } from "./backgrounddashboard";
-import { Category } from "./category";
-import { Lastproduct } from "./lastproduct";
-import { Listproduct } from "./listproduct";
-import { ProductDB } from "./productdb";
-import { User } from "./user";
+import React from 'react';
+import { useEffect } from 'react';
+import { useState } from 'react';
+import { client } from '../../configAxios/configAxios';
+import { Layout } from '../layout';
+import { Amountnft } from './amountnft';
+import { Amountnftusd } from './amountnftusd';
+import { Backgrounddashboard } from './backgrounddashboard';
+import { Category } from './category';
+import { Lastproduct } from './lastproduct';
+import { Listproduct } from './listproduct';
+import { ProductDB } from './productdb';
+import { User } from './user';
+import { switchCategory } from './utils/switchCategory';
+
 export const Product = () => {
-    
-    const [productData, setProductData] = useState (null)
-    const [category, setCategory] = useState (null)
+  const [productData, setProductData] = useState(null);
+  const [allProducts, setAllProducts] = useState(null);
+  const [category, setCategory] = useState(null);
 
-    useEffect(() => {
+  useEffect(() => {
+    const call = async () => {
+      const { data } = await client.get('http://localhost:3000/api/allproduct');
+      setAllProducts(data);
+    };
 
-        const call = async() => {
-          // const res = await fetch('http://localhost:3000/api/users');
-          const res = await client.get('http://localhost:3000/api/category')
-          console.log(res)
-          setCategory(res.data.countCategory.rows)
-        }
-    
-        call()
-    
-      }, [])
-    
-      console.log(category)
+    call();
+  }, []);
 
-    return  <Layout> 	
+  useEffect(() => {
+    const callProductsByCategory = async () => {
+      const { data } = await client.get('http://localhost:3000/api/product');
+      setProductData(switchCategory(data, category));
+    };
 
-    <Backgrounddashboard/>  
-    {productData   != null ? < Amountnft productList = {productData}/>: <p> Cargando </p>}
-    <ProductDB setProductData = {setProductData} />
-    <User/>
-    <Lastproduct/> 
-    <Listproduct/> 
-    {category != null ? <Category setCategoryData ={setCategory} ListCategory  = {category}/>: <p> Cargando </p>}
+    allProducts !== null && callProductsByCategory();
+  }, [category]);
 
-</Layout>
-}
+  return (
+    <Layout>
+      <Backgrounddashboard />
+      {allProducts != null ? (
+        <Amountnft
+          productList={productData === null ? allProducts : productData}
+        />
+      ) : (
+        <p> Cargando </p>
+      )}
+      {allProducts != null ? (
+        <Amountnftusd
+          productList={productData === null ? allProducts : productData}
+        />
+      ) : (
+        <p> Cargando </p>
+      )}
+      <ProductDB setProductData={setProductData} />
+      <User />
+      {allProducts != null ? (
+        <Lastproduct
+          productList={productData === null ? allProducts : productData}
+        />
+      ) : (
+        <p> Cargando </p>
+      )}
+      <Listproduct />
+      <Category setCategoryData={setCategory} />
+    </Layout>
+  );
+};

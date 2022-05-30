@@ -12,3 +12,14 @@ export const allProduct = () => {
     });
 };
 
+export const getCategories = () => {
+  return client
+    .get('http://localhost:3000/api/category')
+    .then((data) => {
+      return { data: data.data.countCategory.rows, statusCode: 200 };
+    })
+    .catch((err) => {
+      return { data: err.code, statusCode: err.response.status };
+    });
+};
+
