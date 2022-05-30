@@ -12,6 +12,10 @@ useEffect(function(){
 
  return  <div> 	
 
+<div id="wrapper">
+
+
+
 {/* <!-- Amount of Products in DB --> */}
 <div className="col-md-4 mb-4">
 <div className="card border-left-primary shadow h-100 py-2">
@@ -28,6 +32,8 @@ useEffect(function(){
     </div>
 </div>
 </div>
-
+</div>
 </div>
 }
+
+

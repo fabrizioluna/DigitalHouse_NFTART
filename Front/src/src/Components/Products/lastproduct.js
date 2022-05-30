@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
-import { Listproduct } from "./listproduct";
+import { Listproduct } from "./expensiveproduct";
 export const Lastproduct = ( {productList}) => {
 
 	const [lastproduct, setlastProduct] = useState(null)
@@ -37,8 +37,10 @@ export const Lastproduct = ( {productList}) => {
 									<div className="text-center">
 										{/* <img className="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;" src="assets/images/product_dummy.svg" alt="image dummy"/> */}
 									</div>
-									<p>$ {lastproduct =! null && lastproduct.nombre_nft}</p>
-									<a target="_blank" rel="nofollow" href="/">Ver Detalles del Producto</a>
+									<p>{lastproduct != null && lastproduct.nombre_nft}</p>
+									<p>{lastproduct != null && lastproduct.precio_actual_usd} USD </p>
+									<p>{lastproduct != null && lastproduct.precio_actual_eth} ETH </p>
+									<p>{lastproduct != null && lastproduct.descripcion}</p>
 								</div>
 							</div>
 						</div>
