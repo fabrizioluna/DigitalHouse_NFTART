@@ -39,7 +39,7 @@ const user = {
     res.render('user/user-login');
   },
 
-  processLogin: async function (req, res) {
+  processLogin: function (req, res) {
     let error = validationResult(req);
     if (error.errors.length > 0) {
       return res.render('user/user-login', {
