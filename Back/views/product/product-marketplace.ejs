@@ -37,43 +37,41 @@
 
     <!-- Main: Vitrina de producto -->
     <main>
-        <section class="container_vitrina_producto">
-            <div class="products">
-                <script>
-                    function TestHola(producto) {
-                        return console.log(producto)
-                    }
-                </script>
+        <div class="products">
+            <script>
+                function TestHola(producto) {
+                    return console.log(producto)
+                }
+            </script>
 
-                <%for(let p of productos){%>
+            <%for(let p of productos){%>
 
-                <a class="container_product_desc" onclick="set(
-                        {
-                            nombre_nft: `<%=p.nombre_nft %>`,
-                            precio_actual_usd: `<%=p.precio_actual_usd%>`,
-                            precio_actual_eth: `<%=p.precio_actual_eth%>`,
-                            autor: `<%=p.autor%>`
-                        }
-                    )">
-                    <img src="/img/PRODUCTOS/<%=p.Categoria.categoria+'_'+p.id+'.jpg'%>" alt="NFT" class="product_img">
-                    <div class="main-article">
-                        <div>
-                            <h2 class="name_product"><%=p.nombre_nft%></h2>
-                            <p class="autor"><%=p.Autor.autor%></p>
-                        </div>
-                        <div class="precios">
-                            <p class="price">$<%=p.precio_actual_usd%></p>
-                            <p class="price_cripto"><%=p.precio_actual_eth%> ETH</p>
-                        </div>
-                        <div class="carrito_corazon">
-                            <i class="fas fa-heart"></i>
-                            <i class="fas fa-cart-arrow-down"></i>
-                        </div>
+            <a class="container_product_desc" >
+                <img src="/img/PRODUCTOS/<%=p.Categoria.categoria+'_'+p.id+'.jpg'%>" alt="NFT" class="product_img">
+                <div class="main-article">
+                    <div>
+                        <h2 class="name_product"><%=p.nombre_nft%></h2>
+                        <p class="autor" id="hover"><%=p.Autor.autor%></p>
                     </div>
-                </a>
-                <%}%>
-            </div>  
-        </section>
+                    <div class="precios">
+                        <p class="price">$<%=p.precio_actual_usd%></p>
+                        <p class="price_cripto"><%=p.precio_actual_eth%> ETH</p>
+                    </div>
+                    <div class="carrito_corazon">
+                        <i class="fas fa-heart" id="hover"></i>
+                        <i class="fas fa-cart-arrow-down" id="hover" onclick="set(
+                            {
+                                nombre_nft: `<%=p.nombre_nft %>`,
+                                precio_actual_usd: `<%=p.precio_actual_usd%>`,
+                                precio_actual_eth: `<%=p.precio_actual_eth%>`,
+                                autor: `<%=p.autor%>`
+                            }
+                        )"></i>
+                    </div>
+                </div>
+            </a>
+            <%}%>
+        </div>  
     </main>
 
     <%- include('../partials/footer') %>

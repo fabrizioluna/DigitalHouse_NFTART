@@ -19,9 +19,10 @@ hr {
 
 .footer__primary {
     display: flex;
+    flex-direction:column;
     justify-content: flex-start;
     align-items: center;
-    width: 50%;
+    width: 800px;
     margin: auto;
     padding-top: 25px;
     padding-bottom: 15px;
@@ -33,13 +34,14 @@ hr {
 
 .footer__section-one img {
     width: 25%;
+    border-radius: 10px;
     -webkit-filter: brightness(100%);
     -webkit-filter: invert(100%);
 }
 
 .footer__section-icons {
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     width: 100%;
 }
 

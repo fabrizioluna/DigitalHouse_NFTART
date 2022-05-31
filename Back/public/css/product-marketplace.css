@@ -4,6 +4,9 @@
     padding: 0px;
 }
 
+body{
+    background-color: #0f2636;
+}
 
 .container_banner{
     justify-content: center;
@@ -112,39 +115,36 @@
 
 /*/////////////// VITRINA PRODUCTO ///////////////////*/
 
-.container_vitrina_producto{
-    margin: auto;
-}
-
 .products{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between;
-    padding: 5%;
+    justify-content: space-around;
+    padding: 3%;
 }
 
 .product_img{
     width: 100%;
     height: 350px;
+    border-bottom:chartreuse;
 }
 
 
 .container_product_desc{
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     height: 500px;
-    width: 30%;
+    width: 350px;
     border: 5px solid #ccc;
-    align-content: center;
     margin: 10px;
     border-radius: 8px;
     box-shadow: 0px 0px 10px rgb(100, 100, 100);
     position: relative;
 }
 
-
 .container_product_desc:hover{
-    border-color: green;
+    border-color: rgb(25, 255, 25);
+    border-width: 10px;
+    height: 500px;
 }
 
 
@@ -162,6 +162,11 @@
     right: 5%;
 } */
 
+.precios{
+    position: absolute;
+    right: 10%;
+}
+
 
 .price{
     font-size: 25px;
@@ -172,11 +177,10 @@
 
 .price_cripto{
     color: #5BBEFF;
-    font-family: 'Alumni Sans', sans-serif;
+    font-family: 'Mulish';
     font-size: 20px;
     font-weight: bold;
 }
-
 
 div.main-article i{
     background-color:transparent;
@@ -193,26 +197,37 @@ div.main-article i:hover{
 }
 
 .name_product{
+    font-family: 'Mulish';
     width: 80%;
     color: rgb(1, 19, 68);
     height: 20px;
 }
 
 .autor{
+    /* display: none; */
     width: 80%;
     height: 10px;
     position: absolute;
-    bottom: 3%;
-    font-family: 'Alumni Sans', sans-serif;
+    bottom: 10%;
+    font-family: 'Mulish';
     color: rgb(108, 206, 17);
     font-size: 25px;
 }
 
+/* #showMessage{
+    display: none;
+
+} */
 
 .carrito_corazon{
+    /* display: none; */
     position: absolute;
     bottom:15px;
     right: 5%;
     border-color: transparent;
     border-radius: 8px;
+}
+
+div:hover #showMessage{
+    display: block;
 }

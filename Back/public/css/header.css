@@ -18,7 +18,8 @@ nav {
 }
 
 .nav__primary-logo {
-    width: 130px;
+    border-radius: 20px;
+    width: 330px;
     -webkit-filter: brightness(100%);
     -webkit-filter: invert(100%);
 }
