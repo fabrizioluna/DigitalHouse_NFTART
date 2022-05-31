@@ -1,47 +1,75 @@
-import React from "react";
-import { useEffect } from "react";
-import { useState } from "react";
-import { client } from "../../configAxios/configAxios";
-import { Layout } from "../layout";
-import { Amountnft } from "./amountnft";
-import { Amountnftusd } from "./amountnftusd";
-import { Backgrounddashboard } from "./backgrounddashboard";
-import { Category } from "./category";
-import { Lastproduct } from "./lastproduct";
-import { Listproduct } from "./listproduct";
-import { ProductDB } from "./productdb";
-import { User } from "./user";
-export const Product = () => {
+import React from 'react';
+import { useEffect } from 'react';
+import { useState } from 'react';
+import { client } from '../../configAxios/configAxios';
+import { Layout } from '../layout';
+import { Amountnft } from './amountnft';
+import { Amountnftusd } from './amountnftusd';
+import { Backgrounddashboard } from './backgrounddashboard';
+import { Category } from './category';
+import { Expensiveproduct } from './expensiveproduct';
+import { Lastproduct } from './lastproduct';
+import { ProductDB } from './productdb';
+import { User } from './user';
+import { switchCategory } from './utils/switchCategory';
 
-  const [productData, setProductData] = useState(null)
-  const [category, setCategory] = useState(null)
-  const [category2, setCategory2] = useState(null)
+export const Product = () => {
+  const [productData, setProductData] = useState(null);
+  const [allProducts, setAllProducts] = useState(null);
+  const [category, setCategory] = useState(null);
 
   useEffect(() => {
-
     const call = async () => {
-      // const res = await fetch('http://localhost:3000/api/users');
-      const res = await client.get('http://localhost:3000/api/category')
-      console.log(res)
-      setCategory(res.data.countCategory.rows)
-    }
+      const { data } = await client.get('http://localhost:3000/api/allproduct');
+      setAllProducts(data);
+    };
 
-    call()
+    call();
+  }, []);
 
-  }, [])
+  useEffect(() => {
+    const callProductsByCategory = async () => {
+      const { data } = await client.get('http://localhost:3000/api/product');
+      setProductData(switchCategory(data, category));
+    };
 
-  console.log(category)
+    allProducts !== null && callProductsByCategory();
+  }, [category]);
 
-  return <Layout>
-
-    <Backgrounddashboard />
-    {productData != null ? < Amountnft productList={productData} /> : <p> Cargando </p>}
-    {productData != null ? < Amountnftusd productList={productData} /> : <p> Cargando </p>}
-    <ProductDB setProductData={setProductData} />
-    <User />
-    {productData != null ? <Lastproduct productList ={productData} /> : <p> Cargando </p> }
-    <Listproduct />
-    {category != null ? <Category setCategoryData={setCategory2} ListCategory={category} /> : <p> Cargando </p>}
-
-  </Layout>
-}
+  return (
+    <Layout>
+      <Backgrounddashboard />
+      {allProducts != null ? (
+        <Amountnft
+          productList={productData === null ? allProducts : productData}
+        />
+      ) : (
+        <p> Cargando </p>
+      )}
+      {allProducts != null ? (
+        <Amountnftusd
+          productList={productData === null ? allProducts : productData}
+        />
+      ) : (
+        <p> Cargando </p>
+      )}
+      <ProductDB setProductData={setProductData} />
+      <User />
+      {allProducts != null ? (
+        <Lastproduct
+          productList={productData === null ? allProducts : productData}
+        />
+      ) : (
+        <p> Cargando </p>
+      )}
+      {allProducts != null ? (
+        <Expensiveproduct
+          productList={productData === null ? allProducts : productData}
+        />
+      ) : (
+        <p> Cargando </p>
+      )}
+      <Category setCategoryData={setCategory} />
+    </Layout>
+  );
+};

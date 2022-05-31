@@ -2,6 +2,7 @@ const nft = require('../../database/models/nft');
 const User = require('../../database/models/Usuarios');
 const Category = require('../../database/models/Categorias');
 const Autores = require('../../database/models/Autores');
+const { Sequelize } = require('sequelize');
 
 const apiUser = {
   // Todos los Usuarios
@@ -46,24 +47,24 @@ const apiProduct = {
   // Servicio que retorne los productos (.count), (.countbycategory), (.productos  datos de cada producto)
   product: async function (req, res) {
     let products = await nft.count();
-    let productsPicture = await nft.findAndCountAll({
+    let Fotografia = await nft.findAndCountAll({
       where: { categoria: 1 },
     });
-    let productsMusic = await nft.findAndCountAll({ where: { categoria: 5 } });
-    let productsArt = await nft.findAndCountAll({ where: { categoria: 2 } });
-    let productsMetaverso = await nft.findAndCountAll({
+    let Musica = await nft.findAndCountAll({ where: { categoria: 5 } });
+    let Arte = await nft.findAndCountAll({ where: { categoria: 2 } });
+    let Metaverso = await nft.findAndCountAll({
       where: { categoria: 3 },
     });
-    let productsCinema = await nft.findAndCountAll({ where: { categoria: 4 } });
+    let Cine = await nft.findAndCountAll({ where: { categoria: 4 } });
     res.json({
       description: 'Count by Category',
       code: 200,
       products,
-      productsPicture,
-      productsMusic,
-      productsArt,
-      productsMetaverso,
-      productsCinema,
+      Fotografia,
+      Musica,
+      Arte,
+      Metaverso,
+      Cine,
     });
   },
 
@@ -78,29 +79,29 @@ const apiProduct = {
     });
   },
 
-//   productId: async function (req, res){
-//      const productId =  await User.findOne({
-//           where: { id: req.params.id },
-//           include: [
-//             {
-//               model: User,
-//               as: "usuario_creador"
-//             },
-//           ]
-//       })
-//       res.json({
-//           description: "Product ID",
-//           code: 200,
-//           productId
-//       })
-//   }}
+  //   productId: async function (req, res){
+  //      const productId =  await User.findOne({
+  //           where: { id: req.params.id },
+  //           include: [
+  //             {
+  //               model: User,
+  //               as: "usuario_creador"
+  //             },
+  //           ]
+  //       })
+  //       res.json({
+  //           description: "Product ID",
+  //           code: 200,
+  //           productId
+  //       })
+  //   }}
 
-//   productId: async function (req, res){
-//       let productId = await nft.findByPk(req.params.id, {include:{model: User}})
-//   let productId = await nft.findByPk(req.params.id)
-//   // let productId = await nft.findAll({
-//       include: {model : User}
-//   })
+  //   productId: async function (req, res){
+  //       let productId = await nft.findByPk(req.params.id, {include:{model: User}})
+  //   let productId = await nft.findByPk(req.params.id)
+  //   // let productId = await nft.findAll({
+  //       include: {model : User}
+  //   })
 
   productId: async function (req, res) {
     let productId = await nft.findOne({
@@ -119,19 +120,15 @@ const apiProduct = {
   },
 
   allProducts: function (req, res) {
-    nft.findAndCountAll()
-    .then(function (nft) {
+    nft.findAndCountAll().then(function (nft) {
       res.json({
         description: 'Product list',
         code: 200,
         nft,
       });
     });
-  }
-
+  },
 };
-
-
 
 // Servicio que retorne producto particualr por ID (Tablas relacionadas, ruta y url de imagen de prodyucto)
 
