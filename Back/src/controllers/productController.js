@@ -4,14 +4,14 @@ const Categorias = require('../../database/models/Categorias');
 const Autores = require('../../database/models/Autores');
 
 const PRODUCT = {
-      marketplace: function (req, res) {
-        nft.findAll({include:[{model: Categorias, as: "Categoria"}, {model: Autores, as: "Autor"}]})
-          .then( function(products) {
-            // console.log(products);
-            // res.json(products);
-            res.render('product/product-marketplace', { productos: products })
-          }
-          );
+  marketplace: function (req, res) {
+    nft.findAll({include:[{model: Categorias, as: "Categoria"}, {model: Autores, as: "Autor"}]})
+      .then( function(products) {
+        // console.log(products);
+        // res.json(products);
+        res.render('product/product-marketplace', { productos: products })
+      }
+    );
   },
 
   create: function (req, res) {
@@ -102,7 +102,9 @@ const PRODUCT = {
 
   detail: async function (req, res) {
     await nft
-      .findOne({ where: { id: req.params.id } })
+      .findOne({ 
+        include: { model: Categorias, as: "Categoria" },
+        where: { id: req.params.id } })
       .then(({ dataValues }) =>
         res.render('product/product-detail', { productos: dataValues })
       )

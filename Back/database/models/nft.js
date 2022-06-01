@@ -14,7 +14,7 @@ const nft = db.define(
       primaryKey:true,
       autoIncrement:true,
     },
-    creador: {
+    propietario: {
       type: DataTypes.INTEGER,
     },
     nombre_nft: {
@@ -53,8 +53,8 @@ const nft = db.define(
 );
 
 // Relación Usuarios
-nft.belongsTo(Usuarios, {foreignKey: "creador", as: "Creador"});
-Usuarios.hasMany(nft, {foreignKey: "creador", as: "Creador"});
+nft.belongsTo(Usuarios, {foreignKey: "propietario", as: "Propietario"});
+Usuarios.hasMany(nft, {foreignKey: "propietario", as: "Propietario"});
 
 // Relación Autores
 nft.belongsTo(Autores,{foreignKey: "autor", as: "Autor"});

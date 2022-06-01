@@ -12,14 +12,15 @@
 
     <section class="container_body">
         <section class="container_datos_persona">
-            <div class="circle">
-                <img src="/img/AVATARES/<%=user.imagen%>" class="ok">
-                <input
-                    name="avatarEdited"
-                    type="file"
-                />
-            </div>
             <form class='popUp__Fields' action="/user/edit" method="post">
+                <div class="circle">
+                    <img src="/img/AVATARES/<%=user.imagen%>" class="ok">
+                    <!-- <input
+                        name="avatarEdited"
+                        value='<%=user.imagen%>'
+                        type="file"
+                    /> -->
+                </div>
                 <div>
                 <label>Nombre completo</label>
                 <input
@@ -42,15 +43,16 @@
                     name="email"
                     value='<%=user.email%>'
                     type='email'
+                    readonly
                 />
                 </div>
                 <div>
-                <!-- <label>Fecha de nacimiento</label>
+                <label>Fecha de nacimiento</label>
                 <input
-                    name="fecha_nacimiento%"
+                    name="fecha_nacimiento"
                     value='<%=user.fecha_nacimiento%>'
                     type='date'
-                /> -->
+                />
                 </div>
                 <div>
                     <label>País</label>
@@ -62,7 +64,6 @@
                         <option value="argentina" <%=(user.pais==='argentina') ? 'selected' : ''%>>Argentina</option>
                     </select>
                 </div>
-        </section>
                 <div class="container_tipo_cuenta">
                     <label>Tipo de cuenta</label>
                     <div class='popUp__Type'>
@@ -79,6 +80,14 @@
                             value="comprador"
                         />
                     </div>
+                </div>
+                <div>
+                <label>Descripción</label>
+                <input
+                    name="descripcion"
+                    value='<%=user.descripcion%>'
+                    type='textarea'
+                />
                 </div>
                 <section class='container_registro_redes'>
                     <h4>Sincroniza tus redes sociales:</h4>

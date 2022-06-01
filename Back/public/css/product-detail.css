@@ -30,14 +30,14 @@
     height: 100%;
     padding-bottom: 30px;
     padding-right: 30px;
-    font-size: 400px;
+    font-size: 200px;
     opacity: 0;
     transition: 200ms;
 }
 
 .share:hover {
     opacity: 1;
-    font-size: 40px;
+    font-size: 30px;
 }
 
 .img-product {

@@ -18,7 +18,7 @@ router.post('/edit', product.processEdit);
 router.get('/delete', product.delete);
 router.post('/delete/:id', product.processDelete);
 
-// carrito
+// detalle
 router.get('/detail/:id', product.detail);
 
 // barra de busqueda

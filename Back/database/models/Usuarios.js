@@ -19,7 +19,7 @@ const Usuarios = db.define(
       type: DataTypes.STRING,
     },
     contrasenia: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
     },
     fecha_nacimiento: {
       type: DataTypes.DATE,
@@ -32,6 +32,9 @@ const Usuarios = db.define(
     },
     imagen:{
       type: DataTypes.STRING
+    },
+    descripcion:{
+      type: DataTypes.TEXT
     },
   },
   {

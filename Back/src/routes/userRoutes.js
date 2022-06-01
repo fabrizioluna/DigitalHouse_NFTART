@@ -26,7 +26,7 @@ router.get('/login', loggedMiddleware, user.login);
 router.post('/login', loginValidation, user.processLogin);
 
 // Obtener el Detalle del Usuario
-router.get('/profile/', guestMiddleware, user.profile);
+router.get('/profile', guestMiddleware, user.profile);
 
 // Edicion del Usuario
 router.get('/edit/:id', guestMiddleware, user.edit);

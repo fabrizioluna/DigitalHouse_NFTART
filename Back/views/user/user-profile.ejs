@@ -34,11 +34,10 @@
                     </ul>
                     <br><br>
 
-                    <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesc Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesc
-                    </p>
+                    <p><%=user.descripcion%></p>
                     <a href="/user/edit/<%=user.id%>">Editar</a>
-                    <form method="post" action="/user/delete">
-                    </form>
+                    <!-- <form method="post" action="/user/delete">
+                    </form> -->
                 </div>            
             </section>
     
@@ -69,7 +68,7 @@
                     <form class='Submenuperfillistado'>
                         <label class= "Submenuperfillistadob"> </label>
                         <select>
-                            <option> Arte </option>
+                            <option>Arte</option>
                             <option>Fotografía</option>
                             <option>Música</option>
                             <option>Simi</option>
@@ -107,258 +106,38 @@
         </section>    
 
         <!-- Colección -->
-        <!-- <section class="Coleccion">
-        <div class="Collecciona">
-            <article class="itemcoleccion">
-                <img src="/img/NFTAR AJUSTADAS/OPCION ARTE 1.jpg" class="Imagenesftp">
-                <div class="descripcion">
-                <H2 class="Nombre"> Nombre NFT1 </H2>
-                <H4 class="Autor"> Autor </H4>
-                <i class="imagendesb fas fa-heartbeat"></i>
-                <i class="imagendesc fas fa-cart-arrow-down"></i>
-                <div class="descripciona">
-                <p class= "PrecioU"> USD </p>
-                <p class= "PrecioE"> EHT </p>
-                <i class="imagendesa fab fa-ethereum"></i>
-
-                </div>
-                </div>
-            </article>
-
-            <article class="itemcoleccion">
-                <img src="/img/NFTAR AJUSTADAS/OPCION ARTE 2.jpg" class="Imagenesftp">
-                <div class ="descripcion">
-                <H2 class="Nombre"> Nombre NFT2 </H2>
-                <H4 class="Autor"> Autor </H4>
-                <i class="imagendesb fas fa-heartbeat"></i>
-                <i class="imagendesc fas fa-cart-arrow-down"></i>
-                <div class="descripciona">
-                <p class= "PrecioU"> USD </p>
-                <p class= "PrecioE"> EHT </p>
-                <i class="imagendesa fab fa-ethereum"></i>
-  
-                </div>
-                </div>
-            </article>
-
-            <article class="itemcoleccion">
-                <img src="/img/NFTAR AJUSTADAS/OPCION ARTE 3.jpg" class="Imagenesftp">
-                <div class ="descripcion">
-                <H2 class="Nombre"> Nombre NFT3 </H2>
-                <H4 class="Autor"> Autor </H4>
-                <i class="imagendesb fas fa-heartbeat"></i>
-                <i class="imagendesc fas fa-cart-arrow-down"></i>
-                <div class="descripciona">
-                <p class= "PrecioU"> USD </p>
-                <p class= "PrecioE"> EHT </p>
-                <i class="imagendesa fab fa-ethereum"></i>
-             
-                </div>
-                </div>
-            </article>
-
-            <article class="itemcoleccion">
-                <img src="/img/NFTAR AJUSTADAS/OPCION ARTE 4.jpg" class="Imagenesftp">
-                <div class ="descripcion">
-                <H2 class="Nombre"> Nombre NFT4 </H2>
-                <H4 class="Autor"> Autor </H4>
-                <i class="imagendesb fas fa-heartbeat"></i>
-                <i class="imagendesc fas fa-cart-arrow-down"></i>
-                <div class="descripciona">
-                <p class= "PrecioU"> USD </p>
-                <p class= "PrecioE"> EHT </p>
-                <i class="imagendesa fab fa-ethereum"></i>
-    
-                </div>
-                </div>
-            </article>
-            </div>
-            </section>
-
-            <section class="Coleccion">
-            <div class="Collecciona">
-            <article class="itemcoleccion">
-                <img src="/img/NFTAR AJUSTADAS/OPCION ARTE 4.jpg" class="Imagenesftp">
-                <div class="descripcion">
-                <H2 class="Nombre"> Nombre NFT5 </H2>
-                <H4 class="Autor"> Autor </H4>
-                <i class="imagendesb fas fa-heartbeat"></i>
-                <i class="imagendesc fas fa-cart-arrow-down"></i>
-                <div class="descripciona">
-                <p class= "PrecioU"> USD </p>
-                <p class= "PrecioE"> EHT </p>
-                <i class="imagendesa fab fa-ethereum"></i>
-         
-                </div>
-                </div>
-            </article>
-
-            <article class="itemcoleccion">
-                <img src="/img/NFTAR AJUSTADAS/OPCION ARTE 3.jpg" class="Imagenesftp">
-                <div class="descripcion">
-                <H2 class="Nombre"> Nombre NFT6 </H2>
-                <H4 class="Autor"> Autor </H4>
-                <i class="imagendesb fas fa-heartbeat"></i>
-                <i class="imagendesc fas fa-cart-arrow-down"></i>
-                <div class="descripciona">
-                <p class= "PrecioU"> USD </p>
-                <p class= "PrecioE"> EHT </p>
-                <i class="imagendesa fab fa-ethereum"></i>
-           
-                </div>
-                </div>
-            </article>
-
-            <article class="itemcoleccion">
-                <img src="/img/NFTAR AJUSTADAS/OPCION ARTE 2.jpg" class="Imagenesftp">
-                <div class="descripcion">
-                <H2 class="Nombre"> Nombre NFT7 </H2>
-                <H4 class="Autor"> Autor </H4>
-                <i class="imagendesb fas fa-heartbeat"></i>
-                <i class="imagendesc fas fa-cart-arrow-down"></i>
-                <div class="descripciona">
-                <p class= "PrecioU"> USD </p>
-                <p class= "PrecioE"> EHT </p>
-                <i class="imagendesa fab fa-ethereum"></i>
-                </div>
-                </div>
-            </article>
-
-            <article class="itemcoleccion">
-                <img src="/img/NFTAR AJUSTADAS/OPCION ARTE 1.jpg" class="Imagenesftp">
-                <div class= "descripcion">
-                <H2 class="Nombre"> Nombre NFT8 </H2>
-                <H4 class="Autor"> Autor </H4>
-                <i class="imagendesb fas fa-heartbeat"></i>
-                <i class="imagendesc fas fa-cart-arrow-down"></i>
-                <div class="descripciona">
-                <p class= "PrecioU"> USD </p>
-                <p class= "PrecioE"> EHT </p>
-                <i class="imagendesa fab fa-ethereum"></i>
-         
-                </div>
-                </div>
-            </article>
-        </div>
-        </section> -->
-
-        <!-- Actividad -->
-        <section class="Tablaactividad">
-        <div>
-        <table>
-            <!-- <div class= "MenuTabla"> -->
-            <tr>
-                <th class='tablaActividad__titulo1'>Nombre</th>
-                <th class='tablaActividad__titulo2'>Precio</th>
-                <!-- <th>Precio</th>
-                <th>Propietario Anterior</th>
-                <th>Fecha / Hora de Operación</th> -->
-            </tr>
-            </div>
-            <tr>
-                <!-- <td>Tipo</td> -->
-                <td class='tablaActividad__descripcion'>
-                    <!-- <figure> -->
-                        <img
-                            src='https://images.ole.com.ar/2022/01/23/dgnR0nTmN_720x0__1.jpg'
-                        />
-                    <!-- </figure> -->
-                    <div class='tablaActividad__informacion'>
-                        <span class='descripcion__1'>Meebits</span>
-                        <span class='descripcion__2'>ETH</span>
-                        <span class='descripcion__3'>Expira en 12hrs y 30mins</span>
-                    </div>
-                </td>
-                <td class= "precioc"> $15.00 USD</td>
-            </tr>
-            <tr>
-                <!-- <td>Tipo</td> -->
-                <td class='tablaActividad__descripcion'>
-                    <!-- <figure> -->
-                        <img
-                            src='https://images.ole.com.ar/2022/01/23/dgnR0nTmN_720x0__1.jpg'
-                        />
-                    <!-- </figure> -->
-                    <div class='tablaActividad__informacion'>
-                        <span class='descripcion__1'>Meebits</span>
-                        <span class='descripcion__2'>ETH</span>
-                        <span class='descripcion__3'>Expira en 12hrs y 30mins</span>
-                    </div>
-                </td>
-                <td class= "precioc"> $15.00 USD</td>
-            </tr>
-            <tr>
-                <!-- <td>Tipo</td> -->
-                <td class='tablaActividad__descripcion'>
-                    <!-- <figure> -->
-                        <img
-                            src='https://images.ole.com.ar/2022/01/23/dgnR0nTmN_720x0__1.jpg'
-                        />
-                    <!-- </figure> -->
-                    <div class='tablaActividad__informacion'>
-                        <span class='descripcion__1'>Meebits</span>
-                        <span class='descripcion__2'>ETH</span>
-                        <span class='descripcion__3'>Expira en 12hrs y 30mins</span>
-                    </div>
-                </td>
-                <td class= "precioc"> $15.00 USD</td>
-            </tr>
-            <tr>
-                <td> Tipo2 </td>
-                <td> NFT2</td>
-                <td class= "precioc"> Precio2</td>
-                <td> Anterior Propietario2</td>
-                <td> Fecha / Hora Operacion2 </td>
-            </tr>
-            <tr>
-                <td> Tipo3 </td>
-                <td> NFT3</td>
-                <td class= "precioc"> Precio3</td>
-                <td> Anterior Propietario3</td>
-                <td> Fecha / Hora Operacion3 </td>
-            </tr>    
-        </table>
-        </div>
-        </section>
-
-        <br>
-        <br>
-
-        <!-- Ofertas -->
         <section>
-        <div>
-            <table class="Tablaofertas">
-                <tr>
-                    <th>Tipo</th>
-                    <th>Precio</th>
-                    <th>Oferta Recibida</th>
-                    <th>Utilidad</th>
-                    <th>Fecha / Hora de experación de la Oferta</th>
-                </tr>
-                <tr>
-                    <td> Tipo1</td>
-                    <td class= "precioc"> PreciodeMercado1</td>
-                    <td> Oferta1</td>
-                    <td> Utilidad1</td>
-                    <td> Fecha / Deexpericaciondelaoferta1</td>
-                </tr>
-                <tr>
-                    <td> Tipo2</td>
-                    <td class= "precioc"> PreciodeMercado2</td>
-                    <td> Oferta2</td>
-                    <td> Utilidad2</td>
-                    <td> Fecha / Deexpericaciondelaoferta2</td>
-                </tr>
-                <tr>
-                    <td> Tipo3</td>
-                    <td class= "precioc"> PreciodeMercado3</td>
-                    <td> Oferta3</td>
-                    <td> Utilidad3</td>
-                    <td> Fecha / Deexpericaciondelaoferta3 </td>
-                </tr>
-            </table>
-            </div>
-            </section>
+            <div class="products">
+    
+                <%for(let p of products){%>
+    
+                <a class="container_product_desc" href="/product/detail/<%=p.id%>">
+                    <img src="/img/PRODUCTOS/<%=p.Categoria.categoria+'_'+p.id+'.jpg'%>" alt="NFT" class="product_img">
+                    <div class="main-article">
+                        <div>
+                            <h2 class="name_product"><%=p.nombre_nft%></h2>
+                            <p class="autor" id="hover"><%=p.Autor.autor%></p>
+                        </div>
+                        <div class="precios">
+                            <p class="price">$<%=p.precio_actual_usd%></p>
+                            <p class="price_cripto"><%=p.precio_actual_eth%> ETH</p>
+                        </div>
+                        <div class="carrito_corazon">
+                            <i class="fas fa-heart" id="hover"></i>
+                            <i class="fas fa-cart-arrow-down" id="hover" onclick="set(
+                                {
+                                    nombre_nft: `<%=p.nombre_nft %>`,
+                                    precio_actual_usd: `<%=p.precio_actual_usd%>`,
+                                    precio_actual_eth: `<%=p.precio_actual_eth%>`,
+                                    autor: `<%=p.autor%>`
+                                }
+                            )"></i>
+                        </div>
+                    </div>
+                </a>
+                <%}%>
+            </div>  
+        </section>
     </main>
 
     <%- include('../partials/footer')%>

@@ -2,6 +2,9 @@ const { validationResult } = require('express-validator');
 const bcryptJs = require('bcryptjs');
 const bcrypt = require('bcrypt');
 const User = require('../../database/models/Usuarios');
+const nft = require('../../database/models/nft');
+const Categorias = require('../../database/models/Categorias');
+const Autores = require('../../database/models/Autores');
 
 const user = {
   register: function (req, res) {
@@ -58,18 +61,28 @@ const user = {
             },
           },
         });
-      }
+      };
       req.session.userLogged = user.dataValues;
       if (req.body.rememberUser === 'yes') {
         res.cookie('userEmail', user.dataValues.email, { maxAge: 30000 });
-      }
+      };
+      return user;
+    }).then(function(user) {
+      let products = nft.findAll({
+        include:[{model: Categorias, as: "Categoria"}, {model: Autores, as: "Autor"}],
+        where: { propietario: user.id }
+      });
+      return products;
+    }).then(function(products) {
+      req.session.products = products;
       return res.redirect('/user/profile');
-    });
+    })
   },
 
   profile: function (req, res) {
     res.render('user/user-profile', {
       user: req.session.userLogged,
+      products: req.session.products
     });
   },
 
@@ -82,11 +95,15 @@ const user = {
   },
 
   update: function (req, res) {
-    console.log(req.body)
     User.update(
       req.body,
       { where: { email: req.body.email } }
     ).then(function () {
+      let user = User.findOne(
+        { where: { email: req.body.email } });
+      return user;
+    }).then(function (user) {
+      req.session.userLogged = user.dataValues;
       res.redirect('/user/profile');
     });
   },
@@ -96,7 +113,7 @@ const user = {
     res.clearCookie('userEmail');
     return res.redirect('/');
   },
-  cart: function(req,res){
+  cart: function(req, res){
     res.render('user/user-cart')
   }
 };

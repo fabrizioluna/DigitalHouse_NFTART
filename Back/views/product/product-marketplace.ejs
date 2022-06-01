@@ -46,7 +46,7 @@
 
             <%for(let p of productos){%>
 
-            <a class="container_product_desc" >
+            <a class="container_product_desc" href="/product/detail/<%=p.id%>">
                 <img src="/img/PRODUCTOS/<%=p.Categoria.categoria+'_'+p.id+'.jpg'%>" alt="NFT" class="product_img">
                 <div class="main-article">
                     <div>

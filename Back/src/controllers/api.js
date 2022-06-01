@@ -107,7 +107,7 @@ const apiProduct = {
     let productId = await nft.findOne({
       where: { id: req.params.id },
       include: [
-        { model: User, as: 'Creador' },
+        { model: User, as: 'Propietario' },
         { model: Category, as: 'Categoria' },
         { model: Autores, as: 'Autor' },
       ],
