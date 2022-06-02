@@ -3,12 +3,10 @@ const nft = require('../../database/models/nft');
 const Categorias = require('../../database/models/Categorias');
 const Autores = require('../../database/models/Autores');
 
-const PRODUCT = {
+const product = {
   marketplace: function (req, res) {
     nft.findAll({include:[{model: Categorias, as: "Categoria"}, {model: Autores, as: "Autor"}]})
       .then( function(products) {
-        // console.log(products);
-        // res.json(products);
         res.render('product/product-marketplace', { productos: products })
       }
     );
@@ -122,4 +120,4 @@ const PRODUCT = {
   },
 };
 
-module.exports = PRODUCT;
+module.exports = product;
